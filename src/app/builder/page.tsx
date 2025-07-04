@@ -8,12 +8,6 @@ export default function BuilderPage() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  // Drag-to-scroll logic for news section
-  const newsRowRef = useRef<HTMLDivElement>(null);
-  const [isNewsDragging, setIsNewsDragging] = useState(false);
-  const [newsStartX, setNewsStartX] = useState(0);
-  const [newsScrollLeft, setNewsScrollLeft] = useState(0);
-
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     setStartX(e.pageX - (cardRowRef.current?.offsetLeft || 0));
@@ -38,29 +32,7 @@ export default function BuilderPage() {
     }
   };
 
-  const handleNewsMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsNewsDragging(true);
-    setNewsStartX(e.pageX - (newsRowRef.current?.offsetLeft || 0));
-    setNewsScrollLeft(newsRowRef.current?.scrollLeft || 0);
-  };
 
-  const handleNewsMouseLeave = () => {
-    setIsNewsDragging(false);
-  };
-
-  const handleNewsMouseUp = () => {
-    setIsNewsDragging(false);
-  };
-
-  const handleNewsMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isNewsDragging) return;
-    e.preventDefault();
-    const x = e.pageX - (newsRowRef.current?.offsetLeft || 0);
-    const walk = (x - newsStartX) * 1.2; // scroll speed
-    if (newsRowRef.current) {
-      newsRowRef.current.scrollLeft = newsScrollLeft - walk;
-    }
-  };
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white font-sans">
       {/* Hero Section */}
@@ -243,7 +215,7 @@ export default function BuilderPage() {
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Identity System with Decentralized I.D (DID)</h3>
-                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Use Kross Network's decentralized identity tools to streamline onboarding, meet KYC/AML requirements, and verify users with confidence. Built-in support for reusable IDs and Soulbound NFTs adds an extra layer of trust and security—ideal for apps that require verified user data.</p>
+                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Use Kross Network&apos;s decentralized identity tools to streamline onboarding, meet KYC/AML requirements, and verify users with confidence. Built-in support for reusable IDs and Soulbound NFTs adds an extra layer of trust and security—ideal for apps that require verified user data.</p>
                 </div>
               </div>
               {/* Card 6 */}
@@ -345,7 +317,7 @@ export default function BuilderPage() {
         <div className="flex w-full justify-end">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 min-h-[360px] max-w-[520px] relative z-10">
             <h3 className="text-[32px] font-bold mb-5">Consensus Layer</h3>
-            <p className="text-[#CACACA] mb-5">Kross Chain uses Leased Proof Of Stake (LPoS). Token holders can "lease" (delegate) their KSS coins to trusted validators. This allows smaller token holders to participate and increase a node's chances of producing blocks. Block producers earn transaction fees, shared with those who leased to them.</p>
+            <p className="text-[#CACACA] mb-5">Kross Chain uses Leased Proof Of Stake (LPoS). Token holders can lease &quot(delegate) their KSS coins to trusted validators. This allows smaller token holders to participate and increase a node&apos;s chances of producing blocks. Block producers earn transaction fees, shared with those who leased to them.</p>
             <div className="flex gap-2 flex-wrap">
               <span className="p-2 rounded-[12px] text-sm border border-[#686868]">Energy Efficient</span>
               <span className="p-2 rounded-[12px] text-sm border border-[#686868]">Inclusive</span>
@@ -424,7 +396,7 @@ export default function BuilderPage() {
         <div className="flex w-full justify-end">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 min-h-[360px] max-w-[520px] relative z-10">
             <h3 className="text-[32px] font-bold mb-5">Tools And Interface Layer</h3>
-            <p className="text-[#CACACA] mb-5">Kross Chain provides user access and integration tools such as Hashgreed DEX+Wallet, an integrated AMM DEX; Waves SDKs, Kross SDKs, Kross Node APIs - JavaScript, Python, and other libraries for interacting with the blockchain; HashPay mobile app- for easy C2C stablecoin payments ; Hashgreed -Africa's First Asset tokenization Platform and NFT marketplace for creative, web3 commerce and RWA.</p>
+            <p className="text-[#CACACA] mb-5">Kross Chain provides user access and integration tools such as Hashgreed DEX+Wallet, an integrated AMM DEX; Waves SDKs, Kross SDKs, Kross Node APIs - JavaScript, Python, and other libraries for interacting with the blockchain; HashPay mobile app- for easy C2C stablecoin payments ; Hashgreed -Africa&apos;s First Asset tokenization Platform and NFT marketplace for creative, web3 commerce and RWA.</p>
             <div className="flex gap-2 flex-wrap">
               <span className="p-2 rounded-[12px] text-sm border border-[#686868]">Hashgreed DEX</span>
               <span className="p-2 rounded-[12px] text-sm border border-[#686868]">Hashgreed</span>
@@ -466,7 +438,7 @@ export default function BuilderPage() {
         <div className="flex w-full justify-end">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 min-h-[360px] max-w-[520px] relative z-10">
             <h3 className="text-[32px] font-bold mb-5">Interoperability Layer</h3>
-            <p className="text-[#CACACA] mb-5">The interoperability layer of KROSS Chain will be built on the IBC Protocol. This layer ensures that KROSS's regulatory and compliance modules, along with all other features introduced to the Cosmos ecosystem, are not confined to the chain itself but are extended across the entire Inter-Blockchain Communication Protocol ecosystem.</p>
+            <p className="text-[#CACACA] mb-5">The interoperability layer of KROSS Chain will be built on the IBC Protocol. This layer ensures that KROSS&apos;s regulatory and compliance modules, along with all other features introduced to the Cosmos ecosystem, are not confined to the chain itself but are extended across the entire Inter-Blockchain Communication Protocol ecosystem.</p>
           </div>
         </div>
         <div className="absolute top-0 z-0">
