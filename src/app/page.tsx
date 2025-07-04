@@ -73,8 +73,8 @@ export default function Home() {
               <img alt="Krosscoin for Builders" width={16} height={16} src="/assets/icon/file-icons_buildkite.png" />
               <span className="text-sm font-normal text-white">Build with Kross</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6">Africa's First Smart Contract Blockchain Solution</h1>
-            <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">Kross Blockchain is Nigeria's First Layer 1 Blockchain Network - Driving Innovation and Real-World Adoption Across The Continent.</p>
+            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6">Africa&aposs First Smart Contract Blockchain Solution</h1>
+            <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">Kross Blockchain is Nigeria&aposs First Layer 1 Blockchain Network - Driving Innovation and Real-World Adoption Across The Continent.</p>
             <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Krosscoin Explorer</a>
           </div>
           {/* Right column */}
@@ -224,7 +224,7 @@ export default function Home() {
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Identity System with Decentralized I.D (DID)</h3>
-                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Use Kross Network's decentralized identity tools to streamline onboarding, meet KYC/AML requirements, and verify users with confidence. Built-in support for reusable IDs and Soulbound NFTs adds an extra layer of trust and security—ideal for apps that require verified user data.</p>
+                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Use Kross Network&aposs decentralized identity tools to streamline onboarding, meet KYC/AML requirements, and verify users with confidence. Built-in support for reusable IDs and Soulbound NFTs adds an extra layer of trust and security—ideal for apps that require verified user data.</p>
                 </div>
               </div>
               {/* Card 6 */}
@@ -430,7 +430,7 @@ export default function Home() {
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/manageCrypto/crypto5.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Transparent Trading with Central Orderbook</h3>
-                        <p className="text-gray-300 mb-8 leading-relaxed text-lg">Execute trades with precision and full visibility. Kross Network's Central Limit Orderbook ensures accurate price discovery, deeper liquidity, and smooth trade execution—all in one powerful interface.</p>
+                        <p className="text-gray-300 mb-8 leading-relaxed text-lg">Execute trades with precision and full visibility. Kross Network&aposs Central Limit Orderbook ensures accurate price discovery, deeper liquidity, and smooth trade execution—all in one powerful interface.</p>
                         <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Swap Now</button>
                       </div>
                     </div>

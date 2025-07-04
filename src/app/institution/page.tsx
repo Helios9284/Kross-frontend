@@ -88,7 +88,7 @@ const InstitutionPage = () => {
         <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4 items-center mb-8 px-4 mx-auto">
           <div className="hidden md:block"></div>
           <div className="flex flex-col items-end">
-            <p className="text-base md:text-lg text-gray-300 mb-6 text-left max-w-xl">"We're committed to bringing the global financial system onchain. Kross Network plays a key role in helping us accelerate the tokenization of real-world assets, turning them into secure, digital representations. This transformation is essential to building a more open and efficient financial ecosystem."
+            <p className="text-base md:text-lg text-gray-300 mb-6 text-left max-w-xl">&quotWe&aposre committed to bringing the global financial system onchain. Kross Network plays a key role in helping us accelerate the tokenization of real-world assets, turning them into secure, digital representations. This transformation is essential to building a more open and efficient financial ecosystem.&quot
               <br/><span className="block mt-4 font-semibold text-white">Mr.Ademolu Oyenuga<br/><span className="text-xs font-normal">Director/Board Member</span></span>
           </p>
           </div>

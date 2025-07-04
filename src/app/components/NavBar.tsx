@@ -4,7 +4,6 @@ import { FaChevronDown, FaBars } from "react-icons/fa";
 import { useState } from "react";
 
 export default function NavBar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<null | "resources" | "ecosystem">(null);
 
   return (
@@ -42,7 +41,7 @@ export default function NavBar() {
               <div className="absolute top-full left-0 mt-10 bg-[#0a0620] rounded-[32px] shadow-lg border border-[#2b3250] z-50 px-8 py-8 inline-block min-w-max">
                 <a href="/news" className="block text-white text-[14px] font-[400] mb-8 hover:underline">News</a>
                 <a href="/blog" className="block text-white text-[14px] font-[400] mb-8 hover:underline">Blog</a>
-                <a href="/guide" className="block text-white text-[14px] font-[400] hover:underline">Developer's Guide</a>
+                <a href="/guide" className="block text-white text-[14px] font-[400] hover:underline">Developer&aposs Guide</a>
               </div>
             )}
           </div>

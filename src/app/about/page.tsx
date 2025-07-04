@@ -29,7 +29,7 @@ export default function AboutPage() {
             To build a globally trusted blockchain infrastructure that empowers the secure and compliant digitization of real world assets. We envision a future where financial systems are seamlessly interconnected, transparent, and accessible to all. At KROSS, we are committed to driving innovation and adoption for a borderless and decentralized world.
           </p>
           <p className="text-base md:text-lg leading-relaxed">
-            At Kross Blockchain, we're always thinking forward. We build cutting-edge technology that's fast, secure, and ready for the future. Our team is passionate about enabling the tokenization of assets and helping institutions meet the needs of tomorrow.
+            At Kross Blockchain, we&aposre always thinking forward. We build cutting-edge technology that&aposs fast, secure, and ready for the future. Our team is passionate about enabling the tokenization of assets and helping institutions meet the needs of tomorrow.
           </p>
         </div>
         {/* Right: 2x2 Grid of Placeholders */}
@@ -59,7 +59,7 @@ export default function AboutPage() {
       <section className="w-full min-h-[320px] flex flex-col items-center justify-center bg-gradient-to-b from-[#18123a] via-[#2b0a3d] to-[#6d05b8] rounded-t-[48px] py-16 mt-10">
         <h3 className="text-white text-base font-semibold mb-2 opacity-80">Staying Ahead Of The Curve</h3>
         <p className="text-2xl md:text-3xl text-white text-center font-bold mb-8 max-w-2xl opacity-80">
-          We're a team of developers and blockchain professionals focused on solving one of the industry's biggest challenges — keeping up with ever-evolving blockchain regulations.
+          We&aposre a team of developers and blockchain professionals focused on solving one of the industry&aposs biggest challenges — keeping up with ever-evolving blockchain regulations.
         </p>
         <a href="/contact" className="mt-2 px-8 py-3 bg-[#FF00B8] text-white font-bold rounded-full text-base shadow-lg hover:bg-[#d6009a] transition-colors">Contact Our Team</a>
       </section>

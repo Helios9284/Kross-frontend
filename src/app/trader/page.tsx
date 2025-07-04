@@ -1,20 +1,9 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import React from 'react';
 const TraderPage = () => {
-  // Drag-to-scroll logic for possibilities section
-  const cardRowRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
 
-  // Drag-to-scroll logic for news section
-  const newsRowRef = useRef<HTMLDivElement>(null);
-  const [isNewsDragging, setIsNewsDragging] = useState(false);
-  const [newsStartX, setNewsStartX] = useState(0);
-  const [newsScrollLeft, setNewsScrollLeft] = useState(0);
-
-  const [animatedPills, setAnimatedPills] = useState([false, false, false, false, false]);
+  const [, setAnimatedPills] = useState([false, false, false, false, false]);
   useEffect(() => {
     const timeouts = [0, 1, 2, 3, 4].map((i) =>
       setTimeout(() => {
@@ -28,53 +17,7 @@ const TraderPage = () => {
     return () => timeouts.forEach(clearTimeout);
   }, []);
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    setStartX(e.pageX - (cardRowRef.current?.offsetLeft || 0));
-    setScrollLeft(cardRowRef.current?.scrollLeft || 0);
-  };
 
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - (cardRowRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 1.2; // scroll speed
-    if (cardRowRef.current) {
-      cardRowRef.current.scrollLeft = scrollLeft - walk;
-    }
-  };
-
-  const handleNewsMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsNewsDragging(true);
-    setNewsStartX(e.pageX - (newsRowRef.current?.offsetLeft || 0));
-    setNewsScrollLeft(newsRowRef.current?.scrollLeft || 0);
-  };
-
-  const handleNewsMouseLeave = () => {
-    setIsNewsDragging(false);
-  };
-
-  const handleNewsMouseUp = () => {
-    setIsNewsDragging(false);
-  };
-
-  const handleNewsMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isNewsDragging) return;
-    e.preventDefault();
-    const x = e.pageX - (newsRowRef.current?.offsetLeft || 0);
-    const walk = (x - newsStartX) * 1.2; // scroll speed
-    if (newsRowRef.current) {
-      newsRowRef.current.scrollLeft = newsScrollLeft - walk;
-    }
-  };
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
@@ -235,7 +178,7 @@ const TraderPage = () => {
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/manageCrypto/crypto3.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Swap</h3>
-                        <p className="text-gray-300 mb-8 leading-relaxed text-lg">Enjoy a smooth trading with the Wallet integrated HASHGREED DEX, Africa's First DEX for Regulated RWA tokens</p>
+                        <p className="text-gray-300 mb-8 leading-relaxed text-lg">Enjoy a smooth trading with the Wallet integrated HASHGREED DEX, Africa&aposs First DEX for Regulated RWA tokens</p>
                         <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Learn More</button>
                       </div>
                     </div>
