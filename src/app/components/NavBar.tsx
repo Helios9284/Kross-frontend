@@ -39,9 +39,9 @@ export default function NavBar() {
             </div>
             {openDropdown === "resources" && (
               <div className="absolute top-full left-0 mt-10 bg-[#0a0620] rounded-[32px] shadow-lg border border-[#2b3250] z-50 px-8 py-8 inline-block min-w-max">
-                <a href="/news" className="block text-white text-[14px] font-[400] mb-8 hover:underline">News</a>
-                <a href="/blog" className="block text-white text-[14px] font-[400] mb-8 hover:underline">Blog</a>
-                <a href="/guide" className="block text-white text-[14px] font-[400] hover:underline">Developer&aposs Guide</a>
+                <Link href="/news" className="block text-white text-[14px] font-[400] mb-8 hover:underline" onClick={() => setOpenDropdown(null)}>News</Link>
+                <Link href="/blog" className="block text-white text-[14px] font-[400] mb-8 hover:underline" onClick={() => setOpenDropdown(null)}>Blog</Link>
+                <Link href="/guide" className="block text-white text-[14px] font-[400] hover:underline" onClick={() => setOpenDropdown(null)}>Developer's Guide</Link>
               </div>
             )}
           </div>
@@ -57,10 +57,10 @@ export default function NavBar() {
             </div>
             {openDropdown === "ecosystem" && (
               <div className="absolute top-full left-0 mt-10 bg-[#0a0620] rounded-[32px] shadow-lg border border-[#2b3250] z-50 px-8 py-8 inline-block min-w-max">
-                <a href="/fund" className="block text-white text-[14px] font-[400] mb-8 hover:underline">Ecnsystem Fund</a>
-                <a href="/rwa" className="block text-white text-[14px] font-[400] mb-8 hover:underline">RWAccelerator</a>
-                <a href="/partners" className="block text-white text-[14px] font-[400] mb-8 hover:underline">Partners</a>
-                <a href="/coin" className="block text-white text-[14px] font-[400] hover:underline">$OM Coin</a>
+                <Link href="/fund" className="block text-white text-[14px] font-[400] mb-8 hover:underline">Ecnsystem Fund</Link>
+                <Link href="/rwa" className="block text-white text-[14px] font-[400] mb-8 hover:underline">RWAccelerator</Link>
+                <Link href="/partner" className="block text-white text-[14px] font-[400] mb-8 hover:underline">Partners</Link>
+                <Link href="/coin" className="block text-white text-[14px] font-[400] hover:underline">$OM Coin</Link>
               </div>
             )}
           </div>

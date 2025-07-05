@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="text-white bg-[#0a0620]">
@@ -17,9 +19,9 @@ export default function Footer() {
           <div className="col-span-1 text-center md:text-left">
             <h3 className="font-semibold mb-4 text-gray-200">Company</h3>
             <ul className="space-y-3">
-              <li><a href="/aboutus" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/contactus" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-              <li><a href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+              <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Referral Program</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Community</a></li>
@@ -29,26 +31,26 @@ export default function Footer() {
             <h3 className="font-semibold mb-4 text-gray-200">Quick Links</h3>
             <ul className="space-y-3">
               <li><a href="" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="/builder" className="text-gray-400 hover:text-white transition-colors">For Builders</a></li>
-              <li><a href="/trader" className="text-gray-400 hover:text-white transition-colors">For Traders</a></li>
-              <li><a href="/institution" className="text-gray-400 hover:text-white transition-colors">For Institution</a></li>
+              <li><Link href="/builder" className="text-gray-400 hover:text-white transition-colors">For Builders</Link></li>
+              <li><Link href="/trader" className="text-gray-400 hover:text-white transition-colors">For Traders</Link></li>
+              <li><Link href="/institution" className="text-gray-400 hover:text-white transition-colors">For Institution</Link></li>
             </ul>
           </div>
           <div className="col-span-1 text-center md:text-left">
             <h3 className="font-semibold mb-4 text-gray-200">Resources</h3>
             <ul className="space-y-3">
-              <li><a href="/news" className="text-gray-400 hover:text-white transition-colors">News</a></li>
-              <li><a href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-              <li><a href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+              <li><Link href="/news" className="text-gray-400 hover:text-white transition-colors">News</Link></li>
+              <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
             </ul>
           </div>
           <div className="col-span-1 text-center md:text-left">
             <h3 className="font-semibold mb-4 text-gray-200">Ecosystem</h3>
             <ul className="space-y-3">
-              <li><a href="/ecosystem" className="text-gray-400 hover:text-white transition-colors">Ecosystem Fund</a></li>
-              <li><a href="/accelerator" className="text-gray-400 hover:text-white transition-colors">RWAccelerator</a></li>
-              <li><a href="/partner" className="text-gray-400 hover:text-white transition-colors">Partners</a></li>
-              <li><a href="/$kiss" className="text-gray-400 hover:text-white transition-colors">SOM Coin</a></li>
+              <li><Link href="/fund" className="text-gray-400 hover:text-white transition-colors">Ecosystem Fund</Link></li>
+              <li><Link href="/rwa" className="text-gray-400 hover:text-white transition-colors">RWAccelerator</Link></li>
+              <li><Link href="/partner" className="text-gray-400 hover:text-white transition-colors">Partners</Link></li>
+              <li><Link href="/coin" className="text-gray-400 hover:text-white transition-colors">SOM Coin</Link></li>
             </ul>
           </div>
           <div className="col-span-1 text-center md:text-left">
