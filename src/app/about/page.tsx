@@ -11,7 +11,7 @@ export default function AboutPage() {
           {/* Left column: Text */}
           <div className="flex-1 flex items-center md:justify-start justify-center">
             <p className="text-white text-base md:text-lg leading-relaxed">
-              Kross Blockchain is Africa's pioneering Layer 1 smart contract platform, purpose-built for the compliant tokenization of real-world assets. Designed for speed, scalability, and regulatory trust, Kross empowers businesses, developers, and governments to seamlessly bring value onchain. With enterprise-grade infrastructure and cross-border interoperability, we're bridging traditional finance with the future of decentralized technology. KROSS is where real-world impact meets blockchain innovation.
+              Kross Blockchain is Africa is pioneering Layer 1 smart contract platform, purpose-built for the compliant tokenization of real-world assets. Designed for speed, scalability, and regulatory trust, Kross empowers businesses, developers, and governments to seamlessly bring value onchain. With enterprise-grade infrastructure and cross-border interoperability, we are bridging traditional finance with the future of decentralized technology. KROSS is where real-world impact meets blockchain innovation.
             </p>
           </div>
           {/* Right column: Image Placeholder */}
@@ -31,7 +31,7 @@ export default function AboutPage() {
               To build a globally trusted blockchain infrastructure that empowers the secure and compliant digitization of real-world assets. We envision a future where financial systems, institutions, and communities are seamlessly connected onchain—transparent, inclusive, and borderless. At KROSS, we are driving the shift from traditional finance to a decentralized world where value flows freely and securely.
             </p>
             <p className="text-white text-base md:text-lg leading-relaxed">
-              At Kross Blockchain, we're always thinking forward. We build cutting-edge technology that's fast, secure, and ready for the future—so our users and partners are never left behind. Whether it's making real-world assets easier to trade or staying ahead of new tech trends, we focus on what's next. With KROSS, you're not just keeping up—you're leading the way.
+              At Kross Blockchain, we are always thinking forward. We build cutting-edge technology that is fast, secure, and ready for the future—so our users and partners are never left behind. Whether it is making real-world assets easier to trade or staying ahead of new tech trends, we focus on what is next. With KROSS, you are not just keeping up—you&aposre leading the way.
             </p>
           </div>
           {/* Right column: single 2x2 grid */}
@@ -56,7 +56,7 @@ export default function AboutPage() {
       <section className="w-full h-[700px] flex flex-col items-center justify-center bg-gradient-to-br from-[#0a0a2f] via-[#1a0a3f] to-[#2a0a4f] py-16 mt-10">
         <h3 className="text-white text-base font-semibold mb-2">Staying Ahead Of The Curve</h3>
         <p className="text-2xl md:text-3xl text-white text-center mb-8 max-w-2xl opacity-80">
-          We're a team of developers and blockchain professionals focused on solving one of the industry's biggest challenges — keeping up with ever-evolving blockchain regulations.
+          We&aposre a team of developers and blockchain professionals focused on solving one of the industry&aposs biggest challenges — keeping up with ever-evolving blockchain regulations.
         </p>
         <h3 className="text-white text-3xl font-bold mb-4 mt-32 text-center">Contact Our Team</h3>
        

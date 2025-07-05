@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Lato } from 'next/font/google'
+// import { Lato } from 'next/font/google'
 interface NewsArticle {
   id: number
   title: string
@@ -66,10 +66,10 @@ const newsArticles: NewsArticle[] = [
     categories: ["Ecosystem", "SIM Coin"],
   },
 ]
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['400', '700'], // Add other weights if needed
-})
+// const lato = Lato({
+//   subsets: ['latin'],
+//   weight: ['400', '700'], // Add other weights if needed
+// })
 
 
 export default function Page() {

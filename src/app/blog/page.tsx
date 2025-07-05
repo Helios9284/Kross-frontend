@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Lato } from 'next/font/google'
+// import { Lato } from 'next/font/google'
 
 interface NewsArticle {
   id: number
@@ -11,12 +11,6 @@ interface NewsArticle {
   categories: string[]
 }
 
-const featuredArticle = {
-  title: "SEC Grants Hashgreed Approval To Tokenize Real Estate Based Assets",
-  excerpt:
-    "The Securities and Exchange Commission (SEC) has Granted Approval to Kross Real Estate Securities Network, Hashgreed, to offer Tokenized Real Estate Digital Assets.",
-  date: "Aug 14, 2024",
-}
 const newsArticles: NewsArticle[] = [
   {
     id: 1,
@@ -68,16 +62,15 @@ const newsArticles: NewsArticle[] = [
   },
 ]
 
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['400', '700'], // Add other weights if needed
-})
+// const lato = Lato({
+//   subsets: ['latin'],
+//   weight: ['400', '700'], // Add other weights if needed
+// })
 
 export default function Page() {
  
   const [searchTerm, setSearchTerm] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
-  const [selectedCategory, setSelectedCategory] = useState("everything")
 
   const [learnAbout, setLearnAbout] = useState("everything")
   const [relatesTo, setRelatesTo] = useState("everyone")
@@ -101,7 +94,7 @@ export default function Page() {
       <div className="mx-auto px-6 py-16">
         {/* Filter Interface */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12 text-center text-[32px]">
-          <span className="text-white  font-normal">I'm Interested to learn about</span>
+          <span className="text-white  font-normal">I am Interested to learn about</span>
 
           <div className="relative">
             <select
@@ -208,7 +201,7 @@ export default function Page() {
             {/* Left column */}
             <div className="lg:w-4/5">
               <h1 className="text-4xl md:text-5xl lg:text-[40px] font-bold leading-tight mb-6">SEC Grants Hashgreed approval to tokenize real estate based assets</h1>
-              <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">The Nigerian Securities and Exchange Commission (SEC) has granted approval to Africa's first digital securities platform, Hashgreed, to offer real estate based digital securities. </p>
+              <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">The Nigerian Securities and Exchange Commission (SEC) has granted approval to Africa&aposs first digital securities platform, Hashgreed, to offer real estate based digital securities. </p>
               <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Read News</a>
             </div>
             {/* Right column */}

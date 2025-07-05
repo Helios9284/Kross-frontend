@@ -1,5 +1,4 @@
 "use client";
-import { useRef, useState } from "react";
 
 export default function Page() {
   const centralizedExchanges = [
@@ -111,7 +110,7 @@ export default function Page() {
                 <div className="text-center md:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Gasless Transaction fees</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">
-                  KROSS Chain transaction fees are fixed, low cost, and paid in the network's native token - $KSS. This predictable fee model ensures affordability and scalability for users, developers, and dApps, even during high network activity.
+                  KROSS Chain transaction fees are fixed, low cost, and paid in the network&aposs native token - $KSS. This predictable fee model ensures affordability and scalability for users, developers, and dApps, even during high network activity.
                   </p>
                 </div>
               </div>

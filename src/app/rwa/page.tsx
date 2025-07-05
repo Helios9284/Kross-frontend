@@ -109,7 +109,7 @@ export default function Page() {
               <div className="flex items-start space-x-3">
                 <div className="w-2 h-2 rounded-full bg-pink-500 mt-2 flex-shrink-0"></div>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Enjoy access to Google Cloud's extensive resources, including project credits, technical training,
+                  Enjoy access to Google Cloud&aposs extensive resources, including project credits, technical training,
                   business support and Google-wide offers
                 </p>
               </div>

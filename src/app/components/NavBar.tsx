@@ -41,7 +41,7 @@ export default function NavBar() {
               <div className="absolute top-full left-0 mt-10 bg-[#0a0620] rounded-[32px] shadow-lg border border-[#2b3250] z-50 px-8 py-8 inline-block min-w-max">
                 <Link href="/news" className="block text-white text-[14px] font-[400] mb-8 hover:underline" onClick={() => setOpenDropdown(null)}>News</Link>
                 <Link href="/blog" className="block text-white text-[14px] font-[400] mb-8 hover:underline" onClick={() => setOpenDropdown(null)}>Blog</Link>
-                <Link href="/guide" className="block text-white text-[14px] font-[400] hover:underline" onClick={() => setOpenDropdown(null)}>Developer's Guide</Link>
+                <Link href="/guide" className="block text-white text-[14px] font-[400] hover:underline" onClick={() => setOpenDropdown(null)}>Developer&aposs Guide</Link>
               </div>
             )}
           </div>
