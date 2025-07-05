@@ -27,8 +27,9 @@ export default function Page() {
       className="min-h-screen w-full bg-gradient-to-b from-[#110942] to-[#050026] text-white font-sans"
     >
       {/* Header */}
-      <div className="px-5 md:px-20 py-10 md:py-20 relative w-full py-16 h-[370px] flex items-center justify-center mb-[150px]" style={{ background: "linear-gradient( #110942 80%)" }}>
-        <div className=" ">
+      <div className="px-5 md:px-20 py-10 md:py-20 relative w-full py-16 h-[370px] flex items-center justify-center mb-[150px]" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
+        <div className=" "
+       >
           <h1 className="text-5xl font-bold text-white text-center">Contact Us</h1>
         </div>
       </div>
@@ -152,9 +153,9 @@ export default function Page() {
               style={{ background: "linear-gradient(135deg, #110942 0%, #6D05B8 100%)", borderWidth: '0.5px' }}
             >
               <div className="flex items-center space-x-6 flex-1">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#6D05B8] flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center">
                   {/* Address Icon (e.g., Map Pin) */}
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 0c-3.314 0-6 2.686-6 6v1h12v-1c0-3.314-2.686-6-6-6z"/></svg>
+                  <img alt="contact_1" className="relative z-10" src="/assets/icon/contact/contact_1.svg" />
                 </div>
                 <div>
                   <div className="font-bold uppercase text-white text-lg mb-1">Our Address</div>
@@ -162,9 +163,9 @@ export default function Page() {
                 </div>
               </div>
               <div className="flex items-center space-x-6 flex-1">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#6D05B8] flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center">
                   {/* Phone Icon */}
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm0 10a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2zm10-10a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zm0 10a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                  <img alt="contact_2" className="relative z-10" src="/assets/icon/contact/contact_2.svg" />
                 </div>
                 <div>
                   <div className="font-bold uppercase text-white text-lg mb-1">Phone Number(s)</div>
@@ -172,9 +173,9 @@ export default function Page() {
                 </div>
               </div>
               <div className="flex items-center space-x-6 flex-1">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#6D05B8] flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center">
                   {/* Email Icon */}
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12H8m8 0a4 4 0 01-8 0m8 0a4 4 0 00-8 0"/></svg>
+                  <img alt="contact_3" className="relative z-10" src="/assets/icon/contact/contact_3.svg" />
                 </div>
                 <div>
                   <div className="font-bold uppercase text-white text-lg mb-1">Email Address</div>
@@ -182,9 +183,9 @@ export default function Page() {
                 </div>
               </div>
               <div className="flex items-center space-x-6 flex-1">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#6D05B8] flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full  flex items-center justify-center">
                   {/* Paper Plane Icon */}
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5l7-7-7-7"/></svg>
+                  <img alt="contact_4" className="relative z-10" src="/assets/icon/contact/contact_4.svg" />
                 </div>
                 <div>
                   <div className="font-bold uppercase text-white text-lg mb-3">Social Media</div>
@@ -193,7 +194,7 @@ export default function Page() {
                     <a href="#" aria-label="Instagram"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/></svg></a>
                     <a href="#" aria-label="LinkedIn"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75s1.75.79 1.75 1.75s-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47c-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.88v1.23h.04c.4-.75 1.38-1.54 2.84-1.54c3.04 0 3.6 2 3.6 4.59v4.72z"/></svg></a>
                     <a href="#" aria-label="Facebook"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788c1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0"/></svg></a>
-                    <a href="#" aria-label="X"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.53 2.47a.75.75 0 0 1 1.06 1.06l-5.47 5.47l-5.47-5.47a.75.75 0 0 1 1.06-1.06l4.41 4.41l4.41-4.41zm-11.06 19.06a.75.75 0 0 1-1.06-1.06l5.47-5.47l5.47 5.47a.75.75 0 0 1-1.06 1.06l-4.41-4.41l-4.41 4.41z"/></svg></a>
+                    <a href="#" aria-label="Twitter"> <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 5.95c-.8.36-1.67.61-2.58.72a4.48 4.48 0 0 0 1.97-2.48 8.94 8.94 0 0 1-2.83 1.08 4.48 4.48 0 0 0-7.64 4.08A12.72 12.72 0 0 1 3.1 4.86a4.48 4.48 0 0 0 1.39 5.98c-.7-.02-1.36-.21-1.94-.53v.05a4.48 4.48 0 0 0 3.6 4.4c-.33.09-.68.14-1.04.14-.25 0-.5-.02-.74-.07a4.48 4.48 0 0 0 4.18 3.11A9 9 0 0 1 2 19.54a12.72 12.72 0 0 0 6.88 2.02c8.26 0 12.78-6.84 12.78-12.78 0-.2 0-.39-.01-.58a9.1 9.1 0 0 0 2.24-2.32z"/></svg></a>
                   </div>
                 </div>
               </div>

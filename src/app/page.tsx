@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
       {/* Hero Section */}
-      <section className="container px-5 md:px-20 py-10 md:py-20 relative w-screen">
+      <section className="px-5 md:px-20 py-10 md:py-20 relative w-screen">
         <div className="flex flex-col lg:flex-row items-center gap-10 w-full">
           {/* Left column */}
           <div className="lg:w-4/5">
@@ -73,7 +73,7 @@ export default function Home() {
               <img alt="Krosscoin for Builders" width={16} height={16} src="/assets/icon/file-icons_buildkite.png" />
               <span className="text-sm font-normal text-white">Build with Kross</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6">Africa&aposs First Smart Contract Blockchain Solution</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}>Africa&apos;s First Smart Contract Blockchain Solution</h1>
             <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">Kross Blockchain is Nigeria&aposs First Layer 1 Blockchain Network - Driving Innovation and Real-World Adoption Across The Continent.</p>
             <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Krosscoin Explorer</a>
           </div>
@@ -334,7 +334,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
-                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/manageCrypto/crypto1.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
+                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_1.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Stake On Kross Hub</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Put Your Tokens To Work. Stake On Kross Hub And Get Rewarded.</p>
@@ -358,7 +358,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
-                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/manageCrypto/crypto2.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
+                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_2.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Swap With Ease</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Trade Assets Instantly With A Seamless Experience. No Delays, No Complexities, Just Fast, Secure Exchanges At Your Fingertips.</p>
@@ -380,7 +380,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
-                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/manageCrypto/crypto3.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
+                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_3.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Boost Your Earnings with Liquidity Pools</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Supply assets to earn passive income and claim a share of the fees from every trade that runs through your pool.</p>
@@ -402,7 +402,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
-                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/manageCrypto/crypto4.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
+                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_4.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Efortless Yield with Kross Vaults</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Put your Krosscoin to work securely and passively. Kross Vaults give you access to curated assets and their staking rewards—no manual buying, staking, or managing required.</p>
@@ -427,7 +427,7 @@ export default function Home() {
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
-                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/manageCrypto/crypto5.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
+                      <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_5.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Transparent Trading with Central Orderbook</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Execute trades with precision and full visibility. Kross Network&aposs Central Limit Orderbook ensures accurate price discovery, deeper liquidity, and smooth trade execution—all in one powerful interface.</p>

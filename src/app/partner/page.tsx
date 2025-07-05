@@ -9,6 +9,21 @@ export default function Page() {
   const clearSearch = () => {
     setSearchTerm("")
   }
+
+  const partners = [
+    { name: "Microsoft for Startups", logo: "/assets/image/partner/1.svg" },
+    { name: "Google Cloud", logo: "/assets/image/partner/2.svg" },
+    { name: "Google Cloud", logo: "/assets/image/partner/3.svg" },
+    { name: "Google Cloud", logo: "/assets/image/partner/4.svg" },
+    { name: "Google Cloud", logo: "/assets/image/partner/5.svg" },
+    { name: "Google Cloud", logo: "/assets/image/partner/6.svg" },
+    { name: "Google Cloud", logo: "/assets/image/partner/7.svg" },
+    { name: "Google Cloud", logo: "/assets/image/partner/8.svg" },
+    { name: "Google Cloud", logo: "/assets/image/partner/9.svg" }, 
+    { name: "Google Cloud", logo: "/assets/image/partner/10.svg" },
+    // ...add all partners
+  ];
+
   return (
   <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
 
@@ -60,13 +75,26 @@ export default function Page() {
         </div>
 
         {/* Partners Content Area - Currently empty as shown in image */}
-        <div className="min-h-[400px]">{/* This space would be populated with partner logos/cards */}</div>
+        <div className="min-h-[400px] px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {partners.map((partner) => (
+              <div key={partner.name} className="bg-[#18123a] rounded-xl flex items-center justify-center h-32">
+                <img src={partner.logo} alt={partner.name} className="h-10 mr-4" />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
       {/* Explore Ecosystem CTA (Pixel-perfect) */}
-      <section className="text-white flex w-full bg-[#110942] border-b-4 border-white">
-        <div className="flex w-full items-center justify-center py-25 md:py-[133px]">
+      <section className="text-white flex w-full bg-[#050026] border-b-4 border-white">
+        
+        <div className="flex w-full items-center relative justify-center py-25 md:py-[133px]">
           <div className="flex flex-col items-center justify-center gap-[56px] w-full">
+            <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 flex gap-4">
+              <div className="w-[850px] h-[450px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+              {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-full md:w-2/3 text-center">Become a <br/>KROSS Partner</h1>
             <div className="flex gap-4 w-full items-center justify-center">
               <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Partner with us</a>

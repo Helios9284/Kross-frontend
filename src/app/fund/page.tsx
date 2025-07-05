@@ -63,6 +63,8 @@ export default function Page() {
               className="w-full h-full rounded-2xl"
               style={{ background: "linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%)" }}
             />
+              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative" src="/assets/image/fund/fund_1.svg" />
+            
           </div>
         </div>
       </div>
@@ -71,11 +73,23 @@ export default function Page() {
 
       <section className="text-white overflow-hidden relative bg-[#050026] h-[800px]">
         {/* Background Glows */}
-        <div className="absolute -bottom-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
+        <div className="absolute -bottom-[120px] left-0 w-[520px] h-[400px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="container mx-auto p-5 md:p-20 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">An international alliance of forward-thinking investors and incubators.</h2>
             <p className="text-xl text-gray-300">Pioneering The Shift In Kross Decentralized Financial System</p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-row gap-4 justify-center">
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/2.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/1.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/4.svg" />
+          </div>
+          <div className="flex flex-row gap-4 justify-center">
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/3.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/6.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/5.svg" />
           </div>
         </div>
       </section>
@@ -96,28 +110,31 @@ export default function Page() {
           {/* Card 1 */}
           <div className="border border-[#A259FF] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942] min-h-[220px]" style={{boxShadow: '0 0 0 2px #2D2177'}}>
             <span className="mb-2">{/* User icon */}
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#A259FF" fillOpacity="0.12"/><path d="M16 17.5c2.485 0 4.5-2.015 4.5-4.5s-2.015-4.5-4.5-4.5-4.5 2.015-4.5 4.5 2.015 4.5 4.5 4.5Zm0 2c-3.038 0-9 1.523-9 4.5V26h18v-2c0-2.977-5.962-4.5-9-4.5Z" fill="#A259FF"/></svg>
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/1.svg" />
             </span>
             <span className="text-[24px] font-medium text-white leading-snug text-left">KYC And AML Checks To Keep Users And The Network Safe.</span>
               </div>
               {/* Card 2 */}
           <div className="border border-[#A259FF] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]" style={{boxShadow: '0 0 0 2px #2D2177'}}>
             <span className="mb-2">{/* Visibility icon */}
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#A259FF" fillOpacity="0.12"/><path d="M8 16c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8-8-3.582-8-8Zm8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" fill="#A259FF"/></svg>
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/2.svg" />
+
             </span>
             <span className="text-[24px] font-medium text-white leading-snug text-left">Complete Visibility Of Funds Through On-Chain Transactions.</span>
               </div>
               {/* Card 3 */}
           <div className="border border-[#A259FF] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]" style={{boxShadow: '0 0 0 2px #2D2177'}}>
             <span className="mb-2">{/* Dollar icon */}
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#A259FF" fillOpacity="0.12"/><path d="M16 10v12M12 14h8M12 18h8" stroke="#A259FF" strokeWidth="2" strokeLinecap="round"/></svg>
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/3.svg" />
+
             </span>
             <span className="text-[24px] font-medium text-white leading-snug text-left">Peace Of Mind For Stakers With On-Chain Coverage And Insurance Safeguards.</span>
               </div>
               {/* Card 4 */}
           <div className="border border-[#A259FF] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]" style={{boxShadow: '0 0 0 2px #2D2177'}}>
             <span className="mb-2">{/* Audit icon */}
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#A259FF" fillOpacity="0.12"/><path d="M10 22V10h12v12H10Zm2-2h8v-8h-8v8Z" fill="#A259FF"/></svg>
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/4.svg" />
+
             </span>
             <span className="text-[24px] font-medium text-white leading-snug text-left">Audited For Safety. Built For Scale. Trusted By Institutions.</span>
           </div>

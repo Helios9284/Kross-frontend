@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.navbar-blur-outline {
+  box-shadow: 0 4px 32px 0 rgba(109, 5, 184, 0.3);
+}

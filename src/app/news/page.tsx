@@ -7,7 +7,8 @@ interface NewsArticle {
   title: string
   excerpt: string
   date: string
-  categories: string[]
+  categories: string[],
+  image: string // Add this line
 }
 
 const featuredArticle = {
@@ -24,6 +25,7 @@ const newsArticles: NewsArticle[] = [
       "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
     date: "Feb 8, 2024",
     categories: ["Ecosystem", "SIM Coin"],
+    image: "/assets/image/news/allnews_1.svg",
   },
   {
     id: 2,
@@ -32,6 +34,7 @@ const newsArticles: NewsArticle[] = [
       "Vitalerin Europe Sp.Z.O, The Registered European Arm Of The Krosscon Project And A Leading Blockchain Asset Tokenization Firm Has Officially Signed A Landmark Agreement With OPK Banc Football Club, A Professional Football Club Based In Poland To Launch Expansion Project And Integrate AI And Metaverse Technologies Into Its Future Infrastructure.",
     date: "Feb 8, 2024",
     categories: ["Ecosystem", "SIM Coin"],
+    image: "/assets/image/news/allnews_2.svg",
   },
   {
     id: 3,
@@ -40,6 +43,7 @@ const newsArticles: NewsArticle[] = [
       "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
     date: "June 15, 2024",
     categories: ["Ecosystem", "SIM Coin"],
+    image: "/assets/image/news/allnews_3.svg",
   },
   {
     id: 4,
@@ -48,6 +52,7 @@ const newsArticles: NewsArticle[] = [
       "Vitalerin Europe Sp.Z.O, The Registered European Arm Of The Krosscon Project And A Leading Blockchain Asset Tokenization Firm Has Officially Signed A Landmark Agreement With OPK Banc Football Club, A Professional Football Club Based In Poland To Launch Expansion Project And Integrate AI And Metaverse Technologies Into Its Future Infrastructure.",
     date: "May 10, 2024",
     categories: ["Ecosystem", "SIM Coin"],
+    image: "/assets/image/news/allnews_4.svg",
   },
   {
     id: 5,
@@ -56,6 +61,7 @@ const newsArticles: NewsArticle[] = [
       "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
     date: "July 1, 2024",
     categories: ["Ecosystem", "SIM Coin"],
+    image: "/assets/image/news/allnews_5.svg",
   },
   {
     id: 6,
@@ -64,6 +70,7 @@ const newsArticles: NewsArticle[] = [
       "Real Estate Tokenization Is Reshaping The Landscape Of Investment Opportunities By Leveraging Blockchain Technology To Fractionalize Property Ownership.",
     date: "May 22, 2024",
     categories: ["Ecosystem", "SIM Coin"],
+    image: "/assets/image/news/allnews_3.svg",
   },
 ]
 // const lato = Lato({
@@ -81,29 +88,31 @@ export default function Page() {
   return (
     <div
       className="min-h-screen w-full bg-gradient-to-b from-[#050026] text-white font-san"
+      
     >
       {/* Header */}
-      <div className="py-16  h-[370px] flex items-center justify-center"  style={{ background: "linear-gradient( #110942 80%)" }}>
+      <div className="py-16  h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)",fontFamily: 'Lato, sans-serif' }}>
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-white mb-3">News</h1>
-          <p className="text-gray-300 text-lg">Welcome To Kross News</p>
+          <h1 className="text-[48px] font-bold text-white mb-3">News</h1>
+          <p className="text-gray-300 text-[24px]">Welcome To Kross News</p>
         </div>
       </div>
       
       {/* Navigation Bar */}
       <section className="text-white overflow-hidden relative bg-[#050026] min-h-screen">
-        <div className="absolute -top-10 -left-10 w-[150px] h-[150px] bg-[#EC34E0]/30 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 left-[70px] w-[50px] h-[50px] bg-[#487DF1]/20 blur-3xl rounded-full"></div>
+        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 flex gap-4">
+          <div className="w-[350px] h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
         <div className="border-b border-gray-700/50">
           <div className="container mx-auto px-6 py-4">
-            <div className="flex items-center justify-between">
-              {/* Left: Label + Select */}
-              <div className="flex items-center space-x-3">
-                <span className="text-lg">Help Me Learn About</span>
+            <div className="grid grid-cols-2 w-full">
+              <div className="flex items-center space-x-3" style={{ fontFamily: 'Lato, sans-serif' }}>
+                <span className="text-[32px] whitespace-nowrap">Help Me Learn About</span>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-40 h-10 px-3 bg-transparent border border-purple-500 text-white focus:outline-none rounded-lg font-medium"
+                  className="w-full h-full px-3 bg-transparent border text-[32px] border-purple-500 text-white focus:outline-none rounded-lg font-medium" style={{fontFamily: 'Lato, sans-serif'}}
                 >
                   <option value="everything" className="bg-gray-800 text-white">everything</option>
                   <option value="tokenization" className="bg-gray-800 text-white">Tokenization</option>
@@ -111,38 +120,39 @@ export default function Page() {
                   <option value="regulations" className="bg-gray-800 text-white">Regulations</option>
                 </select>
               </div>
-              {/* Right: Search */}
-              <div className="relative">
-                <svg
-                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-                <input
-                  type="text"
-                  placeholder="Search News"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-10 py-2 w-80 bg-transparent border border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:outline-none rounded"
-                />
-                {/* X button (clear) */}
-                <button
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
-                  onClick={() => setSearchTerm('')}
-                  type="button"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <div className="flex items-center justify-end">
+                <div className="relative text-[24px]" style={{fontFamily: 'Lato, sans-serif'}}>
+                  <svg
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
                   </svg>
-                </button>
+                  <input
+                    type="text"
+                    placeholder="Search News"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10 pr-10 py-2 w-80 bg-transparent border border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:outline-none rounded"
+                  />
+                  {/* X button (clear) */}
+                  <button
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+                    onClick={() => setSearchTerm('')}
+                    type="button"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -150,7 +160,7 @@ export default function Page() {
 
         {/* Featured Article */}
         <div className="container mx-auto px-6 py-16">
-          <div className="max-w-4xl">
+          <div className="">
             <div className="flex items-center justify-between mb-2">
               <h2 className="text-4xl font-bold text-white leading-tight">{featuredArticle.title}</h2>
               <span className="text-gray-400 text-sm">{featuredArticle.date}</span>
@@ -163,6 +173,7 @@ export default function Page() {
               Read News
             </button>
           </div>
+          <img src="/assets/image/news/news_1.svg" alt="featured article" className="w-full h-full object-cover rounded-lg mb-4 py-[36px]" />
         </div>
       </section>
       {/* All News Section */}
@@ -174,7 +185,12 @@ export default function Page() {
         {/* News Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 font-sans">
           {newsArticles.map((article) => (
-            <div key={article.id} className="space-y-6 mt-[200px] ">
+            <div key={article.id} className="space-y-6 mt-[20px] ">
+              <img
+                src={article.image}
+                alt={article.title}
+                className="w-full h-80 object-cover rounded-lg mb-4"
+              />
               {/* Article Title */}
               <h2 className="text-xl font-bold text-white leading-tight hover:text-purple-300 cursor-pointer transition-colors">
                 {article.title}
