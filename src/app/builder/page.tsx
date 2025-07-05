@@ -7,6 +7,8 @@ export default function BuilderPage() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const cardCount = 8;
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
@@ -32,14 +34,45 @@ export default function BuilderPage() {
     }
   };
 
+  const scrollToCard = (idx: number) => {
+    if (cardRowRef.current) {
+      const cardWidth = cardRowRef.current.children[0].clientWidth + 32; // 32 = gap-8
+      cardRowRef.current.scrollTo({
+        left: cardWidth * idx,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handlePrev = () => {
+    if (activeIndex > 0) {
+      const newIndex = activeIndex - 1;
+      setActiveIndex(newIndex);
+      scrollToCard(newIndex);
+    }
+  };
+
+  const handleNext = () => {
+    if (activeIndex < cardCount - 1) {
+      const newIndex = activeIndex + 1;
+      setActiveIndex(newIndex);
+      scrollToCard(newIndex);
+    }
+  };
+
+  const handleDotClick = (idx: number) => {
+    setActiveIndex(idx);
+    scrollToCard(idx);
+  };
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white font-sans">
       {/* Hero Section */}
       <section className="text-white flex relative overflow-hidden w-full">
-        <div className="container px-5 md:px-20 py-10 md:py-20 relative w-screen">
+        <div className="px-5 md:px-20 py-10 md:py-20 relative w-screen">
           <div className="flex flex-col lg:flex-row items-center gap-6 w-full">
             {/* Left column */}
-            <div className="lg:w-2/3">
+            <div className="lg:w-3/5">
               <div
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFDD] bg-[#11094280] mb-8"
                 style={{ boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 12px 0px inset" }}
@@ -60,7 +93,7 @@ export default function BuilderPage() {
               </p>
               <div className="flex w-full justify-center md:justify-start">
                 <a
-                  href="#"
+                  href="/explorer"
                   className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow"
                 >
                   Krosscoin Explorer
@@ -68,7 +101,7 @@ export default function BuilderPage() {
               </div>
             </div>
             {/* Right column */}
-            <div className="lg:w-1/3 flex justify-center relative">
+            <div className="lg:w-2/5 flex justify-center relative">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl"></div>
               <div className="relative w-80 h-80 md:w-96 md:h-96">
                 <img
@@ -120,12 +153,12 @@ export default function BuilderPage() {
               {/* Center icons grid */}
               <div className="flex flex-col items-center justify-between w-full gap-4">
                 <div className="flex gap-3">
-                  <img alt="Feature 1" width={150} height={150} src="/assets/icon/feature-1.png" />
-                  <img alt="Feature 2" width={150} height={150} src="/assets/icon/feature-2.png" />
+                  <img alt="Feature 1" width={150} height={150} src="/assets/image/builder/builder_sec2_1.svg" />
+                  <img alt="Feature 2" width={150} height={150} src="/assets/image/builder/builder_sec2_2.svg" />
                 </div>
                 <div className="flex gap-3">
-                  <img alt="Feature 3" width={150} height={150} src="/assets/icon/feature-3.png" />
-                  <img alt="Feature 4" width={150} height={150} src="/assets/icon/feature-4.png" />
+                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_3.svg" />
+                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_4.svg" />
                 </div>
               </div>
               {/* Right column features */}
@@ -148,6 +181,8 @@ export default function BuilderPage() {
         </div>
       </section>
 
+     
+
       {/* Possibilities Section */}
       <section className="text-white overflow-hidden relative">
         {/* Background Glows */}
@@ -155,7 +190,7 @@ export default function BuilderPage() {
         <div className="absolute top-0 left-[70px] w-[50px] h-[50px] bg-[#487DF1]/20 blur-3xl rounded-full"></div>
         <div className="container mx-auto p-5 md:p-20 relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Discover endless possibilities with the power of Kross Network.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Explore the world of use cases that can be built atop of Krosscoin and complement the utility of the network</h2>
           </div>
           <div className="relative w-full">
             <div
@@ -166,11 +201,18 @@ export default function BuilderPage() {
               onMouseLeave={handleMouseLeave}
               onMouseUp={handleMouseUp}
               onMouseMove={handleMouseMove}
+              onScroll={() => {
+                if (cardRowRef.current) {
+                  const cardWidth = cardRowRef.current.children[0].clientWidth + 32;
+                  const idx = Math.round(cardRowRef.current.scrollLeft / cardWidth);
+                  if (idx !== activeIndex) setActiveIndex(idx);
+                }
+              }}
             >
               {/* Card 1 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="DeFi" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="DeFi" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/1.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">DeFi</h3>
@@ -180,7 +222,7 @@ export default function BuilderPage() {
               {/* Card 2 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/2.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization</h3>
@@ -190,7 +232,7 @@ export default function BuilderPage() {
               {/* Card 3 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Infrastructure" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Infrastructure" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/3.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Infrastructure</h3>
@@ -200,7 +242,7 @@ export default function BuilderPage() {
               {/* Card 4 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Tokenization of real-world assets(RWA)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Tokenization of real-world assets(RWA)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization of real-world assets(RWA)</h3>
@@ -210,7 +252,7 @@ export default function BuilderPage() {
               {/* Card 5 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Identity System with Decentralized I.D (DID)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Identity System with Decentralized I.D (DID)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Identity System with Decentralized I.D (DID)</h3>
@@ -220,7 +262,7 @@ export default function BuilderPage() {
               {/* Card 6 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Governance and continuous upgrade" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Governance and continuous upgrade" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/6.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Governance and continuous upgrade</h3>
@@ -230,7 +272,7 @@ export default function BuilderPage() {
               {/* Card 7 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/7.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">On and off-ramping with regulatory compliance</h3>
@@ -240,7 +282,7 @@ export default function BuilderPage() {
               {/* Card 8 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/8.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">IBC Compatibility for token movement</h3>
@@ -251,7 +293,43 @@ export default function BuilderPage() {
           </div>
         </div>
       </section>
-
+      {/* Carousel Pagination & Navigation */}
+      <div className="flex flex-col items-center">
+        {/* Dots */}
+        <div className="flex gap-4 mb-8">
+          {Array.from({ length: cardCount }).map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-4 h-4 rounded-full transition ${activeIndex === idx ? "bg-[#A020F0]" : "bg-gray-300"}`}
+              onClick={() => handleDotClick(idx)}
+              aria-label={`Go to card ${idx + 1}`}
+            />
+          ))}
+        </div>
+        {/* Arrows */}
+        <div className="flex gap-12">
+          {/* Left Arrow */}
+          <button
+            className="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center group transition hover:border-[#A020F0] transition"
+            onClick={handlePrev}
+            disabled={activeIndex === 0}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-8 group-hover:stroke-[#A020F0] transition">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+          </button>
+          {/* Right Arrow */}
+          <button
+            className="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center group transition  hover:border-[#A020F0] transition"
+            onClick={handleNext}
+            disabled={activeIndex === cardCount - 1}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 group-hover:stroke-[#A020F0] transition">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </button>
+        </div>
+      </div>
       {/* View Applications Section */}
       <div className="text-white">
         <div className="container mx-auto p-5 md:px-20 py-20">
@@ -271,7 +349,7 @@ export default function BuilderPage() {
               {/* Right: Image */}
               <div className="flex justify-center md:pr-12">
                 <div className="w-full h-[335px] rounded-2xl relative">
-                  <img alt="krosshub.svg" className="object-cover rounded-2xl absolute inset-0 w-full h-full" src="/assets/image/krosshub.svg" />
+                  <img alt="krosshub.svg" className="object-cover rounded-2xl absolute inset-0 w-full h-full" src="/assets/image/builder/builder.svg" />
                 </div>
               </div>
             </div>
@@ -304,7 +382,7 @@ export default function BuilderPage() {
         </div>
         <div className="group">
           <div className="absolute top-0 right-1/2 translate-x-1/2 z-0 group-hover:translate-x-36 xl:group-hover:translate-x-68 2xl:group-hover:translate-x-100 transition-all duration-1000 ease-in-out">
-            <img alt="landing1" width={540} height={450} className="w-full h-[450px] z-0 relative" src="/assets/image/builder/landing1.svg" />
+            <img alt="landing1" width={540} height={450} className="w-full h-[450px] z-0 relative" src="/assets/image/builder/intro/1.svg" />
           </div>
         </div>
       </section>
@@ -323,8 +401,8 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 z-0">
-          <img alt="landing2" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/landing2.svg" />
+        <div className="absolute top-0 left-1/13 z-0">
+          <img alt="landing2" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/2.svg" />
         </div>
       </section>
 
@@ -342,8 +420,8 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 z-0">
-          <img alt="landing3" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/landing3.svg" />
+        <div className="absolute top-0 right-1/13 z-0">
+          <img alt="landing3" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/3.svg" />
         </div>
       </section>
 
@@ -362,8 +440,8 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 z-0">
-          <img alt="landing4" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/landing4.svg" />
+        <div className="absolute top-0 left-1/13 z-0">
+          <img alt="landing4" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/4.svg" />
         </div>
       </section>
 
@@ -383,8 +461,8 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 z-0">
-          <img alt="landing5" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/landing5.svg" />
+        <div className="absolute top-0 right-1/13 z-0">
+          <img alt="landing5" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/5.svg" />
         </div>
       </section>
 
@@ -406,8 +484,8 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 z-0">
-          <img alt="landing6" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/landing6.svg" />
+        <div className="absolute top-0 left-1/13 z-0">
+          <img alt="landing6" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/6.svg" />
         </div>
       </section>
 
@@ -425,8 +503,8 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 z-0">
-          <img alt="landing5" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/landing5.svg" />
+        <div className="absolute top-0 right-1/13 z-0">
+          <img alt="landing5" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/4.svg" />
         </div>
       </section>
 
@@ -440,8 +518,8 @@ export default function BuilderPage() {
             <p className="text-[#CACACA] mb-5">The interoperability layer of KROSS Chain will be built on the IBC Protocol. This layer ensures that KROSS&aposs regulatory and compliance modules, along with all other features introduced to the Cosmos ecosystem, are not confined to the chain itself but are extended across the entire Inter-Blockchain Communication Protocol ecosystem.</p>
           </div>
         </div>
-        <div className="absolute top-0 z-0">
-          <img alt="landing6" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/landing6.svg" />
+        <div className="absolute top-0 left-1/13 z-0">
+          <img alt="landing6" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/3.svg" />
         </div>
       </section>
 

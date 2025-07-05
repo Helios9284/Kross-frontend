@@ -14,6 +14,8 @@ export default function Home() {
   const [newsStartX, setNewsStartX] = useState(0);
   const [newsScrollLeft, setNewsScrollLeft] = useState(0);
 
+  const [activeIndex, setActiveIndex] = useState(0);
+  const cardCount = 8;
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     setStartX(e.pageX - (cardRowRef.current?.offsetLeft || 0));
@@ -62,6 +64,37 @@ export default function Home() {
     }
   };
 
+  const scrollToCard = (idx: number) => {
+    if (cardRowRef.current) {
+      const cardWidth = cardRowRef.current.children[0].clientWidth + 32; // 32 = gap-8
+      cardRowRef.current.scrollTo({
+        left: cardWidth * idx,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handlePrev = () => {
+    if (activeIndex > 0) {
+      const newIndex = activeIndex - 1;
+      setActiveIndex(newIndex);
+      scrollToCard(newIndex);
+    }
+  };
+
+  const handleNext = () => {
+    if (activeIndex < cardCount - 1) {
+      const newIndex = activeIndex + 1;
+      setActiveIndex(newIndex);
+      scrollToCard(newIndex);
+    }
+  };
+
+  const handleDotClick = (idx: number) => {
+    setActiveIndex(idx);
+    scrollToCard(idx);
+  };
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
       {/* Hero Section */}
@@ -89,6 +122,10 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="text-white relative overflow-hidden w-full">
+      <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
+          <div className="w-[550px] h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
         {/* Background Glow */}
         <div className="absolute bottom-0 right-1/2 translate-x-1/3 w-[450px] h-[600px] rounded-full blur-[100px] md:blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
         <div className="container mx-auto px-5 md:px-20 py-20">
@@ -126,16 +163,16 @@ export default function Home() {
               {/* Center icons grid */}
               <div className="flex flex-col items-center justify-between w-full">
                 <div className="flex gap-2">
-                  <img alt="Feature 1" width={150} height={150} src="/assets/icon/feature-1.png" />
-                  <img alt="Feature 2" width={150} height={150} src="/assets/icon/feature-2.png" />
+                  <img alt="Feature 1" width={150} height={150} src="/assets/image/builder/builder_sec2_1.svg" />
+                  <img alt="Feature 2" width={150} height={150} src="/assets/image/builder/builder_sec2_2.svg" />
                 </div>
-                <div className="flex w-full justify-between -mt-1">
-                  <img alt="Feature 3" width={150} height={150} src="/assets/icon/feature-3.png" />
-                  <img alt="Feature 4" width={150} height={150} src="/assets/icon/feature-4.png" />
+                <div className="flex w-full -mt-1 gap-x-24 justify-center">
+                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_3.svg" />
+                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_4.svg" />
                 </div>
                 <div className="flex gap-2 -mt-1">
-                  <img alt="Feature 3" width={150} height={150} src="/assets/icon/feature-3.png" />
-                  <img alt="Feature 4" width={150} height={150} src="/assets/icon/feature-4.png" />
+                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_1.svg" />
+                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_2.svg" />
                 </div>
               </div>
               {/* Right column features */}
@@ -180,7 +217,7 @@ export default function Home() {
               {/* Card 1 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="DeFi" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="DeFi" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/1.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">DeFi</h3>
@@ -190,7 +227,7 @@ export default function Home() {
               {/* Card 2 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/2.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization</h3>
@@ -200,7 +237,7 @@ export default function Home() {
               {/* Card 3 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Infrastructure" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Infrastructure" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/3.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Infrastructure</h3>
@@ -210,7 +247,7 @@ export default function Home() {
               {/* Card 4 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Tokenization of real-world assets(RWA)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Tokenization of real-world assets(RWA)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization of real-world assets(RWA)</h3>
@@ -220,7 +257,7 @@ export default function Home() {
               {/* Card 5 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Identity System with Decentralized I.D (DID)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Identity System with Decentralized I.D (DID)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Identity System with Decentralized I.D (DID)</h3>
@@ -230,7 +267,7 @@ export default function Home() {
               {/* Card 6 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Governance and continuous upgrade" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="Governance and continuous upgrade" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/6.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Governance and continuous upgrade</h3>
@@ -240,7 +277,7 @@ export default function Home() {
               {/* Card 7 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">On and off-ramping with regulatory compliance</h3>
@@ -250,7 +287,7 @@ export default function Home() {
               {/* Card 8 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/card1.svg" />
+                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.svg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">IBC Compatibility for token movement</h3>
@@ -261,7 +298,43 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+      {/* Carousel Pagination & Navigation */}
+      <div className="flex flex-col items-center">
+        {/* Dots */}
+        <div className="flex gap-4 mb-8">
+          {Array.from({ length: cardCount }).map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-4 h-4 rounded-full transition ${activeIndex === idx ? "bg-[#A020F0]" : "bg-gray-300"}`}
+              onClick={() => handleDotClick(idx)}
+              aria-label={`Go to card ${idx + 1}`}
+            />
+          ))}
+        </div>
+        {/* Arrows */}
+        <div className="flex gap-12">
+          {/* Left Arrow */}
+          <button
+            className="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center group transition hover:border-[#A020F0] transition"
+            onClick={handlePrev}
+            disabled={activeIndex === 0}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-8 group-hover:stroke-[#A020F0] transition">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+          </button>
+          {/* Right Arrow */}
+          <button
+            className="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center group transition  hover:border-[#A020F0] transition"
+            onClick={handleNext}
+            disabled={activeIndex === cardCount - 1}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 group-hover:stroke-[#A020F0] transition">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </button>
+        </div>
+      </div>
       {/* Developer Call-to-Action Section */}
       <div className="relative text-white overflow-hidden">
         <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
@@ -462,7 +535,7 @@ export default function Home() {
               <div className="flex-shrink-0 w-[416px] snap-start select-none">
                 <div className="bg-[#0f0f3a]/50 rounded-xl backdrop-blur-sm overflow-hidden hover:border-[#ff00ff]/50 transition-all duration-300 group cursor-pointer h-full shadow-lg hover:shadow-xl">
                   <div className="relative h-[260px] overflow-hidden">
-                    <img alt="How Tokenized Real Estate Is Revolutionizing Property Investment" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/kross-net.svg" />
+                    <img alt="How Tokenized Real Estate Is Revolutionizing Property Investment" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/landing/kross.svg" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
                   <div className="p-6">
@@ -474,7 +547,7 @@ export default function Home() {
               <div className="flex-shrink-0 w-[416px] snap-start select-none">
                 <div className="bg-[#0f0f3a]/50 rounded-xl backdrop-blur-sm overflow-hidden hover:border-[#ff00ff]/50 transition-all duration-300 group cursor-pointer h-full shadow-lg hover:shadow-xl">
                   <div className="relative h-[260px] overflow-hidden">
-                    <img alt="SEC Grants Hashgreed Approval To Tokenize Real Estate Based Assets" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/kross-net.svg" />
+                    <img alt="SEC Grants Hashgreed Approval To Tokenize Real Estate Based Assets" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/landing/kross.svg" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
                   <div className="p-6">
@@ -486,7 +559,7 @@ export default function Home() {
               <div className="flex-shrink-0 w-[416px] snap-start select-none">
                 <div className="bg-[#0f0f3a]/50 rounded-xl backdrop-blur-sm overflow-hidden hover:border-[#ff00ff]/50 transition-all duration-300 group cursor-pointer h-full shadow-lg hover:shadow-xl">
                   <div className="relative h-[260px] overflow-hidden">
-                    <img alt="The Future Of Blockchain In Real Estate Markets" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/kross-net.svg" />
+                    <img alt="The Future Of Blockchain In Real Estate Markets" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/landing/kross.svg" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
                   <div className="p-6">
@@ -498,7 +571,7 @@ export default function Home() {
               <div className="flex-shrink-0 w-[416px] snap-start select-none">
                 <div className="bg-[#0f0f3a]/50 rounded-xl backdrop-blur-sm overflow-hidden hover:border-[#ff00ff]/50 transition-all duration-300 group cursor-pointer h-full shadow-lg hover:shadow-xl">
                   <div className="relative h-[260px] overflow-hidden">
-                    <img alt="KROSS Network Launches New Developer Tools" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/kross-net.svg" />
+                    <img alt="KROSS Network Launches New Developer Tools" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/landing/kross.svg" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
                   <div className="p-6">
@@ -510,7 +583,7 @@ export default function Home() {
               <div className="flex-shrink-0 w-[416px] snap-start select-none">
                 <div className="bg-[#0f0f3a]/50 rounded-xl backdrop-blur-sm overflow-hidden hover:border-[#ff00ff]/50 transition-all duration-300 group cursor-pointer h-full shadow-lg hover:shadow-xl">
                   <div className="relative h-[260px] overflow-hidden">
-                    <img alt="Institutional Adoption Of RWA Tokenization Grows" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/kross-net.svg" />
+                    <img alt="Institutional Adoption Of RWA Tokenization Grows" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/landing/kross.svg" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
                   <div className="p-6">
@@ -522,7 +595,7 @@ export default function Home() {
               <div className="flex-shrink-0 w-[416px] snap-start select-none">
                 <div className="bg-[#0f0f3a]/50 rounded-xl backdrop-blur-sm overflow-hidden hover:border-[#ff00ff]/50 transition-all duration-300 group cursor-pointer h-full shadow-lg hover:shadow-xl">
                   <div className="relative h-[260px] overflow-hidden">
-                    <img alt="Cross-Chain Interoperability: The Next Frontier" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/kross-net.svg" />
+                    <img alt="Cross-Chain Interoperability: The Next Frontier" className="object-cover group-hover:scale-110 transition-transform duration-500 absolute inset-0 w-full h-full" src="/assets/image/landing/kross.svg" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
                   <div className="p-6">

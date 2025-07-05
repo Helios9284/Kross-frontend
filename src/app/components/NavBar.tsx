@@ -43,12 +43,12 @@ export default function NavBar() {
       <div className="flex px-5 md:px-20 py-6 justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          {/* <img
+          <img
             alt="Logo Icon"
             width={30}
             height={30}
-            src="/assets/image/logo.png"
-          /> */}
+            src="/assets/image/logo.svg"
+          />
           <p className="text-white text-[30px] font-[500] leading-[30px]" style={{ fontFamily: 'lato, sans-serif' }}>Kross Network</p>
         </Link>
         {/* Main menu (desktop) */}

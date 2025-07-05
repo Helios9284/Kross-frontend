@@ -32,7 +32,7 @@ export default function Page() {
   };
   return (
     <div
-      className="min-h-screen w-full bg-[#110942]">
+      className="min-h-screen w-full bg-[#110942]" style={{fontFamily: 'lato, sans-serif'}}>
       {/* Hero Section */}
       <div className="h-[600px] bg-[#050026]">
         <div className="grid lg:grid-cols-2 gap-16 items-center ">
@@ -93,9 +93,7 @@ export default function Page() {
             style={{ background: "rgba(139, 69, 199, 0.1)" }}
           >
             <div className="mb-6">
-              <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+              <img alt="Feature 4" src="/assets/icon/rwa/1.svg" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-6">Web3 & AI Expert Guidance</h3>
             <div className="space-y-4">
@@ -122,7 +120,8 @@ export default function Page() {
             style={{ background: "rgba(139, 69, 199, 0.1)" }}
           >
             <div className="mb-6">
-              <div className="text-2xl font-bold text-gray-300">Google Cloud</div>
+            <img alt="Feature 4" src="/assets/icon/rwa/2.svg" />
+
             </div>
             <h3 className="text-2xl font-bold text-white mb-6">Google Cloud-Powered</h3>
             <div className="space-y-4">
@@ -151,14 +150,7 @@ export default function Page() {
             style={{ background: "rgba(139, 69, 199, 0.1)" }}
           >
             <div className="mb-6">
-              <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <img alt="Feature 4" src="/assets/icon/rwa/3.svg" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-6">$200k In Cloud Credits</h3>
             <div className="space-y-4">
@@ -183,14 +175,7 @@ export default function Page() {
             style={{ background: "rgba(139, 69, 199, 0.1)" }}
           >
             <div className="mb-6">
-              <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <img alt="Feature 4" src="/assets/icon/rwa/4.svg" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-6">$200K RWA Market</h3>
             <div className="space-y-4">
@@ -224,7 +209,7 @@ export default function Page() {
         <div className="absolute top-0 left-[70px] w-[50px] h-[50px] bg-[#487DF1]/20 blur-3xl rounded-full"></div>
         <div className="container mx-auto p-5 md:p-20 relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Our Process</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Choose your Tracks</h2>
           </div>
           <div className="relative w-full">
             <div
@@ -237,63 +222,57 @@ export default function Page() {
               onMouseMove={handleMouseMove}
             >
               {/* Card 1 */}
-              <div className="bg-[#0a0726] border border-[#6D28D9] rounded-2xl p-8 flex flex-col md:flex-row gap-8 shadow-lg" style={{boxShadow: '0 0 0 1.5px #6D28D9'}}>
-                {/* Left Column */}
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <h2 className="text-3xl font-bold text-white mb-2">Infrastructure</h2>
-                    <div className="uppercase text-sm text-gray-400 mb-6 tracking-widest">Focus Area</div>
-                    <h3 className="text-2xl font-semibold text-white mb-2">Ecosystem Expansion</h3>
-                    <div className="uppercase text-xs text-gray-400 mb-2">Examples</div>
-                    <ul className="list-disc list-inside text-gray-200 mb-8 space-y-1 pl-2">
-                      <li>Oracles</li>
-                      <li>Explorers</li>
-                      <li>Dev Tooling</li>
-                    </ul>
-                  </div>
-                  <button
-                    className="px-8 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-pink-500 to-purple-600 shadow-md w-[150px] text-center"
-                  >
-                    Apply Now
-                  </button>
-                </div>
-                {/* Right Column */}
-                <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
+              <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+                <div className="flex flex-col-reverse md:flex-row-reverse h-full">
+                  {/* Left: Image */}
+                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
                     <img
                       alt="DeFi"
                       className="object-cover absolute inset-0 w-full h-full"
-                      src="/assets/image/card1.svg"
+                      src="/assets/image/fund/fund_process_1.svg"
                     />
+                  </div>
+                  {/* Right: Content */}
+                  <div className="flex flex-col justify-center py-6 px-0 md:px-8 w-full">
+                    <div>
+                      <h2 className="text-[24px] font-bold text-white mb-1">Infrastructure</h2>
+                      <div className="text-[16px] uppercase text-gray-400 mb-4 tracking-widest">Focus Area</div>
+                      <h3 className="text-[24px] font-semibold text-white mb-1">Ecosystem Expansion</h3>
+                      <div className="text-[16px] uppercase text-gray-400 mb-2 tracking-widest">Examples</div>
+                      <ul className="list-disc list-inside text-white text-base space-y-1 mb-6">
+                        <li>Oracles</li>
+                        <li>Explorers</li>
+                        <li>Dev Tooling</li>
+                      </ul>
+                    </div>
+                    <button className="mt-auto w-fit px-6 py-2 rounded-lg text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 transition">
+                      Apply Now
+                    </button>
+                  </div>
                 </div>
               </div>
-             {/* Card 2 */}
-             <div className="w-full bg-[#0a0726] border border-[#6D28D9] rounded-2xl p-8 flex flex-col md:flex-row gap-8 shadow-lg" style={{boxShadow: '0 0 0 1.5px #6D28D9'}}>
-                {/* Left Column */}
-                <div className="flex-1 flex flex-col justify-between">
-                  <div>
-                    <h2 className="text-3xl font-bold text-white mb-2">Infrastructure</h2>
-                    <div className="uppercase text-sm text-gray-400 mb-6 tracking-widest">Focus Area</div>
-                    <h3 className="text-2xl font-semibold text-white mb-2">Ecosystem Expansion</h3>
-                    <div className="uppercase text-xs text-gray-400 mb-2">Examples</div>
-                    <ul className="list-disc list-inside text-gray-200 mb-8 space-y-1 pl-2">
-                      <li>Oracles</li>
-                      <li>Explorers</li>
-                      <li>Dev Tooling</li>
-                    </ul>
+              {/* Card 2 */}
+              <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+                <div className="flex flex-col-reverse md:flex-row-reverse h-full">
+                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
+                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/rwa/rwa_2.svg" />
                   </div>
-                  <button
-                    className="px-8 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-pink-500 to-purple-600 shadow-md w-[150px] text-center"
-                  >
-                    Apply Now
-                  </button>
-                </div>
-                {/* Right Column */}
-                <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img
-                      alt="DeFi"
-                      className="object-cover absolute inset-0 w-full h-full"
-                      src="/assets/image/card1.svg"
-                    />
+                  <div className="flex flex-col justify-center py-6 px-0 md:px-8 w-full">
+                    <div>
+                      <h2 className="text-[24px] font-bold text-white mb-1">Tokenization</h2>
+                      <div className="text-[16px] uppercase text-gray-400 mb-4 tracking-widest">Focus Area</div>
+                      <h3 className="text-[24px] font-semibold text-white mb-1">Bringing assets on chain</h3>
+                      <div className="text-[16px] uppercase text-gray-400 mb-2 tracking-widest">Examples</div>
+                      <ul className="list-disc list-inside text-white text-[14px] space-y-1 mb-6">
+                        <li>Decentralised Identity Solutions</li>
+                        <li>RWA-backed borrowing and lending</li>
+                        <li>Secondary markets for RWAs</li>
+                      </ul>
+                    </div>
+                    <button className="mt-auto w-fit px-6 py-2 rounded-lg text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 transition">
+                      Apply Now
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

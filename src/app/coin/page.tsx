@@ -64,6 +64,10 @@ export default function Page() {
 
       {/* New section with purple blurred background glow */}
       <section className="text-white relative overflow-hidden w-full">
+        <div className="absolute top-3/5 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
+          <div className="w-[350px] h-[350px] bg-[#EC34E0]/25 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
         {/* Background Glow */}
         <div className="absolute bottom-0 right-1/2 w-[400px] h-[500px] rounded-full blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
         <div className="container mx-auto px-5 md:px-20 py-20">
@@ -91,12 +95,12 @@ export default function Page() {
               {/* Center icons grid */}
               <div className="flex flex-col items-center justify-between w-full gap-4">
                 <div className="flex gap-3">
-                  <img alt="Feature 1" width={150} height={150} src="/assets/icon/feature-1.png" />
-                  <img alt="Feature 2" width={150} height={150} src="/assets/icon/feature-2.png" />
+                  <img alt="Feature 1" width={150} height={150} src="/assets/image/builder/builder_sec2_1.svg" />
+                  <img alt="Feature 2" width={150} height={150} src="/assets/image/builder/builder_sec2_2.svg" />
                 </div>
                 <div className="flex gap-3">
-                  <img alt="Feature 3" width={150} height={150} src="/assets/icon/feature-3.png" />
-                  <img alt="Feature 4" width={150} height={150} src="/assets/icon/feature-4.png" />
+                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_3.svg" />
+                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_4.svg" />
                 </div>
               </div>
               {/* Right column features */}
@@ -119,6 +123,10 @@ export default function Page() {
         </div>
       </section>
       <section className="text-white relative overflow-hidden w-full bg-gradient-to-l from-[#050026] to-[#110942]">
+      <div className="absolute top-3/5 left-1/6 -translate-x-1/2 -translate-y-1/2 flex gap-4">
+          <div className="w-[350px] h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
         <div className=" px-6 ">
           {/* Main Title */}
           <h1 className="text-5xl lg:text-6xl font-bold text-white text-center mt-[64px] mb-[40px]">Buy $OM</h1>
