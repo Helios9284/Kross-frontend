@@ -6,7 +6,8 @@ export default function Page() {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-
+  const [activeIndex, setActiveIndex] = useState(0);
+  const cardCount = 2;
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     setStartX(e.pageX - (cardRowRef.current?.offsetLeft || 0));
@@ -30,6 +31,39 @@ export default function Page() {
       cardRowRef.current.scrollLeft = scrollLeft - walk;
     }
   };
+  
+  const scrollToCard = (idx: number) => {
+    if (cardRowRef.current) {
+      const cardWidth = cardRowRef.current.children[0].clientWidth + 32; // 32 = gap-8
+      cardRowRef.current.scrollTo({
+        left: cardWidth * idx,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handlePrev = () => {
+    if (activeIndex > 0) {
+      const newIndex = activeIndex - 1;
+      setActiveIndex(newIndex);
+      scrollToCard(newIndex);
+    }
+  };
+
+  const handleNext = () => {
+    if (activeIndex < cardCount - 1) {
+      const newIndex = activeIndex + 1;
+      setActiveIndex(newIndex);
+      scrollToCard(newIndex);
+    }
+  };
+
+  const handleDotClick = (idx: number) => {
+    setActiveIndex(idx);
+    scrollToCard(idx);
+  };
+
+
   return (
     <div
       className="min-h-screen w-full bg-[#110942]" style={{fontFamily: 'lato, sans-serif'}}>
@@ -279,7 +313,43 @@ export default function Page() {
           </div>
         </div>
       </section>
-    
+              {/* Carousel Pagination & Navigation */}
+      <div className="flex flex-col items-center bg-[#050026]">
+        {/* Dots */}
+        <div className="flex gap-4 mb-8">
+          {Array.from({ length: cardCount }).map((_, idx) => (
+            <button
+              key={idx}
+              className={`w-4 h-4 rounded-full transition ${activeIndex === idx ? "bg-[#A020F0]" : "bg-gray-300"}`}
+              onClick={() => handleDotClick(idx)}
+              aria-label={`Go to card ${idx + 1}`}
+            />
+          ))}
+        </div>
+        {/* Arrows */}
+        <div className="flex gap-12">
+          {/* Left Arrow */}
+          <button
+            className="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center group transition hover:border-[#A020F0] transition"
+            onClick={handlePrev}
+            disabled={activeIndex === 0}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-8 group-hover:stroke-[#A020F0] transition">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+          </button>
+          {/* Right Arrow */}
+          <button
+            className="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center group transition  hover:border-[#A020F0] transition"
+            onClick={handleNext}
+            disabled={activeIndex === cardCount - 1}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 group-hover:stroke-[#A020F0] transition">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </button>
+        </div>
+      </div>
       {/* Join the RWA Revolution*/}
       <div className="relative text-white overflow-hidden bg-[#050026]">
         <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
