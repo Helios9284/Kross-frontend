@@ -158,7 +158,7 @@ export default function NavBar() {
             <span className="text-white font-semibold">Resources</span>
             <Link href="/news" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>News</Link>
             <Link href="/blog" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>Blog</Link>
-            <Link href="/guide" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>Developers' Guide</Link>
+            <Link href="/guide" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>Developers&apos; Guide</Link>
           </div>
           <div className="flex flex-col gap-2 mt-2">
             <span className="text-white font-semibold">Ecosystem</span>

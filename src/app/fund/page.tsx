@@ -228,7 +228,7 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Evaluation</h3>
-                    <p className="text-gray-300 text-[16px] leading-relaxed tracking-[0px]">We evaluate projects across multiple dimensions, focusing on strong teams with a well-defined execution plan. If selected, you'll gain access to funding, mentorship, and our extensive network. The process includes in-depth discussions with our investment team and capital partners.</p>
+                    <p className="text-gray-300 text-[16px] leading-relaxed tracking-[0px]">We evaluate projects across multiple dimensions, focusing on strong teams with a well-defined execution plan. If selected, you&apos;ll gain access to funding, mentorship, and our extensive network. The process includes in-depth discussions with our investment team and capital partners.</p>
                   </div>
                 </div>
               </div>
