@@ -276,17 +276,8 @@ export default function Page() {
       {/* Join the RWA Revolution*/}
       <div className="relative text-white overflow-hidden bg-[#050026]">
         <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/assets/image/developer-bg.svg')",
-            backgroundSize: '40%',
-            backgroundPosition: 'right bottom',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.5,
-          }}
-        ></div>
-        <div className="container mx-auto px-5 md:px-20 py-[120px] relative">
+        
+        <div className="container mx-auto px-5 md:px-20 py-[120px] relative" style={{backgroundImage: "url('/assets/image/rwa/3.svg')", backgroundSize: "40%", backgroundPosition: 'right bottom', backgroundRepeat: "no-repeat" }}>
           <div className="w-full md:max-w-5xl mx-auto">
             <div className="bg-[#4839A429] rounded-[16px] p-6 px-10 border border-[#77777775] backdrop-blur-sm">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">

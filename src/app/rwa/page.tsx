@@ -327,7 +327,7 @@ export default function Page() {
           ))}
         </div>
         {/* Arrows */}
-        <div className="flex gap-12">
+        <div className="flex gap-12 mb-10">
           {/* Left Arrow */}
           <button
             className="w-16 h-16 rounded-full border-2 border-gray-300 flex items-center justify-center group transition hover:border-[#A020F0] transition"
@@ -350,149 +350,218 @@ export default function Page() {
           </button>
         </div>
       </div>
-      {/* Join the RWA Revolution*/}
-      <div className="relative text-white overflow-hidden bg-[#050026]">
-        <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/assets/image/developer-bg.svg')",
-            backgroundSize: '40%',
-            backgroundPosition: 'right bottom',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.5,
-          }}
-        ></div>
-
-        <div className="container mx-auto px-6 mt-[64px]">
+      {/* Program Timeline */}
+      <div className="p-10 mx-auto">
         {/* Header */}
-        <h1 className="text-4xl lg:text-5xl font-bold text-white text-center mb-20">Program Timeline</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">Program Benefits</h1>
 
-        {/* Timeline Items */}
-        <div className="max-w-7xl mx-auto space-y-20">
-          {/* Applications Open - Left side */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div
-              className="p-8 rounded-2xl border border-purple-500/30"
-              style={{ background: "rgba(139, 69, 199, 0.1)" }}
-            >
-              <h2 className="text-2xl font-bold text-white mb-2">Applications Open</h2>
-              <p className="text-lg text-gray-300 mb-6">20 Feb - 6 Apr 2025</p>
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {/* Benefit 1 */}
+          <div className="border border-gray-700 rounded-2xl p-8 bg-gray-900/20">
+            <div className="mb-6">
+              <img alt="Feature 4" src="/assets/icon/rwa/benefit/1.svg" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 leading-tight">12 Weeks Of Hands-On Mentorship From Web3 Veterans</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Participants will receive direct guidance from experienced Web3 professionals, gaining insights into best
+              practices, industry trends, and technical expertise.
+            </p>
+          </div>
 
-              <div className="space-y-2 mb-6">
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Welcome To KROSS</p>
+          {/* Benefit 2 */}
+          <div className="border border-gray-700 rounded-2xl p-8 bg-gray-900/20">
+            <div className="mb-6">
+              <img alt="Feature 4" src="/assets/icon/rwa/benefit/2.svg" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 leading-tight">Access To The Google For Startups Cloud Program</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Selected participants can access Google&apos;s Web3 and AI experts, up to $200,000 USD Google Cloud and
+              Firebase credit and includes technical training, business support and Google-wide offers.
+            </p>
+          </div>
+
+          {/* Benefit 3 */}
+          <div className="border border-gray-700 rounded-2xl p-8 bg-gray-900/20">
+            <div className="mb-6">
+              <img alt="Feature 4" src="/assets/icon/rwa/benefit/3.svg" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 leading-tight">Compliance Guidance</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Receive expert support from the KROSS team to navigate the regulatory landscape, ensuring projects adhere
+              to relevant compliance standards and best practices.
+            </p>
+          </div>
+
+          {/* Benefit 4 */}
+          <div className="border border-gray-700 rounded-2xl p-8 bg-gray-900/20">
+            <div className="mb-6">
+              <img alt="Feature 4" src="/assets/icon/rwa/benefit/4.svg" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 leading-tight">Investor Pitch Preparation And Demo Day Access</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Train with the KROSS team on investor pitching, refining business models, attend demo day opportunities
+              for funding and networking.
+            </p>
+          </div>
+        </div>
+
+        {/* Apply Now Button */}
+        <div className="flex justify-center">
+          <button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+            Apply Now
+          </button>
+        </div>
+      </div>
+      {/* Join the RWA Revolution*/}
+      <div className="p-10 mx-auto">  
+        {/* Header */}
+        <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-16">Program Timeline</h1>
+
+        <div className="space-y-5 md:space-y-10">
+          {/* Applications Open - Left Aligned on Desktop, Full Width on Mobile */}
+          <div className="w-full lg:w-2/3 lg:ml-0">
+            <div className="border border-gray-700 rounded-xl md:rounded-2xl p-4 md:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
+                {/* Content */}
+                <div className="order-2 lg:order-1">
+                  <h2 className="text-xl md:text-2xl font-bold mb-2">Applications Open</h2>
+                  <p className="text-gray-400 text-base md:text-lg mb-4 md:mb-6">20 Feb - 6 Apr 2025</p>
+                  <ul className="space-y-2 mb-4 md:mb-6">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Welcome to KROSS</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Get to know the accelerator team and other projects</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Start preparing to be accelerated</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Regular office hours to learn more</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Intro sessions to get a head start</span>
+                    </li>
+                  </ul>
+                  <p className="text-xs md:text-sm text-gray-400">
+                    <span className="font-semibold">Reminder:</span> The sooner you apply, the higher your approval
+                    chances
+                  </p>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Get to know the accelerator team and other projects</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Start preparing to be accelerated</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Receive office hours to learn more</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Intro sessions to get a head start</p>
+
+                {/* Icon Card */}
+                <div className="flex justify-center order-1 lg:order-2">
+                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl md:rounded-2xl p-4 md:p-8 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
+                    <div className="bg-white/20 rounded-lg md:rounded-xl p-2 md:p-4">
+                      <svg className="w-8 h-8 md:w-16 md:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <p className="text-gray-400 text-sm">Reminder: The sooner you apply, the higher your approval chances</p>
-            </div>
-
-            <div className="flex justify-center">
-              <div
-                className="w-80 h-64 rounded-2xl"
-                style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
-              ></div>
             </div>
           </div>
 
-          {/* Cohort Announcement - Right side */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="flex justify-center order-2 lg:order-1">
-              <div
-                className="w-80 h-64 rounded-2xl"
-                style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
-              ></div>
-            </div>
-
-            <div
-              className="p-8 rounded-2xl border border-purple-500/30 order-1 lg:order-2"
-              style={{ background: "rgba(139, 69, 199, 0.1)" }}
-            >
-              <h2 className="text-2xl font-bold text-white mb-2">Cohort Announcement</h2>
-              <p className="text-lg text-gray-300 mb-6">18 May 2025</p>
-
-              <p className="text-gray-300 text-sm mb-2">Welcome to the cohort! Acceleration begins.</p>
-              <p className="text-gray-300 text-sm mb-4">Sessions include:</p>
-
-              <div className="space-y-2">
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Tokenomics and Token Launching</p>
+          {/* Cohort Announcement - Right Aligned on Desktop, Full Width on Mobile */}
+          <div className="w-full lg:w-2/3 lg:ml-auto">
+            <div className="border border-gray-700 rounded-xl md:rounded-2xl p-4 md:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
+                {/* Icon Card */}
+                <div className="flex justify-center order-1">
+                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl md:rounded-2xl p-4 md:p-8 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
+                    <div className="bg-white/20 rounded-lg md:rounded-xl p-2 md:p-4">
+                      <svg className="w-8 h-8 md:w-16 md:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,8H4A2,2 0 0,0 2,10V14A2,2 0 0,0 4,16H5V20A1,1 0 0,0 6,21H8A1,1 0 0,0 9,20V16H12L17,20V4L12,8M21.5,12C21.5,13.71 20.54,15.26 19,16V8C20.53,8.75 21.5,10.3 21.5,12Z" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Business leadership</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Fund raising preparation</p>
+
+                {/* Content */}
+                <div className="order-2">
+                  <h2 className="text-xl md:text-2xl font-bold mb-2">Cohort Announcement</h2>
+                  <p className="text-gray-400 text-base md:text-lg mb-4 md:mb-6">18 May 2025</p>
+                  <p className="text-xs md:text-sm mb-4">
+                    Welcome to the cohort! Acceleration begins. Sessions include:
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Tokenomics and Token Launching</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Business leadership</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Fund raising preparation</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Dubai Kickoff Summit - Left side */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div
-              className="p-8 rounded-2xl border border-purple-500/30"
-              style={{ background: "rgba(139, 69, 199, 0.1)" }}
-            >
-              <h2 className="text-2xl font-bold text-white mb-2">Dubai Kickoff Summit</h2>
-              <p className="text-lg text-gray-300 mb-6">18 May 2025</p>
-
-              <p className="text-gray-300 text-sm mb-2">Welcome to the cohort! Acceleration begins.</p>
-              <p className="text-gray-300 text-sm mb-4">Sessions include:</p>
-
-              <div className="space-y-2">
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Tokenomics and Token Launching</p>
+          {/* Dubia Kickoff Summit - Left Aligned on Desktop, Full Width on Mobile */}
+          <div className="w-full lg:w-2/3 lg:ml-0">
+            <div className="border border-gray-700 rounded-xl md:rounded-2xl p-4 md:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
+                {/* Content */}
+                <div className="order-2 lg:order-1">
+                  <h2 className="text-xl md:text-2xl font-bold mb-2">Dubia Kickoff Summit</h2>
+                  <p className="text-gray-400 text-base md:text-lg mb-4 md:mb-6">18 May 2025</p>
+                  <p className="text-xs md:text-sm mb-4">
+                    Welcome to the cohort! Acceleration begins. Sessions include:
+                  </p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Tokenomics and Token Launching</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Business leadership</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400 mt-1 text-xs md:text-sm">•</span>
+                      <span className="text-xs md:text-sm">Fund raising preparation</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Business leadership</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white mt-2.5 flex-shrink-0"></div>
-                  <p className="text-gray-300 text-sm">Fund raising preparation</p>
+
+                {/* Icon Card */}
+                <div className="flex justify-center order-1 lg:order-2">
+                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl md:rounded-2xl p-4 md:p-8 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
+                    <div className="bg-white/20 rounded-lg md:rounded-xl p-2 md:p-4">
+                      <svg className="w-8 h-8 md:w-16 md:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M2.81,14.12L5.64,11.29L8.47,14.12L7.06,15.53L3.5,12L7.06,8.47L8.47,9.88L5.64,12.71L2.81,9.88L1.39,11.29L4.22,14.12L1.39,16.95L2.81,18.36L5.64,15.53L8.47,18.36L9.88,16.95L7.05,14.12L9.88,11.29L8.47,9.88L5.64,12.71L2.81,9.88M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12Z" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="flex justify-center">
-              <div
-                className="w-80 h-64 rounded-2xl"
-                style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
-              ></div>
             </div>
           </div>
         </div>
       </div>
-
-        <div className="container mx-auto px-5 md:px-20 py-[120px] relative">
+      {/* Join the RWA Revolution*/}
+      <div className="relative text-white overflow-hidden bg-[#050026]">
+        <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
+        
+        <div className="container mx-auto px-5 md:px-20 py-[120px] relative" style={{backgroundImage: "url('/assets/image/rwa/3.svg')", backgroundSize: "40%", backgroundPosition: 'right bottom', backgroundRepeat: "no-repeat" }}>
           <div className="w-full md:max-w-5xl mx-auto">
             <div className="bg-[#4839A429] rounded-[16px] p-6 px-10 border border-[#77777775] backdrop-blur-sm">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-center">Begin building today, Explore the Details</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-center">Join the RWA Revolution</h2>
                 </div>
                 <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Developer Doc</a>
               </div>
