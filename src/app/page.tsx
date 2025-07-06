@@ -108,7 +108,7 @@ export default function Home() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}>Africa&apos;s First Smart Contract Blockchain Solution</h1>
             <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">Kross Blockchain is Nigeria&aposs First Layer 1 Blockchain Network - Driving Innovation and Real-World Adoption Across The Continent.</p>
-            <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Krosscoin Explorer</a>
+            <a href="/explorer" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Krosscoin Explorer</a>
           </div>
           {/* Right column */}
           <div className="lg:w-2/5 flex justify-center relative">
@@ -122,7 +122,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="text-white relative overflow-hidden w-full">
-      <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
+        <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
           <div className="w-[550px] h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
           {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
         </div>
@@ -136,8 +136,8 @@ export default function Home() {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 w-full md:w-1/2">An Open Chain That Powers Secure Decentralized Apps</h2>
             <div className="flex items-center gap-6 justify-center">
-              <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">For Builders</a>
-              <a href="#" className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] hover:bg-gradient-to-r hover:from-[#605B8] hover:to-[#AA00B8]">
+              <a href="/builder" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">For Builders</a>
+              <a href="/trader" className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] hover:bg-gradient-to-r hover:from-[#605B8] hover:to-[#AA00B8]">
                 <span className="flex text-white items-center justify-center px-8 py-4 bg-[#0a0620] rounded-[12px] whitespace-nowrap text-md hover:bg-gradient-to-r from-[#6D05B8] to-[#FF00B8]">For Traders</span>
               </a>
             </div>

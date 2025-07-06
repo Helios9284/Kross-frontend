@@ -129,13 +129,49 @@ export default function NavBar() {
             )}
           </div>
           <button className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] hover:from-[#605B8] hover:to-[#AA00B8] font-sans ">
-            <span className="flex text-white items-center justify-center px-6 py-4 bg-[#0a0620] rounded-[12px] whitespace-nowrap text-md hover:bg-gradient-to-r from-[#6D05B8] to-[#FF00B8]">
+            <Link href="/explorer" className="flex text-white items-center justify-center px-6 py-4 bg-[#0a0620] rounded-[12px] whitespace-nowrap text-md hover:bg-gradient-to-r from-[#6D05B8] to-[#FF00B8]">
               Krosscoin Explorer
-            </span>
+            </Link>
           </button>
         </div>
-
+        {/* Mobile menu button */}
+        <div className="lg:hidden flex items-center">
+          <button
+            className="text-white focus:outline-none"
+            onClick={() => setResourcesOpen((prev) => !prev)}
+            aria-label="Open mobile menu"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
+      {/* Mobile menu dropdown */}
+      {resourcesOpen && (
+        <div className="lg:hidden w-full bg-[#050026] border-t border-[#2b3250] px-5 py-4 flex flex-col gap-4 z-50">
+          <Link href="/builder" className="text-white text-lg font-[500] py-2" onClick={() => setResourcesOpen(false)}>For Builders</Link>
+          <Link href="/trader" className="text-white text-lg font-[500] py-2" onClick={() => setResourcesOpen(false)}>For Traders</Link>
+          <Link href="/institution" className="text-white text-lg font-[500] py-2" onClick={() => setResourcesOpen(false)}>For Institution</Link>
+          <div className="border-t border-[#2b3250] my-2"></div>
+          <div className="flex flex-col gap-2">
+            <span className="text-white font-semibold">Resources</span>
+            <Link href="/news" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>News</Link>
+            <Link href="/blog" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>Blog</Link>
+            <Link href="/guide" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>Developers' Guide</Link>
+          </div>
+          <div className="flex flex-col gap-2 mt-2">
+            <span className="text-white font-semibold">Ecosystem</span>
+            <Link href="/fund" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>Ecosystem Fund</Link>
+            <Link href="/rwa" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>RWAccelerator</Link>
+            <Link href="/partner" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>Partners</Link>
+            <Link href="/coin" className="text-white text-base py-1" onClick={() => setResourcesOpen(false)}>$OM Coin</Link>
+          </div>
+          <button className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] font-sans mt-4">
+            <span className="flex text-white items-center justify-center px-6 py-4 bg-[#0a0620] rounded-[12px] whitespace-nowrap text-md">Krosscoin Explorer</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 } 

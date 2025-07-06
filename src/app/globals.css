@@ -28,3 +28,17 @@ body {
 .navbar-blur-outline {
   box-shadow: 0 4px 32px 0 rgba(109, 5, 184, 0.3);
 }
+@keyframes blurMoveFade {
+  0% {
+    left: 100%;
+    opacity: 0.3;
+  }
+  50% {
+    left: 0%;
+    opacity: 0.7;
+  }
+  100% {
+    left: 100%;
+    opacity: 0.3;
+  }
+}

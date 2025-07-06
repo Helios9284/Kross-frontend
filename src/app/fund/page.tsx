@@ -65,35 +65,31 @@ export default function Page() {
       className="min-h-screen bg-[#050026]">
       {/* Hero Section */}
       <div className="">
-        <div className="grid lg:grid-cols-2 gap-16 items-center ">
+        <div className="grid lg:grid-cols-2 gap-16 items-center flex-col-reverse lg:flex-row-reverse">
           {/* Left column: Text and buttons */}
-          <div className="space-y-8 container px-5 md:px-20 py-10 md:py-20 ">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <div className="space-y-8 container px-5 md:px-20 py-10 md:py-20 w-full max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-full mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Kross Ecosystem Fund
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
               Kross Ecosystem Fund supports the development of the Kross blockchain ecosystem by providing funding,
               resources, and strategic guidance to innovative projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                className="px-8 py-4 text-lg font-semibold rounded-lg text-white hover:opacity-90 transition-opacity"
+                className="px-8 py-4 text-base sm:text-lg font-semibold rounded-lg text-white hover:opacity-90 transition-opacity"
                 style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
               >
                 Get Started
               </button>
-              <button className="px-8 py-4 text-lg font-semibold rounded-lg border-2 border-gray-600 text-white hover:bg-gray-800 bg-transparent transition-colors">
+              <button className="px-8 py-4 text-base sm:text-lg font-semibold rounded-lg border-2 border-gray-600 text-white hover:bg-gray-800 bg-transparent transition-colors">
                 Learn More
               </button>
             </div>
           </div>
           {/* Right column: Gradient box */}
-          <div className="relative">
-            <div
-              className="w-full h-full rounded-2xl"
-              style={{ background: "linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%)" }}
-            />
-              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative" src="/assets/image/fund/fund_1.svg" />
+          <div className="relative flex justify-center items-center w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-full mx-auto">
+              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-full h-auto" src="/assets/image/fund/fund_1.svg" />
             
           </div>
         </div>
@@ -101,70 +97,67 @@ export default function Page() {
 
       {/* Alliance Section */}
 
-      <section className="text-white overflow-hidden relative bg-[#050026] h-[800px]">
+      <section className="text-white overflow-hidden relative bg-[#050026] h-auto min-h-[600px] md:h-[800px]">
         {/* Background Glows */}
-        <div className="absolute -bottom-[120px] left-0 w-[520px] h-[400px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
+        <div className="absolute -bottom-[120px] left-0 w-[320px] sm:w-[420px] md:w-[520px] h-[200px] sm:h-[300px] md:h-[400px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="container mx-auto p-5 md:p-20 relative">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">An international alliance of forward-thinking investors and incubators.</h2>
-            <p className="text-xl text-gray-300">Pioneering The Shift In Kross Decentralized Financial System</p>
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 max-w-4xl mx-auto leading-tight">An international alliance of forward-thinking investors and incubators.</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300">Pioneering The Shift In Kross Decentralized Financial System</p>
           </div>
         </div>
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-row gap-4 justify-center">
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/2.svg" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/1.svg" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/4.svg" />
+        <div className="flex flex-col gap-2 md:gap-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 w-full">
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/2.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/1.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/4.svg" />
           </div>
-          <div className="flex flex-row gap-4 justify-center">
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/3.svg" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/6.svg" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/image/partner/5.svg" />
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 w-full">
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/3.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/6.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/5.svg" />
           </div>
         </div>
       </section>
       {/* KEF Glimpse Section */}
-      <section className="w-full py-10 md:py-20 relative flex flex-col items-center justify-center bg-[#050026] px-5 md:px-20">
-        <div className="w-full py-10">
-          <div className="max-w-4xl mx-auto px-4">
-            <h3 className="text-[48px] font-bold text-white mb-6 text-center">
+      <section className="w-full py-10 md:py-20 relative flex flex-col items-center justify-center bg-[#050026] px-2 sm:px-5 md:px-20">
+        <div className="w-full py-6 md:py-10">
+          <div className="max-w-4xl mx-auto px-2 sm:px-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold text-white mb-4 md:mb-6 text-center">
               A Glimpse Into The Kross <br />
               Ecosystem Fund (KEF)
             </h3>
-            <p className="text-[24px] text-gray-300 text-center">
+            <p className="text-base sm:text-lg md:text-[24px] text-gray-300 text-center">
               The KEF Was Created To Fast-Track The Growth And Adoption Of Impactful Projects Within The Kross Ecosystem.
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full px-4 mt-[64px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full px-2 sm:px-4 mt-8 md:mt-[64px]">
           {/* Card 1 */}
-          <div className="border border-[#A259FF] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942] min-h-[220px]" style={{boxShadow: '0 0 0 2px #2D2177'}}>
+          <div className="border border-[#4B6794] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942] min-h-[220px]">
             <span className="mb-2">{/* User icon */}
             <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/1.svg" />
             </span>
             <span className="text-[24px] font-medium text-white leading-snug text-left">KYC And AML Checks To Keep Users And The Network Safe.</span>
-              </div>
+          </div>
               {/* Card 2 */}
-          <div className="border border-[#A259FF] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]" style={{boxShadow: '0 0 0 2px #2D2177'}}>
+          <div className="border border-[#4B6794] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]">
             <span className="mb-2">{/* Visibility icon */}
             <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/2.svg" />
-
             </span>
             <span className="text-[24px] font-medium text-white leading-snug text-left">Complete Visibility Of Funds Through On-Chain Transactions.</span>
               </div>
               {/* Card 3 */}
-          <div className="border border-[#A259FF] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]" style={{boxShadow: '0 0 0 2px #2D2177'}}>
+          <div className="border border-[#4B6794] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]">
             <span className="mb-2">{/* Dollar icon */}
             <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/3.svg" />
-
             </span>
             <span className="text-[24px] font-medium text-white leading-snug text-left">Peace Of Mind For Stakers With On-Chain Coverage And Insurance Safeguards.</span>
               </div>
               {/* Card 4 */}
-          <div className="border border-[#A259FF] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]" style={{boxShadow: '0 0 0 2px #2D2177'}}>
+          <div className="border border-[#4B6794] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]">
             <span className="mb-2">{/* Audit icon */}
             <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/4.svg" />
-
             </span>
             <span className="text-[24px] font-medium text-white leading-snug text-left">Audited For Safety. Built For Scale. Trusted By Institutions.</span>
           </div>
@@ -177,8 +170,10 @@ export default function Page() {
       {/* Possibilities Section */}
       <section className="text-white overflow-hidden relative bg-[#050026]">
         {/* Background Glows */}
-        <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 left-[70px] w-[50px] h-[50px] bg-[#487DF1]/20 blur-3xl rounded-full"></div>
+        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
+          <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px]  bg-gradient-to-r from-[#6D05B8]/40 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
         <div className="container mx-auto p-5 md:p-20 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Our Process</h2>
@@ -208,7 +203,7 @@ export default function Page() {
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Apply</h3>
                     <p className="text-gray-300 text-[16px]  leading-relaxed tracking-[0px]">
-                    We welcome builders at every stage, whether you're just starting or scaling. We're on the lookout for bold, visionary teams ready to shape the future of real-world asset (RWA) applications and the infrastructure behind them.
+                    We welcome builders at every stage, whether you&apos;re just starting or scaling. We&apos;re on the lookout for bold, visionary teams ready to shape the future of real-world asset (RWA) applications and the infrastructure behind them.
                     </p>
                   </div>
                 </div>
@@ -221,7 +216,7 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Present your Ideas</h3>
-                    <p className="text-gray-300 text-[16px]  leading-relaxed tracking-[0px]">Submit your deck and a brief introduction, we welcome early-stage concepts. If your project resonates with our goals, we'll circulate it among our investment partners for further consideration.</p>
+                    <p className="text-gray-300 text-[16px]  leading-relaxed tracking-[0px]">Submit your deck and a brief introduction, we welcome early-stage concepts. If your project resonates with our goals, we&apos;ll circulate it among our investment partners for further consideration.</p>
                   </div>
                 </div>
               </div>
@@ -233,7 +228,7 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Evaluation</h3>
-                    <p className="text-gray-300 text-[16px] leading-relaxed tracking-[0px]">We evaluate projects across multiple dimensions, focusing on strong teams with a well-defined execution plan. If selected, you’ll gain access to funding, mentorship, and our extensive network. The process includes in-depth discussions with our investment team and capital partners.</p>
+                    <p className="text-gray-300 text-[16px] leading-relaxed tracking-[0px]">We evaluate projects across multiple dimensions, focusing on strong teams with a well-defined execution plan. If selected, you'll gain access to funding, mentorship, and our extensive network. The process includes in-depth discussions with our investment team and capital partners.</p>
                   </div>
                 </div>
               </div>
@@ -242,7 +237,7 @@ export default function Page() {
         </div>
       </section>
     {/* Carousel Pagination & Navigation */}
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center pb-[20px]">
         {/* Dots */}
         <div className="flex gap-4 mb-8">
           {Array.from({ length: cardCount }).map((_, idx) => (

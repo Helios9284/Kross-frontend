@@ -91,28 +91,29 @@ export default function Page() {
       
     >
       {/* Header */}
-      <div className="py-16  h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)",fontFamily: 'Lato, sans-serif' }}>
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-[48px] font-bold text-white mb-3">News</h1>
-          <p className="text-gray-300 text-[24px]">Welcome To Kross News</p>
+      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)",fontFamily: 'Lato, sans-serif' }}>
+        <div className="container mx-auto px-2 sm:px-6 text-center">
+          <h1 className="text-2xl sm:text-[48px] font-bold text-white mb-2 sm:mb-3">News</h1>
+          <p className="text-base sm:text-gray-300 sm:text-[24px]">Welcome To Kross News</p>
         </div>
       </div>
       
       {/* Navigation Bar */}
       <section className="text-white overflow-hidden relative bg-[#050026] min-h-screen">
-        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 flex gap-4">
-          <div className="w-[350px] h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
+          <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
           {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
         </div>
         <div className="border-b border-gray-700/50">
-          <div className="container mx-auto px-6 py-4">
-            <div className="grid grid-cols-2 w-full">
-              <div className="flex items-center space-x-3" style={{ fontFamily: 'Lato, sans-serif' }}>
-                <span className="text-[32px] whitespace-nowrap">Help Me Learn About</span>
+          <div className="container mx-auto px-2 sm:px-6 py-2 sm:py-4">
+            <div className="flex flex-col sm:flex-row w-full gap-2 sm:gap-0" style={{ fontFamily: 'Lato, sans-serif' }}>
+              <div className="flex flex-row items-center gap-1 sm:gap-3 w-full">
+                <span className="text-lg sm:text-[32px] whitespace-nowrap">Help Me Learn About</span>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full h-full px-3 bg-transparent border text-[32px] border-purple-500 text-white focus:outline-none rounded-lg font-medium" style={{fontFamily: 'Lato, sans-serif'}}
+                  className="w-full xs:w-auto h-full px-3 bg-transparent border text-base sm:text-[32px] border-purple-500 text-white focus:outline-none rounded-lg font-medium min-w-[120px] sm:min-w-[180px]"
+                  style={{fontFamily: 'Lato, sans-serif'}}
                 >
                   <option value="everything" className="bg-gray-800 text-white">everything</option>
                   <option value="tokenization" className="bg-gray-800 text-white">Tokenization</option>
@@ -120,10 +121,10 @@ export default function Page() {
                   <option value="regulations" className="bg-gray-800 text-white">Regulations</option>
                 </select>
               </div>
-              <div className="flex items-center justify-end">
-                <div className="relative text-[24px]" style={{fontFamily: 'Lato, sans-serif'}}>
+              <div className="flex items-center justify-end w-full mt-2 sm:mt-0">
+                <div className="flex items-center w-full max-w-xs sm:max-w-md bg-transparent border border-gray-600 text-white rounded px-2 py-1 relative" style={{fontFamily: 'Lato, sans-serif'}}>
                   <svg
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"
+                    className="w-5 h-5 text-gray-400 mr-2 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -140,18 +141,19 @@ export default function Page() {
                     placeholder="Search News"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 pr-10 py-2 w-80 bg-transparent border border-gray-600 text-white placeholder:text-gray-400 focus:border-purple-500 focus:outline-none rounded"
+                    className="flex-1 bg-transparent border-none outline-none text-base sm:text-[24px] text-white placeholder:text-gray-400"
                   />
-                  {/* X button (clear) */}
-                  <button
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
-                    onClick={() => setSearchTerm('')}
-                    type="button"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
+                  {searchTerm && (
+                    <button
+                      onClick={() => setSearchTerm('')}
+                      type="button"
+                      className="ml-2 text-gray-400 hover:text-white flex-shrink-0"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -159,31 +161,31 @@ export default function Page() {
         </div>
 
         {/* Featured Article */}
-        <div className="container mx-auto px-6 py-16">
+        <div className="container mx-auto px-2 sm:px-6 py-8 sm:py-16">
           <div className="">
-            <div className="flex items-center justify-between mb-2">
-              <h2 className="text-4xl font-bold text-white leading-tight">{featuredArticle.title}</h2>
-              <span className="text-gray-400 text-sm">{featuredArticle.date}</span>
+            <div className="flex flex-col sm:flex-row items-center justify-between mb-2 sm:mb-4 gap-2 sm:gap-4">
+              <h2 className="text-lg sm:text-4xl font-bold text-white leading-tight">{featuredArticle.title}</h2>
+              <span className="text-gray-400 text-xs sm:text-sm">{featuredArticle.date}</span>
             </div>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">{featuredArticle.excerpt}</p>
+            <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-8 leading-relaxed">{featuredArticle.excerpt}</p>
             <button
-              className="px-6 py-2 text-base font-semibold rounded-lg text-white hover:opacity-90 transition-opacity"
+              className="px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold rounded-lg text-white hover:opacity-90 transition-opacity"
               style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
             >
               Read News
             </button>
           </div>
-          <img src="/assets/image/news/news_1.svg" alt="featured article" className="w-full h-full object-cover rounded-lg mb-4 py-[36px]" />
+          <img src="/assets/image/news/news_1.svg" alt="featured article" className="w-full h-full object-cover rounded-lg mb-2 sm:mb-4 py-4 sm:py-[36px]" />
         </div>
       </section>
       {/* All News Section */}
       <section className="text-white overflow-hidden relative bg-[#050026] min-h-screen">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-2 sm:px-6">
         {/* Page Title */}
-        <h1 className="text-4xl font-bold text-white mb-[100px]">All News</h1>
+        <h1 className="text-lg sm:text-4xl font-bold text-white mb-4 sm:mb-[100px]">All News</h1>
 
         {/* News Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 font-sans">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 font-sans">
           {newsArticles.map((article) => (
             <div key={article.id} className="space-y-6 mt-[20px] ">
               <img

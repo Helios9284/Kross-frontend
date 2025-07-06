@@ -35,18 +35,18 @@ export default function Page() {
       </div>
 
       {/* Main Content */}
-      <div className=" px-5 md:px-20 py-10 md:py-20 relative w-full">
-        <div className="grid lg:grid-cols-2 gap-16">
+      <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-16">
           {/* Contact Form */}
           <div className="">
-            <div className="mb-10">
-              <h2 className="text-4xl font-bold text-white mb-3">Get In Touch</h2>
-              <p className="text-gray-400 text-base">All fields are required</p>
+            <div className="mb-4 sm:mb-10">
+              <h2 className="text-2xl sm:text-4xl font-bold text-white mb-2 sm:mb-3">Get In Touch</h2>
+              <p className="text-gray-400 text-sm sm:text-base">All fields are required</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-8" >
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-8" >
               {/* Name Fields */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label htmlFor="firstName" className="block text-white text-sm font-medium mb-3">
                     First Name
@@ -139,17 +139,17 @@ export default function Page() {
               </div>
 
               {/* Submit Button */}
-              <div className="pt-4">
-              <a href="/contact" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Submit Message</a>
+              <div className="pt-2 sm:pt-4">
+              <a href="/contact" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Submit Message</a>
 
               </div>
             </form>
           </div>
 
           {/* Contact Information */}
-          <div className="lg:pl-8 mx-auto ">
+          <div className="lg:pl-4 sm:lg:pl-8 mx-auto ">
             <div
-              className="rounded-2xl p-10 border border-purple-700/20 h-[600px] flex flex-col h-full"
+              className="rounded-2xl p-4 sm:p-10 border border-purple-700/20 h-[300px] sm:h-[600px] flex flex-col h-full"
               style={{ background: "linear-gradient(135deg, #110942 0%, #6D05B8 100%)", borderWidth: '0.5px' }}
             >
               <div className="flex items-center space-x-6 flex-1">

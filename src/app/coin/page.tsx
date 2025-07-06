@@ -16,13 +16,13 @@ export default function Page() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#110942] text-white font-sans">
       {/* Hero Section */}
-      <section className="text-white flex relative overflow-hidden w-full">
-        <div className="container px-5 md:px-20 py-10 md:py-20 relative w-screen">
-          <div className="flex flex-col lg:flex-row items-center gap-6 w-full">
+      <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full">
+        <div className="container px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
+          <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 w-full">
             {/* Left column */}
-            <div className="lg:w-2/3">
+            <div className="w-full lg:w-2/3">
               <div
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFDD] bg-[#11094280] mb-8"
+                className="inline-flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFDD] bg-[#11094280] mb-4 sm:mb-8"
                 style={{ boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 12px 0px inset" }}
               >
                 <img
@@ -31,25 +31,25 @@ export default function Page() {
                   height={16}
                   src="/assets/icon/file-icons_buildkite.png"
                 />
-                <span className="text-sm font-medium">The $KSS Coin</span>
+                <span className="text-xs sm:text-sm font-medium">The $KSS Coin</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-center md:text-left">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
               Leverage the strength of $KSS to fully activate the potential of the KROSS ecosystem
               </h1>
               
               <div className="flex w-full justify-center md:justify-start">
                 <a
                   href="#"
-                  className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow"
+                  className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow"
                 >
                   Buy $KSS Coin
                 </a>
               </div>
             </div>
             {/* Right column */}
-            <div className="lg:w-1/3 flex justify-center relative">
+            <div className="w-full lg:w-1/3 flex justify-center relative mt-4 lg:mt-0">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl"></div>
-              <div className="relative w-80 h-80 md:w-96 md:h-96">
+              <div className="relative w-40 h-40 sm:w-80 sm:h-80 md:w-96 md:h-96">
                 <img
                   alt="Blockchain 3D Cube Visualization"
                   width={500}
@@ -64,19 +64,18 @@ export default function Page() {
 
       {/* New section with purple blurred background glow */}
       <section className="text-white relative overflow-hidden w-full">
-        <div className="absolute top-3/5 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
-          <div className="w-[350px] h-[350px] bg-[#EC34E0]/25 blur-3xl rounded-full"></div>
-          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        <div className="absolute top-3/5 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
+          <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#EC34E0]/25 blur-3xl rounded-full"></div>
         </div>
         {/* Background Glow */}
-        <div className="absolute bottom-0 right-1/2 w-[400px] h-[500px] rounded-full blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
-        <div className="container mx-auto px-5 md:px-20 py-20">
-          <div className="text-center mb-16 w-full">
-            <h2 className="text-4xl md:text-5xl font-bold mb-[164px]">Utilities</h2>
+        <div className="absolute bottom-0 right-1/2 w-[200px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[300px] md:h-[500px] rounded-full blur-[60px] sm:blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
+        <div className="container mx-auto px-2 sm:px-5 md:px-20 py-10 sm:py-20">
+          <div className="text-center mb-8 sm:mb-16 w-full">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-[164px]">Utilities</h2>
             
           </div>
-          <div className="px-5 relative w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+          <div className="px-2 sm:px-5 relative w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-3 sm:gap-5">
               {/* Left column features */}
               <div className="space-y-10">
                 <div className="text-center md:text-right text-white">
@@ -123,9 +122,9 @@ export default function Page() {
         </div>
       </section>
       <section className="text-white relative overflow-hidden w-full bg-gradient-to-l from-[#050026] to-[#110942]">
-      <div className="absolute top-3/5 left-1/6 -translate-x-1/2 -translate-y-1/2 flex gap-4">
-          <div className="w-[350px] h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
-          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        <div className="absolute top-3/5 left-1/6 -translate-x-1/2 -translate-y-1/2 flex gap-4">
+            <div className="w-[350px] h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+            {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
         </div>
         <div className=" px-6 ">
           {/* Main Title */}
@@ -200,16 +199,21 @@ export default function Page() {
         </div>
       </section>
       {/* Networking Layer */}
-      <section className="min-h-[100px] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
-        <div className="absolute top-[15px] right-[143px] w-[14px] h-[15px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 right-[140px] w-[14px] h-[14px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
-        <div className="flex w-full justify-start">
-          
-        </div>
+      <section className="min-h-[100px] flex items-center justify-center px-5 md:px-20 mx-auto relative w-full bg-gradient-to-l from-[#050026] to-[#110942]">
+
         <div className="group">
-          <div className="absolute top-0 right-1/2 translate-x-1/2 z-0 group-hover:translate-x-36 xl:group-hover:translate-x-68 2xl:group-hover:translate-x-100 transition-all duration-1000 ease-in-out">
-           </div>
+        <div className="absolute top-3/5 left-1/3 -translate-x-1/2 -translate-y-1/2 flex gap-4">
+            <div className="w-[350px] h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+            {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
         </div>
+           
+        </div>
+        <img
+          alt="Blockchain 3D Cube Visualization"
+          width={500}
+          height={500}
+          src="/assets/image/builder/builder.svg"
+        />
       </section>
 
 

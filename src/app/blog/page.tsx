@@ -90,18 +90,18 @@ export default function Page() {
       className="min-h-screen w-full bg-gradient-to-b from-[#050026] text-white font-sans"style={{ fontFamily: 'lato, sans-serif' }}
     >
       {/* Header */}
-      <div className="py-16  h-[370px] flex items-center justify-center"  style={{ background: "linear-gradient( #110942 78%)" }}>
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold text-white mb-3" style={{ fontFamily: 'lato, sans-serif' }}>Blog</h1>
+      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center"  style={{ background: "linear-gradient( #110942 78%)" }}>
+        <div className="container mx-auto px-2 sm:px-6 text-center">
+          <h1 className="text-3xl sm:text-5xl font-bold text-white mb-2 sm:mb-3" style={{ fontFamily: 'lato, sans-serif' }}>Blog</h1>
         </div>
       </div>
       
       {/* Navigation Bar */}
       <section className="text-white overflow-hidden relative bg-[#050026] min-h-screen">
-      <div className=" py-16">
+      <div className="py-8 sm:py-16">
         {/* Filter Interface */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-12 text-center text-[32px]">
-          <span className="text-white  font-normal">I am Interested to learn about</span>
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-12 text-center text-lg sm:text-[32px]">
+          <span className="text-white font-normal">I am Interested to learn about</span>
 
           <div className="relative">
             <select
@@ -167,8 +167,8 @@ export default function Page() {
         </div>
 
         {/* Search Bar */}
-        <div className="flex justify-center mb-20">
-          <div className="relative w-full max-w-lg">
+        <div className="flex justify-center mb-10 sm:mb-20">
+          <div className="relative w-full max-w-xs sm:max-w-lg">
             <svg
               className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
               fill="none"
@@ -245,7 +245,7 @@ export default function Page() {
         <h1 className="text-4xl font-bold text-white mb-[100px]">Blog Posts</h1>
 
         {/* News Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 font-sans">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 font-sans">
           {newsArticles.map((article) => (
             <div key={article.id} className="space-y-6 mt-[20px] ">
               <img

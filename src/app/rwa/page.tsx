@@ -68,32 +68,32 @@ export default function Page() {
     <div
       className="min-h-screen w-full bg-[#110942]" style={{fontFamily: 'lato, sans-serif'}}>
       {/* Hero Section */}
-      <div className="h-[600px] bg-[#050026]">
-        <div className="grid lg:grid-cols-2 gap-16 items-center ">
+      <div className="h-[300px] sm:h-[400px] md:h-[600px] bg-[#050026]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center ">
           {/* Left column: Text and buttons */}
           <div className="relative ">
             <div
-              className="w-full h-full rounded-2xl"
+              className="w-full h-full rounded-2xl min-h-[120px] sm:min-h-[200px] md:min-h-[300px]"
               style={{ background: "linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%)" }}
             />
             
           </div>
           {/* Right column: Gradient box */}
-          <div className="space-y-8 container px-5 md:px-20 py-10 md:py-20 ">
+          <div className="space-y-4 sm:space-y-8 container px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 ">
             <div className="flex flex-col items-center w-full">
               {/* Top Row */}
-              <div className="flex w-full justify-between items-center max-w-xl mx-auto mb-4">
-                <span className="text-white text-[30px] font-normal">Kross Network ×</span>
-                <span className="text-white text-2xl font-normal">Cloud</span>
+              <div className="flex w-full justify-between items-center max-w-xs sm:max-w-xl mx-auto mb-2 sm:mb-4">
+                <span className="text-white text-lg sm:text-[30px] font-normal">Kross Network ×</span>
+                <span className="text-white text-base sm:text-2xl font-normal">Cloud</span>
               </div>
             </div>
             {/* Main Title */}
-            <h1 className="text-[64px] font-bold text-white text-center mb-6">
+            <h1 className="text-2xl sm:text-[64px] font-bold text-white text-center mb-2 sm:mb-6">
               RWA Launchpad
             </h1>
             {/* Button */}
             <button
-              className="px-10 py-4 text-lg font-semibold rounded-lg text-white mt-2"
+              className="px-6 sm:px-10 py-2 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white mt-1 sm:mt-2"
               style={{
                 background: "linear-gradient(90deg, #e91e63 0%, #9c27b0 100%)",
               }}
@@ -103,16 +103,16 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="py-[112px] px-6">
+      <div className="py-8 sm:py-[112px] px-2 sm:px-6">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">Why Join The RWA Launchpad</h1>
-          <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed mb-10">
+        <div className="text-center mb-8 sm:mb-16">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-8 leading-tight">Why Join The RWA Launchpad</h1>
+          <p className="text-base sm:text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed mb-4 sm:mb-10">
             An Accelerator Program Supported By Google Cloud, Designed To Empower AI Builders And Startups With
             Investment Capital, Mentorship, Dedicated Support And More.
           </p>
           <button
-            className="px-8 py-3 text-base font-semibold rounded-lg text-white hover:opacity-90 transition-opacity"
+            className="px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-semibold rounded-lg text-white"
             style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
           >
             News
@@ -120,7 +120,7 @@ export default function Page() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 max-w-6xl mx-auto">
           {/* Web3 & AI Expert Guidance */}
           <div
             className="p-8 rounded-2xl border border-purple-500/30"

@@ -68,13 +68,13 @@ export default function BuilderPage() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white font-sans">
       {/* Hero Section */}
-      <section className="text-white flex relative overflow-hidden w-full">
-        <div className="px-5 md:px-20 py-10 md:py-20 relative w-screen">
-          <div className="flex flex-col lg:flex-row items-center gap-6 w-full">
+      <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full">
+        <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
+          <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 w-full">
             {/* Left column */}
-            <div className="lg:w-3/5">
+            <div className="w-full lg:w-3/5">
               <div
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFDD] bg-[#11094280] mb-8"
+                className="inline-flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFDD] bg-[#11094280] mb-4 sm:mb-8"
                 style={{ boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 12px 0px inset" }}
               >
                 <img
@@ -83,27 +83,27 @@ export default function BuilderPage() {
                   height={16}
                   src="/assets/icon/file-icons_buildkite.png"
                 />
-                <span className="text-sm font-medium">Krosscoin for Builders</span>
+                <span className="text-xs sm:text-sm font-medium">Krosscoin for Builders</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-center md:text-left">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
                 The Premier African RWA Layer 1 Blockchain Designed To Define And Enforce Real-World Regulatory Standards
               </h1>
-              <p className="text-xl text-gray-300 mb-10 w-full md:w-2/3 text-center md:text-left">
+              <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-2/3 text-center md:text-left">
                 The Premier RWA Layer 1 Blockchain Designed To Meet And Enforce Real-World Regulatory Standards.
               </p>
               <div className="flex w-full justify-center md:justify-start">
                 <a
                   href="/explorer"
-                  className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow"
+                  className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow"
                 >
                   Krosscoin Explorer
                 </a>
               </div>
             </div>
             {/* Right column */}
-            <div className="lg:w-2/5 flex justify-center relative">
+            <div className="w-full lg:w-2/5 flex justify-center relative mt-4 lg:mt-0">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl"></div>
-              <div className="relative w-80 h-80 md:w-96 md:h-96">
+              <div className="relative w-40 h-40 sm:w-80 sm:h-80 md:w-96 md:h-96">
                 <img
                   alt="Blockchain 3D Cube Visualization"
                   width={500}
@@ -119,22 +119,22 @@ export default function BuilderPage() {
       {/* New section with purple blurred background glow */}
       <section className="text-white relative overflow-hidden w-full">
         {/* Background Glow */}
-        <div className="absolute bottom-0 right-1/2 w-[400px] h-[500px] rounded-full blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
-        <div className="container mx-auto px-5 md:px-20 py-20">
-          <div className="text-center mb-16 w-full">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Built For Builders Like You</h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+        <div className="absolute bottom-0 right-1/2 w-[200px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[300px] md:h-[500px] rounded-full blur-[60px] sm:blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
+        <div className="container mx-auto px-2 sm:px-5 md:px-20 py-10 sm:py-20">
+          <div className="text-center mb-8 sm:mb-16 w-full">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Built For Builders Like You</h2>
+            <p className="text-base sm:text-xl text-gray-300 max-w-4xl mx-auto mb-4 sm:mb-8">
               Designed For Innovation—Compliance-Ready, Secure, And Built To Extend The Capabilities Of Cosmos And Beyond.
             </p>
             <a
               href="#"
-              className="inline-flex px-8 py-4 bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-lg text-white font-medium hover:from-fuchsia-700 hover:to-pink-700 transition-all shadow-lg shadow-fuchsia-700/30"
+              className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-lg text-white font-medium hover:from-fuchsia-700 hover:to-pink-700 transition-all shadow-lg shadow-fuchsia-700/30"
             >
               Developer Guide
             </a>
           </div>
-          <div className="px-5 relative w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+          <div className="px-2 sm:px-5 relative w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-3 sm:gap-5">
               {/* Left column features */}
               <div className="space-y-10">
                 <div className="text-center md:text-right text-white">
@@ -151,14 +151,14 @@ export default function BuilderPage() {
                 </div>
               </div>
               {/* Center icons grid */}
-              <div className="flex flex-col items-center justify-between w-full gap-4">
-                <div className="flex gap-3">
-                  <img alt="Feature 1" width={150} height={150} src="/assets/image/builder/builder_sec2_1.svg" />
-                  <img alt="Feature 2" width={150} height={150} src="/assets/image/builder/builder_sec2_2.svg" />
+              <div className="flex flex-col items-center justify-between w-full gap-2 sm:gap-4">
+                <div className="flex gap-2 sm:gap-3">
+                  <img alt="Feature 1" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_1.svg" />
+                  <img alt="Feature 2" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_2.svg" />
                 </div>
-                <div className="flex gap-3">
-                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_3.svg" />
-                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_4.svg" />
+                <div className="flex gap-2 sm:gap-3">
+                  <img alt="Feature 3" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_3.svg" />
+                  <img alt="Feature 4" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_4.svg" />
                 </div>
               </div>
               {/* Right column features */}
