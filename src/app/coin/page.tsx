@@ -165,7 +165,7 @@ export default function Page() {
 
                 >
                    <img
-                    src={exchangeImages[exchange]}
+                    src={exchangeImages[exchange as keyof typeof exchangeImages]}
                     alt={exchange}
                     className="pr-2"
                   />
@@ -183,7 +183,7 @@ export default function Page() {
 
                 >
                   <img
-                    src={exchangeImages[exchange]}
+                    src={exchangeImages[exchange as keyof typeof exchangeImages]}
                     alt={exchange}
                     className="pr-2"
                   />
@@ -201,7 +201,7 @@ export default function Page() {
 
                 >
                   <img
-                    src={exchangeImages[exchange]}
+                    src={exchangeImages[exchange as keyof typeof exchangeImages]}
                     alt={exchange}
                     className="pr-2"
                   />
@@ -224,7 +224,7 @@ export default function Page() {
                   className="flex items-center justify-center h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
                 >
                   <img
-                    src={exchangeImages_1[exchange]}
+                    src={exchangeImages_1[exchange as keyof typeof exchangeImages_1]}
                     alt={exchange}
                     className="pr-2"
                   />
