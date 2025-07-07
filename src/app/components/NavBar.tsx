@@ -10,7 +10,6 @@ export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const resourcesRef = useRef<HTMLDivElement>(null);
   const ecosystemRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   useEffect(() => {
