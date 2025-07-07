@@ -4,7 +4,12 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans ">
       {/* Centered About Us Heading */}
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center justify-center items-center flex bg-[#110942] h-[200px] sm:h-[300px] md:h-[400px]">About Us</h1>
+      {/* Header */}
+      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
+        <div className="container mx-auto px-2 sm:px-6 text-center">
+          <h1 className="text-3xl sm:text-5xl font-bold text-white mb-2 sm:mb-3" style={{ fontFamily: 'lato, sans-serif' }}>About Us</h1>
+        </div>
+      </div>
       {/* Two-column Section */}
       <section className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 w-full flex flex-col md:flex-row bg-[#050026]">
         <div className="flex flex-col md:flex-row items-center md:items-stretch gap-6 md:gap-10 w-full">
@@ -15,8 +20,8 @@ export default function AboutPage() {
             </p>
           </div>
           {/* Right column: Image Placeholder */}
-          <div className="">
-            <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full" src="/assets/image/about/1.svg" />
+          <div className="place-content-center">
+            <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full" src="/assets/image/about/about.svg" />
           </div>
         </div>
       </section>
@@ -78,7 +83,14 @@ export default function AboutPage() {
         </p>
         <h3 className="text-white text-[48px] sm:text-3xl font-bold mb-2 sm:mb-4 mt-12 sm:mt-32 text-center">Contact Our Team</h3>
        
-        <a href="/contact" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Contact Us</a>
+        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="/contact"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Contact Us
+                </a>
+              </div>
         
       </section>
     </div>

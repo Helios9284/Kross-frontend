@@ -91,10 +91,10 @@ export default function BuilderPage() {
               <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-2/3 text-center md:text-left">
                 The Premier RWA Layer 1 Blockchain Designed To Meet And Enforce Real-World Regulatory Standards.
               </p>
-              <div className="flex w-full justify-center md:justify-start">
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
                   href="/explorer"
-                  className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                 >
                   Krosscoin Explorer
                 </a>
@@ -126,14 +126,20 @@ export default function BuilderPage() {
             <p className="text-base sm:text-xl text-gray-300 max-w-4xl mx-auto mb-4 sm:mb-8">
               Designed For Innovation—Compliance-Ready, Secure, And Built To Extend The Capabilities Of Cosmos And Beyond.
             </p>
-            <a
-              href="#"
-              className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-lg text-white font-medium hover:from-fuchsia-700 hover:to-pink-700 transition-all shadow-lg shadow-fuchsia-700/30"
-            >
-              Developer Guide
-            </a>
+            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <a
+                href="#"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+              >
+                Developer Guide
+              </a>
+            </div>
           </div>
-          <div className="px-2 sm:px-5 relative w-full">
+          <div className="px-2 sm:px-5 relative w-full relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
+          <div className="w-[280px] sm:w-[350px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[4  50px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
             <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-3 sm:gap-5">
               {/* Left column features */}
               <div className="space-y-10">
@@ -180,15 +186,14 @@ export default function BuilderPage() {
           </div>
         </div>
       </section>
-
-     
-
       {/* Possibilities Section */}
       <section className="text-white overflow-hidden relative">
         {/* Background Glows */}
-        <div className="absolute -top-10 -left-10 w-[150px] h-[150px] bg-[#EC34E0]/30 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 left-[70px] w-[50px] h-[50px] bg-[#487DF1]/20 blur-3xl rounded-full"></div>
-        <div className="container mx-auto p-5 md:p-20 relative">
+        <div className="absolute top-0 right-0  flex gap-2 sm:gap-4 z-1">
+          <div className="w-[380px] sm:w-[450px] md:w-[550px] h-[380px] sm:h-[450px] md:h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
+        <div className="mx-auto pl-5 md:pl-20 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Explore the world of use cases that can be built atop of Krosscoin and complement the utility of the network</h2>
           </div>
@@ -344,7 +349,14 @@ export default function BuilderPage() {
                   <h2 className="text-[40px] md:text-5xl font-bold mb-6">KROSS Hub</h2>
                   <p className="text-lg md:text-xl text-gray-300 leading-relaxed w-full">Your Entry Point Into The Kross Network. Bridge And Stake Your Assets, Complete Onchain Tasks, And Rise Through The Leaderboard To Unlock Higher Rewards.</p>
                 </div>
-                <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Start Earning Rewards</a>
+                <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                  <a
+                    href="#"
+                    className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                  >
+                    Start Earning Rewards
+                  </a>
+               </div>
               </div>
               {/* Right: Image */}
               <div className="flex justify-center md:pr-12">
@@ -529,10 +541,22 @@ export default function BuilderPage() {
           <div className="flex flex-col items-center justify-center gap-[56px] w-full">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-full md:w-2/3 text-center">Explore the KROSS Ecosystem</h1>
             <div className="flex gap-4 w-full items-center justify-center">
-              <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Start Building</a>
-              <a href="#" className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] hover:bg-gradient-to-r hover:from-[#6D05B8] hover:to-[#AA00B8]">
-                <span className="flex text-white items-center justify-center px-8 py-4 bg-[#110942] rounded-[12px] whitespace-nowrap text-md hover:bg-gradient-to-r from-[#6D05B8] to-[#FF00B8]">Discover Ecosystem</span>
-              </a>
+            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Start Building
+                </a>
+              </div>
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Discover Ecosystem
+                </a>
+              </div>
             </div>
           </div>
         </div>

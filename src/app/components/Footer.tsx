@@ -11,7 +11,14 @@ export default function Footer() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto md:max-w-md">
             <input type="email" placeholder="Email address" className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm md:text-base" />
-            <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Subscribe</a>
+            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <a
+                href="#"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+              >
+                Subscribe
+              </a>
+            </div>
           </div>
         </div>
         <div className="border-t border-gray-400 border-t-[1px] mt-12 my-24"></div>

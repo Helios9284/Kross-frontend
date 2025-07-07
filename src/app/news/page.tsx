@@ -168,12 +168,14 @@ export default function Page() {
               <span className="text-gray-400 text-xs sm:text-sm">{featuredArticle.date}</span>
             </div>
             <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-8 leading-relaxed">{featuredArticle.excerpt}</p>
-            <button
-              className="px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold rounded-lg text-white hover:opacity-90 transition-opacity"
-              style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
-            >
-              Read News
-            </button>
+            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <a
+                href="#"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+              >
+                Read News
+              </a>
+            </div>
           </div>
           <img src="/assets/image/news/news_1.svg" alt="featured article" className="w-full h-full object-cover rounded-lg mb-2 sm:mb-4 py-4 sm:py-[36px]" />
         </div>

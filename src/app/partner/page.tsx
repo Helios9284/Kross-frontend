@@ -90,14 +90,18 @@ export default function Page() {
       <section className="text-white flex w-full bg-[#050026] border-b-4 border-white">
         
         <div className="flex w-full items-center relative justify-center py-10 sm:py-25 md:py-[133px]">
-          <div className="flex flex-col items-center justify-center gap-8 sm:gap-[56px] w-full">
+          <div className="flex flex-col items-center justify-center gap-8 sm:gap-[56px] w-full z-1">
             <div className="absolute top-1/3 left-1/3 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
               <div className="w-[250px] sm:w-[450px] md:w-[850px] h-[120px] sm:h-[250px] md:h-[450px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
             </div>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-full md:w-2/3 text-center">Become a <br/>KROSS Partner</h1>
-            <div className="flex flex-col sm:flex-row gap-4 w-full items-center justify-center">
-              <a href="#" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Partner with us</a>
-              
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-full md:w-2/3 text-center z-10">Become a <br/>KROSS Partner</h1>
+            <div className="z-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <a
+                href="#"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+              >
+                Partner with us
+              </a>
             </div>
           </div>
         </div>

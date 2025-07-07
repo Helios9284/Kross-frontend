@@ -125,7 +125,7 @@ export default function Home() {
           <div className="lg:w-2/5 flex justify-center relative">
             <div className="relative w-80 h-80 md:w-full md:h-full">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full -z-0"></div>
-              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative z-10" src="/assets/image/hero.svg" />
+              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative " src="/assets/image/landing/landing_1.svg" />
             </div>
           </div>
         </div>
@@ -220,10 +220,12 @@ export default function Home() {
 
       {/* Possibilities Section */}
       <section className="text-white overflow-hidden relative">
+      <div className="absolute top-0 right-0  flex gap-2 sm:gap-4 z-1">
+          <div className="w-[380px] sm:w-[450px] md:w-[550px] h-[380px] sm:h-[450px] md:h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
         {/* Background Glows */}
-        <div className="absolute -top-10 -left-10 w-[150px] h-[150px] bg-[#EC34E0]/30 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 left-[70px] w-[50px] h-[50px] bg-[#487DF1]/20 blur-3xl rounded-full"></div>
-        <div className="container mx-auto p-5 md:p-20 relative">
+        <div className=" mx-auto pl-5 md:pl-20 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Discover endless possibilities with the power of Kross Network.</h2>
           </div>
@@ -361,24 +363,22 @@ export default function Home() {
       {/* Developer Call-to-Action Section */}
       <div className="relative text-white overflow-hidden">
         <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/assets/image/developer-bg.svg')",
-            backgroundSize: '40%',
-            backgroundPosition: 'right bottom',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.5,
-          }}
-        ></div>
-        <div className="container mx-auto px-5 md:px-20 py-[120px] relative">
+        
+        <div className="container mx-auto px-5 md:px-20 py-[120px] relative"  style={{backgroundImage: "url('/assets/image/rwa/3.svg')", backgroundSize: "40%", backgroundPosition: 'right bottom', backgroundRepeat: "no-repeat" }}>
           <div className="w-full md:max-w-5xl mx-auto">
             <div className="bg-[#4839A429] rounded-[16px] p-6 px-10 border border-[#77777775] backdrop-blur-sm">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-center">Begin building today, Explore the Details</h2>
                 </div>
-                <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Developer Doc</a>
+                <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                  <a
+                    href="#"
+                    className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                  >
+                    Developer Doc
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -399,12 +399,19 @@ export default function Home() {
                   <h2 className="text-[40px] md:text-5xl font-bold mb-6">KROSS Hub</h2>
                   <p className="text-lg md:text-xl text-gray-300 leading-relaxed w-full">Your Entry Point Into The Kross Network. Bridge And Stake Your Assets, Complete Onchain Tasks, And Rise Through The Leaderboard To Unlock Higher Rewards.</p>
                 </div>
-                <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Start Earning Rewards</a>
+                <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                  <a
+                    href="#"
+                    className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                  >
+                    Start Earning Rewards
+                  </a>
+                </div>
               </div>
               {/* Right: Image */}
               <div className="flex justify-center md:pr-12">
                 <div className="w-full h-[335px] rounded-2xl relative">
-                  <img alt="krosshub.svg" className="object-cover rounded-2xl absolute inset-0 w-full h-full" src="/assets/image/krosshub.svg" />
+                  <img alt="krosshub.svg" className="object-cover rounded-2xl absolute inset-0 w-full h-full" src="/assets/image/landing/application.svg" />
                 </div>
               </div>
             </div>
@@ -413,7 +420,7 @@ export default function Home() {
       </div>
 
       {/* Manage & Grow Section */}
-      <section className="text-white w-full">
+      <section className="text-white w-full" style={{ fontFamily: 'Lato, sans-serif' }}>
         <div className="w-full transition-all duration-1000 ease-in-out">
           {/* Card 1: Stake On Kross Hub */}
           <div className="w-full flex justify-center sticky top-0">
@@ -434,7 +441,14 @@ export default function Home() {
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Stake On Kross Hub</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Put Your Tokens To Work. Stake On Kross Hub And Get Rewarded.</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Start Staking</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Start Staking
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -458,7 +472,14 @@ export default function Home() {
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Swap With Ease</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Trade Assets Instantly With A Seamless Experience. No Delays, No Complexities, Just Fast, Secure Exchanges At Your Fingertips.</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Swap Now</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Add Liquidity
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -480,7 +501,14 @@ export default function Home() {
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Boost Your Earnings with Liquidity Pools</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Supply assets to earn passive income and claim a share of the fees from every trade that runs through your pool.</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Add Liquidity</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Access Vault Now
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -502,7 +530,14 @@ export default function Home() {
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Efortless Yield with Kross Vaults</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Put your Krosscoin to work securely and passively. Kross Vaults give you access to curated assets and their staking rewards—no manual buying, staking, or managing required.</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Access Vault Now</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Swap Now
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -527,7 +562,14 @@ export default function Home() {
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Transparent Trading with Central Orderbook</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Execute trades with precision and full visibility. Kross Network&aposs Central Limit Orderbook ensures accurate price discovery, deeper liquidity, and smooth trade execution—all in one powerful interface.</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Swap Now</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Start Trading
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

@@ -158,7 +158,7 @@ const TraderPage = () => {
           </div>
           {/* Card 2: Swap With Ease */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full relative overflow-hidden">
+            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
               <div className="absolute w-[150px] h-[100px] -left-20 bottom-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[200px] left-0 -bottom-50 bg-[#EC34E0CC]/30 blur-3xl  rounded-full"></div>
               <div className="absolute w-[150px] h-[100px] left-[100px] -bottom-50 bg-[#EC34E0CC]/30 blur-3xl rounded-full"></div>
@@ -183,7 +183,7 @@ const TraderPage = () => {
           </div>
           {/* Card 3: Boost Your Earnings with Liquidity Pools */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full relative overflow-hidden">
+            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
               <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
               <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
@@ -205,7 +205,7 @@ const TraderPage = () => {
           </div>
           {/* Card 4: Effortless Yield with Kross Vaults */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full relative overflow-hidden">
+            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
               <div className="absolute w-[250px] h-[250px] -left-50 -top-50 bg-[#FF00B840]/50 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[250px] -right-50 -bottom-50 bg-[#FF00B840]/60 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
@@ -227,7 +227,7 @@ const TraderPage = () => {
           </div>
           {/* Card 5: Transparent Trading with Central Orderbook */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full relative overflow-hidden">
+            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
               <div className="absolute w-[150px] h-[150px] -right-20 top-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[250px] -left-50 -bottom-50 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] -left-10 -bottom-50 bg-[#EC34E0CC]/20 blur-3xl rounded-full"></div>
@@ -283,8 +283,14 @@ const TraderPage = () => {
           <div className="flex flex-col items-center justify-center gap-[56px] w-full">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-full md:w-2/3 text-center">Ready To Get Started</h1>
             <div className="flex gap-4 w-full items-center justify-center">
-              <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Get Started</a>
-              
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Get Started
+                </a>
+              </div>
             </div>
           </div>
         </div>

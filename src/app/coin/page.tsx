@@ -12,7 +12,25 @@ export default function Page() {
     "AscendEX",
     "Crypto.com",
   ]
+  const exchangeImages = {
+    "Binance": "/assets/icon/coin/Binance.svg",
+    "ByBit": "/assets/icon/coin/bybit.svg",
+    "KuCoin": "/assets/icon/coin/kucoin.svg",
+    "OKX": "/assets/icon/coin/okx.svg",
+    "Kraken": "/assets/icon/coin/kraken.svg",
+    "Gate.io": "/assets/icon/coin/gate.svg",
+    "Bitget": "/assets/icon/coin/bitget.svg",
+    "AscendEX": "/assets/icon/coin/ascent.svg",
+    "Crypto.com": "/assets/icon/coin/crypto.com.svg",
+  }
+
   const decentralizedExchanges = ["Uniswap", "Hyperliquid", "Osmosis", "DYDX"]
+  const exchangeImages_1 = {
+    "Uniswap": "/assets/icon/coin/Uniswap.svg",
+    "Hyperliquid": "/assets/icon/coin/Hyper.svg",
+    "Osmosis": "/assets/icon/coin/Osmosis.svg",
+    "DYDX": "/assets/icon/coin/DYDX.svg"
+  }
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#110942] text-white font-sans">
       {/* Hero Section */}
@@ -37,12 +55,12 @@ export default function Page() {
               Leverage the strength of $KSS to fully activate the potential of the KROSS ecosystem
               </h1>
               
-              <div className="flex w-full justify-center md:justify-start">
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
                   href="#"
-                  className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                 >
-                  Buy $KSS Coin
+                 Buy $KSS Coin
                 </a>
               </div>
             </div>
@@ -54,7 +72,7 @@ export default function Page() {
                   alt="Blockchain 3D Cube Visualization"
                   width={500}
                   height={500}
-                  src="/assets/image/builder/builder.svg"
+                  src="/assets/image/coin/coin_1.svg"
                 />
               </div>
             </div>
@@ -63,7 +81,7 @@ export default function Page() {
       </section>
 
       {/* New section with purple blurred background glow */}
-      <section className="text-white relative overflow-hidden w-full">
+      <section className="text-white relative overflow-hidden w-full" style={{ backgroundImage: "url('/assets/image/coin/Component.svg')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
         <div className="absolute top-3/5 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
           <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#EC34E0]/25 blur-3xl rounded-full"></div>
         </div>
@@ -141,39 +159,54 @@ export default function Page() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {/* First row - 4 exchanges */}
               {centralizedExchanges.slice(0, 4).map((exchange, index) => (
-                <button
+                <div
                   key={index}
-                  className="h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
+                  className="flex items-center justify-center h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
 
                 >
+                   <img
+                    src={exchangeImages[exchange]}
+                    alt={exchange}
+                    className="pr-2"
+                  />
                   {exchange}
-                </button>
+                </div>
               ))}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 max-w-3xl mx-auto">
               {/* Second row - 3 exchanges */}
               {centralizedExchanges.slice(4, 7).map((exchange, index) => (
-                <button
+                <div
                   key={index}
-                  className="h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
+                  className="flex items-center justify-center h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
 
                 >
+                  <img
+                    src={exchangeImages[exchange]}
+                    alt={exchange}
+                    className="pr-2"
+                  />
                   {exchange}
-                </button>
+                </div>
               ))}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto">
               {/* Third row - 2 exchanges */}
               {centralizedExchanges.slice(7, 9).map((exchange, index) => (
-                <button
+                <div
                   key={index}
-                  className="h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
+                  className="flex items-center justify-center h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
 
                 >
+                  <img
+                    src={exchangeImages[exchange]}
+                    alt={exchange}
+                    className="pr-2"
+                  />
                   {exchange}
-                </button>
+                </div>
               ))}
             </div>
           </div>
@@ -186,13 +219,17 @@ export default function Page() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {decentralizedExchanges.map((exchange, index) => (
-                <button
+                <div
                   key={index}
-                  className="h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
-          
+                  className="flex items-center justify-center h-14 px-6 rounded-xl border border-white-500/30 text-white font-medium hover:bg-purple-500/10 transition-colors"
                 >
+                  <img
+                    src={exchangeImages_1[exchange]}
+                    alt={exchange}
+                    className="pr-2"
+                  />
                   {exchange}
-                </button>
+                </div>
               ))}
             </div>
           </div>
@@ -212,7 +249,7 @@ export default function Page() {
           alt="Blockchain 3D Cube Visualization"
           width={500}
           height={500}
-          src="/assets/image/builder/builder.svg"
+          src="/assets/image/coin/coin_2.svg"
         />
       </section>
 

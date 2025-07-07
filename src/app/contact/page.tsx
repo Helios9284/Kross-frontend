@@ -149,7 +149,7 @@ export default function Page() {
           {/* Contact Information */}
           <div className="lg:pl-4 sm:lg:pl-8 mx-auto ">
             <div
-              className="rounded-2xl p-4 sm:p-10 border border-purple-700/20 h-[300px] sm:h-[600px] flex flex-col h-full"
+              className="rounded-2xl p-4 sm:p-10 border border-purple-700/20 flex flex-col h-full"
               style={{ background: "linear-gradient(135deg, #110942 0%, #6D05B8 100%)", borderWidth: '0.5px' }}
             >
               <div className="flex items-center space-x-6 flex-1">

@@ -92,14 +92,14 @@ export default function Page() {
               RWA Launchpad
             </h1>
             {/* Button */}
-            <button
-              className="px-6 sm:px-10 py-2 sm:py-4 text-base sm:text-lg font-semibold rounded-lg text-white mt-1 sm:mt-2"
-              style={{
-                background: "linear-gradient(90deg, #e91e63 0%, #9c27b0 100%)",
-              }}
-            >
-              Coming Soon!
-            </button>
+            <div className="z-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <a
+                href="#"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+              >
+                Coming Soon!
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -111,12 +111,14 @@ export default function Page() {
             An Accelerator Program Supported By Google Cloud, Designed To Empower AI Builders And Startups With
             Investment Capital, Mentorship, Dedicated Support And More.
           </p>
-          <button
-            className="px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-semibold rounded-lg text-white"
-            style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
-          >
-            News
-          </button>
+          <div className="z-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+            <a
+              href="#"
+              className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+            >
+              News
+            </a>
+          </div>
         </div>
 
         {/* Features Grid */}
@@ -238,9 +240,10 @@ export default function Page() {
       
       {/* Possibilities Section */}
       <section className="text-white overflow-hidden relative bg-[#050026]">
+        <div className="absolute top-1/3  -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 z-0">
+          <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+        </div>
         {/* Background Glows */}
-        <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 left-[70px] w-[50px] h-[50px] bg-[#487DF1]/20 blur-3xl rounded-full"></div>
         <div className="container mx-auto p-5 md:p-20 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Choose your Tracks</h2>
@@ -263,7 +266,7 @@ export default function Page() {
                     <img
                       alt="DeFi"
                       className="object-cover absolute inset-0 w-full h-full"
-                      src="/assets/image/fund/fund_process_1.svg"
+                      src="/assets/image/rwa/rwa_1.svg"
                     />
                   </div>
                   {/* Right: Content */}
@@ -350,7 +353,7 @@ export default function Page() {
           </button>
         </div>
       </div>
-      {/* Program Timeline */}
+      {/* Program Benefit */}
       <div className="p-10 mx-auto">
         {/* Header */}
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">Program Benefits</h1>
@@ -408,12 +411,17 @@ export default function Page() {
 
         {/* Apply Now Button */}
         <div className="flex justify-center">
-          <button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-            Apply Now
-          </button>
+          <div className=" inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+            <a
+              href="#"
+              className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+            >
+              Apply Now
+            </a>
+          </div>
         </div>
       </div>
-      {/* Join the RWA Revolution*/}
+      {/* Join the Timeline*/}
       <div className="p-10 mx-auto">  
         {/* Header */}
         <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-16">Program Timeline</h1>
@@ -457,12 +465,8 @@ export default function Page() {
 
                 {/* Icon Card */}
                 <div className="flex justify-center order-1 lg:order-2">
-                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl md:rounded-2xl p-4 md:p-8 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
-                    <div className="bg-white/20 rounded-lg md:rounded-xl p-2 md:p-4">
-                      <svg className="w-8 h-8 md:w-16 md:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                      </svg>
-                    </div>
+                  <div className=" rounded-xl md:rounded-2xl p-4 w-full h-full flex items-center justify-center">
+                    <img src="/assets/image/fund/fund_process_3.svg"  alt="rwa_3" />
                   </div>
                 </div>
               </div>
@@ -475,12 +479,8 @@ export default function Page() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-center">
                 {/* Icon Card */}
                 <div className="flex justify-center order-1">
-                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl md:rounded-2xl p-4 md:p-8 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
-                    <div className="bg-white/20 rounded-lg md:rounded-xl p-2 md:p-4">
-                      <svg className="w-8 h-8 md:w-16 md:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12,8H4A2,2 0 0,0 2,10V14A2,2 0 0,0 4,16H5V20A1,1 0 0,0 6,21H8A1,1 0 0,0 9,20V16H12L17,20V4L12,8M21.5,12C21.5,13.71 20.54,15.26 19,16V8C20.53,8.75 21.5,10.3 21.5,12Z" />
-                      </svg>
-                    </div>
+                  <div className=" rounded-xl md:rounded-2xl p-4 w-full h-full flex items-center justify-center">
+                    <img src="/assets/image/fund/fund_process_2.svg"  alt="rwa_3" />
                   </div>
                 </div>
 
@@ -539,12 +539,8 @@ export default function Page() {
 
                 {/* Icon Card */}
                 <div className="flex justify-center order-1 lg:order-2">
-                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl md:rounded-2xl p-4 md:p-8 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
-                    <div className="bg-white/20 rounded-lg md:rounded-xl p-2 md:p-4">
-                      <svg className="w-8 h-8 md:w-16 md:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M2.81,14.12L5.64,11.29L8.47,14.12L7.06,15.53L3.5,12L7.06,8.47L8.47,9.88L5.64,12.71L2.81,9.88L1.39,11.29L4.22,14.12L1.39,16.95L2.81,18.36L5.64,15.53L8.47,18.36L9.88,16.95L7.05,14.12L9.88,11.29L8.47,9.88L5.64,12.71L2.81,9.88M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12Z" />
-                      </svg>
-                    </div>
+                 <div className=" rounded-xl md:rounded-2xl p-4 w-full h-full flex items-center justify-center">
+                    <img src="/assets/image/fund/fund_process_1.svg"  alt="rwa_3" />
                   </div>
                 </div>
               </div>
@@ -561,9 +557,16 @@ export default function Page() {
             <div className="bg-[#4839A429] rounded-[16px] p-6 px-10 border border-[#77777775] backdrop-blur-sm">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-center">Join the RWA Revolution</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold text-center">Interested in the RWAccelerator?</h2>
                 </div>
-                <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Developer Doc</a>
+                <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                  <a
+                    href="#"
+                    className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                  >
+                    Join Now
+                  </a>
+                </div>
               </div>
             </div>
           </div>

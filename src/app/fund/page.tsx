@@ -64,40 +64,55 @@ export default function Page() {
     <div
       className="min-h-screen bg-[#050026]">
       {/* Hero Section */}
-      <div className="">
-        <div className="grid lg:grid-cols-2 gap-16 items-center flex-col-reverse lg:flex-row-reverse">
-          {/* Left column: Text and buttons */}
-          <div className="space-y-8 container px-5 md:px-20 py-10 md:py-20 w-full max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-full mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+      <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full">
+        <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
+          <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 w-full">
+            {/* Left column */}
+            <div className="w-full lg:w-3/5">
+              
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
               Kross Ecosystem Fund
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+              </h1>
+              <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-2/3 text-center md:text-left">
               Kross Ecosystem Fund supports the development of the Kross blockchain ecosystem by providing funding,
               resources, and strategic guidance to innovative projects.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className="px-8 py-4 text-base sm:text-lg font-semibold rounded-lg text-white hover:opacity-90 transition-opacity"
-                style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
-              >
-                Get Started
-              </button>
-              <button className="px-8 py-4 text-base sm:text-lg font-semibold rounded-lg border-2 border-gray-600 text-white hover:bg-gray-800 bg-transparent transition-colors">
-                Learn More
-              </button>
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Get Started
+                </a>
+              </div>
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Learn More
+                </a>
+              </div>
+              </div>
+            </div>
+            {/* Right column */}
+            <div className="w-full lg:w-2/5 flex justify-center relative mt-4 lg:mt-0">
+              <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl"></div>
+              <div className="relative w-40 h-40 sm:w-80 sm:h-80 md:w-96 md:h-96">
+                <img
+                  alt="Blockchain 3D Cube Visualization"
+                  width={500}
+                  height={500}
+                  src="/assets/image/fund/fund_1.svg"
+                />
+              </div>
             </div>
           </div>
-          {/* Right column: Gradient box */}
-          <div className="relative flex justify-center items-center w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-full mx-auto">
-              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-full h-auto" src="/assets/image/fund/fund_1.svg" />
-            
-          </div>
         </div>
-      </div>
-
+      </section>
       {/* Alliance Section */}
-
-      <section className="text-white overflow-hidden relative bg-[#050026] h-auto min-h-[600px] md:h-[800px]">
+      <section className="text-white overflow-hidden relative bg-[#050026] h-auto min-h-[600px] md:h-[800px]" style={{ backgroundImage: "url('/assets/image/fund/Component.svg')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
         {/* Background Glows */}
         <div className="absolute -bottom-[120px] left-0 w-[320px] sm:w-[420px] md:w-[520px] h-[200px] sm:h-[300px] md:h-[400px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="container mx-auto p-5 md:p-20 relative">
@@ -162,11 +177,16 @@ export default function Page() {
             <span className="text-[24px] font-medium text-white leading-snug text-left">Audited For Safety. Built For Scale. Trusted By Institutions.</span>
           </div>
         </div>
-        <a href="#" className="inline-flex mt-[72px] px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Join Now</a>
+        <div className="mt-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+          <a
+            href="#"
+            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+          >
+            Join Now
+          </a>
+        </div>
 
       </section>
-    
-      
       {/* Possibilities Section */}
       <section className="text-white overflow-hidden relative bg-[#050026]">
         {/* Background Glows */}
@@ -196,7 +216,7 @@ export default function Page() {
                     <img
                       alt="DeFi"
                       className="object-cover absolute inset-0 w-full h-full"
-                      src="/assets/image/fund/fund_process_1.svg"
+                      src="/assets/image/fund/fund_process_3.svg"
                     />
                   </div>
                   {/* Right: Content */}
@@ -212,7 +232,7 @@ export default function Page() {
               <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_2.svg" />
+                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_1.svg" />
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Present your Ideas</h3>
@@ -236,8 +256,8 @@ export default function Page() {
           </div>
         </div>
       </section>
-    {/* Carousel Pagination & Navigation */}
-    <div className="flex flex-col items-center pb-[20px]">
+      {/* Carousel Pagination & Navigation */}
+      <div className="flex flex-col items-center pb-[20px]">
         {/* Dots */}
         <div className="flex gap-4 mb-8">
           {Array.from({ length: cardCount }).map((_, idx) => (
@@ -284,7 +304,14 @@ export default function Page() {
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-center">Join the RWA Revolution</h2>
                 </div>
-                <a href="#" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Developer Doc</a>
+                <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Join Now
+                </a>
+              </div>
               </div>
             </div>
           </div>

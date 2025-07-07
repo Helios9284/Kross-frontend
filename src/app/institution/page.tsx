@@ -31,19 +31,44 @@ const InstitutionPage = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white" style={{fontFamily: 'Lato, sans-serif'}}>
       {/* Hero Section */}
-      <section className="container px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
+      <section
+        className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-full"
+        style={{
+          backgroundImage: `
+            linear-gradient(to left, rgba(17, 9, 66, 0) 0%, #110942 80%),
+            url('/assets/image/institution/institution.svg')
+          `,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top"
+        }}
+      >
         <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-10 w-full">
           {/* Left column */}
           <div className="w-full lg:w-4/5">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-4 sm:mb-6">Transforming Real-World Assets<br/>Into Powerful Digital Value</h1>
             <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-3/5">Powering compliant RWA tokenization for businesses, governments, And developers through secure, institutional-grade infrastructure</p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              <a href="/contact" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Contact us</a>
-              <a href="#" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Tokenisation guide</a>
+            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <a
+                href="/contact"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+              >
+                Contact us
+              </a>
+            </div>
+            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <a
+                href="#"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+              >
+                Tokenisation guide
+              </a>
             </div>
           </div>
-          
         </div>
+          
+      </div>
       </section>
 
       {/* Stats Section */}
@@ -60,12 +85,19 @@ const InstitutionPage = () => {
         <div className="max-w-2xl text-center mx-auto">
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4">Institutions Partnering With Us</h3>
           <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">Our mission is to bring the global financial ecosystem onchain. We are committed to accelerating the efforts of those transforming tangible assets into secure, tokenized representations, driving the future of finance.</p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-4">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center mb-4">
             <img src="/assets/image/institution/1.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
             <img src="/assets/image/institution/2.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
             <img src="/assets/image/institution/3.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
           </div>
-          <a href="/contact" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium mt-[20px]">Contact us</a>
+          <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+            <a
+              href="/contact"
+              className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+            >
+              Contact us
+            </a>
+          </div>
         </div>
       </section>
 
@@ -74,7 +106,14 @@ const InstitutionPage = () => {
         <div className="max-w-2xl text-center mx-auto mb-4 sm:mb-6">
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">Why Do Institutions Choose Kross Network?</h3>
           <p className="text-[24px] sm:text-lg text-gray-300 mb-2 sm:mb-4 py-[24px]">Our mission is to bring the global financial ecosystem onchain. We are committed to accelerating the efforts of those transforming tangible assets into secure, tokenized representations, driving the future of finance</p>
-          <span className="bg-transparent min-w-[120px] sm:min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-2 sm:py-4 px-4 sm:px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Tokenisation guide</span>
+          <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+            <a
+              href="#"
+              className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+            >
+              Tokenisation guide
+            </a>
+          </div>
           
         </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-10 px-[20px] md:px-[74px] py-[24px]">
@@ -111,7 +150,14 @@ const InstitutionPage = () => {
       {/* CTA Section */}
       <section className="w-full flex flex-col items-center justify-center py-8 sm:py-16">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">Start Tokenizing Your Real World Assets</h3>
-        <a href="#" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium">Get Started</a>
+        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+            <a
+              href="/contact"
+              className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+            >
+              Contact us
+            </a>
+          </div>
       </section>
     </div>
   );
