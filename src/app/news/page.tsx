@@ -91,7 +91,7 @@ export default function Page() {
       style={{ fontFamily: 'Lato, sans-serif' }}
     >
       {/* Header */}
-      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
+      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/news/image.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
         <div className="container mx-auto px-2 sm:px-6 text-center">
           <h1 className="text-2xl sm:text-[48px] font-bold text-white mb-2 sm:mb-3">News</h1>
           <p className="text-base sm:text-gray-300 sm:text-[24px]">Welcome To Kross News</p>

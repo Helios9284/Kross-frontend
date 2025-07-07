@@ -99,6 +99,10 @@ export default function Home() {
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
       {/* Hero Section */}
       <section className="px-5 md:px-20 py-10 md:py-20 relative w-screen">
+        <div className="absolute top-1/4 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
+          <div className="w-[280px] sm:w-[450px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[450px] bg-[#6D05B8]/25 blur-3xl rounded-full"></div>
+          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        </div>
         <div className="flex flex-col lg:flex-row items-center gap-10 w-full">
           {/* Left column */}
           <div className="lg:w-4/5">
@@ -107,8 +111,15 @@ export default function Home() {
               <span className="text-sm font-normal text-white">Build with Kross</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}>Africa&apos;s First Smart Contract Blockchain Solution</h1>
-            <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">Kross Blockchain is Nigeria&aposs First Layer 1 Blockchain Network - Driving Innovation and Real-World Adoption Across The Continent.</p>
-            <a href="/explorer" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Krosscoin Explorer</a>
+            <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">Kross Blockchain is Nigeria&apos;s First Layer 1 Blockchain Network - Driving Innovation and Real-World Adoption Across The Continent.</p>
+            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200">
+              <a
+                href="/explorer"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200"
+              >
+                Krosscoin Explorer
+              </a>
+            </div>
           </div>
           {/* Right column */}
           <div className="lg:w-2/5 flex justify-center relative">
@@ -121,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="text-white relative overflow-hidden w-full">
+      <section className="text-white relative overflow-hidden w-full" style={{ backgroundImage: "url('/assets/Component.svg')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
         <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
           <div className="w-[550px] h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
           {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
@@ -134,12 +145,24 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-8 py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFD4] bg-[#11094280] mb-8 text-sm font-normal text-white" style={{ boxShadow: '0px 4px 12px 0px #00000040 inset' }}>
               Our Features
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 w-full md:w-1/2">An Open Chain That Powers Secure Decentralized Apps</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 w-full md:w-1/2" style={{ fontFamily: 'Lato, sans-serif' }}>An Open Chain That Powers Secure Decentralized Apps</h2>
             <div className="flex items-center gap-6 justify-center">
-              <a href="/builder" className="inline-flex px-8 py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">For Builders</a>
-              <a href="/trader" className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] hover:bg-gradient-to-r hover:from-[#605B8] hover:to-[#AA00B8]">
-                <span className="flex text-white items-center justify-center px-8 py-4 bg-[#0a0620] rounded-[12px] whitespace-nowrap text-md hover:bg-gradient-to-r from-[#6D05B8] to-[#FF00B8]">For Traders</span>
-              </a>
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200">
+                <a
+                  href="/builder"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200"
+                >
+                  For Builders
+                </a>
+              </div>
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="/trader"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  For Traders
+                </a>
+              </div>
             </div>
           </div>
           {/* Features Grid */}
