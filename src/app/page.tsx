@@ -102,10 +102,10 @@ export default function Home() {
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
       {/* Hero Section */}
       <section className="px-5 md:px-20 py-10 md:py-20 relative w-screen">
-        <div className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 z-0">
-          <div className="relative w-[280px] sm:w-[450px] md:w-[850px] h-[280px] sm:h-[450px] md:h-[650px] flex items-center justify-center">
+        <div className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 ">
+          <div className=" relative w-[280px] sm:w-[450px] md:w-[850px] h-[280px] sm:h-[450px] md:h-[650px] flex items-center justify-center">
             {/* Blurred background */}
-            <div className="absolute inset-0 bg-[#6D05B8]/25 blur-3xl rounded-full"></div>
+            <div className="absolute inset-0 bg-[#6D05B8]/25 blur-3xl rounded-full z-0"></div>
             {/* Sharp image */}
             <img
               alt="star"
@@ -116,24 +116,24 @@ export default function Home() {
         </div>
         <div className="flex flex-col lg:flex-row items-center gap-10 w-full ">
           {/* Left column */}
-          <div className="lg:w-4/5">
+          <div className="w-3/5  z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFD4] bg-[#11094280] mb-8" style={{ boxShadow: '0px 4px 12px 0px #00000040 inset' }}>
               <img alt="Krosscoin for Builders" width={16} height={16} src="/assets/icon/file-icons_buildkite.png" />
               <span className="text-sm font-normal text-white">Build with Kross</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6 z-10" style={{ fontFamily: 'lato, sans-serif' }}>Africa&apos;s First Smart Contract Blockchain Solution</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}>Africa&apos;s First Smart Contract Blockchain Solution</h1>
             <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">Kross Blockchain is Nigeria&apos;s First Layer 1 Blockchain Network - Driving Innovation and Real-World Adoption Across The Continent.</p>
-            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200">
+            <div className="z-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200">
               <a
-                href="/explorer"
+                href="/builder"
                 className="z-10 inline-flex px-8 py-4 rounded-[10px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200"
               >
-                Krosscoin Explorer
+                Build Now
               </a>
             </div>
           </div>
           {/* Right column */}
-          <div className="lg:w-2/5 flex justify-center relative">
+          <div className="w-2/5 flex justify-center relative">
             <div className="relative w-80 h-80 md:w-full md:h-full">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full -z-0"></div>
               <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative " src="/assets/image/landing/landing_1.svg" />
@@ -722,7 +722,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <p className="text-start text-white text-base px-4">
+            <p className="text-start text-white text-[20px] px-4 py-10">
+            <img alt="Mask Gruop" className="relative" src="/assets/image/landing/Mask_group.svg" />
+
             Explore All Kross Updates On Our{" "}
             <button
               onClick={handleMediumClick}
