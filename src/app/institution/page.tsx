@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
 
 const features = [
   {
@@ -27,7 +28,21 @@ const features = [
   },
 ];
 
+const testimonialImages = [
+  "/assets/image/institution/1.svg",
+  "/assets/image/institution/2.svg",
+  "/assets/image/institution/3.svg",
+];
+
 const InstitutionPage = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % testimonialImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white" style={{fontFamily: 'Lato, sans-serif'}}>
       {/* Hero Section */}
@@ -131,7 +146,12 @@ const InstitutionPage = () => {
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-[86px] text-center">Why Do Institutions Choose Kross Network?</h3>
         <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4 items-center mb-4 sm:mb-8 px-2 sm:px-4 mx-auto">
           <div className="flex justify-center">
-            <img src="/assets/image/institution/3.svg" alt="Institution Partner" className="w-auto h-full" />
+            {/* Rotating testimonial image */}
+            <img
+              src={testimonialImages[currentImage]}
+              alt="Institution Partner"
+              className="w-auto h-full"
+            />
           </div>
           <div className="flex flex-col items-end">
             <p className="text-base md:text-lg text-gray-300 mb-6 text-left max-w-xl">&quot;We&apos;re committed to bringing the global financial system onchain. Kross Network plays a key role in helping us accelerate the tokenization of real-world assets, turning them into secure, digital representations. This transformation is essential to building a more open and efficient financial ecosystem.&quot;
@@ -140,10 +160,12 @@ const InstitutionPage = () => {
           </div>
         </div>
         <div className="flex gap-2 justify-center mt-6">
-          <span className="w-3 h-3 rounded-full bg-[#A259FF] inline-block"></span>
-          <span className="w-3 h-3 rounded-full bg-[#29214A] inline-block"></span>
-          <span className="w-3 h-3 rounded-full bg-[#29214A] inline-block"></span>
-          <span className="w-3 h-3 rounded-full bg-[#29214A] inline-block"></span>
+          {testimonialImages.map((_, idx) => (
+            <span
+              key={idx}
+              className={`w-3 h-3 rounded-full inline-block transition-colors duration-300 ${currentImage === idx ? 'bg-[#A259FF]' : 'bg-[#29214A]'}`}
+            ></span>
+          ))}
         </div>
       </section>
 

@@ -212,11 +212,11 @@ export default function Page() {
               <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
                   {/* Left: Image */}
-                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
+                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
                     <img
                       alt="DeFi"
                       className="object-cover absolute inset-0 w-full h-full"
-                      src="/assets/image/fund/fund_process_3.svg"
+                      src="/assets/image/fund/fund_process_1.svg"
                     />
                   </div>
                   {/* Right: Content */}
@@ -232,7 +232,7 @@ export default function Page() {
               <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_1.svg" />
+                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_2.svg" />
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Present your Ideas</h3>
@@ -244,7 +244,7 @@ export default function Page() {
               <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_2.svg" />
+                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_3.svg" />
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Evaluation</h3>

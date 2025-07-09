@@ -71,7 +71,7 @@ export default function AboutPage() {
 
       {/* Gradient Contact Section */}
       <section className="w-full h-[300px] sm:h-[500px] md:h-[700px] flex flex-col items-center justify-center relative bg-gradient-to-br from-[#0a0a2f] via-[#1a0a3f] to-[#2a0a4f] py-8 sm:py-16 mt-6 sm:mt-10">
-      <div className="absolute bottom-0 left-0 flex gap-4">
+        <div className="absolute bottom-0 left-0 flex gap-4">
             <div className="w-[550px] h-[250px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
         </div>
         <div className="absolute top-0 right-0 flex gap-4">
@@ -83,14 +83,14 @@ export default function AboutPage() {
         </p>
         <h3 className="text-white text-[48px] sm:text-3xl font-bold mb-2 sm:mb-4 mt-12 sm:mt-32 text-center">Contact Our Team</h3>
        
-        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-                <a
-                  href="/contact"
-                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
-                >
-                  Contact Us
-                </a>
-              </div>
+          <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+            <a
+              href="/contact"
+              className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+            >
+              Contact Us
+            </a>
+          </div>
         
       </section>
     </div>

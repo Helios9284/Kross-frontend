@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa";
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { usePathname } from 'next/navigation';
 
 export default function NavBar() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
@@ -11,6 +12,11 @@ export default function NavBar() {
   const resourcesRef = useRef<HTMLDivElement>(null);
   const ecosystemRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  const pathname = usePathname();
+  const isBuilderPage = pathname === '/builder';
+  const isTraderPage = pathname === '/trader';
+  const isInstitutionPage = pathname === '/institution';
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -45,7 +51,7 @@ export default function NavBar() {
     <div className="w-full h-full bg-[#050026] shadow-custom navbar-blur-outline" >
       <div className="flex px-5 md:px-20 py-6 justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 z-50">
           <img
             alt="Logo Icon"
             width={30}
@@ -56,33 +62,40 @@ export default function NavBar() {
         </Link>
         {/* Main menu (desktop) */}
         <div className="hidden lg:flex items-center gap-3 justify-center font-sans">
-          <div className="half-gradient-border rounded-[12px] p-[2px] transition-all duration-200 bg-transparent z-10">
-            <button
-              type="button"
-              onClick={() => router.push("/builder")}
-              className="block text-white text-[16px] font-[500] leading-[24px] rounded-[5px] px-3 py-1 bg-[#050026] transition-all duration-200 relative z-10"
-            >
-              For Builders
-            </button>
+          <div className={`group inline-block rounded-full p-[2px] bg-transparent transition-all duration-200 relative${isBuilderPage ? ' border-visible' : ''}`}>
+              <div className="p-[2px] transition-all duration-200 bottom-quarter-border-gradient">
+              <button
+                type="button"
+                onClick={() => router.push('/builder')}
+                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10"
+              >
+                For Builders
+              </button>
+            </div>
           </div>
-          <div className="half-gradient-border rounded-[12px] p-[2px] transition-all duration-200 bg-transparent z-10">
-            <button
-              type="button"
-              onClick={() => router.push("/trader")}
-              className="block text-white text-[16px] font-[500] leading-[24px] rounded-[5px] px-3 py-1 bg-[#050026] transition-all duration-200 relative z-10"
-            >
-              For Traders
-            </button>
+          <div className={`group inline-block rounded-full p-[2px] bg-transparent transition-all duration-200 relative${isTraderPage ? ' border-visible' : ''}`}>
+              <div className="p-[2px] transition-all duration-200 bottom-quarter-border-gradient">
+              <button
+                type="button"
+                onClick={() => router.push('/trader')}
+                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10"
+              >
+                For Traders
+              </button>
+            </div>
           </div>
-          <div className="half-gradient-border rounded-[12px] p-[2px] transition-all duration-200 bg-transparent z-10">
-            <button
-              type="button"
-              onClick={() => router.push("/institution")}
-              className="block text-white text-[16px] font-[500] leading-[24px] rounded-[5px] px-3 py-1 bg-[#050026] transition-all duration-200 relative z-10"
-            >
-              For Institution
-            </button>
+          <div className={`group inline-block rounded-full p-[2px] bg-transparent transition-all duration-200 relative${isInstitutionPage ? ' border-visible' : ''}`}>
+              <div className="p-[2px] transition-all duration-200 bottom-quarter-border-gradient">
+              <button
+                type="button"
+                onClick={() => router.push('/institution')}
+                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10"
+              >
+                For Institution
+              </button>
+            </div>
           </div>
+
         </div>
         {/* Dropdowns and button (desktop) */}
         <div className="hidden lg:flex items-center gap-6 justify-center font-sans">
@@ -194,9 +207,6 @@ export default function NavBar() {
             <Link href="/partner" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>Partners</Link>
             <Link href="/coin" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>$OM Coin</Link>
           </div>
-          <button className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] font-sans mt-4">
-            <span className="flex text-white items-center justify-center px-6 py-4 bg-[#0a0620] rounded-[12px] whitespace-nowrap text-md">Krosscoin Explorer</span>
-          </button>
         </div>
       )}
     </div>

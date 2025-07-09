@@ -126,16 +126,16 @@ const TraderPage = () => {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "bottom"
         }}>
+          
         <div className="w-full transition-all duration-1000 ease-in-out">
           {/* Card 1: Stake On Kross Hub */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="h-[120vh] flex items-start justify-center w-full bg-[#050026] relative overflow-hidden">
-              <div className="absolute w-[1262px] h-[2322px] top-[86.3px] left-[62px] -rotate-180 bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
-              <div className="absolute w-[1416px] h-[2334px] left-[806.78px] -rotate-180 bg-[#6D05B8CC]/50 blur-[560px] rounded-full"></div>
-              <div className="absolute w-[1218.9px] h-[1229px] top-[-0.72px] left-[1199.9px] -rotate-180 bg-[#FF00B840]/50 blur-[560px] rounded-full"></div>
-              <div className="absolute w-[1254.9px] h-[1429px] top-[-60.76px] left-[1440px] -rotate-180 bg-[#6D05B866]/50 blur-[560px] rounded-full"></div>
+            <section className="h-[120vh] flex items-start justify-center w-full bg-[#050026] relative overflow-hidden" style={{ backgroundImage: "url('/assets/image/trader/Component.svg')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
+              <div className="absolute top-1/10 -right-1/10 flex gap-4">
+                <div className="w-[550px] h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+              </div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-20 mb-20 relative z-10">
+                <div className="text-center mt-40 mb-20 relative z-10">
                   <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto"
@@ -158,12 +158,15 @@ const TraderPage = () => {
           </div>
           {/* Card 2: Swap With Ease */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
               <div className="absolute w-[150px] h-[100px] -left-20 bottom-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[200px] left-0 -bottom-50 bg-[#EC34E0CC]/30 blur-3xl  rounded-full"></div>
               <div className="absolute w-[150px] h-[100px] left-[100px] -bottom-50 bg-[#EC34E0CC]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[100px] right-[50px] -bottom-40 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
+              <div className="text-center mt-20 mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
@@ -183,10 +186,13 @@ const TraderPage = () => {
           </div>
           {/* Card 3: Boost Your Earnings with Liquidity Pools */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
               <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
               <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
+              <div className="text-center mt-20 mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
@@ -205,10 +211,13 @@ const TraderPage = () => {
           </div>
           {/* Card 4: Effortless Yield with Kross Vaults */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
               <div className="absolute w-[250px] h-[250px] -left-50 -top-50 bg-[#FF00B840]/50 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[250px] -right-50 -bottom-50 bg-[#FF00B840]/60 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
+              <div className="text-center mt-20 mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
@@ -227,13 +236,16 @@ const TraderPage = () => {
           </div>
           {/* Card 5: Transparent Trading with Central Orderbook */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
               <div className="absolute w-[150px] h-[150px] -right-20 top-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[250px] -left-50 -bottom-50 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] -left-10 -bottom-50 bg-[#EC34E0CC]/20 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] right-50 -bottom-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] -top-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
+              <div className="text-center mt-20 mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">

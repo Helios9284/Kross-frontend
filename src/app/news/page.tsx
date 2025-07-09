@@ -109,20 +109,24 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row w-full gap-2 sm:gap-0" style={{ fontFamily: 'Lato, sans-serif' }}>
               <div className="flex flex-row items-center gap-1 sm:gap-3 w-full">
                 <span className="text-lg sm:text-[32px] whitespace-nowrap">Help Me Learn About</span>
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full xs:w-auto h-full px-3 bg-transparent border text-base sm:text-[32px] border-purple-500 text-white focus:outline-none rounded-lg font-medium min-w-[120px] sm:min-w-[180px]"
-                  style={{fontFamily: 'Lato, sans-serif'}}
+                <div
+                  className="p-[2px] rounded-lg bg-gradient-to-l from-[#6D05B8] to-[#FF00B8] w-full xs:w-auto min-w-[120px] sm:min-w-[180px]"
                 >
-                  <option value="everything" className="bg-gray-800 text-white">everything</option>
-                  <option value="tokenization" className="bg-gray-800 text-white">Tokenization</option>
-                  <option value="blockchain" className="bg-gray-800 text-white">Blockchain</option>
-                  <option value="regulations" className="bg-gray-800 text-white">Regulations</option>
-                </select>
+                  <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="w-full h-full px-3 bg-[#050026] text-base sm:text-[32px] text-white focus:outline-none rounded-lg font-medium border-none"
+                    style={{ fontFamily: 'Lato, sans-serif' }}
+                  >
+                    <option value="everything" className="bg-gray-800 text-white">everything</option>
+                    <option value="tokenization" className="bg-gray-800 text-white">Tokenization</option>
+                    <option value="blockchain" className="bg-gray-800 text-white">Blockchain</option>
+                    <option value="regulations" className="bg-gray-800 text-white">Regulations</option>
+                  </select>
+                </div>
               </div>
               <div className="flex items-center justify-end w-full mt-2 sm:mt-0">
-                <div className="flex items-center w-full max-w-xs sm:max-w-md bg-transparent border border-gray-600 text-white rounded px-2 py-1 relative" style={{fontFamily: 'Lato, sans-serif'}}>
+                <div className="flex items-center w-full max-w-xs sm:max-w-md bg-transparent border border-gray-600 text-white rounded-lg px-2 py-1 relative" style={{fontFamily: 'Lato, sans-serif'}}>
                   <svg
                     className="w-5 h-5 text-gray-400 mr-2 flex-shrink-0"
                     fill="none"

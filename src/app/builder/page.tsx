@@ -136,11 +136,20 @@ export default function BuilderPage() {
             </div>
           </div>
           <div className="px-2 sm:px-5 relative w-full relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
-          <div className="w-[280px] sm:w-[350px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[4  50px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
-          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
-        </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-3 sm:gap-5">
+
+          <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 z-1">
+            <div className="relative w-[280px] sm:w-[350px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[450px]  flex items-center justify-center">
+              {/* Blurred background */}
+              <div className="absolute inset-0 bg-[#EC34E0]/22 blur-3xl rounded-full z-0 pulse-move"></div>
+              {/* Sharp image */}
+              <img
+                alt="star"
+                className="relative w-full h-full z-10"
+                src="/assets/star.svg"
+              />
+            </div>
+          </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-3 sm:gap-5 ">
               {/* Left column features */}
               <div className="space-y-10">
                 <div className="text-center md:text-right text-white">
@@ -157,7 +166,7 @@ export default function BuilderPage() {
                 </div>
               </div>
               {/* Center icons grid */}
-              <div className="flex flex-col items-center justify-between w-full gap-2 sm:gap-4">
+              <div className="flex flex-col items-center justify-between w-full gap-2 sm:gap-4 z-10">
                 <div className="flex gap-2 sm:gap-3">
                   <img alt="Feature 1" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_1.svg" />
                   <img alt="Feature 2" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_2.svg" />
@@ -361,7 +370,7 @@ export default function BuilderPage() {
               {/* Right: Image */}
               <div className="flex justify-center md:pr-12">
                 <div className="w-full h-[335px] rounded-2xl relative">
-                  <img alt="krosshub.svg" className="object-cover rounded-2xl absolute inset-0 w-full h-full" src="/assets/image/builder/builder.svg" />
+                  <img alt="krosshub.svg" className="object-cover rounded-2xl absolute inset-0 w-full h-full" src="/assets/image/builder/hub.svg" />
                 </div>
               </div>
             </div>
@@ -378,10 +387,12 @@ export default function BuilderPage() {
       </section>
 
       {/* Networking Layer */}
-      <section className="min-h-[80vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
-        <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
-        <div className="flex w-full justify-start">
+      <section className="min-h-[80vh] md:flex-row items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
+      <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
+      <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
+        
+
+        <div className=" w-full justify-start">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 py-[50px] min-h-[360px] relative max-w-[520px] z-10">
             <h3 className="text-[32px] font-bold mb-8">Networking Layer</h3>
             <p className="text-[#CACACA] mb-10">Kross Chain networking layer handles peer to peer communication. Nodes communicate with each other to share blockchain data (blocks, transactions). This enhances data synchronization, node discovery, and block transaction propagation.</p>
@@ -392,10 +403,26 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="group">
-          <div className="absolute top-0 right-1/2 translate-x-1/2 z-0 group-hover:translate-x-36 xl:group-hover:translate-x-68 2xl:group-hover:translate-x-100 transition-all duration-1000 ease-in-out">
-            <img alt="landing1" width={540} height={450} className="w-full h-[450px] z-0 relative" src="/assets/image/builder/intro/1.svg" />
+        <div className=" w-full h-full group">
+          <div className="absolute top-0 right-1/3  group-hover:translate-x-12 xl:group-hover:translate-x-24 2xl:group-hover:translate-x-36 transition-all duration-1000 ease-in-out">
+            <img alt="landing1" className="w-full h-[270px] z-0 relative" src="/assets/image/builder/intro/1.svg" />
           </div>
+          {/* Second image (only visible on hover) */}
+          <div className="absolute right-5/29  top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
+            <img
+              alt="landing1"
+              className="w-full h-[270px] z-0 relative"
+              src="/assets/image/builder/intro/1.svg"
+            />
+          </div>
+          <div className="absolute right-21/69 top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
+            <img
+              alt="landing1"
+              className="w-full h-[270px] z-0 relative"
+              src="/assets/image/builder/intro/1.svg"
+            />
+          </div>
+         
         </div>
       </section>
 

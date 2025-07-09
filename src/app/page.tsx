@@ -94,28 +94,39 @@ export default function Home() {
     setActiveIndex(idx);
     scrollToCard(idx);
   };
-
+  const handleMediumClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://medium.com/@kross", "_blank", "noopener,noreferrer")
+  }
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
       {/* Hero Section */}
       <section className="px-5 md:px-20 py-10 md:py-20 relative w-screen">
-        <div className="absolute top-1/4 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
-          <div className="w-[280px] sm:w-[450px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[450px] bg-[#6D05B8]/25 blur-3xl rounded-full"></div>
-          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+        <div className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 z-0">
+          <div className="relative w-[280px] sm:w-[450px] md:w-[850px] h-[280px] sm:h-[450px] md:h-[650px] flex items-center justify-center">
+            {/* Blurred background */}
+            <div className="absolute inset-0 bg-[#6D05B8]/25 blur-3xl rounded-full"></div>
+            {/* Sharp image */}
+            <img
+              alt="star"
+              className="relative w-full h-full z-4"
+              src="/assets/star.svg"
+            />
+          </div>
         </div>
-        <div className="flex flex-col lg:flex-row items-center gap-10 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-10 w-full ">
           {/* Left column */}
           <div className="lg:w-4/5">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFD4] bg-[#11094280] mb-8" style={{ boxShadow: '0px 4px 12px 0px #00000040 inset' }}>
               <img alt="Krosscoin for Builders" width={16} height={16} src="/assets/icon/file-icons_buildkite.png" />
               <span className="text-sm font-normal text-white">Build with Kross</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}>Africa&apos;s First Smart Contract Blockchain Solution</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6 z-10" style={{ fontFamily: 'lato, sans-serif' }}>Africa&apos;s First Smart Contract Blockchain Solution</h1>
             <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">Kross Blockchain is Nigeria&apos;s First Layer 1 Blockchain Network - Driving Innovation and Real-World Adoption Across The Continent.</p>
             <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200">
               <a
                 href="/explorer"
-                className="inline-flex px-8 py-4 rounded-[10px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200"
+                className="z-10 inline-flex px-8 py-4 rounded-[10px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200"
               >
                 Krosscoin Explorer
               </a>
@@ -134,8 +145,36 @@ export default function Home() {
       {/* Features Section */}
       <section className="text-white relative overflow-hidden w-full" style={{ backgroundImage: "url('/assets/Component.svg')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
         <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
-          <div className="w-[550px] h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
-          {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
+          <div className="relative w-[280px] sm:w-[450px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[450px]  flex items-center justify-center">
+            {/* Blurred background */}
+            <div className="absolute inset-0 bg-[#EC34E0]/22 blur-3xl rounded-full z-0 pulse-move"></div>
+            {/* Sharp image */}
+            <img
+              alt="star"
+              className="relative w-full h-full z-10"
+              src="/assets/star.svg"
+            />
+          </div>
+        </div>
+        <div className="absolute top-0 -left-1/5 flex gap-2 sm:gap-4">
+          <div className="relative w-[280px] sm:w-[450px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[450px] flex items-center justify-center">
+            {/* Sharp image */}
+            <img
+              alt="star"
+              className="relative w-full h-full z-10"
+              src="/assets/star.svg"
+            />
+          </div>
+        </div>
+        <div className="absolute bottom-0 right-0 flex gap-2 sm:gap-4">
+          <div className="relative w-[280px] sm:w-[450px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[450px] flex items-center justify-center">
+            {/* Sharp image */}
+            <img
+              alt="star"
+              className="relative w-full h-full z-10"
+              src="/assets/star.svg"
+            />
+          </div>
         </div>
         {/* Background Glow */}
         <div className="absolute bottom-0 right-1/2 translate-x-1/3 w-[450px] h-[600px] rounded-full blur-[100px] md:blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
@@ -219,9 +258,9 @@ export default function Home() {
       </section>
 
       {/* Possibilities Section */}
-      <section className="text-white overflow-hidden relative">
-      <div className="absolute top-0 right-0  flex gap-2 sm:gap-4 z-1">
-          <div className="w-[380px] sm:w-[450px] md:w-[550px] h-[380px] sm:h-[450px] md:h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+      <section className="text-white overflow-hidden relative pt-10">
+      <div className="absolute top-0 left-0  flex gap-2 sm:gap-4 z-1">
+          <div className="w-[380px] sm:w-[450px] md:w-[550px] h-[380px] sm:h-[450px] md:h-[550px] bg-[#EC34E0]/29 blur-3xl rounded-full"></div>
           {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
         </div>
         {/* Background Glows */}
@@ -458,12 +497,15 @@ export default function Home() {
           </div>
           {/* Card 2: Swap With Ease */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
+            <section className="h-[120vh] w-screen flex items-start justify-center w-full bg-transparent relative overflow-hidden">
               <div className="absolute w-[150px] h-[100px] -left-20 bottom-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[200px] left-0 -bottom-50 bg-[#EC34E0CC]/30 blur-3xl  rounded-full"></div>
               <div className="absolute w-[150px] h-[100px] left-[100px] -bottom-50 bg-[#EC34E0CC]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[100px] right-[50px] -bottom-40 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
+                <div className="text-center mt-20 mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
@@ -489,10 +531,15 @@ export default function Home() {
           </div>
           {/* Card 3: Boost Your Earnings with Liquidity Pools */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
-              <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
-              <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
+              <div className="absolute w-[150px] h-[100px] -left-20 bottom-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
+              <div className="absolute w-[250px] h-[200px] left-0 -bottom-50 bg-[#EC34E0CC]/30 blur-3xl  rounded-full"></div>
+              <div className="absolute w-[150px] h-[100px] left-[100px] -bottom-50 bg-[#EC34E0CC]/30 blur-3xl rounded-full"></div>
+              <div className="absolute w-[150px] h-[100px] right-[50px] -bottom-40 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
+                <div className="text-center mt-20 mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
@@ -518,10 +565,13 @@ export default function Home() {
           </div>
           {/* Card 4: Effortless Yield with Kross Vaults */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
               <div className="absolute w-[250px] h-[250px] -left-50 -top-50 bg-[#FF00B840]/50 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[250px] -right-50 -bottom-50 bg-[#FF00B840]/60 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
+                <div className="text-center mt-20 mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
@@ -547,13 +597,16 @@ export default function Home() {
           </div>
           {/* Card 5: Transparent Trading with Central Orderbook */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen md:h-[80vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
               <div className="absolute w-[150px] h-[150px] -right-20 top-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[250px] -left-50 -bottom-50 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] -left-10 -bottom-50 bg-[#EC34E0CC]/20 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] right-50 -bottom-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] -top-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
+                <div className="text-center mt-20 mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
@@ -582,7 +635,7 @@ export default function Home() {
 
       {/* News Section */}
       <section className="py-20 bg-gradient-to-br from-[#0a0a2f] via-[#1a0a3f] to-[#2a0a4f] text-white relative overflow-hidden">
-        <div className="container mx-auto px-5 md:px-20 relative">
+        <div className=" mx-auto px-5 md:px-20 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold">Kross Network In The News</h2>
           </div>
@@ -669,10 +722,18 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <p className="text-start text-white text-base px-4">
+            Explore All Kross Updates On Our{" "}
+            <button
+              onClick={handleMediumClick}
+              className="text-pink-500 hover:text-pink-400 font-medium transition-colors duration-200 cursor-pointer underline"
+            >
+              Medium Page
+            </button>
+          </p>
           </div>
         </div>
       </section>
-
     </div>
   );
 }

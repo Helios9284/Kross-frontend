@@ -103,12 +103,12 @@ export default function Page() {
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-4 mb-6 sm:mb-12 text-center text-lg sm:text-[32px]">
           <span className="text-white font-normal">I am Interested to learn about</span>
 
-          <div className="relative">
+          <div className="relative p-[2px] rounded-lg bg-gradient-to-l from-[#6D05B8] to-[#FF00B8] min-w-[130px] w-fit">
             <select
               value={learnAbout}
               onChange={(e) => setLearnAbout(e.target.value)}
-              className="appearance-none bg-transparent border border-purple-400/60 rounded-lg px-4 py-2 pr-10 text-white focus:border-purple-400 focus:outline-none min-w-[130px]"
-              style={{ borderColor: "#a855f7" }}
+              className="appearance-none bg-[#050026] rounded-lg px-4 py-2 pr-10 text-white focus:outline-none min-w-[130px] border-none"
+              style={{ fontFamily: 'Lato, sans-serif' }}
             >
               <option value="everything" className="bg-gray-800 text-white">
                 everything
@@ -135,11 +135,11 @@ export default function Page() {
 
           <span className="text-white font-normal">that relates to</span>
 
-          <div className="relative ">
+          <div className="relative p-[2px] rounded-lg bg-gradient-to-l from-[#6D05B8] to-[#FF00B8] min-w-[130px] w-fit ">
             <select
               value={relatesTo}
               onChange={(e) => setRelatesTo(e.target.value)}
-              className="text-[32px] appearance-none bg-transparent border border-purple-400/60 rounded-lg px-4 py-2 pr-10 text-white focus:border-purple-400 focus:outline-none min-w-[130px] text-base"
+              className="appearance-none bg-[#050026] rounded-lg px-4 py-2 pr-10 text-white focus:outline-none min-w-[130px] border-none"
               style={{ borderColor: "#a855f7" }}
             >
               <option value="everyone" className="bg-gray-800 text-white">
