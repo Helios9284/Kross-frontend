@@ -5,7 +5,7 @@ export default function AboutPage() {
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans ">
       {/* Centered About Us Heading */}
       {/* Header */}
-      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
+      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/about/image.png')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
         <div className="container mx-auto px-2 sm:px-6 text-center">
           <h1 className="text-3xl sm:text-5xl font-bold text-white mb-2 sm:mb-3" style={{ fontFamily: 'lato, sans-serif' }}>About Us</h1>
         </div>
@@ -21,7 +21,7 @@ export default function AboutPage() {
           </div>
           {/* Right column: Image Placeholder */}
           <div className="place-content-center">
-            <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full" src="/assets/image/about/about.svg" />
+            <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full" src="/assets/image/about/about.png" />
           </div>
         </div>
       </section>
@@ -42,8 +42,8 @@ export default function AboutPage() {
           {/* Right column: single 2x2 grid */}
           <div className="grid grid-cols-2 grid-rows-2 gap-4 md:gap-4 h-full place-content-center">
             <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full" src="/assets/image/about/1.svg" />
-            <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full mt-10" src="/assets/image/about/2.svg" />
-            <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full -mt-10" src="/assets/image/about/3.svg" />
+            <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full mt-[20px]" src="/assets/image/about/2.svg" />
+            <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full -mt-[20px]" src="/assets/image/about/3.svg" />
             <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="h-full " src="/assets/image/about/4.svg" />
           </div>
         </div>

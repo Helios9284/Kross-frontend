@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 export default function Page() {
   const centralizedExchanges = [
     "Binance",
@@ -26,19 +26,24 @@ export default function Page() {
 
   const decentralizedExchanges = ["Uniswap", "Hyperliquid", "Osmosis", "DYDX"]
   const exchangeImages_1 = {
-    "Uniswap": "/assets/icon/coin/Uniswap.svg",
-    "Hyperliquid": "/assets/icon/coin/Hyper.svg",
-    "Osmosis": "/assets/icon/coin/Osmosis.svg",
-    "DYDX": "/assets/icon/coin/DYDX.svg"
+    "Uniswap": "/assets/icon/coin/uniswap.svg",
+    "Hyperliquid": "/assets/icon/coin/hyper.svg",
+    "Osmosis": "/assets/icon/coin/osmosis.svg",
+    "DYDX": "/assets/icon/coin/dydx.svg"
   }
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#110942] text-white font-sans">
       {/* Hero Section */}
-      <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full">
-        <div className="container px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
+      <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full  min-h-[600px]">
+        <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 w-full">
             {/* Left column */}
-            <div className="w-full lg:w-2/3">
+            <motion.div
+              className="w-full w-2/3"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div
                 className="inline-flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFDD] bg-[#11094280] mb-4 sm:mb-8"
                 style={{ boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 12px 0px inset" }}
@@ -63,25 +68,26 @@ export default function Page() {
                  Buy $KSS Coin
                 </a>
               </div>
-            </div>
+            </motion.div>
             {/* Right column */}
-            <div className="w-full lg:w-1/3 flex justify-center relative mt-4 lg:mt-0">
-              <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl"></div>
-              <div className="relative w-40 h-40 sm:w-80 sm:h-80 md:w-96 md:h-96">
-                <img
-                  alt="Blockchain 3D Cube Visualization"
-                  width={500}
-                  height={500}
-                  src="/assets/image/coin/coin_1.svg"
-                />
+            <motion.div
+              className="w-1/3 flex justify-center relative"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="relative w-80 h-80 md:w-full md:h-full">
+                <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full -z-0"></div>
+                <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative " src="/assets/image/coin/coin_1.png" />
               </div>
-            </div>
+            </motion.div>
+              
           </div>
         </div>
       </section>
 
       {/* New section with purple blurred background glow */}
-      <section className="text-white relative overflow-hidden w-full" style={{ backgroundImage: "url('/assets/image/coin/Component.svg')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
+      <section className="text-white relative overflow-hidden w-full" style={{ backgroundImage: "url('/assets/image/coin/Component.png')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
         <div className="absolute top-3/5 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
           <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#EC34E0]/25 blur-3xl rounded-full"></div>
         </div>
@@ -249,7 +255,7 @@ export default function Page() {
           alt="Blockchain 3D Cube Visualization"
           width={500}
           height={500}
-          src="/assets/image/coin/coin_2.svg"
+          src="/assets/image/coin/coin_2.png"
         />
       </section>
 

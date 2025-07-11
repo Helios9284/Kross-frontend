@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-
+import { motion } from "framer-motion";
 export default function Home() {
   // Drag-to-scroll logic for possibilities section
   const cardRowRef = useRef<HTMLDivElement>(null);
@@ -101,7 +101,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
       {/* Hero Section */}
-      <section className="px-5 md:px-20 py-10 md:py-20 relative w-screen">
+      <section className="px-5 md:px-20 py-10 md:py-20 relative w-full min-h-[600px]">
         <div className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 ">
           <div className=" relative w-[280px] sm:w-[450px] md:w-[850px] h-[280px] sm:h-[450px] md:h-[650px] flex items-center justify-center">
             {/* Blurred background */}
@@ -110,13 +110,18 @@ export default function Home() {
             <img
               alt="star"
               className="relative w-full h-full z-4"
-              src="/assets/star.svg"
+              src="/assets/star.png"
             />
           </div>
         </div>
         <div className="flex flex-col lg:flex-row items-center gap-10 w-full ">
           {/* Left column */}
-          <div className="w-3/5  z-10">
+          <motion.div
+            className="w-3/5  z-10"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFD4] bg-[#11094280] mb-8" style={{ boxShadow: '0px 4px 12px 0px #00000040 inset' }}>
               <img alt="Krosscoin for Builders" width={16} height={16} src="/assets/icon/file-icons_buildkite.png" />
               <span className="text-sm font-normal text-white">Build with Kross</span>
@@ -131,19 +136,24 @@ export default function Home() {
                 Build Now
               </a>
             </div>
-          </div>
+          </motion.div>
           {/* Right column */}
-          <div className="w-2/5 flex justify-center relative">
+          <motion.div
+            className="w-2/5 flex justify-center relative"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="relative w-80 h-80 md:w-full md:h-full">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full -z-0"></div>
-              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative " src="/assets/image/landing/landing_1.svg" />
+              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative " src="/assets/image/landing/landing_1.png" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="text-white relative overflow-hidden w-full" style={{ backgroundImage: "url('/assets/Component.svg')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
+      <section className="text-white relative overflow-hidden w-full" style={{ backgroundImage: "url('/assets/Component.png')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
         <div className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4">
           <div className="relative w-[280px] sm:w-[450px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[450px]  flex items-center justify-center">
             {/* Blurred background */}
@@ -152,7 +162,7 @@ export default function Home() {
             <img
               alt="star"
               className="relative w-full h-full z-10"
-              src="/assets/star.svg"
+              src="/assets/star.png"
             />
           </div>
         </div>
@@ -172,7 +182,7 @@ export default function Home() {
             <img
               alt="star"
               className="relative w-full h-full z-10"
-              src="/assets/star.svg"
+              src="/assets/star.png"
             />
           </div>
         </div>
@@ -225,16 +235,16 @@ export default function Home() {
               {/* Center icons grid */}
               <div className="flex flex-col items-center justify-between w-full">
                 <div className="flex gap-2">
-                  <img alt="Feature 1" width={150} height={150} src="/assets/image/builder/builder_sec2_1.svg" />
-                  <img alt="Feature 2" width={150} height={150} src="/assets/image/builder/builder_sec2_2.svg" />
+                  <img alt="Feature 1" width={150} height={150} src="/assets/image/builder/builder_sec2_1.png" />
+                  <img alt="Feature 2" width={150} height={150} src="/assets/image/builder/builder_sec2_2.png" />
                 </div>
                 <div className="flex w-full -mt-1 gap-x-24 justify-center">
-                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_3.svg" />
-                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_4.svg" />
+                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_3.png" />
+                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_4.png" />
                 </div>
                 <div className="flex gap-2 -mt-1">
-                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_1.svg" />
-                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_2.svg" />
+                  <img alt="Feature 3" width={150} height={150} src="/assets/image/builder/builder_sec2_1.png" />
+                  <img alt="Feature 4" width={150} height={150} src="/assets/image/builder/builder_sec2_2.png" />
                 </div>
               </div>
               {/* Right column features */}
@@ -463,10 +473,9 @@ export default function Home() {
         <div className="w-full transition-all duration-1000 ease-in-out">
           {/* Card 1: Stake On Kross Hub */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="h-[120vh] flex items-start justify-center w-full bg-[#0a0620] relative overflow-hidden">
+            <section className="h-[120vh] flex items-start justify-center w-full bg-[#050026] relative overflow-hidden">
               <div className="absolute w-[1262px] h-[2322px] top-[86.3px] left-[62px] -rotate-180 bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
-              <div className="absolute w-[1416px] h-[2334px] left-[806.78px] -rotate-180 bg-[#6D05B8CC]/50 blur-[560px] rounded-full"></div>
-              <div className="absolute w-[1218.9px] h-[1229px] top-[-0.72px] left-[1199.9px] -rotate-180 bg-[#FF00B840]/50 blur-[560px] rounded-full"></div>
+              <div className="absolute w-[1416px] h-[534px] left-[806.78px] -rotate-180 bg-[#6D05B8CC]/50 blur-[560px] rounded-full"></div>
               <div className="absolute w-[1254.9px] h-[1429px] top-[-60.76px] left-[1440px] -rotate-180 bg-[#6D05B866]/50 blur-[560px] rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
                 <div className="text-center mt-20 mb-20 relative z-10">
@@ -483,7 +492,7 @@ export default function Home() {
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="#"
-                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent  text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
                             Start Staking
                           </a>
@@ -497,14 +506,13 @@ export default function Home() {
           </div>
           {/* Card 2: Swap With Ease */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="h-[120vh] w-screen flex items-start justify-center w-full bg-transparent relative overflow-hidden">
-              <div className="absolute w-[150px] h-[100px] -left-20 bottom-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
-              <div className="absolute w-[250px] h-[200px] left-0 -bottom-50 bg-[#EC34E0CC]/30 blur-3xl  rounded-full"></div>
-              <div className="absolute w-[150px] h-[100px] left-[100px] -bottom-50 bg-[#EC34E0CC]/30 blur-3xl rounded-full"></div>
-              <div className="absolute w-[150px] h-[100px] right-[50px] -bottom-40 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
+            <section className="h-[120vh] w-screen flex items-start justify-center w-full bg-[#050026] relative overflow-hidden">
+              <div className="absolute w-[662px] h-[422px] bottom-[86.3px] left-[62px] -rotate-180 bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
+              <div className="absolute w-[1416px] h-[534px] left-[806.78px] -rotate-180 bg-[#FF00B866]/20 blur-3xl  rounded-full"></div>
+              <div className="absolute w-[1254.9px] h-[1429px] top-[-60.76px] left-[1440px] -rotate-180 bg-[#6D05B866]/50 blur-[560px] rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-20 mb-20 relative z-10 invisible">
-                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                <div className="min-h-15vh text-center mt-20 mb-20 relative z-10 invisible">
+                  {/* <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2> */}
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
@@ -517,7 +525,7 @@ export default function Home() {
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="#"
-                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
                             Add Liquidity
                           </a>
@@ -531,14 +539,12 @@ export default function Home() {
           </div>
           {/* Card 3: Boost Your Earnings with Liquidity Pools */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
-              <div className="absolute w-[150px] h-[100px] -left-20 bottom-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
-              <div className="absolute w-[250px] h-[200px] left-0 -bottom-50 bg-[#EC34E0CC]/30 blur-3xl  rounded-full"></div>
-              <div className="absolute w-[150px] h-[100px] left-[100px] -bottom-50 bg-[#EC34E0CC]/30 blur-3xl rounded-full"></div>
-              <div className="absolute w-[150px] h-[100px] right-[50px] -bottom-40 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-[#050026] relative overflow-hidden">
+               <div className="absolute w-full h-[1222px] top-0 left-0 -rotate-180 bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
+              <div className="absolute w-[1416px] h-[534px] left-[806.78px] -rotate-180 bg-[#FF00B866]/20 blur-3xl  rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-20 mb-20 relative z-10 invisible">
-                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                <div className="min-h-15vh text-center mt-20 mb-20 relative z-10 invisible">
+                  {/* <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2> */}
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
@@ -551,7 +557,7 @@ export default function Home() {
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="#"
-                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
                             Access Vault Now
                           </a>
@@ -565,12 +571,13 @@ export default function Home() {
           </div>
           {/* Card 4: Effortless Yield with Kross Vaults */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
-              <div className="absolute w-[250px] h-[250px] -left-50 -top-50 bg-[#FF00B840]/50 blur-3xl rounded-full"></div>
-              <div className="absolute w-[250px] h-[250px] -right-50 -bottom-50 bg-[#FF00B840]/60 blur-3xl rounded-full"></div>
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full  bg-[#050026] relative overflow-hidden">
+              <div className="absolute w-[1062px] h-[422px] bottom-[86.3px] right-[62px] -rotate-180 bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
+              <div className="absolute w-[1416px] h-[534px] right-[806.78px] -rotate-180 bg-[#FF00B866]/30 blur-3xl  rounded-full"></div>
+              <div className="absolute w-[1254.9px] h-[1429px] top-[-60.76px] right-[1440px] -rotate-180 bg-[#6D05B866]/50 blur-[560px] rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-20 mb-20 relative z-10 invisible">
-                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                <div className="min-h-15vh text-center mt-20 mb-20 relative z-10 invisible">
+                  {/* <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2> */}
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
@@ -583,7 +590,7 @@ export default function Home() {
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="#"
-                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
                             Swap Now
                           </a>
@@ -597,16 +604,12 @@ export default function Home() {
           </div>
           {/* Card 5: Transparent Trading with Central Orderbook */}
           <div className="w-full flex justify-center sticky top-0">
-            <section className="w-screen h-[120vh] flex items-start justify-center w-full bg-transparent relative overflow-hidden">
-              <div className="absolute w-[150px] h-[150px] -right-20 top-10 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
-              <div className="absolute w-[250px] h-[250px] -left-50 -bottom-50 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
-              <div className="absolute w-[150px] h-[150px] -left-10 -bottom-50 bg-[#EC34E0CC]/20 blur-3xl rounded-full"></div>
-              <div className="absolute w-[150px] h-[150px] right-50 -bottom-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
-              <div className="absolute w-[150px] h-[150px] -top-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
+            <section className="w-screen h-[120vh] flex items-start justify-center w-full  bg-[#050026] relative overflow-hidden">
+            <div className="absolute w-[1262px] h-[2322px] top-[486.3px] -left-1/9 -rotate-180 bg-[#6D05B8]/90 blur-[560px] rounded-full"></div>
+              <div className="absolute w-[1416px] h-[534px] left-[806.78px] -rotate-180 bg-[#6D05B8CC]/90 blur-[560px] rounded-full"></div>
+              <div className="absolute w-[1416px] h-[534px] bottom-0 left-[806.78px] -rotate-180 bg-[#6D05B8CC]/90 blur-[560px] rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-20 mb-20 relative z-10 invisible">
-                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
-                </div>
+              <div className="min-h-15vh text-center mt-20 mb-20 relative z-10 invisible"></div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
@@ -618,7 +621,7 @@ export default function Home() {
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="#"
-                            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
                             Start Trading
                           </a>

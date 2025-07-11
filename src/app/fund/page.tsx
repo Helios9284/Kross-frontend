@@ -1,6 +1,6 @@
 "use client"
-import React from 'react';
-import { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 export default function Page() {
   const cardRowRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -8,6 +8,7 @@ export default function Page() {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const cardCount = 3;
+  const [imgVisible, setImgVisible] = useState(false);
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     setStartX(e.pageX - (cardRowRef.current?.offsetLeft || 0));
@@ -60,6 +61,10 @@ export default function Page() {
       cardRowRef.current.scrollLeft = scrollLeft - walk;
     }
   };
+
+  useEffect(() => {
+    setImgVisible(true);
+  }, []);
   return (
     <div
       className="min-h-screen bg-[#050026]">
@@ -68,7 +73,12 @@ export default function Page() {
         <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 w-full">
             {/* Left column */}
-            <div className="w-full lg:w-3/5">
+            <motion.div
+              className="w-full lg:w-3/5"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               
               <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
               Kross Ecosystem Fund
@@ -89,13 +99,13 @@ export default function Page() {
               <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
                   href="#"
-                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                 >
-                  Learn More
+                  Learn more
                 </a>
+              </div>  
               </div>
-              </div>
-            </div>
+            </motion.div>
             {/* Right column */}
             <div className="w-full lg:w-2/5 flex justify-center relative mt-4 lg:mt-0">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl"></div>
@@ -104,7 +114,10 @@ export default function Page() {
                   alt="Blockchain 3D Cube Visualization"
                   width={500}
                   height={500}
-                  src="/assets/image/fund/fund_1.svg"
+                  src="/assets/image/fund/fund_1.png"
+                  className={`transition-all duration-700 ease-out
+                    ${imgVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}
+                    w-full h-full`}
                 />
               </div>
             </div>
@@ -112,7 +125,7 @@ export default function Page() {
         </div>
       </section>
       {/* Alliance Section */}
-      <section className="text-white overflow-hidden relative bg-[#050026] h-auto min-h-[600px] md:h-[800px]" style={{ backgroundImage: "url('/assets/image/fund/Component.svg')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
+      <section className="text-white overflow-hidden relative bg-[#050026] h-auto min-h-[600px] md:h-[800px]" style={{ backgroundImage: "url('/assets/image/fund/Component.png')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
         {/* Background Glows */}
         <div className="absolute -bottom-[120px] left-0 w-[320px] sm:w-[420px] md:w-[520px] h-[200px] sm:h-[300px] md:h-[400px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="container mx-auto p-5 md:p-20 relative">
@@ -123,14 +136,14 @@ export default function Page() {
         </div>
         <div className="flex flex-col gap-2 md:gap-4">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 w-full">
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/2.svg" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/1.svg" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/4.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/2.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/1.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/4.png" />
           </div>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 w-full">
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/3.svg" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/6.svg" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/5.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/3.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/6.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/5.png" />
           </div>
         </div>
       </section>
@@ -216,7 +229,7 @@ export default function Page() {
                     <img
                       alt="DeFi"
                       className="object-cover absolute inset-0 w-full h-full"
-                      src="/assets/image/fund/fund_process_1.svg"
+                      src="/assets/image/fund/fund_process_1.png"
                     />
                   </div>
                   {/* Right: Content */}
@@ -232,7 +245,7 @@ export default function Page() {
               <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_2.svg" />
+                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_2.png" />
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Present your Ideas</h3>
@@ -244,7 +257,7 @@ export default function Page() {
               <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_3.svg" />
+                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_3.png" />
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Evaluation</h3>
@@ -297,7 +310,7 @@ export default function Page() {
       <div className="relative text-white overflow-hidden bg-[#050026]">
         <div className="absolute -top-[120px] left-0 w-[520px] h-[400px] bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
         
-        <div className="container mx-auto px-5 md:px-20 py-[120px] relative" style={{backgroundImage: "url('/assets/image/rwa/3.svg')", backgroundSize: "40%", backgroundPosition: 'right bottom', backgroundRepeat: "no-repeat" }}>
+        <div className="container mx-auto px-5 md:px-20 py-[120px] relative" style={{backgroundImage: "url('/assets/image/rwa/3.png')", backgroundSize: "40%", backgroundPosition: 'right bottom', backgroundRepeat: "no-repeat" }}>
           <div className="w-full md:max-w-5xl mx-auto">
             <div className="bg-[#4839A429] rounded-[16px] p-6 px-10 border border-[#77777775] backdrop-blur-sm">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -317,31 +330,29 @@ export default function Page() {
           </div>
         </div>
       </div>
-      {/* FAQ Section */}
       <section className="w-full flex flex-col  justify-center bg-[#050026] px-10 md:px-20 py-10 md:py-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-14">FAQs</h2>
-        <div className="gap-0">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-[64px]">FAQs</h2>
+        <div className="">
           {[
-            'How soon can we expect the results for KYC?',
-            'Which types of assets are available on the KROSS Network?',
+            'What Ideas are we interested in?',
+            'Who should apply?',
             'When will I know if I\'m selected?',
-            'What happens if I upload more than one ID during the KYC process?',
-            'Can I use multiple wallets?',
-            'What network does KROSS Network operate on?'
+            'How many projects will be selected?',
+            'Who should apply?',
           ].map((q, i, arr) => (
             <React.Fragment key={i}>
-              <div className="flex items-center justify-between w-full px-12 py-6 text-white text-lg md:text-xl font-normal">
+              <div className="flex items-center justify-between w-full px-12 pb-[17px] text-white text-lg md:text-xl font-normal">
                 <span>{q}</span>
-                <span className="text-[#A259FF] text-2xl font-bold select-none ml-auto">+</span>
+                <span className="text-[#FFFFFF] text-[14px] font-bold select-none ml-auto">+</span>
               </div>
-              {i < arr.length - 1 && (
-                <hr className="border-t border-[#29214A] mx-8 mb-[80px]  " />
+              {i < arr.length && (
+                <hr className="border-t border-[#29214A] mx-8 mb-[64px]  " />
                 // <hr className="border-t-2 border-[#29214A] mx-8 rounded-full" />
               )}
             </React.Fragment>
           ))}
-                  </div>
-      </section> 
+        </div>
+      </section>
     </div>
   )
 }

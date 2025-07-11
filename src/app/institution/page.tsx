@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-
+import { motion } from "framer-motion";
 const features = [
   {
     title: 'Onchain Compliance',
@@ -29,11 +29,24 @@ const features = [
 ];
 
 const testimonialImages = [
-  "/assets/image/institution/1.svg",
-  "/assets/image/institution/2.svg",
-  "/assets/image/institution/3.svg",
+  "/assets/image/institution/1.png",
+  "/assets/image/institution/2.png",
+  "/assets/image/institution/3.png",
 ];
-
+const nameArray = [
+  {
+    title: 'Mr.Ademolu Oyenuga',
+    desc: 'Director/Board Member'
+  },
+  {
+    title: 'Mr. Patric Smith',
+    desc: 'Founder/CEO'
+  },
+  {
+    title: 'Dr. Alexander Nwuba',
+    desc: 'None Excutive Director'
+  }
+]
 const InstitutionPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
   useEffect(() => {
@@ -51,7 +64,7 @@ const InstitutionPage = () => {
         style={{
           backgroundImage: `
             linear-gradient(to left, rgba(17, 9, 66, 0) 0%, #110942 80%),
-            url('/assets/image/institution/institution.svg')
+            url('/assets/image/institution/institution.png')
           `,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -60,7 +73,12 @@ const InstitutionPage = () => {
       >
         <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-10 w-full">
           {/* Left column */}
-          <div className="w-full lg:w-4/5">
+          <motion.div
+            className="w-full lg:w-4/5"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-4 sm:mb-6">Transforming Real-World Assets<br/>Into Powerful Digital Value</h1>
             <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-3/5">Powering compliant RWA tokenization for businesses, governments, And developers through secure, institutional-grade infrastructure</p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
@@ -75,13 +93,13 @@ const InstitutionPage = () => {
             <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
               <a
                 href="#"
-                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
               >
                 Tokenisation guide
               </a>
-            </div>
+            </div>  
           </div>
-        </div>
+        </motion.div>
           
       </div>
       </section>
@@ -101,9 +119,9 @@ const InstitutionPage = () => {
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4">Institutions Partnering With Us</h3>
           <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">Our mission is to bring the global financial ecosystem onchain. We are committed to accelerating the efforts of those transforming tangible assets into secure, tokenized representations, driving the future of finance.</p>
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center mb-4">
-            <img src="/assets/image/institution/1.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
-            <img src="/assets/image/institution/2.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
-            <img src="/assets/image/institution/3.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
+            <img src="/assets/image/institution/1.png" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
+            <img src="/assets/image/institution/2.png" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
+            <img src="/assets/image/institution/3.png" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
           </div>
           <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
             <a
@@ -124,13 +142,12 @@ const InstitutionPage = () => {
           <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
             <a
               href="#"
-              className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+              className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
             >
               Tokenisation guide
             </a>
+          </div> 
           </div>
-          
-        </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-10 px-[20px] md:px-[74px] py-[24px]">
           {features.map((f, i) => (
             <div key={i} className="border border-[#110942] rounded-[16px] p-8 bg-[#110942]/25 min-h-[180px] flex flex-col items-start" >
@@ -145,7 +162,7 @@ const InstitutionPage = () => {
       <section className="w-full flex flex-col items-center justify-center py-8 sm:py-16 bg-[#110942]">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-[86px] text-center">Why Do Institutions Choose Kross Network?</h3>
         <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4 items-center mb-4 sm:mb-8 px-2 sm:px-4 mx-auto">
-          <div className="flex justify-center">
+          <div className="flex justify-center w-full h-full">
             {/* Rotating testimonial image */}
             <img
               src={testimonialImages[currentImage]}
@@ -154,8 +171,13 @@ const InstitutionPage = () => {
             />
           </div>
           <div className="flex flex-col items-end">
-            <p className="text-base md:text-lg text-gray-300 mb-6 text-left max-w-xl">&quot;We&apos;re committed to bringing the global financial system onchain. Kross Network plays a key role in helping us accelerate the tokenization of real-world assets, turning them into secure, digital representations. This transformation is essential to building a more open and efficient financial ecosystem.&quot;
-              <br/><span className="block mt-4 font-semibold text-white">Mr.Ademolu Oyenuga<br/><span className="text-xs font-normal">Director/Board Member</span></span>
+            <p className="text-[24px] md:text-lg text-gray-300 mb-6 text-left max-w-xl">&quot;We&apos;re committed to bringing the global financial system onchain. Kross Network plays a key role in helping us accelerate the tokenization of real-world assets, turning them into secure, digital representations. This transformation is essential to building a more open and efficient financial ecosystem.&quot;
+              <br/>
+              <span className="block text-[24px] mt-4 font-semibold text-white">
+                {nameArray[currentImage].title}
+                <br/>
+                <span className="text-[18px] font-normal">{nameArray[currentImage].desc}</span>
+                </span>
           </p>
           </div>
         </div>

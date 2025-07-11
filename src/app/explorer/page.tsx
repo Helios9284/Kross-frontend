@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-
+import { motion } from "framer-motion";
 export default function ExplorerPage() {
   // Step-by-step instructions for using the Kross Explorer
   const steps = [
@@ -47,43 +47,74 @@ export default function ExplorerPage() {
       style={{ fontFamily: 'lato, sans-serif' }}
       aria-label="Kross Explorer Upgrade Page"
     >
-      {/* Hero Section */}
-      <section className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
-        {/* Animated background blur */}
-        <div
-          className="absolute top-1/3 w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#FF00B8]/40 blur-3xl rounded-full -z-0"
-          style={{
-            animation: 'blurMoveFade 9s linear infinite',
-            left: 0,
-          }}
-          aria-hidden="true"
-        ></div>
-        <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-10 w-full">
-          {/* Left column: Title and description */}
-          <div className="w-full lg:w-4/5 relative">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-4 sm:mb-6">
-              Our Explorer Is Being Upgraded
-            </h1>
-            <p className="text-base sm:text-xl text-gray-300 mb-6 sm:mb-10 w-full md:w-3/5">
-              It&apos;s a scar on us we need the fix so let&apos;s beautify the scar. It costs $10k to build the new upgraded explorer. For now we secure the Blockchain records from Waves chain custom endpoint.
-            </p>
+      <section className="px-5 md:px-20 py-10 md:py-20 relative w-full min-h-[600px]">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 " >
+          <div className=" relative w-[280px] sm:w-[450px] md:w-[850px] h-[280px] sm:h-[450px] md:h-[650px] flex items-center justify-center">
+            {/* Blurred background */}
+            <div className="absolute inset-0 bg-[#FF00B8]/25 blur-3xl rounded-full z-0 explorer-move" ></div>
+            {/* Sharp image */}
+
           </div>
-          {/* Right column: Illustration */}
-          <div className="w-full lg:w-2/5 flex justify-center relative mt-4 lg:mt-0">
-            <div className="w-40 h-40 sm:w-80 sm:h-80 md:w-full md:h-full overflow-x-hidden overflow-y-hidden">
-              <img
-                alt="3D cube visualizing blockchain data for Kross Explorer"
-                className="relative z-10"
-                src="/assets/image/explorer/1.svg"
-                width={320}
-                height={320}
-                loading="lazy"
-              />
-            </div>
+          
+        </div>
+        <div className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 " >
+          <div className=" relative w-[280px] sm:w-[450px] md:w-[850px] h-[280px] sm:h-[450px] md:h-[650px] flex items-center justify-center">
+            {/* Blurred background */}
+            {/* Sharp image */}
+            <img
+              alt="star"
+              className="relative w-full h-full z-4"
+              src="/assets/star.svg"
+            />
+            
+          </div>
+          
+        </div>
+        <div className="absolute top-1/3 left-1/3 flex gap-2 sm:gap-4">
+          <div className=" relative w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] flex items-center justify-center">
+        
+            <img
+              alt="star"
+              className="relative w-full h-full z-10"
+              src="/assets/star1.svg"
+            />
           </div>
         </div>
-      </section>
+        <div className="absolute top-0 right-0 flex gap-2 sm:gap-4">
+          <div className=" relative w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] flex items-center justify-center">
+        
+            <img
+              alt="star"
+              className="relative w-full h-full z-10"
+              src="/assets/star1.svg"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col lg:flex-row items-center gap-10 w-full ">
+          {/* Left column */}
+          <motion.div
+            className="w-3/5  z-10"
+            initial={{ x: -100, opacity: 0.1 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}> Our Explorer Is Being Upgraded</h1>
+            <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">It&apos;s a scar on us we need the fix so let&apos;s beautify the scar. It costs $10k to build the new upgraded explorer. For now we secure the Blockchain records from Waves chain custom endpoint.</p>
 
+          </motion.div>
+          {/* Right column */}
+          <motion.div
+            className="w-2/5 flex justify-center relative"
+            initial={{ x: 100, opacity: 0.1 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="relative w-80 h-80 md:w-full md:h-full">
+              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative " src="/assets/image/explorer/1.png" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
       {/* Info Section */}
       <section className="relative bg-[#050026] w-full">
         <div
@@ -96,13 +127,13 @@ export default function ExplorerPage() {
             <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#6D05B8]/42 blur-3xl rounded-full"></div>
           </div>
           <div className="text-center mb-4 sm:mb-8">
-            <span className="block text-lg sm:text-[40px] font-medium text-gray-500">
+            <span className="block text-[40px] sm:text-[40px] font-medium text-gray-500">
               For Now You Can Use The Kross Explorer By
             </span>
-            <span className="block text-2xl sm:text-[48px] font-bold text-transparent text-white mt-1">
+            <span className="block text-[48px] sm:text-[48px] font-bold text-transparent text-white mt-1">
               Inserting Our Node Url Inside The Custom Field
             </span>
-            <span className="block text-2xl sm:text-[56px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EC34E0] to-[#6D05B8] mt-1">
+            <span className="block text-[56px] sm:text-[56px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EC34E0] to-[#6D05B8] mt-1">
               Of The Classic Waves Explorer.
             </span>
           </div>
@@ -113,29 +144,31 @@ export default function ExplorerPage() {
             aria-controls="explorer-steps"
             onClick={() => setShowSteps((prev) => !prev)}
           >
-            <span className="text-lg">
-              <img src="/assets/icon/step.svg" alt="Steps icon" className="w-6 h-6" />
+            <span className="text-[40px] flex items-center gap-2">
+              <img src="/assets/icon/step.svg" alt="Steps icon"  />
+            
+            {showSteps ? 'Steps' : 'Steps'} 
             </span>
-            {showSteps ? 'Hide Steps' : 'Show Steps'}
           </button>
         </div>
       </section>
 
       {/* Steps Section (collapsible) */}
       {showSteps && (
-        <section className="relative bg-[#050026] w-full" id="explorer-steps">
-          <div className="container mx-auto px-6">
-            <div className="max-w-2xl mx-auto">
+        <section className="relative bg-[#050026] w-full " id="explorer-steps">
+          <div className="pb-[145px]" style={{backgroundImage: "url('/assets/image/explorer/grid.png')", backgroundSize: "100% 100%", backgroundRepeat: "no-repeat", backgroundPosition: "top center"}}>
+            <div className="max-w-4xl mx-auto">
               <div
                 className="p-[2px] rounded-3xl"
-                style={{ background: 'linear-gradient(to bottom, #6D05B8, transparent)' }}
+                // style={{ background: 'linear-gradient(to bottom, #6D05B8, transparent)' }}
+                
               >
-                <div className="p-10 rounded-3xl bg-[#050026] sm:p-12 md:p-16">
-                  <ol className="space-y-5" aria-label="Steps to use Kross Explorer">
+                <div className="p-10 rounded-3xl bg-transparent sm:p-12 md:p-16" style={{backgroundImage: "url('/assets/image/explorer/rectangle.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "top center"}}>
+                  <ol className="space-y-6" aria-label="Steps to use Kross Explorer">
                     {steps.map((step, index) => (
                       <li
                         key={index}
-                        className="flex flex-row items-center space-x-0 sm:space-x-5 p-[14px] sm:p-[18px] rounded-full shadow-lg h-auto sm:h-[50px] w-full"
+                        className="flex flex-row items-center space-x-0 sm:space-x-5 p-[14px] sm:p-[18px] rounded-full shadow-lg min-h-20 w-full font-sans"
                         style={{
                           background:
                             index % 2 === 0
@@ -144,13 +177,13 @@ export default function ExplorerPage() {
                         }}
                       >
                         <span
-                          className="text-white font-bold text-xl flex-shrink-0 w-10 text-center border-2 rounded-full h-10 flex items-center justify-center bg-[#6D05B8]"
+                          className="text-white font-bold text-[40px] border-2 rounded-full bg-[#6D05B8] inline-flex items-center justify-center aspect-square px-4"
                           style={{ borderColor: '#6D05B8' }}
                           aria-label={`Step ${step.number}`}
                         >
                           {step.number}
                         </span>
-                        <span className="text-white text-base leading-relaxed font-medium text-center sm:text-left break-words w-full">
+                        <span className="text-white text-base leading-relaxed text-[22px] font-medium text-center sm:text-left break-words w-full">
                           {step.text}
                         </span>
                       </li>

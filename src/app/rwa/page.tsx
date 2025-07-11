@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 export default function Page() {
   const cardRowRef = useRef<HTMLDivElement>(null);
@@ -67,42 +68,58 @@ export default function Page() {
   return (
     <div
       className="min-h-screen w-full bg-[#110942]" style={{fontFamily: 'lato, sans-serif'}}>
-      {/* Hero Section */}
-      <div className="h-[300px] sm:h-[400px] md:h-[600px] bg-[#050026]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center ">
-          {/* Left column: Text and buttons */}
-          <div className="relative ">
-            <div
-              className="w-full h-full rounded-2xl min-h-[120px] sm:min-h-[200px] md:min-h-[300px]"
-              style={{ background: "linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%)" }}
-            />
-            
-          </div>
-          {/* Right column: Gradient box */}
-          <div className="space-y-4 sm:space-y-8 container px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 ">
-            <div className="flex flex-col items-center w-full">
-              {/* Top Row */}
-              <div className="flex w-full justify-between items-center max-w-xs sm:max-w-xl mx-auto mb-2 sm:mb-4">
-                <span className="text-white text-lg sm:text-[30px] font-normal">Kross Network ×</span>
-                <span className="text-white text-base sm:text-2xl font-normal">Cloud</span>
+        {/* Hero Section */}
+      <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full bg-[#050026] min-h-[600px]">
+        <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen ">
+          <div className="flex flex-col lg:flex-row items-center  gap-4 sm:gap-6 w-full">
+            {/* Left column */}
+            <motion.div
+              className="w-2/4 flex justify-center relative"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="relative w-full h-full flex items-center justify-center ">
+                <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full z-0"></div>
+              
+                  <img
+                    alt="Blockchain 3D Cube Visualization"
+                    width={500}
+                    height={500}
+                    src="/assets/image/rwa/rwa.png"
+                    className="relative"
+                  />
               </div>
-            </div>
-            {/* Main Title */}
-            <h1 className="text-2xl sm:text-[64px] font-bold text-white text-center mb-2 sm:mb-6">
+            </motion.div>
+            <motion.div
+              className="w-full lg:w-2/4 flex flex-col items-start pl-[80px] "
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="flex justify-start items-center w-full md:w-2/3 mb-4 sm:mb-[21px] pl-0">
+                <span className="text-base sm:text-lg md:text-2xl text-gray-300">Kross Network ×</span>
+                <span className="pl-10 text-base sm:text-lg md:text-2xl text-gray-300">Cloud</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-[24px] text-center pl-0 md:pl-4 lg:pl-8">
               RWA Launchpad
-            </h1>
-            {/* Button */}
-            <div className="z-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-              <a
-                href="#"
-                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
-              >
-                Coming Soon!
-              </a>
-            </div>
+              </h1>
+              
+              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block text-sm sm:text-base md:text-lg">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Coming Soon!
+                </a>
+              </div>
+            </motion.div>
+            {/* Right column */}
+           
           </div>
         </div>
-      </div>
+      </section>
+      
       <div className="py-8 sm:py-[112px] px-2 sm:px-6">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-16">
@@ -244,7 +261,7 @@ export default function Page() {
           <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
         </div>
         {/* Background Glows */}
-        <div className="container mx-auto p-5 md:p-20 relative">
+        <div className="mx-auto pl-5 md:pl-20 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Choose your Tracks</h2>
           </div>
@@ -266,7 +283,7 @@ export default function Page() {
                     <img
                       alt="DeFi"
                       className="object-cover absolute inset-0 w-full h-full"
-                      src="/assets/image/rwa/rwa_1.svg"
+                      src="/assets/image/rwa/rwa_1.png"
                     />
                   </div>
                   {/* Right: Content */}
@@ -282,9 +299,14 @@ export default function Page() {
                         <li>Dev Tooling</li>
                       </ul>
                     </div>
-                    <button className="mt-auto w-fit px-6 py-2 rounded-lg text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 transition">
+                    <div className="inline-flex w-max p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200">
+                      <a
+                        href="#"
+                        className="inline-flex px-4 py-2 rounded-[10px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200"
+                      >
                       Apply Now
-                    </button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -292,7 +314,7 @@ export default function Page() {
               <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/rwa/rwa_2.svg" />
+                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/rwa/rwa_2.png" />
                   </div>
                   <div className="flex flex-col justify-center py-6 px-0 md:px-8 w-full">
                     <div>
@@ -306,9 +328,14 @@ export default function Page() {
                         <li>Secondary markets for RWAs</li>
                       </ul>
                     </div>
-                    <button className="mt-auto w-fit px-6 py-2 rounded-lg text-white font-semibold bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 transition">
+                    <div className="inline-flex w-max p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200">
+                      <a
+                        href="#"
+                        className="inline-flex px-4 py-2 rounded-[10px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200"
+                      >
                       Apply Now
-                    </button>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -574,28 +601,26 @@ export default function Page() {
       </div>
       {/* FAQ Section */}
       <section className="w-full flex flex-col  justify-center bg-[#050026] px-10 md:px-20 py-10 md:py-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-14">FAQs</h2>
-        <div className="gap-0">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-[64px]">FAQs</h2>
+        <div className="">
           {[
-            'How soon can we expect the results for KYC?',
-            'Which types of assets are available on the KROSS Network?',
+            'What Ideas are we interested in?',
+            'Who should apply?',
             'When will I know if I\'m selected?',
-            'What happens if I upload more than one ID during the KYC process?',
-            'Can I use multiple wallets?',
-            'What network does KROSS Network operate on?'
+            'How many projects will be selected?'
           ].map((q, i, arr) => (
             <React.Fragment key={i}>
-              <div className="flex items-center justify-between w-full px-12 py-6 text-white text-lg md:text-xl font-normal">
+              <div className="flex items-center justify-between w-full px-12 pb-[17px] text-white text-lg md:text-xl font-normal">
                 <span>{q}</span>
-                <span className="text-[#A259FF] text-2xl font-bold select-none ml-auto">+</span>
+                <span className="text-[#FFFFFF] text-[14px] font-bold select-none ml-auto">+</span>
               </div>
-              {i < arr.length - 1 && (
-                <hr className="border-t border-[#29214A] mx-8 mb-[80px]  " />
+              {i < arr.length && (
+                <hr className="border-t border-[#29214A] mx-8 mb-[64px]  " />
                 // <hr className="border-t-2 border-[#29214A] mx-8 rounded-full" />
               )}
             </React.Fragment>
           ))}
-                  </div>
+        </div>
       </section> 
     </div>
   )

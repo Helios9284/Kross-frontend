@@ -108,21 +108,21 @@ export default function NavBar() {
               <div className="absolute top-full left-0 mt-4 bg-[#050026] rounded-[16px] border border-[#2b3250] shadow-lg z-10 flex flex-col w-max px-[16px] py-[16px]">
                 <Link
                   href="/news"
-                  className="text-white text-[14px] font-[300] mb-6 hover:underline text-left"
+                  className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setResourcesOpen(false)}
                 >
                   News
                 </Link>
                 <Link
                   href="/blog"
-                  className="text-white text-[14px] font-[300] mb-6 hover:underline text-left"
+                  className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setResourcesOpen(false)}
                 >
                   Blog
                 </Link>
                 <Link
                   href="/guide"
-                  className="text-white text-[14px] font-[300] hover:underline text-left"
+                  className="text-white text-[14px] font-[300]  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setResourcesOpen(false)}
                 >
                   Developers&apos; Guide
@@ -139,28 +139,28 @@ export default function NavBar() {
               <div className="absolute top-full left-0 mt-4 bg-[#050026] rounded-[16px] border border-[#2b3250] shadow-lg z-10 flex flex-col w-max px-[16px] py-[16px]">
                 <Link
                   href="/fund"
-                  className="text-white text-[14px] font-[300] mb-6 hover:underline text-left"
+                  className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setEcosystemOpen(false)}
                 >
                   Ecosystem Fund
                 </Link>
                 <Link
                   href="/rwa"
-                  className="text-white text-[14px] font-[300] mb-6 hover:underline text-left"
+                  className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setEcosystemOpen(false)}
                 >
                   RWAccelerator
                 </Link>
                 <Link
                   href="/partner"
-                  className="text-white text-[14px] font-[300] mb-6 hover:underline text-left"
+                  className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setEcosystemOpen(false)}
                 >
                   Partners
                 </Link>
                 <Link
                   href="/coin"
-                  className="text-white text-[14px] font-[300] hover:underline text-left"
+                  className="text-white text-[14px] font-[300]  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setEcosystemOpen(false)}
                 >
                   $OM Coin

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import React from 'react';
+import { motion } from "framer-motion";
 const TraderPage = () => {
 
   const [, setAnimatedPills] = useState([false, false, false, false, false]);
@@ -17,29 +18,55 @@ const TraderPage = () => {
     return () => timeouts.forEach(clearTimeout);
   }, []);
 
+  // FAQ Section logic
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const faqQuestions = [
+    'What is Hashgreed DEX?',
+    'How do I trade on Hashgreed DEX?',
+    'Is Hashgreed DEX safe and compliant?',
+    'What assets can be traded on Hashgreed DEX?',
+    'Are there any fees on Hashgreed DEX'
+  ];
+  const faqAnswers = [
+    `Hashgreed DEX is a decentralized exchange built on Kross Blockchain, allowing users to trade digital assets, tokenized real-world assets (RWAs), in a peer-to-peer, non-custodial manner. It operates without intermediaries, providing users with direct control over their wallets and funds while offering secure, transparent, and instant trades.`,
+    `To trade on Hashgreed DEX, simply:\n\n* Create or connect your Kross wallet.\n* Fund your wallet with Krosscoin (KSS) and/or other supported tokens.\n* Select the trading pair you want (e.g., KSS/HNGN, RWA tokens).\n* Place a buy or sell order or interact with an existing one in the order book or liquidity pool.\n* KYC is enforced for regulated assets and tokenized RWAs.`,
+    `Yes. Hashgreed DEX is built on Kross Blockchain, which is optimized for regulatory-compliant asset tokenization. While Hashgreed itself is a regulated entity under the Nigeria SEC’s Regulatory Incubation Program, all smart contracts are non-custodial and auditable. For tokenized securities or regulated RWAs, only verified users with completed KYC will be allowed to participate in compliance with local laws.`,
+    `Users can trade:\n\n* Native tokens like Krosscoin (KSS)\n* Stablecoins like HNGN and KUSD tokens\n* Tokenized real estate, commodities, or sovereign assets\n* Regulator-approved Tokens and Coins`,
+    `Yes, Hashgreed DEX charges a small transaction fee (e.g., 1%) per trade, which is distributed to liquidity providers and the platform treasury. A minimum network fee in KSS also applies per transaction. The platform does not charge any withdrawal or deposit fees, as funds remain in your control at all times.`
+  ];
 
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white" style={{fontFamily: 'lato, sans-serif'}}>
       {/* Hero Section */}
-      <section className="w-full px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative">
+      <section className="w-full px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative min-h-[600px]">
         <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-10 w-full">
           {/* Left column */}
-          <div className="w-full lg:w-3/5">
+          <motion.div
+            className="w-full lg:w-3/5"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="inline-flex items-center gap-2 px-2 sm:px-4 py-1 sm:py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFD4] bg-[#11094280] mb-4 sm:mb-8" style={{ boxShadow: '0px 4px 12px 0px #00000040 inset' }}>
               <img alt="Krosscoin for Traders" width={16} height={16} src="/assets/icon/file-icons_buildkite.png" />
               <span className="text-xs sm:text-sm font-normal text-white">Krosscoin for Traders</span>
             </div>
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-4 sm:mb-6" style={{ fontFamily: 'lato, sans-serif' }}>Simplify Your Crypto Journey</h1>
             <a href="#" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Join Traders</a>
-          </div>
+          </motion.div>
           {/* Right column */}
-          <div className="w-full lg:w-2/5 flex justify-center relative mt-4 lg:mt-0">
+          <motion.div
+            className="w-full lg:w-2/5 flex justify-center relative mt-4 lg:mt-0"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="relative w-40 h-40 sm:w-80 sm:h-80 md:w-full md:h-full">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full -z-0"></div>
               <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative z-10 w-full h-auto" src="/assets/image/trader_1.svg" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -135,20 +162,27 @@ const TraderPage = () => {
                 <div className="w-[550px] h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
               </div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-40 mb-20 relative z-10">
+                <div className="text-center mt-[96px] mb-20 relative z-10">
                   <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto"
                 >
                   <div className="relative"
                   >
-                    <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative h-[400px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_1.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">$KSS Staking</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Get rewards for simply staking on the KROSS DEX. Coming Soon</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Learn More</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Learn more
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -164,19 +198,26 @@ const TraderPage = () => {
               <div className="absolute w-[150px] h-[100px] left-[100px] -bottom-50 bg-[#EC34E0CC]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[100px] right-[50px] -bottom-40 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-              <div className="text-center mt-20 mb-20 relative z-10 invisible">
-                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                <div className="text-center mt-[96px] mb-20 relative z-10 invisible">
+                 <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
-                    <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative  h-[400px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_2.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Vaults</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">KROSS Vaults let you earn rewards on stablecoins like KUSD and HNGN, effortlessly. Get the benefits of staking without the complexity of managing assets yourself. Coming Soon
                         </p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Learn More</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Learn more
+                          </a>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -190,18 +231,25 @@ const TraderPage = () => {
               <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
               <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-              <div className="text-center mt-20 mb-20 relative z-10 invisible">
-                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+               <div className="text-center mt-[96px] mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
-                    <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative  h-[400px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_3.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Swap</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Enjoy a smooth trading with the Wallet integrated HASHGREED DEX, Africa&aposs First DEX for Regulated RWA tokens</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Learn More</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Learn more
+                          </a>
+                        </div>  
                       </div>
                     </div>
                   </div>
@@ -215,18 +263,25 @@ const TraderPage = () => {
               <div className="absolute w-[250px] h-[250px] -left-50 -top-50 bg-[#FF00B840]/50 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[250px] -right-50 -bottom-50 bg-[#FF00B840]/60 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-              <div className="text-center mt-20 mb-20 relative z-10 invisible">
-                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                <div className="text-center mt-[96px] mb-20 relative z-10 invisible">
+                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
-                    <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative h-[400px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_4.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Central Limit Orderbook</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Reap the benefits of a transparent order book for accurate price discovery and streamlined trade execution.</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Learn More</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Learn more
+                          </a>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -243,18 +298,25 @@ const TraderPage = () => {
               <div className="absolute w-[150px] h-[150px] right-50 -bottom-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] -top-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-              <div className="text-center mt-20 mb-20 relative z-10 invisible">
-                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
+                <div className="text-center mt-[96px] mb-20 relative z-10 invisible">
+                    <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
                 <div className="max-w-4xl py-[100px] mx-auto">
                   <div className="relative">
-                    <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative h-[400px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_5.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative max-w-lg z-10">
                         <h3 className="text-2xl md:text-[40px] font-bold mb-4 transition-colors duration-200 text-white">Liquidity Pools & Farms</h3>
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Provide assets to earn LP rewards and a share of all transaction fees charged to traders that use the pool, starting at the HASHGREED DEX.</p>
-                        <button className="bg-transparent min-w-[191px] border-2 border-[#ff00ff] hover:bg-[#ff00ff] text-white font-medium py-4 px-8 rounded-[12px] transition-all duration-200 hover:scale-105">Learn More</button>
+                        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                          <a
+                            href="#"
+                            className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                          >
+                            Learn more
+                          </a>
+                        </div>  
                       </div>
                     </div>
                   </div>
@@ -264,30 +326,32 @@ const TraderPage = () => {
           </div>
         </div>
       </section>
-           {/* FAQ Section */}
+      {/* FAQ Section */}
       <section className="w-full flex flex-col  justify-center bg-[#050026] px-10 md:px-20 py-10 md:py-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-14">FAQs</h2>
-        <div className="gap-0">
-          {[
-            'How soon can we expect the results for KYC?',
-            'Which types of assets are available on the KROSS Network?',
-            'When will I know if I\'m selected?',
-            'What happens if I upload more than one ID during the KYC process?',
-            'Can I use multiple wallets?',
-            'What network does KROSS Network operate on?'
-          ].map((q, i, arr) => (
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-[64px]">FAQs</h2>
+        <div className="">
+          {faqQuestions.map((q, i, arr) => (
             <React.Fragment key={i}>
-              <div className="flex items-center justify-between w-full px-12 py-6 text-white text-lg md:text-xl font-normal">
+              <div
+                className="flex items-center justify-between w-full px-12 pb-[17px] text-white text-lg md:text-xl font-normal cursor-pointer"
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              >
                 <span>{q}</span>
-                <span className="text-[#A259FF] text-2xl font-bold select-none ml-auto">+</span>
+                <span className="text-[#B203B8] text-[14px] font-bold select-none ml-auto">
+                  {openIndex === i ? '−' : '+'}
+                </span>
               </div>
-              {i < arr.length - 1 && (
-                <hr className="border-t border-[#29214A] mx-8 mb-[100px]  " />
-                // <hr className="border-t-2 border-[#29214A] mx-8 rounded-full" />
+              {openIndex === i && (
+                <div className="w-full px-15 pb-4 text-white text-base whitespace-pre-line">
+                  {faqAnswers[i]}
+                </div>
+              )}
+              {i < arr.length && (
+                <hr className="border-t border-[#29214A] mx-8 mb-[64px]  " />
               )}
             </React.Fragment>
           ))}
-                  </div>
+        </div>
       </section> 
       {/* Explore Ecosystem CTA (Pixel-perfect) */}
       <section className="text-white flex w-full bg-[#110942] border-b-4 border-white">

@@ -90,7 +90,7 @@ export default function Page() {
       className="min-h-screen w-full bg-gradient-to-b from-[#050026] text-white font-sans"style={{ fontFamily: 'lato, sans-serif' }}
     >
       {/* Header */}
-      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
+      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.png')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
         <div className="container mx-auto px-2 sm:px-6 text-center">
           <h1 className="text-3xl sm:text-5xl font-bold text-white mb-2 sm:mb-3" style={{ fontFamily: 'lato, sans-serif' }}>Blog</h1>
         </div>
@@ -229,7 +229,7 @@ export default function Page() {
                 <img
                   alt="Blockchain 3D Cube Visualization"
                   className="relative z-10 object-contain w-full h-full "
-                  src="/assets/image/blog_1.svg"
+                  src="/assets/image/news/allnews_1.png"
                 />
             </div>
           </div>

@@ -25,7 +25,7 @@ const newsArticles: NewsArticle[] = [
       "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
     date: "Feb 8, 2024",
     categories: ["Ecosystem", "SIM Coin"],
-    image: "/assets/image/news/allnews_1.svg",
+    image: "/assets/image/news/allnews_1.png",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const newsArticles: NewsArticle[] = [
       "Vitalerin Europe Sp.Z.O, The Registered European Arm Of The Krosscon Project And A Leading Blockchain Asset Tokenization Firm Has Officially Signed A Landmark Agreement With OPK Banc Football Club, A Professional Football Club Based In Poland To Launch Expansion Project And Integrate AI And Metaverse Technologies Into Its Future Infrastructure.",
     date: "Feb 8, 2024",
     categories: ["Ecosystem", "SIM Coin"],
-    image: "/assets/image/news/allnews_2.svg",
+    image: "/assets/image/news/allnews_2.png",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const newsArticles: NewsArticle[] = [
       "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
     date: "June 15, 2024",
     categories: ["Ecosystem", "SIM Coin"],
-    image: "/assets/image/news/allnews_3.svg",
+    image: "/assets/image/news/allnews_3.png",
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const newsArticles: NewsArticle[] = [
       "Vitalerin Europe Sp.Z.O, The Registered European Arm Of The Krosscon Project And A Leading Blockchain Asset Tokenization Firm Has Officially Signed A Landmark Agreement With OPK Banc Football Club, A Professional Football Club Based In Poland To Launch Expansion Project And Integrate AI And Metaverse Technologies Into Its Future Infrastructure.",
     date: "May 10, 2024",
     categories: ["Ecosystem", "SIM Coin"],
-    image: "/assets/image/news/allnews_4.svg",
+    image: "/assets/image/news/allnews_4.png",
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const newsArticles: NewsArticle[] = [
       "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
     date: "July 1, 2024",
     categories: ["Ecosystem", "SIM Coin"],
-    image: "/assets/image/news/allnews_5.svg",
+    image: "/assets/image/news/allnews_5.png",
   },
   {
     id: 6,
@@ -70,7 +70,7 @@ const newsArticles: NewsArticle[] = [
       "Real Estate Tokenization Is Reshaping The Landscape Of Investment Opportunities By Leveraging Blockchain Technology To Fractionalize Property Ownership.",
     date: "May 22, 2024",
     categories: ["Ecosystem", "SIM Coin"],
-    image: "/assets/image/news/allnews_3.svg",
+    image: "/assets/image/news/allnews_3.png",
   },
 ]
 // const lato = Lato({
@@ -91,7 +91,7 @@ export default function Page() {
       style={{ fontFamily: 'Lato, sans-serif' }}
     >
       {/* Header */}
-      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/news/image.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
+      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/news/image.png')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
         <div className="container mx-auto px-2 sm:px-6 text-center">
           <h1 className="text-2xl sm:text-[48px] font-bold text-white mb-2 sm:mb-3">News</h1>
           <p className="text-base sm:text-gray-300 sm:text-[24px]">Welcome To Kross News</p>

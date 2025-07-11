@@ -27,7 +27,7 @@ export default function Page() {
       className="min-h-screen w-full bg-gradient-to-b from-[#110942] to-[#050026] text-white font-sans"
     >
       {/* Header */}
-      <div className="px-5 md:px-20 py-10 md:py-20 relative w-full py-16 h-[370px] flex items-center justify-center mb-[150px]" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
+      <div className="px-5 md:px-20 py-10 md:py-20 relative w-full py-16 h-[370px] flex items-center justify-center mb-[150px]" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.png')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
         <div className=" "
        >
           <h1 className="text-5xl font-bold text-white text-center">Contact Us</h1>

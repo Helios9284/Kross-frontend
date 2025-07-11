@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function BuilderPage() {
   // Drag-to-scroll logic for possibilities section
@@ -65,6 +66,13 @@ export default function BuilderPage() {
     scrollToCard(idx);
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+  const [isConsensusHovered, setIsConsensusHovered] = useState(false);
+  const [isApplicationHovered, setIsApplicationHovered] = useState(false);
+  const [isTokenHovered, setIsTokenHovered] = useState(false);
+  const [isToolsHovered, setIsToolsHovered] = useState(false);
+  const [isGovernanceHovered, setIsGovernanceHovered] = useState(false);
+  const [isInteroperabilityHovered, setIsInteroperabilityHovered] = useState(false);
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white font-sans">
       {/* Hero Section */}
@@ -72,7 +80,12 @@ export default function BuilderPage() {
         <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 w-full">
             {/* Left column */}
-            <div className="w-full lg:w-3/5">
+            <motion.div
+              className="w-full lg:w-3/5"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div
                 className="inline-flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFDD] bg-[#11094280] mb-4 sm:mb-8"
                 style={{ boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 12px 0px inset" }}
@@ -99,19 +112,26 @@ export default function BuilderPage() {
                   Krosscoin Explorer
                 </a>
               </div>
-            </div>
+            </motion.div>
             {/* Right column */}
-            <div className="w-full lg:w-2/5 flex justify-center relative mt-4 lg:mt-0">
-              <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl"></div>
-              <div className="relative w-40 h-40 sm:w-80 sm:h-80 md:w-96 md:h-96">
-                <img
-                  alt="Blockchain 3D Cube Visualization"
-                  width={500}
-                  height={500}
-                  src="/assets/image/builder/builder.svg"
-                />
+            <motion.div
+              className="w-2/5 flex justify-center relative"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="relative w-full h-full ">
+                <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full z-0"></div>
+              
+                  <img
+                    alt="Blockchain 3D Cube Visualization"
+                    width={500}
+                    height={500}
+                    src="/assets/image/builder/builder.png"
+                    className="relative"
+                  />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -145,7 +165,7 @@ export default function BuilderPage() {
               <img
                 alt="star"
                 className="relative w-full h-full z-10"
-                src="/assets/star.svg"
+                src="/assets/image/builder/star.png"
               />
             </div>
           </div>
@@ -168,12 +188,12 @@ export default function BuilderPage() {
               {/* Center icons grid */}
               <div className="flex flex-col items-center justify-between w-full gap-2 sm:gap-4 z-10">
                 <div className="flex gap-2 sm:gap-3">
-                  <img alt="Feature 1" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_1.svg" />
-                  <img alt="Feature 2" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_2.svg" />
+                  <img alt="Feature 1" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_1.png" />
+                  <img alt="Feature 2" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_2.png" />
                 </div>
                 <div className="flex gap-2 sm:gap-3">
-                  <img alt="Feature 3" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_3.svg" />
-                  <img alt="Feature 4" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_4.svg" />
+                  <img alt="Feature 3" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_3.png" />
+                  <img alt="Feature 4" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_4.png" />
                 </div>
               </div>
               {/* Right column features */}
@@ -226,7 +246,7 @@ export default function BuilderPage() {
               {/* Card 1 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="DeFi" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/1.svg" />
+                  <img alt="DeFi" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/1.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">DeFi</h3>
@@ -236,7 +256,7 @@ export default function BuilderPage() {
               {/* Card 2 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/2.svg" />
+                  <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/2.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization</h3>
@@ -246,7 +266,7 @@ export default function BuilderPage() {
               {/* Card 3 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Infrastructure" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/3.svg" />
+                  <img alt="Infrastructure" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/3.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Infrastructure</h3>
@@ -256,7 +276,7 @@ export default function BuilderPage() {
               {/* Card 4 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Tokenization of real-world assets(RWA)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.svg" />
+                  <img alt="Tokenization of real-world assets(RWA)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization of real-world assets(RWA)</h3>
@@ -266,7 +286,7 @@ export default function BuilderPage() {
               {/* Card 5 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Identity System with Decentralized I.D (DID)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.svg" />
+                  <img alt="Identity System with Decentralized I.D (DID)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Identity System with Decentralized I.D (DID)</h3>
@@ -276,7 +296,7 @@ export default function BuilderPage() {
               {/* Card 6 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Governance and continuous upgrade" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/6.svg" />
+                  <img alt="Governance and continuous upgrade" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/6.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Governance and continuous upgrade</h3>
@@ -286,7 +306,7 @@ export default function BuilderPage() {
               {/* Card 7 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/7.svg" />
+                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/7.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">On and off-ramping with regulatory compliance</h3>
@@ -296,7 +316,7 @@ export default function BuilderPage() {
               {/* Card 8 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/8.svg" />
+                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/8.spngvg" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">IBC Compatibility for token movement</h3>
@@ -370,7 +390,7 @@ export default function BuilderPage() {
               {/* Right: Image */}
               <div className="flex justify-center md:pr-12">
                 <div className="w-full h-[335px] rounded-2xl relative">
-                  <img alt="krosshub.svg" className="object-cover rounded-2xl absolute inset-0 w-full h-full" src="/assets/image/builder/hub.svg" />
+                  <img alt="krosshub.svg" className="object-cover rounded-2xl absolute inset-0 w-full h-full" src="/assets/image/builder/hub.png" />
                 </div>
               </div>
             </div>
@@ -404,22 +424,22 @@ export default function BuilderPage() {
           </div>
         </div>
         <div className=" w-full h-full group">
-          <div className="absolute top-0 right-1/3  group-hover:translate-x-12 xl:group-hover:translate-x-24 2xl:group-hover:translate-x-36 transition-all duration-1000 ease-in-out">
-            <img alt="landing1" className="w-full h-[270px] z-0 relative" src="/assets/image/builder/intro/1.svg" />
+          <div className="z-1 absolute top-0 right-1/3  group-hover:translate-x-12 xl:group-hover:translate-x-24 2xl:group-hover:translate-x-36 transition-all duration-1000 ease-in-out">
+            <img alt="landing1" className="w-full h-[270px] z-0 relative" src="/assets/image/builder/intro/1.png" />
           </div>
           {/* Second image (only visible on hover) */}
-          <div className="absolute right-5/29  top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
+          <div className="z-0 absolute right-5/29  top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
             <img
               alt="landing1"
-              className="w-full h-[270px] z-0 relative"
-              src="/assets/image/builder/intro/1.svg"
+              className="w-full h-[270px] z-0 relative opacity-60"
+              src="/assets/image/builder/intro/1.png"
             />
           </div>
-          <div className="absolute right-21/69 top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
+          <div className="z-0 absolute right-21/69 top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
             <img
               alt="landing1"
-              className="w-full h-[270px] z-0 relative"
-              src="/assets/image/builder/intro/1.svg"
+              className="w-full h-[270px] z-0 relative opacity-60"
+              src="/assets/image/builder/intro/1.png"
             />
           </div>
          
@@ -427,7 +447,11 @@ export default function BuilderPage() {
       </section>
 
       {/* Consensus Layer */}
-      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
+      <section
+        className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
+        onMouseEnter={() => setIsConsensusHovered(true)}
+        onMouseLeave={() => setIsConsensusHovered(false)}
+      >
         <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="absolute top-0 left-[140px] w-[334px] h-[466px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-end">
@@ -440,13 +464,31 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 left-1/13 z-0">
-          <img alt="landing2" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/2.svg" />
+        <div className="absolute -top-[1/20] left-1/13 z-0">
+          <motion.img
+            alt="landing2"
+            width={540}
+            height={450}
+            src="/assets/image/builder/intro/2.png"
+            className="w-full md:w-[540px] h-[450px] z-0"
+            initial={{ x: -20, y: -40, opacity: 0 }}
+            animate={
+              isConsensusHovered
+                ? { y: 100, x: 120, opacity: 1 }
+                : { y: -40, x: -20, opacity: 0 }
+            }
+            transition={{
+              y: { duration: 0.4 },
+              x: { delay: 0.4, duration: 0.6 },
+              opacity: { duration: 0.7, ease: "easeOut" }
+            }}
+            style={{ willChange: "transform, opacity" }}
+          />
         </div>
       </section>
 
       {/* Data Layer */}
-      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
+      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"  onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-start">
@@ -459,13 +501,27 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 right-1/13 z-0">
-          <img alt="landing3" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/3.svg" />
+        <div className="relative">
+          <motion.img
+            alt="landing3"
+            width={540}
+            height={450}
+            className="w-full md:w-[540px] h-[450px] z-0"
+            initial={{ y: 40, opacity: 0 }}
+            animate={isHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            style={{ willChange: "transform, opacity" }}
+            src="/assets/image/builder/intro/3.png"
+          />
         </div>
       </section>
 
       {/* Application Layer */}
-      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
+      <section
+        className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
+        onMouseEnter={() => setIsApplicationHovered(true)}
+        onMouseLeave={() => setIsApplicationHovered(false)}
+      >
         <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="absolute top-0 left-[140px] w-[334px] h-[466px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-end">
@@ -480,12 +536,26 @@ export default function BuilderPage() {
           </div>
         </div>
         <div className="absolute top-0 left-1/13 z-0">
-          <img alt="landing4" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/4.svg" />
+          <motion.img
+            alt="landing4"
+            width={540}
+            height={450}
+            className="w-full md:w-[540px] h-[450px] z-0"
+            initial={{ y: 40, opacity: 0 }}
+            animate={isApplicationHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            style={{ willChange: "transform, opacity" }}
+            src="/assets/image/builder/intro/4.png"
+          />
         </div>
       </section>
 
       {/* Token Layer */}
-      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
+      <section
+        className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
+        onMouseEnter={() => setIsTokenHovered(true)}
+        onMouseLeave={() => setIsTokenHovered(false)}
+      >
         <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-start">
@@ -501,12 +571,26 @@ export default function BuilderPage() {
           </div>
         </div>
         <div className="absolute top-0 right-1/13 z-0">
-          <img alt="landing5" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/5.svg" />
+          <motion.img
+            alt="landing5"
+            width={540}
+            height={450}
+            className="w-full md:w-[540px] h-[450px] z-0"
+            initial={{ y: 40, opacity: 0 }}
+            animate={isTokenHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            style={{ willChange: "transform, opacity" }}
+            src="/assets/image/builder/intro/5.png"
+          />
         </div>
       </section>
 
       {/* Tools And Interface Layer */}
-      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
+      <section
+        className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
+        onMouseEnter={() => setIsToolsHovered(true)}
+        onMouseLeave={() => setIsToolsHovered(false)}
+      >
         <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="absolute top-0 left-[140px] w-[334px] h-[466px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-end">
@@ -524,12 +608,26 @@ export default function BuilderPage() {
           </div>
         </div>
         <div className="absolute top-0 left-1/13 z-0">
-          <img alt="landing6" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/6.svg" />
+          <motion.img
+            alt="landing6"
+            width={540}
+            height={450}
+            className="w-full md:w-[540px] h-[450px] z-0"
+            initial={{ y: 40, opacity: 0 }}
+            animate={isToolsHovered ? { y: 0, opacity: 1 } : { y: 0, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            style={{ willChange: "transform, opacity" }}
+            src="/assets/image/builder/intro/6.png"
+          />
         </div>
       </section>
 
       {/* Governance Layer */}
-      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
+      <section
+        className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
+        onMouseEnter={() => setIsGovernanceHovered(true)}
+        onMouseLeave={() => setIsGovernanceHovered(false)}
+      >
         <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-start">
@@ -543,12 +641,26 @@ export default function BuilderPage() {
           </div>
         </div>
         <div className="absolute top-0 right-1/13 z-0">
-          <img alt="landing5" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/4.svg" />
+          <motion.img
+            alt="landing5"
+            width={540}
+            height={450}
+            className="w-full md:w-[540px] h-[450px] z-0"
+            initial={{ y: 40, opacity: 0 }}
+            animate={isGovernanceHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            style={{ willChange: "transform, opacity" }}
+            src="/assets/image/builder/intro/7.png"
+          />
         </div>
       </section>
 
       {/* Interoperability Layer */}
-      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
+      <section
+        className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
+        onMouseEnter={() => setIsInteroperabilityHovered(true)}
+        onMouseLeave={() => setIsInteroperabilityHovered(false)}
+      >
         <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="absolute top-0 left-[140px] w-[334px] h-[466px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-end">
@@ -558,7 +670,17 @@ export default function BuilderPage() {
           </div>
         </div>
         <div className="absolute top-0 left-1/13 z-0">
-          <img alt="landing6" width={540} height={450} className="w-full md:w-[540px] h-[450px] z-0" src="/assets/image/builder/intro/3.svg" />
+          <motion.img
+            alt="landing6"
+            width={540}
+            height={450}
+            className="w-full md:w-[540px] h-[450px] z-0"
+            initial={{ y: 40, opacity: 0 }}
+            animate={isInteroperabilityHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            style={{ willChange: "transform, opacity" }}
+            src="/assets/image/builder/intro/8.png"
+          />
         </div>
       </section>
 
@@ -579,7 +701,7 @@ export default function BuilderPage() {
               <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
                   href="#"
-                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                 >
                   Discover Ecosystem
                 </a>
