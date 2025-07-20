@@ -80,15 +80,14 @@ export default function Page() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
-              Kross Ecosystem Fund
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
+              Kross Ecosystem<br/> Fund
               </h1>
-              <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-2/3 text-center md:text-left">
-              Kross Ecosystem Fund supports the development of the Kross blockchain ecosystem by providing funding,
-              resources, and strategic guidance to innovative projects.
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-2/3 text-center md:text-left">
+              A multi-million dollar initiative to accelerate real-world impact <br/>through blockchain innovation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <div style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
                   href="#"
                   className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
@@ -96,7 +95,7 @@ export default function Page() {
                   Get Started
                 </a>
               </div>
-              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <div  style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
                   href="#"
                   className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
@@ -109,7 +108,7 @@ export default function Page() {
             {/* Right column */}
             <div className="w-full lg:w-2/5 flex justify-center relative mt-4 lg:mt-0">
               <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl"></div>
-              <div className="relative w-40 h-40 sm:w-80 sm:h-80 md:w-96 md:h-96">
+              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto">
                 <img
                   alt="Blockchain 3D Cube Visualization"
                   width={500}
@@ -117,7 +116,7 @@ export default function Page() {
                   src="/assets/image/fund/fund_1.png"
                   className={`transition-all duration-700 ease-out
                     ${imgVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}
-                    w-full h-full`}
+                    w-full h-auto`}
                 />
               </div>
             </div>
@@ -136,14 +135,14 @@ export default function Page() {
         </div>
         <div className="flex flex-col gap-2 md:gap-4">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 w-full">
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/2.png" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/1.png" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/4.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/2.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/1.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/4.png" />
           </div>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 w-full">
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/3.png" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/6.png" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-32 sm:w-40 md:w-48" src="/assets/image/partner/5.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/3.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/6.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/5.png" />
           </div>
         </div>
       </section>
@@ -155,49 +154,49 @@ export default function Page() {
               A Glimpse Into The Kross <br />
               Ecosystem Fund (KEF)
             </h3>
-            <p className="text-base sm:text-lg md:text-[24px] text-gray-300 text-center">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 text-center">
               The KEF Was Created To Fast-Track The Growth And Adoption Of Impactful Projects Within The Kross Ecosystem.
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full px-2 sm:px-4 mt-8 md:mt-[64px]">
           {/* Card 1 */}
-          <div className="border border-[#4B6794] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942] min-h-[220px]">
+          <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942] min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* User icon */}
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/1.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-10 sm:w-12 md:w-16 h-auto" src="/assets/icon/fund/1.svg" />
             </span>
-            <span className="text-[24px] font-medium text-white leading-snug text-left">KYC And AML Checks To Keep Users And The Network Safe.</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-snug text-left">KYC And AML Checks To Keep Users And The Network Safe.</span>
           </div>
               {/* Card 2 */}
-          <div className="border border-[#4B6794] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]">
+          <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942]/60 min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* Visibility icon */}
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/2.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-10 sm:w-12 md:w-16 h-auto" src="/assets/icon/fund/2.svg" />
             </span>
-            <span className="text-[24px] font-medium text-white leading-snug text-left">Complete Visibility Of Funds Through On-Chain Transactions.</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-snug text-left">Complete Visibility Of Funds Through On-Chain Transactions.</span>
               </div>
               {/* Card 3 */}
-          <div className="border border-[#4B6794] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]">
+          <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942]/60 min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* Dollar icon */}
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/3.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-10 sm:w-12 md:w-16 h-auto" src="/assets/icon/fund/3.svg" />
             </span>
-            <span className="text-[24px] font-medium text-white leading-snug text-left">Peace Of Mind For Stakers With On-Chain Coverage And Insurance Safeguards.</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-snug text-left">Peace Of Mind For Stakers With On-Chain Coverage And Insurance Safeguards.</span>
               </div>
               {/* Card 4 */}
-          <div className="border border-[#4B6794] rounded-[16px] p-10 flex flex-col items-start gap-6 bg-[#110942]/60 min-h-[220px]">
+          <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942]/60 min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* Audit icon */}
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/4.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-10 sm:w-12 md:w-16 h-auto" src="/assets/icon/fund/4.svg" />
             </span>
-            <span className="text-[24px] font-medium text-white leading-snug text-left">Audited For Safety. Built For Scale. Trusted By Institutions.</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-snug text-left">Audited For Safety. Built For Scale. Trusted By Institutions.</span>
           </div>
         </div>
         <div className="mt-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-          <a
-            href="#"
-            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
-          >
-            Join Now
-          </a>
-        </div>
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                   Join Now
+                </a>
+              </div> 
 
       </section>
       {/* Possibilities Section */}
@@ -222,13 +221,13 @@ export default function Page() {
               onMouseMove={handleMouseMove}
             >
               {/* Card 1 */}
-              <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
-                <div className="flex flex-col-reverse md:flex-row-reverse h-full">
+              <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+                <div className="flex flex-col-reverse md:flex-row-reverse">
                   {/* Left: Image */}
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
                     <img
                       alt="DeFi"
-                      className="object-cover absolute inset-0 w-full h-full"
+                      className="object-contain w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56  mx-auto"
                       src="/assets/image/fund/fund_process_1.png"
                     />
                   </div>
@@ -236,32 +235,36 @@ export default function Page() {
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Apply</h3>
                     <p className="text-gray-300 text-[16px]  leading-relaxed tracking-[0px]">
-                    We welcome builders at every stage, whether you&apos;re just starting or scaling. We&apos;re on the lookout for bold, visionary teams ready to shape the future of real-world asset (RWA) applications and the infrastructure behind them.
+                      We welcome builders at every stage, whether you&apos;re just starting or scaling. We&apos;re on the lookout for bold, visionary teams ready to shape the future of real-world asset (RWA) applications and the infrastructure behind them.
                     </p>
                   </div>
                 </div>
               </div>
               {/* Card 2 */}
-              <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
-                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_2.png" />
+                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
+                    <img alt="Tokenization" className="object-contain w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56  mx-auto " src="/assets/image/fund/fund_process_2.png" />
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Present your Ideas</h3>
-                    <p className="text-gray-300 text-[16px]  leading-relaxed tracking-[0px]">Submit your deck and a brief introduction, we welcome early-stage concepts. If your project resonates with our goals, we&apos;ll circulate it among our investment partners for further consideration.</p>
+                    <p className="text-gray-300 text-[16px]  leading-relaxed tracking-[0px]">
+                      Submit your deck and a brief introduction, we welcome early-stage concepts. If your project resonates with our goals, we&apos;ll circulate it among our investment partners for further consideration.
+                    </p>
                   </div>
                 </div>
               </div>
               {/* Card 3 */}
-              <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
-                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
-                    <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/fund/fund_process_3.png" />
+                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
+                    <img alt="Tokenization" className="object-contain w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 mx-auto" src="/assets/image/fund/fund_process_3.png" />
                   </div>
                   <div className="flex flex-col py-6 px-0 md:px-8 w-full">
                     <h3 className="text-4xl md:text-[40px] font-bold mb-4">Evaluation</h3>
-                    <p className="text-gray-300 text-[16px] leading-relaxed tracking-[0px]">We evaluate projects across multiple dimensions, focusing on strong teams with a well-defined execution plan. If selected, you&apos;ll gain access to funding, mentorship, and our extensive network. The process includes in-depth discussions with our investment team and capital partners.</p>
+                    <p className="text-gray-300 text-[16px] leading-relaxed tracking-[0px]">
+                      We evaluate projects across multiple dimensions, focusing on strong teams with a well-defined execution plan. If selected, you&apos;ll gain access to funding, mentorship, and our extensive network. The process includes in-depth discussions with our investment team and capital partners.
+                    </p>
                   </div>
                 </div>
               </div>

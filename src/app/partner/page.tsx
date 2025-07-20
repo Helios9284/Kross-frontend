@@ -17,8 +17,8 @@ export default function Page() {
     { name: "Google Cloud", logo: "/assets/image/partner/5.svg" },
     { name: "Google Cloud", logo: "/assets/image/partner/6.svg" },
     { name: "Google Cloud", logo: "/assets/image/partner/7.svg" },
-    { name: "Google Cloud", logo: "/assets/image/partner/8.svg" },
-    { name: "Google Cloud", logo: "/assets/image/partner/9.svg" }, 
+    { name: "Google Cloud", logo: "/assets/image/partner/8.png" },
+    { name: "Google Cloud", logo: "/assets/image/partner/9.png" }, 
     { name: "Google Cloud", logo: "/assets/image/partner/10.svg" },
     // ...add all partners
   ];
@@ -32,8 +32,8 @@ export default function Page() {
         <div className="text-center mb-8 sm:mb-16">
           <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-8">KROSS Partners</h1>
           <p className="text-base sm:text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            KROSS is at the forefront of building the most inclusive and fastest growing ecosystem for real-world
-            assets. Discover the global network of KROSS ecosystem partners and partners.
+            KROSS is at the forefront of building the most inclusive and fastest <br/>growing ecosystem for real-world
+            assets. Discover the global<br/> network of KROSS ecosystem partners and partners.
           </p>
         </div>
 
@@ -74,11 +74,11 @@ export default function Page() {
         </div>
 
         {/* Partners Content Area - Currently empty as shown in image */}
-        <div className="min-h-[200px] sm:min-h-[400px] px-2 sm:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className=" px-2 sm:px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 ">
             {partners.map((partner) => (
-              <div key={partner.name} className="bg-[#18123a] rounded-xl flex items-center justify-center h-32">
-                <img src={partner.logo} alt={partner.name} className="h-10 mr-4" />
+              <div key={partner.name} className=" h-[211px] bg-[#18123a] rounded-xl p-10 flex items-center justify-center">
+                <img src={partner.logo} alt={partner.name} className="" />
               </div>
             ))}
           </div>

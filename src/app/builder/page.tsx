@@ -74,10 +74,10 @@ export default function BuilderPage() {
   const [isGovernanceHovered, setIsGovernanceHovered] = useState(false);
   const [isInteroperabilityHovered, setIsInteroperabilityHovered] = useState(false);
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white font-sans">
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white " style={{fontFamily: 'lato, sans-serif'}}>
       {/* Hero Section */}
-      <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full">
-        <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
+      <section className="px-5 sm:px-2 md:px-20 py-10 sm:py-6 md:py-20 relative w-full min-h-[400px] sm:min-h-[600px]">
+        <div className="px-2 sm:px-2 md:px-20 py-6 sm:py-6 md:py-20 relative w-full">
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 w-full">
             {/* Left column */}
             <motion.div
@@ -96,18 +96,19 @@ export default function BuilderPage() {
                   height={16}
                   src="/assets/icon/file-icons_buildkite.png"
                 />
-                <span className="text-xs sm:text-sm font-medium">Krosscoin for Builders</span>
+                <span className="text-xs sm:text-sm font-medium font-sans">Krosscoin for Builders</span>
               </div>
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
-                The Premier African RWA Layer 1 Blockchain Designed To Define And Enforce Real-World Regulatory Standards
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
+                The Premier African RWA <br/>Layer 1 Blockchain Designed <br/>To Define And Enforce Real-<br/>World Regulatory Standards
               </h1>
-              <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-2/3 text-center md:text-left">
-                The Premier RWA Layer 1 Blockchain Designed To Meet And Enforce Real-World Regulatory Standards.
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-2/3 text-center md:text-left">
+                The Premier RWA Layer 1 Blockchain Designed To Meet <br/>And Enforce Real-World Regulatory Standards.
               </p>
-              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              
+              <div  style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
                   href="/explorer"
-                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                 >
                   Krosscoin Explorer
                 </a>
@@ -115,7 +116,7 @@ export default function BuilderPage() {
             </motion.div>
             {/* Right column */}
             <motion.div
-              className="w-2/5 flex justify-center relative"
+              className="w-full lg:w-2/5 flex justify-center relative"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -128,7 +129,7 @@ export default function BuilderPage() {
                     width={500}
                     height={500}
                     src="/assets/image/builder/builder.png"
-                    className="relative"
+                    className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto"
                   />
               </div>
             </motion.div>
@@ -139,32 +140,33 @@ export default function BuilderPage() {
       {/* New section with purple blurred background glow */}
       <section className="text-white relative overflow-hidden w-full">
         {/* Background Glow */}
-        <div className="absolute bottom-0 right-1/2 w-[200px] sm:w-[300px] md:w-[400px] h-[200px] sm:h-[300px] md:h-[500px] rounded-full blur-[60px] sm:blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
-        <div className="container mx-auto px-2 sm:px-5 md:px-20 py-10 sm:py-20">
+        <div className="absolute bottom-0 right-1/2 w-[120px] sm:w-[200px] md:w-[400px] h-[120px] sm:h-[200px] md:h-[500px] rounded-full blur-[40px] sm:blur-[100px] opacity-100 bg-gradient-to-br from-[#FF00B8] to-[#6D05B8] z-[-1]" />
+        <div className="container mx-auto px-2 sm:px-2 md:px-20 py-10 sm:py-10 md:py-20">
           <div className="text-center mb-8 sm:mb-16 w-full">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Built For Builders Like You</h2>
-            <p className="text-base sm:text-xl text-gray-300 max-w-4xl mx-auto mb-4 sm:mb-8">
-              Designed For Innovation—Compliance-Ready, Secure, And Built To Extend The Capabilities Of Cosmos And Beyond.
+            <h2 className="text-3xl sm:text-2xl md:text-5xl font-bold mb-4 sm:mb-6">Built For Builders Like You</h2>
+            <p className="text-base sm:text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto mb-4 sm:mb-8 font-sans">
+              Designed For Innovation—Compliance-Ready, Secure, And<br/> Built To Extend The Capabilities Of Cosmos And Beyond.
             </p>
-            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-              <a
-                href="#"
-                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
-              >
-                Developer Guide
-              </a>
-            </div>
+                       
+            <div  style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Developer Guide
+                </a>
+              </div>
           </div>
-          <div className="px-2 sm:px-5 relative w-full relative">
+          <div className="px-2 sm:px-2 relative w-full relative">
 
           <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 z-1">
-            <div className="relative w-[280px] sm:w-[350px] md:w-[450px] h-[280px] sm:h-[350px] md:h-[450px]  flex items-center justify-center">
+            <div className="relative w-[180px] sm:w-[280px] md:w-[450px] h-[180px] sm:h-[280px] md:h-[450px]  flex items-center justify-center">
               {/* Blurred background */}
               <div className="absolute inset-0 bg-[#EC34E0]/22 blur-3xl rounded-full z-0 pulse-move"></div>
               {/* Sharp image */}
               <img
                 alt="star"
-                className="relative w-full h-full z-10"
+                className="relative w-full h-auto max-w-full z-10"
                 src="/assets/image/builder/star.png"
               />
             </div>
@@ -173,27 +175,27 @@ export default function BuilderPage() {
               {/* Left column features */}
               <div className="space-y-10">
                 <div className="text-center md:text-right text-white">
-                  <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Plug And Play Compliant Solutions</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">
-                    Build And Operate In A Regulatory Compliant And Transparent Environment With KROSS Modular Tech Stack..
+                  <h3 className="text-base sm:text-lg md:text-2xl text-white font-semibold mb-2">Plug And Play Compliant Solutions</h3>
+                  <p className="text-xs sm:text-sm md:text-[16px] text-gray-300 leading-relaxed">
+                    Build And Operate In A Regulatory Compliant And <br/> Transparent Environment With KROSS Modular Tech<br/> Stack..
                   </p>
                 </div>
                 <div className="text-center md:text-right text-white">
-                  <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Default-Secure Programming Language</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">
-                    Use RIDE By Waves Blockchain To Build Secure And Robust DApps With Ease
+                  <h3 className="text-base sm:text-lg md:text-2xl text-white font-semibold mb-2">Default-Secure Programming Language</h3>
+                  <p className="text-xs sm:text-sm md:text-[16px] text-gray-300 leading-relaxed">
+                    Use RIDE By Waves Blockchain To Build Secure And<br/> Robust DApps With Ease
                   </p>
                 </div>
               </div>
               {/* Center icons grid */}
               <div className="flex flex-col items-center justify-between w-full gap-2 sm:gap-4 z-10">
                 <div className="flex gap-2 sm:gap-3">
-                  <img alt="Feature 1" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_1.png" />
-                  <img alt="Feature 2" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_2.png" />
+                  <img alt="Feature 1" width={100} height={100} className="w-16 sm:w-24 md:w-36 h-auto" src="/assets/image/builder/builder_sec2_1.png" />
+                  <img alt="Feature 2" width={100} height={100} className="w-16 sm:w-24 md:w-36 h-auto" src="/assets/image/builder/builder_sec2_2.png" />
                 </div>
                 <div className="flex gap-2 sm:gap-3">
-                  <img alt="Feature 3" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_3.png" />
-                  <img alt="Feature 4" width={100} height={100} className="w-16 sm:w-24 md:w-36" src="/assets/image/builder/builder_sec2_4.png" />
+                  <img alt="Feature 3" width={100} height={100} className="w-16 sm:w-24 md:w-36 h-auto" src="/assets/image/builder/builder_sec2_3.png" />
+                  <img alt="Feature 4" width={100} height={100} className="w-16 sm:w-24 md:w-36 h-auto" src="/assets/image/builder/builder_sec2_4.png" />
                 </div>
               </div>
               {/* Right column features */}
@@ -201,13 +203,13 @@ export default function BuilderPage() {
                 <div className="text-center md:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Multi-Chain Compatible</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">
-                    Access To Cross-Chain Interoperability Through Cosmos Inter-Blockchain Communication Protocol (IBC)
+                    Access To Cross-Chain Interoperability Through<br/> Cosmos Inter-Blockchain Communication Protocol (IBC)
                   </p>
                 </div>
                 <div className="text-center md:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">HASHGREED DEX</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">
-                    Trade And Manage Regulated Tokenized Assets Onchain. Create And Distribute Your Tokens Within A Minute
+                    Trade And Manage Regulated Tokenized Assets<br/>  Onchain. Create And Distribute Your Tokens Within A<br/> Minute
                   </p>
                 </div>
               </div>
@@ -224,7 +226,7 @@ export default function BuilderPage() {
         </div>
         <div className="mx-auto pl-5 md:pl-20 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Explore the world of use cases that can be built atop of Krosscoin and complement the utility of the network</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 mx-auto leading-tight">Explore The World Of Use Cases That Can<br/> Be Built Atop Of Krosscoin And Complement<br/> The Utility Of The Network</h2>
           </div>
           <div className="relative w-full">
             <div
@@ -250,7 +252,7 @@ export default function BuilderPage() {
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">DeFi</h3>
-                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Build lending protocols, DEXs, yield vaults, and more—powered by seamless cross-chain asset flow and low-cost, high-speed transactions on Kross Network.</p>
+                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Build lending protocols, DEXs, yield vaults, and more—<br/>powered by seamless cross-chain asset flow and low-<br/>cost, high-speed transactions on Kross Network.</p>
                 </div>
               </div>
               {/* Card 2 */}
@@ -260,7 +262,7 @@ export default function BuilderPage() {
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization</h3>
-                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Bring real-world and digital assets on-chain. From real estate and art to loyalty points and in-game items, tokenize anything with Kross Network secure, scalable foundation and unlock new forms of ownership and liquidity.</p>
+                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Bring real-world and digital assets on-chain.<br/> From real estate and art to loyalty points and in-game items, tokenize anything<br/> with Kross Network secure, scalable foundation and unlock<br/> new forms of ownership and liquidity.</p>
                 </div>
               </div>
               {/* Card 3 */}
@@ -376,7 +378,7 @@ export default function BuilderPage() {
               <div className="p-12 space-y-8">
                 <div>
                   <h2 className="text-[40px] md:text-5xl font-bold mb-6">KROSS Hub</h2>
-                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed w-full">Your Entry Point Into The Kross Network. Bridge And Stake Your Assets, Complete Onchain Tasks, And Rise Through The Leaderboard To Unlock Higher Rewards.</p>
+                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed w-full font-sans">Your entry point into the Kross Network.<br/> Bridge and stake your assets, complete <br/>onchain tasks, and rise through the<br/> leaderboard to unlock higher rewards.</p>
                 </div>
                 <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                   <a
@@ -492,7 +494,7 @@ export default function BuilderPage() {
         <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-start">
-          <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 py-[50px] min-h-[360px] relative max-w-[520px] z-10">
+          <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-5 sm:p-8 md:p-10 py-[30px] sm:py-[40px] md:py-[50px] min-h-[360px] relative w-full sm:max-w-[520px] z-10">
             <h3 className="text-[32px] font-bold mb-8">Data Layer</h3>
             <p className="text-[#CACACA] mb-10">Stores blockchain data like transactions, account balances, and smart contract states. Data is saved in an append-only structure (blockchain). Each block contains: Regular transactions (transfers, leases, exchanges), Smart contract updates, Alias and data transactions.</p>
             <div className="flex gap-2 flex-wrap">
@@ -501,7 +503,7 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="absolute top-0 right-1/13 z-0">
           <motion.img
             alt="landing3"
             width={540}

@@ -30,8 +30,8 @@ const features = [
 
 const testimonialImages = [
   "/assets/image/institution/1.png",
-  "/assets/image/institution/2.png",
-  "/assets/image/institution/3.png",
+  "/assets/image/institution/2.svg",
+  "/assets/image/institution/3.svg",
 ];
 const nameArray = [
   {
@@ -79,26 +79,27 @@ const InstitutionPage = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-4 sm:mb-6">Transforming Real-World Assets<br/>Into Powerful Digital Value</h1>
-            <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-3/5">Powering compliant RWA tokenization for businesses, governments, And developers through secure, institutional-grade infrastructure</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-4 sm:mb-6">Transforming Real-World Assets<br/>Into Powerful Digital Value</h1>
+            <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-3/5">Powering compliant RWA tokenization for businesses, governments,<br/> And developers through secure, institutional-grade infrastructure</p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-              <a
-                href="/contact"
-                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
-              >
-                Contact us
-              </a>
+              
+              <div style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="/contact"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Contact us
+                </a>
+              </div>
+              <div  style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+                <a
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                >
+                  Tokenisation guide
+                </a>
+              </div>
             </div>
-            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-              <a
-                href="#"
-                className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
-              >
-                Tokenisation guide
-              </a>
-            </div>  
-          </div>
         </motion.div>
           
       </div>
@@ -115,15 +116,15 @@ const InstitutionPage = () => {
 
       {/* Partner Section */}
       <section className="w-full flex flex-col items-center justify-center py-8 sm:py-10 md:py-20 bg-[#050026]">
-        <div className="max-w-2xl text-center mx-auto">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-4">Institutions Partnering With Us</h3>
-          <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6">Our mission is to bring the global financial ecosystem onchain. We are committed to accelerating the efforts of those transforming tangible assets into secure, tokenized representations, driving the future of finance.</p>
+        <div className=" text-center mx-auto">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold mb-2 sm:mb-4">Institutions Partnering With Us</h3>
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-6 font-sans">Our mission is to bring the global financial ecosystem onchain. We are committed <br/> to accelerating the efforts of those transforming tangible assets into secure,<br/> tokenized representations, driving the future of finance.</p>
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center mb-4">
             <img src="/assets/image/institution/1.png" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
-            <img src="/assets/image/institution/2.png" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
-            <img src="/assets/image/institution/3.png" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
+            <img src="/assets/image/institution/2.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
+            <img src="/assets/image/institution/3.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
           </div>
-          <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+          <div style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
             <a
               href="/contact"
               className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
@@ -138,21 +139,21 @@ const InstitutionPage = () => {
       <section className="w-full flex flex-col items-center justify-center py-8 sm:py-14 bg-[#050026]">
         <div className="max-w-2xl text-center mx-auto mb-4 sm:mb-6">
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">Why Do Institutions Choose Kross Network?</h3>
-          <p className="text-[24px] sm:text-lg text-gray-300 mb-2 sm:mb-4 py-[24px]">Our mission is to bring the global financial ecosystem onchain. We are committed to accelerating the efforts of those transforming tangible assets into secure, tokenized representations, driving the future of finance</p>
-          <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-2 sm:mb-4 py-[24px]">Our mission is to bring the global financial ecosystem onchain. We are committed to accelerating the efforts of those transforming tangible assets into secure, tokenized representations, driving the future of finance</p>
+          <div  style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
             <a
               href="#"
               className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
             >
               Tokenisation guide
             </a>
-          </div> 
+          </div>
           </div>
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-10 px-[20px] md:px-[74px] py-[24px]">
           {features.map((f, i) => (
             <div key={i} className="border border-[#110942] rounded-[16px] p-8 bg-[#110942]/25 min-h-[180px] flex flex-col items-start" >
-              <h4 className="text-[32px] md:text-[24px] font-bold mb-2">{f.title}</h4>
-              <p className="text-[16px] md:text-[16px] text-gray-300">{f.desc}</p>
+              <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">{f.title}</h4>
+              <p className="text-base sm:text-lg md:text-xl text-gray-300">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -162,21 +163,21 @@ const InstitutionPage = () => {
       <section className="w-full flex flex-col items-center justify-center py-8 sm:py-16 bg-[#110942]">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-[86px] text-center">Why Do Institutions Choose Kross Network?</h3>
         <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4 items-center mb-4 sm:mb-8 px-2 sm:px-4 mx-auto">
-          <div className="flex justify-center w-full h-full">
+          <div className="flex justify-center w-full h-full mb-6 md:mb-0">
             {/* Rotating testimonial image */}
             <img
               src={testimonialImages[currentImage]}
               alt="Institution Partner"
-              className="w-auto h-full"
+              className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 object-contain mx-auto"
             />
           </div>
           <div className="flex flex-col items-end">
-            <p className="text-[24px] md:text-lg text-gray-300 mb-6 text-left max-w-xl">&quot;We&apos;re committed to bringing the global financial system onchain. Kross Network plays a key role in helping us accelerate the tokenization of real-world assets, turning them into secure, digital representations. This transformation is essential to building a more open and efficient financial ecosystem.&quot;
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 text-left max-w-xl">&quot;We&apos;re committed to bringing the global financial system onchain. Kross Network plays a key role in helping us accelerate the tokenization of real-world assets, turning them into secure, digital representations. This transformation is essential to building a more open and efficient financial ecosystem.&quot;
               <br/>
-              <span className="block text-[24px] mt-4 font-semibold text-white">
+              <span className="block text-lg sm:text-xl mt-4 font-semibold text-white">
                 {nameArray[currentImage].title}
                 <br/>
-                <span className="text-[18px] font-normal">{nameArray[currentImage].desc}</span>
+                <span className="text-base sm:text-lg font-normal">{nameArray[currentImage].desc}</span>
                 </span>
           </p>
           </div>
@@ -194,14 +195,14 @@ const InstitutionPage = () => {
       {/* CTA Section */}
       <section className="w-full flex flex-col items-center justify-center py-8 sm:py-16">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">Start Tokenizing Your Real World Assets</h3>
-        <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-            <a
-              href="/contact"
-              className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
-            >
-              Contact us
-            </a>
-          </div>
+        <div style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+          <a
+            href="/contact"
+            className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+          >
+            Contact us
+          </a>
+        </div>
       </section>
     </div>
   );

@@ -42,13 +42,9 @@ export default function ExplorerPage() {
   const [showSteps, setShowSteps] = useState(true);
 
   return (
-    <main
-      className="min-h-screen w-full bg-gradient-to-b from-[#1a0841] to-[#18062b] flex flex-col items-center relative overflow-hidden"
-      style={{ fontFamily: 'lato, sans-serif' }}
-      aria-label="Kross Explorer Upgrade Page"
-    >
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white " style={{fontFamily: 'lato, sans-serif'}}>
       <section className="px-5 md:px-20 py-10 md:py-20 relative w-full min-h-[600px]">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 " >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 " >
           <div className=" relative w-[280px] sm:w-[450px] md:w-[850px] h-[280px] sm:h-[450px] md:h-[650px] flex items-center justify-center">
             {/* Blurred background */}
             <div className="absolute inset-0 bg-[#FF00B8]/25 blur-3xl rounded-full z-0 explorer-move" ></div>
@@ -93,24 +89,24 @@ export default function ExplorerPage() {
         <div className="flex flex-col lg:flex-row items-center gap-10 w-full ">
           {/* Left column */}
           <motion.div
-            className="w-3/5  z-10"
+            className="w-full lg:w-2/4 z-10"
             initial={{ x: -100, opacity: 0.1 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}> Our Explorer Is Being Upgraded</h1>
-            <p className="text-xl text-gray-300 mb-10 w-full md:w-3/5">It&apos;s a scar on us we need the fix so let&apos;s beautify the scar. It costs $10k to build the new upgraded explorer. For now we secure the Blockchain records from Waves chain custom endpoint.</p>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}> Our Explorer Is<br/> Being Upgraded</h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-10 w-full md:w-3/5">It&apos;s a scar on us we need the fix so let&apos;s beautify the scar. It <br/>costs $10k to build the new upgraded explorer. For now <br/>we secure the Blockchain records from Waves chain<br/> custom endpoint.</p>
 
           </motion.div>
           {/* Right column */}
           <motion.div
-            className="w-2/5 flex justify-center relative"
+            className="w-full lg:w-2/4 flex justify-center relative"
             initial={{ x: 100, opacity: 0.1 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="relative w-80 h-80 md:w-full md:h-full">
-              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative " src="/assets/image/explorer/1.png" />
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto flex justify-center items-center">
+              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative w-full h-auto" src="/assets/image/explorer/1.png" />
             </div>
           </motion.div>
         </div>
@@ -127,24 +123,24 @@ export default function ExplorerPage() {
             <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#6D05B8]/42 blur-3xl rounded-full"></div>
           </div>
           <div className="text-center mb-4 sm:mb-8">
-            <span className="block text-[40px] sm:text-[40px] font-medium text-gray-500">
+            <span className="block text-2xl sm:text-3xl md:text-4xl font-medium text-gray-500">
               For Now You Can Use The Kross Explorer By
             </span>
-            <span className="block text-[48px] sm:text-[48px] font-bold text-transparent text-white mt-1">
+            <span className="block text-3xl sm:text-4xl md:text-5xl font-bold text-transparent text-white mt-1">
               Inserting Our Node Url Inside The Custom Field
             </span>
-            <span className="block text-[56px] sm:text-[56px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EC34E0] to-[#6D05B8] mt-1">
+            <span className="block text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EC34E0] to-[#6D05B8] mt-1">
               Of The Classic Waves Explorer.
             </span>
           </div>
           {/* Steps Toggle Button */}
           <button
-            className="mb-4 sm:mb-6 px-4 sm:px-6 py-2 rounded-full border-[0.5px] border-[#FFFFFFD4] bg-[#11094280] text-white font-semibold shadow-lg flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#6D05B8]"
+            className="mb-4 sm:mb-6 px-4 sm:px-6 py-2 sm:py-3 rounded-full border-[0.5px] border-[#FFFFFFD4] bg-[#11094280] text-white font-semibold shadow-lg flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-[#6D05B8] text-base sm:text-lg"
             aria-pressed={showSteps}
             aria-controls="explorer-steps"
             onClick={() => setShowSteps((prev) => !prev)}
           >
-            <span className="text-[40px] flex items-center gap-2">
+            <span className="text-2xl sm:text-3xl flex items-center gap-2">
               <img src="/assets/icon/step.svg" alt="Steps icon"  />
             
             {showSteps ? 'Steps' : 'Steps'} 
@@ -163,38 +159,57 @@ export default function ExplorerPage() {
                 // style={{ background: 'linear-gradient(to bottom, #6D05B8, transparent)' }}
                 
               >
-                <div className="p-10 rounded-3xl bg-transparent sm:p-12 md:p-16" style={{backgroundImage: "url('/assets/image/explorer/rectangle.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "top center"}}>
-                  <ol className="space-y-6" aria-label="Steps to use Kross Explorer">
-                    {steps.map((step, index) => (
-                      <li
-                        key={index}
-                        className="flex flex-row items-center space-x-0 sm:space-x-5 p-[14px] sm:p-[18px] rounded-full shadow-lg min-h-20 w-full font-sans"
-                        style={{
-                          background:
-                            index % 2 === 0
-                              ? 'linear-gradient(135deg, #a21caf 0%, #6D05B8 100%)'
-                              : 'linear-gradient(-135deg, #a21caf 0%, #6D05B8 100%)',
-                        }}
-                      >
-                        <span
-                          className="text-white font-bold text-[40px] border-2 rounded-full bg-[#6D05B8] inline-flex items-center justify-center aspect-square px-4"
-                          style={{ borderColor: '#6D05B8' }}
-                          aria-label={`Step ${step.number}`}
-                        >
-                          {step.number}
-                        </span>
-                        <span className="text-white text-base leading-relaxed text-[22px] font-medium text-center sm:text-left break-words w-full">
-                          {step.text}
-                        </span>
-                      </li>
-                    ))}
-                  </ol>
+                <div className="relative w-full h-full overflow-hidden">
+                  {/* Blurred background */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage: "url('/assets/image/explorer/rectangle.svg')",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "top center",
+                      filter: "blur(64px)", // Strong, but not excessive
+                      opacity: 0.5
+                    }}
+                  />
+                  {/* Optional: Add a dark overlay for smoother blending */}
+                  <div className="absolute inset-0 bg-[#050026] opacity-75" />
+                  {/* Foreground content */}
+                  <div className="relative z-10">
+                    <div className="p-6 sm:p-10 rounded-3xl bg-transparent sm:p-12 md:p-16" style={{backgroundImage: "url('/assets/image/explorer/rectangle.svg')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "top center"}}>
+                      <ol className="space-y-6" aria-label="Steps to use Kross Explorer">
+                        {steps.map((step, index) => (
+                          <li
+                            key={index}
+                            className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 space-x-0 sm:space-x-5 p-4 sm:p-[18px] rounded-full shadow-lg min-h-20 w-full font-sans"
+                            style={{
+                              background:
+                                index % 2 === 0
+                                  ? 'linear-gradient(135deg, #a21caf 0%, #6D05B8 100%)'
+                                  : 'linear-gradient(-135deg, #a21caf 0%, #6D05B8 100%)',
+                            }}
+                          >
+                            <span
+                              className="text-white font-bold text-2xl sm:text-3xl md:text-4xl border-2 rounded-full bg-[#6D05B8] inline-flex items-center justify-center aspect-square px-4"
+                              style={{ borderColor: '#6D05B8' }}
+                              aria-label={`Step ${step.number}`}
+                            >
+                              {step.number}
+                            </span>
+                            <span className="text-white text-base sm:text-lg md:text-xl leading-relaxed font-medium text-center sm:text-left break-words w-full">
+                              {step.text}
+                            </span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
       )}
-    </main>
+    </div>
   );
 } 

@@ -52,7 +52,7 @@ const TraderPage = () => {
               <img alt="Krosscoin for Traders" width={16} height={16} src="/assets/icon/file-icons_buildkite.png" />
               <span className="text-xs sm:text-sm font-normal text-white">Krosscoin for Traders</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-4 sm:mb-6" style={{ fontFamily: 'lato, sans-serif' }}>Simplify Your Crypto Journey</h1>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[64px] font-bold leading-tight mb-4 sm:mb-6" style={{ fontFamily: 'lato, sans-serif' }}>Simplify Your Crypto <br/>Journey</h1>
             <a href="#" className="inline-flex px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#FF00B8] to-[#6D05B8] rounded-[12px] text-white font-medium hover:from-[#6D05B8] hover:to-[#FF00B8] hover-shadow">Join Traders</a>
           </motion.div>
           {/* Right column */}

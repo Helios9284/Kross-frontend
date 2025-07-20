@@ -80,31 +80,38 @@ export default function Page() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <div className="relative w-full h-full flex items-center justify-center ">
-                <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full z-0"></div>
-              
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage: "url(/assets/image/rwa/background.png)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    filter: "blur(80px)"
+                  }}
+                ></div>
                   <img
                     alt="Blockchain 3D Cube Visualization"
-                    width={500}
-                    height={500}
+                    width={384}
+                    height={384}
                     src="/assets/image/rwa/rwa.png"
-                    className="relative"
+                    className="relative ml-10"
                   />
               </div>
             </motion.div>
             <motion.div
-              className="w-full lg:w-2/4 flex flex-col items-start pl-[80px] "
+              className="w-full lg:w-2/4 flex flex-col items-start pl-[80px] justify-center"
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="flex justify-start items-center w-full md:w-2/3 mb-4 sm:mb-[21px] pl-0">
-                <span className="text-base sm:text-lg md:text-2xl text-gray-300">Kross Network ×</span>
-                <span className="pl-10 text-base sm:text-lg md:text-2xl text-gray-300">Cloud</span>
+              <div className="flex justify-start items-center w-full md:w-2/3 mb-4 sm:mb-[21px] pl-0 gap-2">
+                <span className="text-[30px] text-gray-300">Kross Network</span>
+                <img src="/assets/image/rwa/cloud.png" alt="Cloud" className="" />
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-[24px] text-center pl-0 md:pl-4 lg:pl-8">
+              <h1 className="text-[32px] sm:text-[48px] md:text-[64px] font-bold leading-tight mb-4 sm:mb-[24px] text-center pl-0 md:pl-4 lg:pl-8">
               RWA Launchpad
               </h1>
-              
               <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block text-sm sm:text-base md:text-lg">
                 <a
                   href="#"
@@ -115,7 +122,6 @@ export default function Page() {
               </div>
             </motion.div>
             {/* Right column */}
-           
           </div>
         </div>
       </section>
@@ -276,10 +282,10 @@ export default function Page() {
               onMouseMove={handleMouseMove}
             >
               {/* Card 1 */}
-              <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
                   {/* Left: Image */}
-                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
+                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
                     <img
                       alt="DeFi"
                       className="object-cover absolute inset-0 w-full h-full"
@@ -311,9 +317,9 @@ export default function Page() {
                 </div>
               </div>
               {/* Card 2 */}
-              <div className="w-[678px]  md:w-[700px] h-[362px] md:h-[400px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="flex flex-col-reverse md:flex-row-reverse h-full">
-                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0">
+                  <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
                     <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/rwa/rwa_2.png" />
                   </div>
                   <div className="flex flex-col justify-center py-6 px-0 md:px-8 w-full">
@@ -493,7 +499,7 @@ export default function Page() {
                 {/* Icon Card */}
                 <div className="flex justify-center order-1 lg:order-2">
                   <div className=" rounded-xl md:rounded-2xl p-4 w-full h-full flex items-center justify-center">
-                    <img src="/assets/image/fund/fund_process_3.svg"  alt="rwa_3" />
+                    <img src="/assets/image/fund/fund_process_1.png"  alt="rwa_3" />
                   </div>
                 </div>
               </div>
@@ -507,7 +513,7 @@ export default function Page() {
                 {/* Icon Card */}
                 <div className="flex justify-center order-1">
                   <div className=" rounded-xl md:rounded-2xl p-4 w-full h-full flex items-center justify-center">
-                    <img src="/assets/image/fund/fund_process_2.svg"  alt="rwa_3" />
+                    <img src="/assets/image/fund/fund_process_2.png"  alt="rwa_3" />
                   </div>
                 </div>
 
@@ -567,7 +573,7 @@ export default function Page() {
                 {/* Icon Card */}
                 <div className="flex justify-center order-1 lg:order-2">
                  <div className=" rounded-xl md:rounded-2xl p-4 w-full h-full flex items-center justify-center">
-                    <img src="/assets/image/fund/fund_process_1.svg"  alt="rwa_3" />
+                    <img src="/assets/image/fund/3.png"  alt="rwa_3" />
                   </div>
                 </div>
               </div>

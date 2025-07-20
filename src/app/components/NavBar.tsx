@@ -105,7 +105,7 @@ export default function NavBar() {
               <FaChevronDown className="text-white w-3 h-3" />
             </div>
             {resourcesOpen && (
-              <div className="absolute top-full left-0 mt-4 bg-[#050026] rounded-[16px] border border-[#2b3250] shadow-lg z-10 flex flex-col w-max px-[16px] py-[16px]">
+              <div className="z-50 absolute top-full left-0 mt-4 bg-[#050026] rounded-[16px] border border-[#2b3250] shadow-lg z-10 flex flex-col w-max px-[16px] py-[16px]">
                 <Link
                   href="/news"
                   className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
@@ -136,7 +136,7 @@ export default function NavBar() {
               <FaChevronDown className="text-white w-3 h-3" />
             </div>
             {ecosystemOpen && (
-              <div className="absolute top-full left-0 mt-4 bg-[#050026] rounded-[16px] border border-[#2b3250] shadow-lg z-10 flex flex-col w-max px-[16px] py-[16px]">
+              <div className="z-50 absolute top-full left-0 mt-4 bg-[#050026] rounded-[16px] border border-[#2b3250] shadow-lg z-10 flex flex-col w-max px-[16px] py-[16px]">
                 <Link
                   href="/fund"
                   className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
@@ -163,7 +163,7 @@ export default function NavBar() {
                   className="text-white text-[14px] font-[300]  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setEcosystemOpen(false)}
                 >
-                  $OM Coin
+                  $KSS Coin
                 </Link>
               </div>
             )}
@@ -205,7 +205,7 @@ export default function NavBar() {
             <Link href="/fund" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>Ecosystem Fund</Link>
             <Link href="/rwa" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>RWAccelerator</Link>
             <Link href="/partner" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>Partners</Link>
-            <Link href="/coin" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>$OM Coin</Link>
+            <Link href="/coin" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>$KSS Coin</Link>
           </div>
         </div>
       )}
