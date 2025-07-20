@@ -96,10 +96,10 @@ export default function Page() {
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-full md:w-2/3 text-center z-10">Become a <br/>KROSS Partner</h1>
             <div className="z-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
               <a
-                href="#"
+                href="/contact"
                 className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
               >
-                Partner with us
+                Contact Us
               </a>
             </div>
           </div>

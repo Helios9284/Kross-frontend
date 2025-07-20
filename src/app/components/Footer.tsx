@@ -59,9 +59,8 @@ export default function Footer() {
             <h3 className="font-semibold mb-4 text-gray-200 text-base sm:text-sm">Ecosystem</h3>
             <ul className="space-y-3">
               <li><Link href="/fund" className="text-gray-400 hover:text-white transition-colors">Ecosystem Fund</Link></li>
-              <li><Link href="/rwa" className="text-gray-400 hover:text-white transition-colors">RWAccelerator</Link></li>
               <li><Link href="/partner" className="text-gray-400 hover:text-white transition-colors">Partners</Link></li>
-              <li><Link href="/coin" className="text-gray-400 hover:text-white transition-colors">KROSS Coin</Link></li>
+              <li><Link href="/coin" className="text-gray-400 hover:text-white transition-colors">$KSS Coin</Link></li>
             </ul>
           </div>
           <div className="col-span-1 text-center md:text-left">

@@ -171,3 +171,10 @@ body {
   z-index: -1;
   pointer-events: none;
 }
+
+.custom-gradient-border {
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, transparent, #344054) 1;
+  border-radius: 0.75rem; /* matches Tailwind's rounded-xl */
+}

@@ -155,7 +155,7 @@ export default function Page() {
               Ecosystem Fund (KEF)
             </h3>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 text-center">
-              The KEF Was Created To Fast-Track The Growth And Adoption Of Impactful Projects Within The Kross Ecosystem.
+              The KEF Was Created To Fast-Track The Growth And Adoption Of Impactful Projects <br/> Within The Kross Ecosystem.
             </p>
           </div>
         </div>
@@ -163,30 +163,38 @@ export default function Page() {
           {/* Card 1 */}
           <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942] min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* User icon */}
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-10 sm:w-12 md:w-16 h-auto" src="/assets/icon/fund/1.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/1.png" />
             </span>
-            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-snug text-left">KYC And AML Checks To Keep Users And The Network Safe.</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug text-left">$10M+ To Fuel The Future of Blockchain</span>
+            <span className="text-xs sm:text-sm md:text-base text-white leading-snug text-left">Focused on deploying strategic capital over four years to back high-<br/>impact blockchain ventures.</span>
+          
           </div>
               {/* Card 2 */}
           <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942]/60 min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* Visibility icon */}
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-10 sm:w-12 md:w-16 h-auto" src="/assets/icon/fund/2.svg" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/2.png" />
             </span>
-            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-snug text-left">Complete Visibility Of Funds Through On-Chain Transactions.</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug text-left">Global Mentorship And Support</span>
+            <span className="text-xs sm:text-sm md:text-base text-white leading-snug text-left">Empowering visionary founders with funding, strategic guidance, and a <br/> world-class network.</span>
+              
               </div>
               {/* Card 3 */}
           <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942]/60 min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* Dollar icon */}
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-10 sm:w-12 md:w-16 h-auto" src="/assets/icon/fund/3.svg" />
+              <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/3.png" />
             </span>
-            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-snug text-left">Peace Of Mind For Stakers With On-Chain Coverage And Insurance Safeguards.</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug text-left">Backed By Industry Giants</span>
+            <span className="text-xs sm:text-sm md:text-base text-white leading-snug text-left">Trusted by global investors including laser digital, shorooq partners, <br/> and brevan howard digital</span>
+
               </div>
               {/* Card 4 */}
           <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942]/60 min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* Audit icon */}
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-10 sm:w-12 md:w-16 h-auto" src="/assets/icon/fund/4.svg" />
+              <img alt="Blockchain 3D Cube Visualization" className="relative z-10" src="/assets/icon/fund/4.png" />
             </span>
-            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white leading-snug text-left">Audited For Safety. Built For Scale. Trusted By Institutions.</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-snug text-left">Audited For Safety. Built For Scale. Trusted By Institutions.</span>
+            <span className="text-xs sm:text-sm md:text-base text-white leading-snug text-left">We welcome projects at any phase of growth, built for a connected, <br/> multi-chain world.</span>
+          
           </div>
         </div>
         <div className="mt-10 inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">

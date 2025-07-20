@@ -144,13 +144,7 @@ export default function NavBar() {
                 >
                   Ecosystem Fund
                 </Link>
-                <Link
-                  href="/rwa"
-                  className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
-                  onClick={() => setEcosystemOpen(false)}
-                >
-                  RWAccelerator
-                </Link>
+                
                 <Link
                   href="/partner"
                   className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
@@ -203,7 +197,6 @@ export default function NavBar() {
           <div className="flex flex-col gap-2 mt-2">
             <span className="text-white font-semibold">Ecosystem</span>
             <Link href="/fund" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>Ecosystem Fund</Link>
-            <Link href="/rwa" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>RWAccelerator</Link>
             <Link href="/partner" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>Partners</Link>
             <Link href="/coin" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>$KSS Coin</Link>
           </div>

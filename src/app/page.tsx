@@ -221,15 +221,15 @@ export default function Home() {
               <div className="space-y-10">
                 <div className="text-center md:text-right text-white">
                   <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Decentralized Identity Guard</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Authenticate Users And Apps With Decentralized IDs, Ensuring Secure And Scalable Identity Across Kross DApps.</p>
+                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Authenticate Users And Apps With Decentralized IDs, <br/> Ensuring Secure And Scalable Identity Across Kross <br/> DApps.</p>
                 </div>
                 <div className="text-center md:text-right text-white">
                   <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Know Your Counterparty</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Build For A Secure Future With Access To Users Who Meet Rigorous KYC/AML Standards.</p>
+                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Build For A Secure Future With Access To Users Who Meet <br/> Rigorous KYC/AML Standards.</p>
                 </div>
                 <div className="text-center md:text-right text-white">
-                  <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Decentralized Identity Guard</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Authenticate Users And Apps With Decentralized IDs, Ensuring Secure And Scalable Identity Across IBC DApps.</p>
+                  <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Application-First Protocol</h3>
+                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Get Access To DEXs, DeFi And RWA Tokenization <br/> Platforms From Day 1.</p>
                 </div>
               </div>
               {/* Center icons grid */}
@@ -251,15 +251,15 @@ export default function Home() {
               <div className="space-y-10">
                 <div className="text-center md:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Simplified For Builders & Users</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Deliver Efficient, Low-Cost Tools That Simplify Launching And Using Blockchain Apps — No Matter Your Experience Level.</p>
+                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Deliver Efficient, Low-Cost Tools That Simplify <br/> Launching And Using Blockchain Apps — No Matter <br/> Your Experience Level.</p>
                 </div>
                 <div className="text-center md:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Fast And Low Fees</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Move Assets And Data Across Blockchains With Minimal Fees And High Speed Powered By The Inter-Blockchain Communication (IBC).</p>
+                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Move Assets And Data Across Blockchains With Minimal <br/> Fees And High Speed Powered By The Inter-Blockchain <br/> Communication (IBC).</p>
                 </div>
                 <div className="text-center md:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Built For Reliability</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Launch With Confidence On A Proven, Secure, And Transparent Chain Powered By The Kross, Waves Or Cosmos SDKs.</p>
+                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Launch With Confidence On A Proven, Secure, And <br/> Transparent Chain Powered By The Kross, Waves  Or <br/> Cosmos SDKs.</p>
                 </div>
               </div>
             </div>
@@ -445,8 +445,10 @@ export default function Home() {
               {/* Left: Text and button */}
               <div className="p-12 space-y-8">
                 <div>
-                  <h2 className="text-[40px] md:text-5xl font-bold mb-6">KROSS Hub</h2>
-                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed w-full">Your Entry Point Into The Kross Network. Bridge And Stake Your Assets, Complete Onchain Tasks, And Rise Through The Leaderboard To Unlock Higher Rewards.</p>
+                  <h2 className="text-[40px] md:text-5xl font-bold mb-[16px]">KROSS Hub</h2>
+                  <p className="text-sm md:text-base text-gray-300 leading-relaxed w-full mb-[16px]">Discover KROSS Hub:</p>
+
+                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed w-full">Invest In RWAs On Hashgreed, Play TapOwn <br/> To Earn RWA Shares, and Access NFT, DeFi, <br/>  WorkFi, And EnergyFi Apps.</p>
                 </div>
                 <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                   <a
@@ -524,7 +526,7 @@ export default function Home() {
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Trade Assets Instantly With A Seamless Experience. No Delays, No Complexities, Just Fast, Secure Exchanges At Your Fingertips.</p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
-                            href="#"
+                            href="https://dex.hashgreed.com"
                             className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
                             Add Liquidity
@@ -589,7 +591,7 @@ export default function Home() {
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Put your Krosscoin to work securely and passively. Kross Vaults give you access to curated assets and their staking rewards—no manual buying, staking, or managing required.</p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
-                            href="#"
+                            href="https://dex.hashgreed.com"
                             className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
                             Swap Now

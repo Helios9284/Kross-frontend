@@ -318,7 +318,7 @@ export default function BuilderPage() {
               {/* Card 8 */}
               <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/8.spngvg" />
+                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/8.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">IBC Compatibility for token movement</h3>
@@ -378,7 +378,7 @@ export default function BuilderPage() {
               <div className="p-12 space-y-8">
                 <div>
                   <h2 className="text-[40px] md:text-5xl font-bold mb-6">KROSS Hub</h2>
-                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed w-full font-sans">Your entry point into the Kross Network.<br/> Bridge and stake your assets, complete <br/>onchain tasks, and rise through the<br/> leaderboard to unlock higher rewards.</p>
+                  <p className="text-lg md:text-xl text-gray-300 leading-relaxed w-full font-sans">Your Entry Point Into The Kross Network.<br/> Bridge And Stake Your Assets, Complete <br/>Onchain Tasks, And Rise Through The<br/> Leaderboard To Unlock Higher Rewards.</p>
                 </div>
                 <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                   <a

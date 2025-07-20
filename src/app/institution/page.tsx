@@ -119,7 +119,7 @@ const InstitutionPage = () => {
         <div className=" text-center mx-auto">
           <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold mb-2 sm:mb-4">Institutions Partnering With Us</h3>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-6 font-sans">Our mission is to bring the global financial ecosystem onchain. We are committed <br/> to accelerating the efforts of those transforming tangible assets into secure,<br/> tokenized representations, driving the future of finance.</p>
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center mb-4">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center mb-4 pb-[135px]">
             <img src="/assets/image/institution/1.png" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
             <img src="/assets/image/institution/2.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
             <img src="/assets/image/institution/3.svg" alt="Institution Partner" className="w-full sm:w-1/3 h-auto" />
