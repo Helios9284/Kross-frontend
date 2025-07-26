@@ -24,7 +24,7 @@ export default function Page() {
   ];
 
   return (
-  <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
+  <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans  overflow-hidden">
 
     <section className="bg-[#050026]">
     <div className="container mx-auto px-2 sm:px-6 py-8 sm:py-[64px]">
@@ -75,7 +75,7 @@ export default function Page() {
 
         {/* Partners Content Area - Currently empty as shown in image */}
         <div className=" px-2 sm:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 ">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 ">
             {partners.map((partner) => (
               <div key={partner.name} className=" h-[211px] bg-[#18123a] rounded-xl p-10 flex items-center justify-center">
                 <img src={partner.logo} alt={partner.name} className="" />

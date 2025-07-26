@@ -15,7 +15,7 @@ export default function Home() {
   const [newsScrollLeft, setNewsScrollLeft] = useState(0);
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const cardCount = 8;
+  const cardCount = 7;
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     setStartX(e.pageX - (cardRowRef.current?.offsetLeft || 0));
@@ -99,7 +99,7 @@ export default function Home() {
     window.open("https://medium.com/@kross", "_blank", "noopener,noreferrer")
   }
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans  overflow-hidden">
       {/* Hero Section */}
       <section className="px-4 sm:px-6 md:px-20 py-8 sm:py-12 md:py-20 relative w-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
         <div className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 ">
@@ -204,12 +204,12 @@ export default function Home() {
                   For Builders
                 </a>
               </div>
-              <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
+              <div  style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block z-0">
                 <a
-                  href="/trader"
-                  className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
+                  href="#"
+                  className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026]/95 hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                 >
-                  For Traders
+                  For Trader
                 </a>
               </div>
             </div>
@@ -278,7 +278,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Discover endless possibilities with the power of Kross Network.</h2>
           </div>
-          <div className="relative w-full">
+          <div className="relative w-full ">
             <div
               ref={cardRowRef}
               className="flex gap-8 w-full cursor-grab active:cursor-grabbing select-none pb-4"
@@ -289,7 +289,7 @@ export default function Home() {
               onMouseMove={handleMouseMove}
             >
               {/* Card 1 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div style={{display:"inline-table"}} className="w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="DeFi" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/1.png" />
                 </div>
@@ -298,18 +298,9 @@ export default function Home() {
                   <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Build lending protocols, DEXs, yield vaults, and more—powered by seamless cross-chain asset flow and low-cost, high-speed transactions on Kross Network.</p>
                 </div>
               </div>
-              {/* Card 2 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
-                <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/2.png" />
-                </div>
-                <div className="py-6">
-                  <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization</h3>
-                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Bring real-world and digital assets on-chain. From real estate and art to loyalty points and in-game items, tokenize anything with Kross Network secure, scalable foundation and unlock new forms of ownership and liquidity.</p>
-                </div>
-              </div>
+              
               {/* Card 3 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="Infrastructure" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/3.png" />
                 </div>
@@ -319,7 +310,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Card 4 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div style={{display:"inline-table"}} className=" w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="Tokenization of real-world assets(RWA)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.png" />
                 </div>
@@ -329,7 +320,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Card 5 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table  w-full md:w-[635px] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="Identity System with Decentralized I.D (DID)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.png" />
                 </div>
@@ -339,7 +330,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Card 6 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table  w-full md:w-[635px] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="Governance and continuous upgrade" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/6.png" />
                 </div>
@@ -349,7 +340,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Card 7 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.png" />
                 </div>
@@ -359,7 +350,7 @@ export default function Home() {
                 </div>
               </div>
               {/* Card 8 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.png" />
                 </div>
@@ -452,7 +443,7 @@ export default function Home() {
                 </div>
                 <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                   <a
-                    href="#"
+                    href="/earning"
                     className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                   >
                     Start Earning Rewards
@@ -471,7 +462,7 @@ export default function Home() {
       </div>
 
       {/* Manage & Grow Section */}
-      <section className="text-white w-full" style={{ fontFamily: 'Lato, sans-serif' }}>
+      <section className="text-white w-full " style={{ fontFamily: 'Lato, sans-serif' }}>
         <div className="w-full transition-all duration-1000 ease-in-out">
           {/* Card 1: Stake On Kross Hub */}
           <div className="w-full flex justify-center sticky top-0">
@@ -479,11 +470,11 @@ export default function Home() {
               <div className="absolute w-[1262px] h-[2322px] top-[86.3px] left-[62px] -rotate-180 bg-[#FF00B866]/50 blur-3xl rounded-full"></div>
               <div className="absolute w-[1416px] h-[534px] left-[806.78px] -rotate-180 bg-[#6D05B8CC]/50 blur-[560px] rounded-full"></div>
               <div className="absolute w-[1254.9px] h-[1429px] top-[-60.76px] left-[1440px] -rotate-180 bg-[#6D05B866]/50 blur-[560px] rounded-full"></div>
-              <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-20 mb-20 relative z-10">
+              <div className="w-full container px-5 xl:px-20">
+                <div className="text-center md:my-20 xl:my-10 relative z-10">
                   <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2>
                 </div>
-                <div className="max-w-4xl py-[100px] mx-auto">
+                <div className="max-w-4xl xl:py-[100px] py-[50px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
@@ -496,7 +487,7 @@ export default function Home() {
                             href="#"
                             className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent  text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
-                            Start Staking
+                            Cooming Soon
                           </a>
                         </div>
                       </div>
@@ -516,7 +507,7 @@ export default function Home() {
                 <div className="min-h-15vh text-center mt-20 mb-20 relative z-10 invisible">
                   {/* <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2> */}
                 </div>
-                <div className="max-w-4xl py-[100px] mx-auto">
+                <div className="max-w-4xl  xl:py-[100px] py-[50px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
@@ -529,7 +520,7 @@ export default function Home() {
                             href="https://dex.hashgreed.com"
                             className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
-                            Add Liquidity
+                           Swap Now
                           </a>
                         </div>
                       </div>
@@ -548,7 +539,7 @@ export default function Home() {
                 <div className="min-h-15vh text-center mt-20 mb-20 relative z-10 invisible">
                   {/* <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2> */}
                 </div>
-                <div className="max-w-4xl py-[100px] mx-auto">
+                <div className="max-w-4xl  xl:py-[100px] py-[50px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
@@ -558,10 +549,10 @@ export default function Home() {
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Supply assets to earn passive income and claim a share of the fees from every trade that runs through your pool.</p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
-                            href="#"
+                            href="https://dex.hashgreed.com"
                             className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
-                            Access Vault Now
+                            Add Liquidity
                           </a>
                         </div>
                       </div>
@@ -581,7 +572,7 @@ export default function Home() {
                 <div className="min-h-15vh text-center mt-20 mb-20 relative z-10 invisible">
                   {/* <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Easily Manage And Grow Your Crypto With Kross DEX.</h2> */}
                 </div>
-                <div className="max-w-4xl py-[100px] mx-auto">
+                <div className="max-w-4xl  xl:py-[100px] py-[50px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
@@ -591,10 +582,10 @@ export default function Home() {
                         <p className="text-gray-300 mb-8 leading-relaxed text-lg">Put your Krosscoin to work securely and passively. Kross Vaults give you access to curated assets and their staking rewards—no manual buying, staking, or managing required.</p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
-                            href="https://dex.hashgreed.com"
+                            href=""
                             className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
-                            Swap Now
+                            Cooming Soon
                           </a>
                         </div>
                       </div>
@@ -612,7 +603,7 @@ export default function Home() {
               <div className="absolute w-[1416px] h-[534px] bottom-0 left-[806.78px] -rotate-180 bg-[#6D05B8CC]/90 blur-[560px] rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
               <div className="min-h-15vh text-center mt-20 mb-20 relative z-10 invisible"></div>
-                <div className="max-w-4xl py-[100px] mx-auto">
+                <div className="max-w-4xl xl:py-[100px] py-[50px] mx-auto">
                   <div className="relative">
                     <div className="relative rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
@@ -625,7 +616,7 @@ export default function Home() {
                             href="#"
                             className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                           >
-                            Start Trading
+                            Cooming Soon
                           </a>
                         </div>
                       </div>

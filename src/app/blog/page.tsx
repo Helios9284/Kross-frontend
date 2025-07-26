@@ -87,7 +87,7 @@ export default function Page() {
   }
   return (
     <div
-      className="min-h-screen w-full bg-gradient-to-b from-[#050026] text-white font-sans"style={{ fontFamily: 'lato, sans-serif' }}
+      className="min-h-screen w-full bg-gradient-to-b from-[#050026] text-white font-sans  overflow-hidden"style={{ fontFamily: 'lato, sans-serif' }}
     >
       {/* Header */}
       <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/contact/contact_1.png')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>

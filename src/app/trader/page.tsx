@@ -37,9 +37,9 @@ const TraderPage = () => {
 
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white" style={{fontFamily: 'lato, sans-serif'}}>
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white " style={{fontFamily: 'lato, sans-serif'}}>
       {/* Hero Section */}
-      <section className="w-full px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative min-h-[600px]">
+      <section className="w-full px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative xl:min-h-[600px]">
         <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-10 w-full">
           {/* Left column */}
           <motion.div
@@ -162,19 +162,19 @@ const TraderPage = () => {
                 <div className="w-[550px] h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
               </div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-[96px] mb-20 relative z-10">
+                <div className="text-center mt-[10px] xl:mt-[96px] mb-5 xl:mb-20 relative z-10">
                   <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
-                <div className=" py-[100px] mx-auto"
+                <div className=" xl:py-[100px] py-[10px] mx-auto"
                 >
                   <div className="relative"
                   >
-                    <div className="relative h-[650px]  rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative h-[500px] xl:h-[650px]  rounded-[40px] px-10 py-[50px] xl:py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_1.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative z-10">
-                        <h3 className="text-5xl md:text-[64px] font-bold mb-4 transition-colors duration-200 text-white">$KSS Staking</h3>
-                        <p className="text-gray-300 mb-8 leading-relaxed text-2xl">Get rewards for simply staking on the <br/> KROSS DEX. Coming Soon</p>
+                        <h3 className="text-3xl xl:text-[64px] font-bold mb-4 transition-colors duration-200 text-white">$KSS Staking</h3>
+                        <p className="text-gray-300 mb-8 leading-relaxed text-lg xl:text-2xl">Get rewards for simply staking on the <br/> KROSS DEX. Coming Soon</p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="#"
@@ -198,17 +198,17 @@ const TraderPage = () => {
               <div className="absolute w-[150px] h-[100px] left-[100px] -bottom-50 bg-[#EC34E0CC]/30 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[100px] right-[50px] -bottom-40 bg-[#6D05B86B]/30 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-[96px] mb-20 relative z-10 invisible">
+                <div className="text-center mt-[10px] xl:mt-[96px] mb-5 xl:mb-20 relative z-10 invisible">
                  <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
-                <div className="py-[100px] mx-auto">
+                <div className="xl:py-[100px] py-[10px] mx-auto">
                   <div className="relative">
-                    <div className="relative h-[650px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative h-[500px] xl:h-[650px]  rounded-[40px] px-10 py-[50px] xl:py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_2.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative z-10">
-                        <h3 className="text-5xl md:text-[64px] font-semibold mb-4 transition-colors duration-200 text-white">Vaults</h3>
-                        <p className="text-gray-300 mb-8 leading-relaxed text-2xl">KROSS Vaults Let You Earn Rewards On Stablecoins Like KUSD <br/> And HNGN, Effortlessly. Get The Benefits Of Staking <br/> Without The Complexity Of Managing Assets Yourself. <br/> Coming Soon
+                        <h3 className="text-3xl xl:text-[64px] font-semibold mb-4 transition-colors duration-200 text-white">Vaults</h3>
+                        <p className="text-gray-300 mb-8 leading-relaxed text-lg xl:text-2xl">KROSS Vaults Let You Earn Rewards On Stablecoins Like KUSD <br/> And HNGN, Effortlessly. Get The Benefits Of Staking <br/> Without The Complexity Of Managing Assets Yourself. <br/> Coming Soon
                         </p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
@@ -231,17 +231,17 @@ const TraderPage = () => {
               <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#EC34E0CC]/20 blur-3xl  rounded-full"></div>
               <div className="absolute w-[350px] h-[350px] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-               <div className="text-center mt-[96px] mb-20 relative z-10 invisible">
+               <div className="text-center  mt-[10px] xl:mt-[96px] mb-5 xl:mb-20  relative z-10 invisible">
                   <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
-                <div className="py-[100px] mx-auto">
+                <div className="xl:py-[100px] py-[10px] mx-auto">
                   <div className="relative">
-                    <div className="relative h-[650px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative h-[500px] xl:h-[650px]  rounded-[40px] px-10 py-[50px] xl:py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_3.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative z-10">
-                        <h3 className="text-5xl md:text-[64px] font-semibold mb-4 transition-colors duration-200 text-white">Swap</h3>
-                        <p className="text-gray-300 mb-8 leading-relaxed text-2xl">Easy & Secure Trading With The Wallet Integrated <br/> HASHGREED DEX. Africa&apos;s First DEX For Regulated <br/> RWA Trading</p>
+                        <h3 className="text-3xl xl:text-[64px] font-semibold mb-4 transition-colors duration-200 text-white">Swap</h3>
+                        <p className="text-gray-300 mb-8 leading-relaxed text-lg xl:text-2xl">Easy & Secure Trading With The Wallet Integrated <br/> HASHGREED DEX. Africa&apos;s First DEX For Regulated <br/> RWA Trading</p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="https://DEX.hashgreed.com"
@@ -263,17 +263,17 @@ const TraderPage = () => {
               <div className="absolute w-[250px] h-[250px] -left-50 -top-50 bg-[#FF00B840]/50 blur-3xl rounded-full"></div>
               <div className="absolute w-[250px] h-[250px] -right-50 -bottom-50 bg-[#FF00B840]/60 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-[96px] mb-20 relative z-10 invisible">
+                <div className="text-center mt-[10px] xl:mt-[96px] mb-5 xl:mb-20  relative z-10 invisible">
                   <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
-                <div className="py-[100px] mx-auto">
+                <div className="xl:py-[100px] py-[10px] mx-auto">
                   <div className="relative">
-                    <div className="relative h-[650px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative h-[500px] xl:h-[650px]  rounded-[40px] px-10 py-[50px] xl:py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_4.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative z-10">
-                        <h3 className="text-5xl md:text-[64px] font-semibold mb-4 transition-colors duration-200 text-white">Central Limit <br/> Orderbook</h3>
-                        <p className="text-gray-300 mb-8 leading-relaxed text-2xl">Reap the benefits of a transparent order <br/> book for accurate price discovery and <br/> streamlined trade execution.</p>
+                        <h3 className="text-3xl xl:text-[64px] font-semibold mb-4 transition-colors duration-200 text-white">Central Limit <br/> Orderbook</h3>
+                        <p className="text-gray-300 mb-8 leading-relaxed text-lg xl:text-2xl">Reap the benefits of a transparent order <br/> book for accurate price discovery and <br/> streamlined trade execution.</p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="#"
@@ -298,17 +298,17 @@ const TraderPage = () => {
               <div className="absolute w-[150px] h-[150px] right-50 -bottom-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="absolute w-[150px] h-[150px] -top-40 bg-[#6D05B86B]/20 blur-3xl rounded-full"></div>
               <div className="w-full container px-5 md:px-20">
-                <div className="text-center mt-[96px] mb-20 relative z-10 invisible">
+                <div className="text-center  mt-[10px] xl:mt-[96px] mb-5 xl:mb-20  relative z-10 invisible">
                     <h2 className="text-4xl md:text-5xl font-bold max-w-4xl mx-auto leading-tight text-white">Our features</h2>
                 </div>
-                <div className="py-[100px] mx-auto">
+                <div className="xl:py-[100px] py-[10px] mx-auto">
                   <div className="relative">
-                    <div className="relative h-[650px] rounded-[40px] px-10 py-[104px] border-4 border-[#4B6794] overflow-hidden">
+                    <div className="relative h-[500px] xl:h-[650px]  rounded-[40px] px-10 py-[50px] xl:py-[104px] border-4 border-[#4B6794] overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#110942] to-[#140669]"></div>
                       <div className="absolute inset-0 opacity-90" style={{backgroundImage: "url(/assets/image/trader/trader_feature_5.svg)", backgroundSize: "contain", backgroundPosition: "right", backgroundRepeat: "no-repeat"}}></div>
                       <div className="relative z-10">
-                        <h3 className="text-5xl md:text-[64px] font-semibold mb-4 transition-colors duration-200 text-white">Liquidity Pools & Farms</h3>
-                        <p className="text-gray-300 mb-8 leading-relaxed text-2xl">Provide Assets To Earn LP Rewards And A Share Of All <br/> Transaction Fees Charged To Traders That Use The Pool, Starting <br/> At The HASHGREED DEX.</p>
+                        <h3 className="text-3xl xl:text-[64px] font-semibold mb-4 transition-colors duration-200 text-white">Liquidity Pools & Farms</h3>
+                        <p className="text-gray-300 mb-8 leading-relaxed text-lg xl:text-2xl">Provide Assets To Earn LP Rewards And A Share Of All <br/> Transaction Fees Charged To Traders That Use The Pool, Starting <br/> At The HASHGREED DEX.</p>
                         <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                           <a
                             href="https://DEX.hashgreed.com"
@@ -327,13 +327,13 @@ const TraderPage = () => {
         </div>
       </section>
       {/* FAQ Section */}
-      <section className="w-full flex flex-col  justify-center bg-[#050026] px-10 md:px-20 py-10 md:py-20">
+      <section className="w-full flex flex-col  justify-center bg-[#050026] px-5 xl:px-20 py-10 xl:py-20">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-[64px]">FAQs</h2>
         <div className="">
           {faqQuestions.map((q, i) => (
             <div
               key={i}
-              className={"mt-[100px] group px-6"}
+              className={"mt-[50px] xl:mt-[100px] group px-6"}
               style={{
                 borderRadius: '0.75rem',
                 padding: '1px', // border thickness
@@ -347,7 +347,7 @@ const TraderPage = () => {
                 className={`rounded-xl bg-[#050026]`}
               >
                 <div
-                  className={`flex items-center justify-between w-full p-12 text-white text-xl md:text-[32px] font-medium cursor-pointer${openIndex === i ? "bg-[#050026]" : ""}`}
+                  className={`flex items-center justify-between w-full p-4 xl:p-12 text-white text-xl md:text-[32px] font-medium cursor-pointer${openIndex === i ? "bg-[#050026]" : ""}`}
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   role="button"
                   tabIndex={0}

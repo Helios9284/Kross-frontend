@@ -9,7 +9,7 @@ export default function BuilderPage() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  const cardCount = 8;
+  const cardCount = 7;
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
@@ -68,15 +68,68 @@ export default function BuilderPage() {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isConsensusHovered, setIsConsensusHovered] = useState(false);
+  const [hasConsensusAnimated, setHasConsensusAnimated] = useState(false);
   const [isApplicationHovered, setIsApplicationHovered] = useState(false);
+  const [hasApplicationAnimated, setHasApplicationAnimated] = useState(false);
   const [isTokenHovered, setIsTokenHovered] = useState(false);
+  const [hasTokenAnimated, setHasTokenAnimated] = useState(false);
   const [isToolsHovered, setIsToolsHovered] = useState(false);
+  const [hasToolsAnimated, setHasToolsAnimated] = useState(false);
   const [isGovernanceHovered, setIsGovernanceHovered] = useState(false);
+  const [hasGovernanceAnimated, setHasGovernanceAnimated] = useState(false);
   const [isInteroperabilityHovered, setIsInteroperabilityHovered] = useState(false);
+  const [hasInteroperabilityAnimated, setHasInteroperabilityAnimated] = useState(false);
+  const [hasDataAnimated, setHasDataAnimated] = useState(false);
+
+  const handleConsensusMouseEnter = () => {
+    setIsConsensusHovered(true);
+    if (!hasConsensusAnimated) setHasConsensusAnimated(true);
+  };
+
+  const handleConsensusMouseLeave = () => {
+    setIsConsensusHovered(false);
+  };
+
+  const handleDataMouseEnter = () => {
+    setIsHovered(true);
+    if (!hasDataAnimated) setHasDataAnimated(true);
+  };
+  const handleDataMouseLeave = () => setIsHovered(false);
+
+  const handleApplicationMouseEnter = () => {
+    setIsApplicationHovered(true);
+    if (!hasApplicationAnimated) setHasApplicationAnimated(true);
+  };
+  const handleApplicationMouseLeave = () => setIsApplicationHovered(false);
+
+  const handleTokenMouseEnter = () => {
+    setIsTokenHovered(true);
+    if (!hasTokenAnimated) setHasTokenAnimated(true);
+  };
+  const handleTokenMouseLeave = () => setIsTokenHovered(false);
+
+  const handleToolsMouseEnter = () => {
+    setIsToolsHovered(true);
+    if (!hasToolsAnimated) setHasToolsAnimated(true);
+  };
+  const handleToolsMouseLeave = () => setIsToolsHovered(false);
+
+  const handleGovernanceMouseEnter = () => {
+    setIsGovernanceHovered(true);
+    if (!hasGovernanceAnimated) setHasGovernanceAnimated(true);
+  };
+  const handleGovernanceMouseLeave = () => setIsGovernanceHovered(false);
+
+  const handleInteroperabilityMouseEnter = () => {
+    setIsInteroperabilityHovered(true);
+    if (!hasInteroperabilityAnimated) setHasInteroperabilityAnimated(true);
+  };
+  const handleInteroperabilityMouseLeave = () => setIsInteroperabilityHovered(false);
+
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white " style={{fontFamily: 'lato, sans-serif'}}>
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white overflow-hidden" style={{fontFamily: 'lato, sans-serif'}}>
       {/* Hero Section */}
-      <section className="px-5 sm:px-2 md:px-20 py-10 sm:py-6 md:py-20 relative w-full min-h-[400px] sm:min-h-[600px]">
+      <section className="px-2  xl:px-20 py-1  xl:py-20 relative w-full min-h-[400px] xl:min-h-[600px]">
         <div className="px-2 sm:px-2 md:px-20 py-6 sm:py-6 md:py-20 relative w-full">
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 w-full">
             {/* Left column */}
@@ -98,12 +151,10 @@ export default function BuilderPage() {
                 />
                 <span className="text-xs sm:text-sm font-medium font-sans">Krosscoin for Builders</span>
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center md:text-left">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 ">
                 The Premier African RWA <br/>Layer 1 Blockchain Designed <br/>To Define And Enforce Real-<br/>World Regulatory Standards
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-4 sm:mb-10 w-full md:w-2/3 text-center md:text-left">
-                The Premier RWA Layer 1 Blockchain Designed To Meet <br/>And Enforce Real-World Regulatory Standards.
-              </p>
+              
               
               <div  style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
@@ -218,17 +269,17 @@ export default function BuilderPage() {
         </div>
       </section>
       {/* Possibilities Section */}
-      <section className="text-white overflow-hidden relative">
-        {/* Background Glows */}
-        <div className="absolute top-0 right-0  flex gap-2 sm:gap-4 z-1">
-          <div className="w-[380px] sm:w-[450px] md:w-[550px] h-[380px] sm:h-[450px] md:h-[550px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
+      <section className="text-white overflow-hidden relative pt-10">
+        <div className="absolute top-0 left-0  flex gap-2 sm:gap-4 z-1">
+          <div className="w-[380px] sm:w-[450px] md:w-[550px] h-[380px] sm:h-[450px] md:h-[550px] bg-[#EC34E0]/29 blur-3xl rounded-full"></div>
           {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
         </div>
-        <div className="mx-auto pl-5 md:pl-20 relative z-10">
+        {/* Background Glows */}
+        <div className=" mx-auto pl-5 md:pl-20 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 mx-auto leading-tight">Explore The World Of Use Cases That Can<br/> Be Built Atop Of Krosscoin And Complement<br/> The Utility Of The Network</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto leading-tight">Discover endless possibilities with the power of Kross Network.</h2>
           </div>
-          <div className="relative w-full">
+          <div className="relative w-full ">
             <div
               ref={cardRowRef}
               className="flex gap-8 w-full cursor-grab active:cursor-grabbing select-none pb-4"
@@ -237,36 +288,20 @@ export default function BuilderPage() {
               onMouseLeave={handleMouseLeave}
               onMouseUp={handleMouseUp}
               onMouseMove={handleMouseMove}
-              onScroll={() => {
-                if (cardRowRef.current) {
-                  const cardWidth = cardRowRef.current.children[0].clientWidth + 32;
-                  const idx = Math.round(cardRowRef.current.scrollLeft / cardWidth);
-                  if (idx !== activeIndex) setActiveIndex(idx);
-                }
-              }}
             >
               {/* Card 1 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div style={{display:"inline-table"}} className="w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="DeFi" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/1.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">DeFi</h3>
-                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Build lending protocols, DEXs, yield vaults, and more—<br/>powered by seamless cross-chain asset flow and low-<br/>cost, high-speed transactions on Kross Network.</p>
+                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Build lending protocols, DEXs, yield vaults, and more—powered by seamless cross-chain asset flow and low-cost, high-speed transactions on Kross Network.</p>
                 </div>
               </div>
-              {/* Card 2 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
-                <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="Tokenization" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/2.png" />
-                </div>
-                <div className="py-6">
-                  <h3 className="text-4xl md:text-[40px] font-bold mb-4">Tokenization</h3>
-                  <p className="text-gray-300 text-xl md:text-[22px] leading-relaxed tracking-[0px]">Bring real-world and digital assets on-chain.<br/> From real estate and art to loyalty points and in-game items, tokenize anything<br/> with Kross Network secure, scalable foundation and unlock<br/> new forms of ownership and liquidity.</p>
-                </div>
-              </div>
+              
               {/* Card 3 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="Infrastructure" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/3.png" />
                 </div>
@@ -276,7 +311,7 @@ export default function BuilderPage() {
                 </div>
               </div>
               {/* Card 4 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div style={{display:"inline-table"}} className=" w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="Tokenization of real-world assets(RWA)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.png" />
                 </div>
@@ -286,7 +321,7 @@ export default function BuilderPage() {
                 </div>
               </div>
               {/* Card 5 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table  w-full md:w-[635px] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="Identity System with Decentralized I.D (DID)" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.png" />
                 </div>
@@ -296,7 +331,7 @@ export default function BuilderPage() {
                 </div>
               </div>
               {/* Card 6 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table  w-full md:w-[635px] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
                   <img alt="Governance and continuous upgrade" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/6.png" />
                 </div>
@@ -306,9 +341,9 @@ export default function BuilderPage() {
                 </div>
               </div>
               {/* Card 7 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/7.png" />
+                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">On and off-ramping with regulatory compliance</h3>
@@ -316,9 +351,9 @@ export default function BuilderPage() {
                 </div>
               </div>
               {/* Card 8 */}
-              <div className="w-full md:w-[635px] h-[700px] md:h-[800px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+              <div className="inline-table w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/8.png" />
+                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">IBC Compatibility for token movement</h3>
@@ -382,7 +417,7 @@ export default function BuilderPage() {
                 </div>
                 <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                   <a
-                    href="#"
+                    href="/earning"
                     className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                   >
                     Start Earning Rewards
@@ -410,8 +445,8 @@ export default function BuilderPage() {
 
       {/* Networking Layer */}
       <section className="min-h-[80vh] md:flex-row items-start justify-center container px-5 md:px-20 mx-auto relative w-full">
-      <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
-      <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
+      <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/10 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
+      <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         
 
         <div className=" w-full justify-start">
@@ -426,18 +461,26 @@ export default function BuilderPage() {
           </div>
         </div>
         <div className=" w-full h-full group">
-          <div className="z-1 absolute top-0 right-1/3  group-hover:translate-x-12 xl:group-hover:translate-x-24 2xl:group-hover:translate-x-36 transition-all duration-1000 ease-in-out">
-            <img alt="landing1" className="w-full h-[270px] z-0 relative" src="/assets/image/builder/intro/1.png" />
+          <div className="z-1 absolute top-0 right-1/3 group-hover:translate-x-12 xl:group-hover:translate-x-24 2xl:group-hover:translate-x-36 transition-all duration-1000 ease-in-out">
+            <img
+              alt="landing1"
+              className="
+                w-full h-[350px] z-0 relative
+                group-hover:w-full group-hover:h-[270px]
+                transition-all duration-1000 ease-in-out
+              "
+              src="/assets/image/builder/intro/1.png"
+            />
           </div>
           {/* Second image (only visible on hover) */}
-          <div className="z-0 absolute right-5/29  top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
+          <div className="z-0 absolute right-5/29  top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-2000">
             <img
               alt="landing1"
               className="w-full h-[270px] z-0 relative opacity-60"
               src="/assets/image/builder/intro/1.png"
             />
           </div>
-          <div className="z-0 absolute right-21/69 top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
+          <div className="z-0 absolute right-21/69 top-2/11 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-2000">
             <img
               alt="landing1"
               className="w-full h-[270px] z-0 relative opacity-60"
@@ -451,10 +494,10 @@ export default function BuilderPage() {
       {/* Consensus Layer */}
       <section
         className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
-        onMouseEnter={() => setIsConsensusHovered(true)}
-        onMouseLeave={() => setIsConsensusHovered(false)}
+        onMouseEnter={handleConsensusMouseEnter}
+        onMouseLeave={handleConsensusMouseLeave}
       >
-        <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
+        <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/10 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
         <div className="absolute top-0 left-[140px] w-[334px] h-[466px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-end">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 min-h-[360px] max-w-[520px] relative z-10">
@@ -466,7 +509,7 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute -top-[1/20] left-1/13 z-0">
+        <div className="absolute top-0 z-0">
           <motion.img
             alt="landing2"
             width={540}
@@ -475,9 +518,12 @@ export default function BuilderPage() {
             className="w-full md:w-[540px] h-[450px] z-0"
             initial={{ x: -20, y: -40, opacity: 0 }}
             animate={
-              isConsensusHovered
+              hasConsensusAnimated
                 ? { y: 100, x: 120, opacity: 1 }
-                : { y: -40, x: -20, opacity: 0 }
+                : (isConsensusHovered
+                    ? { y: 100, x: 120, opacity: 1 }
+                    : { y: -40, x: -20, opacity: 0 }
+                  )
             }
             transition={{
               y: { duration: 0.4 },
@@ -490,9 +536,9 @@ export default function BuilderPage() {
       </section>
 
       {/* Data Layer */}
-      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"  onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-        <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
+      <section className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"  onMouseEnter={handleDataMouseEnter} onMouseLeave={handleDataMouseLeave}>
+        <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/10 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
+        <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/20 blur-3xl  rounded-full"></div>
         <div className="flex w-full justify-start">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-5 sm:p-8 md:p-10 py-[30px] sm:py-[40px] md:py-[50px] min-h-[360px] relative w-full sm:max-w-[520px] z-10">
             <h3 className="text-[32px] font-bold mb-8">Data Layer</h3>
@@ -503,14 +549,21 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 right-1/13 z-0">
+        <div className="absolute top-1/5 z-0">
           <motion.img
             alt="landing3"
             width={540}
             height={450}
             className="w-full md:w-[540px] h-[450px] z-0"
             initial={{ y: 40, opacity: 0 }}
-            animate={isHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            animate={
+              hasDataAnimated
+                ? { y: 0, opacity: 1 }
+                : (isHovered
+                    ? { y: 0, opacity: 1 }
+                    : { y: 40, opacity: 0 }
+                  )
+            }
             transition={{ duration: 0.7, ease: "easeOut" }}
             style={{ willChange: "transform, opacity" }}
             src="/assets/image/builder/intro/3.png"
@@ -521,10 +574,10 @@ export default function BuilderPage() {
       {/* Application Layer */}
       <section
         className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
-        onMouseEnter={() => setIsApplicationHovered(true)}
-        onMouseLeave={() => setIsApplicationHovered(false)}
+        onMouseEnter={handleApplicationMouseEnter}
+        onMouseLeave={handleApplicationMouseLeave}
       >
-        <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
+        <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/10 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
         <div className="absolute top-0 left-[140px] w-[334px] h-[466px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-end">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 min-h-[360px] max-w-[520px] relative z-10">
@@ -537,14 +590,21 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 left-1/13 z-0">
+        <div className="absolute top-1/6  z-0">
           <motion.img
             alt="landing4"
             width={540}
             height={450}
             className="w-full md:w-[540px] h-[450px] z-0"
             initial={{ y: 40, opacity: 0 }}
-            animate={isApplicationHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            animate={
+              hasApplicationAnimated
+                ? { y: 0, opacity: 1 }
+                : (isApplicationHovered
+                    ? { y: 0, opacity: 1 }
+                    : { y: 40, opacity: 0 }
+                  )
+            }
             transition={{ duration: 0.7, ease: "easeOut" }}
             style={{ willChange: "transform, opacity" }}
             src="/assets/image/builder/intro/4.png"
@@ -555,11 +615,11 @@ export default function BuilderPage() {
       {/* Token Layer */}
       <section
         className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
-        onMouseEnter={() => setIsTokenHovered(true)}
-        onMouseLeave={() => setIsTokenHovered(false)}
+        onMouseEnter={handleTokenMouseEnter}
+        onMouseLeave={handleTokenMouseLeave}
       >
-        <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
+        <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/10 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
+        <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-start">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 py-[50px] min-h-[360px] relative max-w-[520px] z-10">
             <h3 className="text-[32px] font-bold mb-8">Token Layer</h3>
@@ -572,14 +632,21 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 right-1/13 z-0">
+        <div className="absolute top-1/9 z-0">
           <motion.img
             alt="landing5"
             width={540}
             height={450}
             className="w-full md:w-[540px] h-[450px] z-0"
             initial={{ y: 40, opacity: 0 }}
-            animate={isTokenHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            animate={
+              hasTokenAnimated
+                ? { y: 0, opacity: 1 }
+                : (isTokenHovered
+                    ? { y: 0, opacity: 1 }
+                    : { y: 40, opacity: 0 }
+                  )
+            }
             transition={{ duration: 0.7, ease: "easeOut" }}
             style={{ willChange: "transform, opacity" }}
             src="/assets/image/builder/intro/5.png"
@@ -590,10 +657,10 @@ export default function BuilderPage() {
       {/* Tools And Interface Layer */}
       <section
         className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
-        onMouseEnter={() => setIsToolsHovered(true)}
-        onMouseLeave={() => setIsToolsHovered(false)}
+        onMouseEnter={handleToolsMouseEnter}
+        onMouseLeave={handleToolsMouseLeave}
       >
-        <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
+        <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/10 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
         <div className="absolute top-0 left-[140px] w-[334px] h-[466px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-end">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 min-h-[360px] max-w-[520px] relative z-10">
@@ -609,14 +676,21 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 left-1/13 z-0">
+        <div className="absolute top-1/7 z-0">
           <motion.img
             alt="landing6"
             width={540}
             height={450}
             className="w-full md:w-[540px] h-[450px] z-0"
             initial={{ y: 40, opacity: 0 }}
-            animate={isToolsHovered ? { y: 0, opacity: 1 } : { y: 0, opacity: 0 }}
+            animate={
+              hasToolsAnimated
+                ? { y: 0, opacity: 1 }
+                : (isToolsHovered
+                    ? { y: 0, opacity: 1 }
+                    : { y: 40, opacity: 0 }
+                  )
+            }
             transition={{ duration: 0.7, ease: "easeOut" }}
             style={{ willChange: "transform, opacity" }}
             src="/assets/image/builder/intro/6.png"
@@ -627,11 +701,11 @@ export default function BuilderPage() {
       {/* Governance Layer */}
       <section
         className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
-        onMouseEnter={() => setIsGovernanceHovered(true)}
-        onMouseLeave={() => setIsGovernanceHovered(false)}
+        onMouseEnter={handleGovernanceMouseEnter}
+        onMouseLeave={handleGovernanceMouseLeave}
       >
-        <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
-        <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/40 blur-3xl rounded-full"></div>
+        <div className="absolute top-[150px] right-[143px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/10 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
+        <div className="absolute top-0 right-[140px] w-[434px] h-[566px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-start">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 py-[50px] min-h-[360px] relative max-w-[520px] z-10">
             <h3 className="text-[32px] font-bold mb-8">Governance Layer</h3>
@@ -642,14 +716,21 @@ export default function BuilderPage() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 right-1/13 z-0">
+        <div className="absolute top-1/4 right-4/9 z-0">
           <motion.img
             alt="landing5"
             width={540}
             height={450}
             className="w-full md:w-[540px] h-[450px] z-0"
             initial={{ y: 40, opacity: 0 }}
-            animate={isGovernanceHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            animate={
+              hasGovernanceAnimated
+                ? { y: 0, opacity: 1 }
+                : (isGovernanceHovered
+                    ? { y: 0, opacity: 1 }
+                    : { y: 40, opacity: 0 }
+                  )
+            }
             transition={{ duration: 0.7, ease: "easeOut" }}
             style={{ willChange: "transform, opacity" }}
             src="/assets/image/builder/intro/7.png"
@@ -660,10 +741,10 @@ export default function BuilderPage() {
       {/* Interoperability Layer */}
       <section
         className="min-h-[70vh] flex items-start justify-center container px-5 md:px-20 mx-auto relative w-full"
-        onMouseEnter={() => setIsInteroperabilityHovered(true)}
-        onMouseLeave={() => setIsInteroperabilityHovered(false)}
+        onMouseEnter={handleInteroperabilityMouseEnter}
+        onMouseLeave={handleInteroperabilityMouseLeave}
       >
-        <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/40 via-[#FF00B8]/30 to-[#6D05B8]/40 blur-3xl rounded-full"></div>
+        <div className="absolute top-[100px] left-[100px] w-[434px] h-[565px] bg-gradient-to-t from-[#6D05B8]/10 to-[#FF00B8]/10 blur-3xl rounded-full"></div>
         <div className="absolute top-0 left-[140px] w-[334px] h-[466px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="flex w-full justify-end">
           <div className="bg-[#11094240] backdrop-blur-sm border border-[#344054] rounded-[12px] p-10 min-h-[360px] max-w-[520px] relative z-10">
@@ -671,14 +752,21 @@ export default function BuilderPage() {
             <p className="text-[#CACACA] mb-5">The interoperability layer of KROSS Chain will be built on the IBC Protocol. This layer ensures that KROSS&aposs regulatory and compliance modules, along with all other features introduced to the Cosmos ecosystem, are not confined to the chain itself but are extended across the entire Inter-Blockchain Communication Protocol ecosystem.</p>
           </div>
         </div>
-        <div className="absolute top-0 left-1/13 z-0">
+        <div className="absolute top-1/4 z-0">
           <motion.img
             alt="landing6"
             width={540}
             height={450}
             className="w-full md:w-[540px] h-[450px] z-0"
             initial={{ y: 40, opacity: 0 }}
-            animate={isInteroperabilityHovered ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 }}
+            animate={
+              hasInteroperabilityAnimated
+                ? { y: 0, opacity: 1 }
+                : (isInteroperabilityHovered
+                    ? { y: 0, opacity: 1 }
+                    : { y: 40, opacity: 0 }
+                  )
+            }
             transition={{ duration: 0.7, ease: "easeOut" }}
             style={{ willChange: "transform, opacity" }}
             src="/assets/image/builder/intro/8.png"
@@ -687,7 +775,7 @@ export default function BuilderPage() {
       </section>
 
       {/* Explore Ecosystem CTA (Pixel-perfect) */}
-      <section className="text-white flex w-full bg-[#110942] border-b-4 border-white">
+      <section className="text-white flex w-full bg-[#110942]">
         <div className="flex w-full items-center justify-center py-25 md:py-[133px]">
           <div className="flex flex-col items-center justify-center gap-[56px] w-full">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight w-full md:w-2/3 text-center">Explore the KROSS Ecosystem</h1>

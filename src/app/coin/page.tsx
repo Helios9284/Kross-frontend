@@ -32,7 +32,7 @@ export default function Page() {
     "DYDX": "/assets/icon/coin/dydx.svg"
   }
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#110942] text-white font-sans">
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#110942] text-white font-sans  overflow-hidden">
       {/* Hero Section */}
       <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full  min-h-[600px]">
         <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
@@ -62,7 +62,7 @@ export default function Page() {
               
               <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
-                  href="#"
+                  href="https://dex.hashgreed.com"
                   className="inline-flex px-8 py-4 sm:px-4 sm:py-2 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block text-base sm:text-sm"
                 >
                  Buy $KSS Coin
@@ -76,7 +76,7 @@ export default function Page() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto">
+              <div className="relative w-full max-w-xs sm:max-w-sm xl:max-w-md lg:max-w-lg h-auto">
                 <div className="absolute inset-0 bg-[#FF00B8]/30 blur-3xl rounded-full -z-0"></div>
                 <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative w-full h-auto" src="/assets/image/coin/coin_1.png" />
               </div>
@@ -159,10 +159,10 @@ export default function Page() {
             <h2
               className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] bg-clip-text text-transparent"
             >
-              Centralized Exchanges
+              Planned Centralized Exchanges
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-1  xl:grid-cols-4 gap-6 mb-8">
               {/* First row - 4 exchanges */}
               {centralizedExchanges.slice(0, 4).map((exchange, index) => (
                 <div
@@ -180,7 +180,7 @@ export default function Page() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8 max-w-3xl mx-auto">
               {/* Second row - 3 exchanges */}
               {centralizedExchanges.slice(4, 7).map((exchange, index) => (
                 <div
@@ -198,7 +198,7 @@ export default function Page() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg mx-auto">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 w-full xl:max-w-lg mx-auto">
               {/* Third row - 2 exchanges */}
               {centralizedExchanges.slice(7, 9).map((exchange, index) => (
                 <div
@@ -220,7 +220,7 @@ export default function Page() {
           {/* Decentralized Exchanges Section */}
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] bg-clip-text text-transparent">
-              Decentralized Exchanges
+              Planned Decentralized Exchanges
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

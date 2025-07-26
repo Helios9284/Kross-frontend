@@ -67,7 +67,7 @@ export default function Page() {
   }, []);
   return (
     <div
-      className="min-h-screen bg-[#050026]">
+      className="min-h-screen bg-[#050026]  overflow-hidden">
       {/* Hero Section */}
       <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full">
         <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen">
@@ -124,7 +124,7 @@ export default function Page() {
         </div>
       </section>
       {/* Alliance Section */}
-      <section className="text-white overflow-hidden relative bg-[#050026] h-auto min-h-[600px] md:h-[800px]" style={{ backgroundImage: "url('/assets/image/fund/Component.png')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
+      <section className="text-white overflow-hidden relative bg-[#050026] xl:h-[800px] py-10" style={{ backgroundImage: "url('/assets/image/fund/Component.png')", backgroundSize: "auto", backgroundRepeat: "no-repeat", backgroundPosition: "top center" }}>
         {/* Background Glows */}
         <div className="absolute -bottom-[120px] left-0 w-[320px] sm:w-[420px] md:w-[520px] h-[200px] sm:h-[300px] md:h-[400px] bg-[#6D05B8]/20 blur-3xl rounded-full"></div>
         <div className="container mx-auto p-5 md:p-20 relative">
@@ -133,16 +133,16 @@ export default function Page() {
             <p className="text-base sm:text-lg md:text-xl text-gray-300">Pioneering The Shift In Kross Decentralized Financial System</p>
           </div>
         </div>
-        <div className="flex flex-col gap-2 md:gap-4">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 w-full">
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/2.png" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/1.png" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/4.png" />
+        <div className="flex flex-col gap-2 xl:gap-4">
+          <div className="flex flex-col xl:sm:flex-row justify-center items-center gap-2 xl:gap-4 w-full">
+            <img alt="Blockchain 3D Cube Visualization" className="relative " src="/assets/image/partner/2.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative" src="/assets/image/partner/1.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative" src="/assets/image/partner/4.png" />
           </div>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 w-full">
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/3.png" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/6.png" />
-            <img alt="Blockchain 3D Cube Visualization" className="relative z-10 w-20 sm:w-32 md:w-40 lg:w-48 h-auto" src="/assets/image/partner/5.png" />
+          <div className="flex flex-col xl:flex-row justify-center items-center gap-2 xl:gap-4 w-full">
+            <img alt="Blockchain 3D Cube Visualization" className="relative " src="/assets/image/partner/3.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative " src="/assets/image/partner/6.png" />
+            <img alt="Blockchain 3D Cube Visualization" className="relative" src="/assets/image/partner/5.png" />
           </div>
         </div>
       </section>
@@ -159,7 +159,7 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full px-2 sm:px-4 mt-8 md:mt-[64px]">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-8 w-full px-2 sm:px-4 mt-8 md:mt-[64px]">
           {/* Card 1 */}
           <div className="border border-[#4B6794] rounded-[16px] p-6 sm:p-8 md:p-10 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942] min-h-[180px] sm:min-h-[220px]">
             <span className="mb-2">{/* User icon */}
@@ -229,8 +229,8 @@ export default function Page() {
               onMouseMove={handleMouseMove}
             >
               {/* Card 1 */}
-              <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
-                <div className="flex flex-col-reverse md:flex-row-reverse">
+              <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] xl:min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
+                <div className="flex flex-col-reverse xl:flex-row-reverse">
                   {/* Left: Image */}
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
                     <img
@@ -250,7 +250,7 @@ export default function Page() {
               </div>
               {/* Card 2 */}
               <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
-                <div className="flex flex-col-reverse md:flex-row-reverse h-full">
+                <div className="flex flex-col-reverse xl:flex-row-reverse">
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
                     <img alt="Tokenization" className="object-contain w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56  mx-auto " src="/assets/image/fund/fund_process_2.png" />
                   </div>
@@ -264,7 +264,7 @@ export default function Page() {
               </div>
               {/* Card 3 */}
               <div className="w-full sm:w-[400px] md:w-[500px] lg:w-[678px] min-h-[200px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
-                <div className="flex flex-col-reverse md:flex-row-reverse h-full">
+                <div className="flex flex-col-reverse xl:flex-row-reverse">
                   <div className="relative w-full md:w-[300px] h-[250px] md:h-full flex-shrink-0 p-10">
                     <img alt="Tokenization" className="object-contain w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 mx-auto" src="/assets/image/fund/fund_process_3.png" />
                   </div>
@@ -341,8 +341,8 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <section className="w-full flex flex-col  justify-center bg-[#050026] px-10 md:px-20 py-10 md:py-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-[64px]">FAQs</h2>
+      <section className="w-full flex flex-col justify-center bg-[#050026] px-5 xl:px-20 py-5 xl:py-20">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-[10px] xl:mb-[64px]">FAQs</h2>
         <div className="">
           {[
             'What Ideas are we interested in?',
@@ -352,7 +352,7 @@ export default function Page() {
             'Who should apply?',
           ].map((q, i, arr) => (
             <React.Fragment key={i}>
-              <div className="flex items-center justify-between w-full px-12 pb-[17px] text-white text-lg md:text-xl font-normal">
+              <div className="flex items-center justify-between w-full px-2 xl:px-12 pb-[9px] xl:pb-[17px] text-white text-lg md:text-xl font-normal">
                 <span>{q}</span>
                 <span className="text-[#FFFFFF] text-[14px] font-bold select-none ml-auto">+</span>
               </div>

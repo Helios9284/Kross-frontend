@@ -57,7 +57,7 @@ const InstitutionPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white" style={{fontFamily: 'Lato, sans-serif'}}>
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white overflow-hidden" style={{fontFamily: 'Lato, sans-serif'}}>
       {/* Hero Section */}
       <section
         className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-full"
@@ -149,7 +149,7 @@ const InstitutionPage = () => {
             </a>
           </div>
           </div>
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-10 px-[20px] md:px-[74px] py-[24px]">
+        <div className="w-full grid grid-cols-1 xl:grid-cols-3 gap-3 sm:gap-6 mb-4 sm:mb-10 px-[20px] md:px-[74px] py-[24px]">
           {features.map((f, i) => (
             <div key={i} className="border border-[#110942] rounded-[16px] p-8 bg-[#110942]/25 min-h-[180px] flex flex-col items-start" >
               <h4 className="text-lg sm:text-xl md:text-2xl font-bold mb-2">{f.title}</h4>

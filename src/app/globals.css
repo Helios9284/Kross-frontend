@@ -172,9 +172,10 @@ body {
   pointer-events: none;
 }
 
-.custom-gradient-border {
-  border-width: 2px;
-  border-style: solid;
-  border-image: linear-gradient(to bottom, transparent, #344054) 1;
-  border-radius: 0.75rem; /* matches Tailwind's rounded-xl */
-}
+/* @media (min-width: 900px) {
+  .grid-mobile-1col {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+} */
+

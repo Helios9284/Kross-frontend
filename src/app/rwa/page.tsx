@@ -67,7 +67,7 @@ export default function Page() {
 
   return (
     <div
-      className="min-h-screen w-full bg-[#110942]" style={{fontFamily: 'lato, sans-serif'}}>
+      className="min-h-screen w-full bg-[#110942]  overflow-hidden" style={{fontFamily: 'lato, sans-serif'}}>
         {/* Hero Section */}
       <section className="text-white flex flex-col lg:flex-row relative overflow-hidden w-full bg-[#050026] min-h-[600px]">
         <div className="px-2 sm:px-5 md:px-20 py-6 sm:py-10 md:py-20 relative w-full sm:w-screen ">

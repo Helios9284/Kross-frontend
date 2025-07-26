@@ -87,26 +87,26 @@ export default function Page() {
 
   return (
     <div
-      className="min-h-screen w-full bg-gradient-to-b from-[#050026] text-white "
+      className="min-h-screen w-full bg-gradient-to-b from-[#050026] text-white  overflow-hidden"
       style={{ fontFamily: 'Lato, sans-serif' }}
     >
       {/* Header */}
       <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/news/image.png')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
-        <div className="container mx-auto px-2 sm:px-6 text-center">
+        <div className="container mx-auto text-center">
           <h1 className="text-2xl sm:text-[48px] font-bold text-white mb-2 sm:mb-3">News</h1>
           <p className="text-base sm:text-gray-300 sm:text-[24px]">Welcome To Kross News</p>
         </div>
       </div>
       
       {/* Navigation Bar */}
-      <section className="text-white overflow-hidden relative bg-[#050026] min-h-screen">
+      <section className="text-white overflow-hidden relative bg-[#050026] min-h-[600px]  px-4 sm:px-6">
         <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
           <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
           {/* <div className="w-[250px] h-[250px] bg-[#487DF1]/20 blur-3xl rounded-full"></div> */}
         </div>
         <div className="border-b border-gray-700/50">
-          <div className="container mx-auto px-2 sm:px-6 py-2 sm:py-4">
-            <div className="flex flex-col sm:flex-row w-full gap-2 sm:gap-0" style={{ fontFamily: 'Lato, sans-serif' }}>
+          <div className="container mx-auto py-2 sm:py-4">
+            <div className="flex flex-col xl:flex-row w-full gap-2 sm:gap-0" style={{ fontFamily: 'Lato, sans-serif' }}>
               <div className="flex flex-row items-center gap-1 sm:gap-3 w-full">
                 <span className="text-lg sm:text-[32px] whitespace-nowrap">Help Me Learn About</span>
                 <div
@@ -165,7 +165,7 @@ export default function Page() {
         </div>
 
         {/* Featured Article */}
-        <div className="container mx-auto px-2 sm:px-6 py-8 sm:py-16">
+        <div className="container mx-auto py-8 sm:py-16">
           <div className="">
             <div className="flex flex-col sm:flex-row items-center justify-between mb-2 sm:mb-4 gap-2 sm:gap-4">
               <h2 className="text-lg sm:text-4xl font-bold text-white leading-tight">{featuredArticle.title}</h2>
@@ -185,19 +185,19 @@ export default function Page() {
         </div>
       </section>
       {/* All News Section */}
-      <section className="text-white overflow-hidden relative bg-[#050026] min-h-screen">
-      <div className="container mx-auto px-2 sm:px-6">
+      <section className="text-white overflow-hidden relative bg-[#050026] min-h-screen px-4 sm:px-6">
+      <div className="container mx-auto">
         {/* Page Title */}
         <h1 className="text-lg sm:text-4xl font-bold text-white mb-4 sm:mb-[100px]">All News</h1>
 
         {/* News Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 font-sans">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 xl:gap-8 font-sans">
           {newsArticles.map((article) => (
             <div key={article.id} className="space-y-6 mt-[20px] ">
               <img
                 src={article.image}
                 alt={article.title}
-                className="w-full h-80 object-cover rounded-lg mb-4"
+                className="w-full object-cover rounded-lg mb-4"
               />
               {/* Article Title */}
               <h2 className="text-xl font-bold text-white leading-tight hover:text-purple-300 cursor-pointer transition-colors">

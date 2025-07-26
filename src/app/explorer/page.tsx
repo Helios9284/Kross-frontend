@@ -42,7 +42,7 @@ export default function ExplorerPage() {
   const [showSteps, setShowSteps] = useState(true);
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white " style={{fontFamily: 'lato, sans-serif'}}>
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] via-[#1a0a3f] to-[#2a0a4f] text-white overflow-hidden" style={{fontFamily: 'lato, sans-serif'}}>
       <section className="px-5 md:px-20 py-10 md:py-20 relative w-full min-h-[600px]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 " >
           <div className=" relative w-[280px] sm:w-[450px] md:w-[850px] h-[280px] sm:h-[450px] md:h-[650px] flex items-center justify-center">
@@ -95,8 +95,7 @@ export default function ExplorerPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold leading-tight mb-6" style={{ fontFamily: 'lato, sans-serif' }}> Our Explorer Is<br/> Being Upgraded</h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-10 w-full md:w-3/5">It&apos;s a scar on us we need the fix so let&apos;s beautify the scar. It <br/>costs $10k to build the new upgraded explorer. For now <br/>we secure the Blockchain records from Waves chain<br/> custom endpoint.</p>
-
+            
           </motion.div>
           {/* Right column */}
           <motion.div
@@ -106,7 +105,7 @@ export default function ExplorerPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto flex justify-center items-center">
-              <img alt="Blockchain 3D Cube Visualization" width={525} height={430} className="relative w-full h-auto" src="/assets/image/explorer/1.png" />
+              <img alt="Blockchain 3D Cube Visualization" className="relative w-full h-auto" src="/assets/image/explorer/1.png" />
             </div>
           </motion.div>
         </div>

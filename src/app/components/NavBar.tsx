@@ -49,7 +49,7 @@ export default function NavBar() {
 
   return (
     <div className="w-full h-full bg-[#050026] shadow-custom navbar-blur-outline" >
-      <div className="flex px-5 md:px-20 py-6 justify-between items-center">
+      <div className="flex px-5 md:px-20 py-6 justify-between items-center z-50">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 z-50">
           <img
