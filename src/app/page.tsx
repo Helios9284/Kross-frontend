@@ -99,7 +99,7 @@ export default function Home() {
     window.open("https://medium.com/@kross", "_blank", "noopener,noreferrer")
   }
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans  overflow-hidden">
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
       {/* Hero Section */}
       <section className="px-4 sm:px-6 md:px-20 py-8 sm:py-12 md:py-20 relative w-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
         <div className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4 ">
@@ -194,7 +194,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-8 py-2 rounded-[24px] border-[0.5px] border-[#FFFFFFD4] bg-[#11094280] mb-8 text-sm font-normal text-white" style={{ boxShadow: '0px 4px 12px 0px #00000040 inset' }}>
               Our Features
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 w-full md:w-1/2" style={{ fontFamily: 'Lato, sans-serif' }}>An Open Chain That Powers Secure Decentralized Apps</h2>
+            <h2 className="text-2xl xl:text-5xl font-bold mb-6 w-full md:w-1/2" style={{ fontFamily: 'Lato, sans-serif' }}>An Open Chain That Powers Secure Decentralized Apps</h2>
             <div className="flex items-center gap-6 justify-center">
               <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200">
                 <a
@@ -216,18 +216,18 @@ export default function Home() {
           </div>
           {/* Features Grid */}
           <div className="px-5 relative w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-5">
+            <div className="grid grid-cols-1  xl:grid-cols-3 items-center gap-5">
               {/* Left column features */}
               <div className="space-y-10">
-                <div className="text-center md:text-right text-white">
-                  <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Decentralized Identity Guard</h3>
-                  <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Authenticate Users And Apps With Decentralized IDs, <br/> Ensuring Secure And Scalable Identity Across Kross <br/> DApps.</p>
+                <div className="text-center xl:text-right text-white">
+                  <h3 className="text-lg xl:text-2xl text-white font-semibold mb-2">Decentralized Identity Guard</h3>
+                  <p className="text-xs xl:text-[16px] text-gray-300 leading-relaxed">Authenticate Users And Apps With Decentralized IDs, <br/> Ensuring Secure And Scalable Identity Across Kross <br/> DApps.</p>
                 </div>
-                <div className="text-center md:text-right text-white">
+                <div className="text-center xl:text-right text-white">
                   <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Know Your Counterparty</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Build For A Secure Future With Access To Users Who Meet <br/> Rigorous KYC/AML Standards.</p>
                 </div>
-                <div className="text-center md:text-right text-white">
+                <div className="text-center xl:text-right text-white">
                   <h3 className="text-lg md:text-2xl text-white font-semibold mb-2">Application-First Protocol</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Get Access To DEXs, DeFi And RWA Tokenization <br/> Platforms From Day 1.</p>
                 </div>
@@ -249,15 +249,15 @@ export default function Home() {
               </div>
               {/* Right column features */}
               <div className="space-y-10">
-                <div className="text-center md:text-left text-white">
+                <div className="text-center xl:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Simplified For Builders & Users</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Deliver Efficient, Low-Cost Tools That Simplify <br/> Launching And Using Blockchain Apps — No Matter <br/> Your Experience Level.</p>
                 </div>
-                <div className="text-center md:text-left text-white">
+                <div className="text-center xl:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Fast And Low Fees</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Move Assets And Data Across Blockchains With Minimal <br/> Fees And High Speed Powered By The Inter-Blockchain <br/> Communication (IBC).</p>
                 </div>
-                <div className="text-center md:text-left text-white">
+                <div className="text-center xl:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Built For Reliability</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">Launch With Confidence On A Proven, Secure, And <br/> Transparent Chain Powered By The Kross, Waves  Or <br/> Cosmos SDKs.</p>
                 </div>

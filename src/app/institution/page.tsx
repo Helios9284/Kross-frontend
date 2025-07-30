@@ -29,9 +29,9 @@ const features = [
 ];
 
 const testimonialImages = [
+  "/assets/image/institution/3.svg",
   "/assets/image/institution/1.png",
   "/assets/image/institution/2.svg",
-  "/assets/image/institution/3.svg",
 ];
 const nameArray = [
   {
@@ -163,16 +163,16 @@ const InstitutionPage = () => {
       <section className="w-full flex flex-col items-center justify-center py-8 sm:py-16 bg-[#110942]">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-[86px] text-center">Why Do Institutions Choose Kross Network?</h3>
         <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-4 items-center mb-4 sm:mb-8 px-2 sm:px-4 mx-auto">
-          <div className="flex justify-center w-full h-full mb-6 md:mb-0">
+          <div className="flex justify-center w-full h-full mb-6 xl:mb-0">
             {/* Rotating testimonial image */}
             <img
               src={testimonialImages[currentImage]}
               alt="Institution Partner"
-              className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 object-contain mx-auto"
+              className="w-40 h-40 xl:w-56 xl:h-56 object-contain mx-auto"
             />
           </div>
           <div className="flex flex-col items-end">
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 text-left max-w-xl">&quot;We&apos;re committed to bringing the global financial system onchain. Kross Network plays a key role in helping us accelerate the tokenization of real-world assets, turning them into secure, digital representations. This transformation is essential to building a more open and efficient financial ecosystem.&quot;
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 text-left max-w-xl">We&apos;re Committed To Bringing The Global Financial System Onchain. Kross Network Plays A Key Role In Helping Us Accelerate The Tokenization Of Real-World Assets, Turning Them Into Secure, Digital Tepresentations. This Transformation Is Essential To Building A More Open And Efficient Financial Ecosystem.
               <br/>
               <span className="block text-lg sm:text-xl mt-4 font-semibold text-white">
                 {nameArray[currentImage].title}

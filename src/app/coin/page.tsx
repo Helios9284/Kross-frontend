@@ -99,16 +99,16 @@ export default function Page() {
             
           </div>
           <div className="px-2 sm:px-5 relative w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-3 sm:gap-5">
+            <div className="grid grid-cols-1 xl:grid-cols-3 items-center gap-3 sm:gap-5">
               {/* Left column features */}
               <div className="space-y-10">
-                <div className="text-center md:text-right text-white">
+                <div className="text-center xl:text-right text-white">
                   <h3 className="text-base sm:text-lg md:text-2xl text-white font-semibold mb-2">Governance</h3>
                   <p className="text-xs sm:text-sm md:text-[16px] text-gray-300 leading-relaxed">
                   With $KSS at its core, KROSS empowers its community to lead. From protocol integrations to chain upgrades, every major decision is shaped by collective input and governance.
                   </p>
                 </div>
-                <div className="text-center md:text-right text-white">
+                <div className="text-center xltext-right text-white">
                   <h3 className="text-base sm:text-lg md:text-2xl text-white font-semibold mb-2">LPoS Security</h3>
                   <p className="text-xs sm:text-sm md:text-[16px] text-gray-300 leading-relaxed">
                   Powered by Leased Proof of Stake, the KROSS blockchain lets KSS holders play an active role in network security by leasing their tokens to validators. In return, both validators and community participants earn rewards for helping maintain and grow the ecosystem.
@@ -128,13 +128,13 @@ export default function Page() {
               </div>
               {/* Right column features */}
               <div className="space-y-10">
-                <div className="text-center md:text-left text-white">
+                <div className="text-center xl:text-left text-white">
                   <h3 className="text-base sm:text-lg md:text-2xl font-semibold mb-2">100% RWA Backed</h3>
                   <p className="text-xs sm:text-sm md:text-[16px] text-gray-300 leading-relaxed">
                   The $KSS token is intrinsically linked to Real World Assets, with 100% of project-generated $KSS sales allocated toward the acquisition and development of early-stage, scalable real estate assets intended for tokenization. This positions $KSS as the first Layer 1 coin fully backed by land-based holdings. Liquidity Providers earn between 5% to 20% APY by supplying liquidity on exchanges and have the option to swap up to 50% of their $KSS for KABT (Kross Asset Backed Tokens), enabling broad and ongoing value discovery for the $KSS ecosystem.
                   </p>
                 </div>
-                <div className="text-center md:text-left text-white">
+                <div className="text-center xl:text-left text-white">
                   <h3 className="text-base sm:text-lg md:text-2xl font-semibold mb-2">Gasless Transaction fees</h3>
                   <p className="text-xs sm:text-sm md:text-[16px] text-gray-300 leading-relaxed">
                   KROSS Chain transaction fees are fixed, low cost, and paid in the network&aposs native token - $KSS. This predictable fee model ensures affordability and scalability for users, developers, and dApps, even during high network activity.

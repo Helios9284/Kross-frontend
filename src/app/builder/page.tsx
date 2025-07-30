@@ -222,16 +222,16 @@ export default function BuilderPage() {
               />
             </div>
           </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-3 sm:gap-5 ">
+            <div className="grid grid-cols-1 xl:grid-cols-3 items-center gap-3 sm:gap-5 ">
               {/* Left column features */}
               <div className="space-y-10">
-                <div className="text-center md:text-right text-white">
+                <div className="text-center xl:text-right text-white">
                   <h3 className="text-base sm:text-lg md:text-2xl text-white font-semibold mb-2">Plug And Play Compliant Solutions</h3>
                   <p className="text-xs sm:text-sm md:text-[16px] text-gray-300 leading-relaxed">
                     Build And Operate In A Regulatory Compliant And <br/> Transparent Environment With KROSS Modular Tech<br/> Stack..
                   </p>
                 </div>
-                <div className="text-center md:text-right text-white">
+                <div className="text-center xl:text-right text-white">
                   <h3 className="text-base sm:text-lg md:text-2xl text-white font-semibold mb-2">Default-Secure Programming Language</h3>
                   <p className="text-xs sm:text-sm md:text-[16px] text-gray-300 leading-relaxed">
                     Use RIDE By Waves Blockchain To Build Secure And<br/> Robust DApps With Ease
@@ -251,13 +251,13 @@ export default function BuilderPage() {
               </div>
               {/* Right column features */}
               <div className="space-y-10">
-                <div className="text-center md:text-left text-white">
+                <div className="text-center xl:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">Multi-Chain Compatible</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">
                     Access To Cross-Chain Interoperability Through<br/> Cosmos Inter-Blockchain Communication Protocol (IBC)
                   </p>
                 </div>
-                <div className="text-center md:text-left text-white">
+                <div className="text-center xl:text-left text-white">
                   <h3 className="text-lg md:text-2xl font-semibold mb-2">HASHGREED DEX</h3>
                   <p className="text-xs md:text-[16px] text-gray-300 leading-relaxed">
                     Trade And Manage Regulated Tokenized Assets<br/>  Onchain. Create And Distribute Your Tokens Within A<br/> Minute
