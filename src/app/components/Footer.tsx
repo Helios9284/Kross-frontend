@@ -116,10 +116,10 @@ export default function Footer() {
               </li>
               <div className='flex justify-center items-center align-middle py-4 space-x-4'>
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors -translate-x-18" onClick={() => setSociallink("patyble")}>
-                    <img src="/assets/image/footer/patyble.png" alt="medium" className="w-6 h-6 sm:w-5 sm:h-5 hover:w-7 hover:h-7"/>
+                    <img src="/assets/image/footer/patyble.png" alt="medium" className="w-6 h-6 sm:w-7 sm:h-7 "/>
                 </Link>
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors -translate-x-18" onClick={() => setSociallink("jollo")}>
-                    <img src="/assets/image/footer/jollo.png" alt="medium" className="w-6 h-6 sm:w-5 sm:h-5 hover:w-7 hover:h-7"/>
+                    <img src="/assets/image/footer/jollo.png" alt="medium" className="w-6 h-6 sm:w-7 sm:h-7 "/>
                 </Link>
               </div>
             </ul>
