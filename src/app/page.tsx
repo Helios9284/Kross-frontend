@@ -342,7 +342,7 @@ export default function Home() {
               {/* Card 7 */}
               <div className="inline-table w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/5.png" />
+                  <img alt="On and off-ramping with regulatory compliance" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/7.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">On and off-ramping with regulatory compliance</h3>
@@ -352,7 +352,7 @@ export default function Home() {
               {/* Card 8 */}
               <div className="inline-table w-full md:w-[635px] bg-[#110942] backdrop-blur-sm border border-[#464646] rounded-[16px] group overflow-hidden p-6 hover:bg-purple-800/50 transition-all flex-shrink-0 select-none">
                 <div className="relative w-full md:w-[585px] h-[390px]">
-                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/4.png" />
+                  <img alt="IBC Compatibility for token movement" className="object-cover absolute inset-0 w-full h-full" src="/assets/image/builder/layout/8.png" />
                 </div>
                 <div className="py-6">
                   <h3 className="text-4xl md:text-[40px] font-bold mb-4">IBC Compatibility for token movement</h3>
