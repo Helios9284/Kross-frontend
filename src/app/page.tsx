@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 export default function Home() {
   // Drag-to-scroll logic for possibilities section
   const cardRowRef = useRef<HTMLDivElement>(null);
@@ -97,6 +98,11 @@ export default function Home() {
   const handleMediumClick = () => {
     // Replace with your actual Medium page URL
     window.open("https://medium.com/@krosscoin_team", "_blank", "noopener,noreferrer")
+  }
+
+  const handleDeveloperClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://github.com/krosscoin", "_blank", "noopener,noreferrer")
   }
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
@@ -412,12 +418,13 @@ export default function Home() {
                   <h2 className="text-2xl md:text-3xl font-bold text-center">Begin building today, Explore the Details</h2>
                 </div>
                 <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-                  <a
-                    href="#"
+                  <Link
+                    href="/"
+                    onClick={() => handleDeveloperClick()}
                     className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                   >
                     Developer Doc
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

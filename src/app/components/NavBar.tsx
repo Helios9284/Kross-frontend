@@ -55,6 +55,10 @@ export default function NavBar() {
     // Replace with your actual Medium page URL
     window.open("https://github.com/krosscoin", "_blank", "noopener,noreferrer")
   }
+  const handleExplorerClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://krossvoyager.com", "_blank", "noopener,noreferrer")
+  }
 
   return (
     <div className="w-full h-full bg-[#050026] shadow-custom navbar-blur-outline" >
@@ -76,7 +80,7 @@ export default function NavBar() {
               <button
                 type="button"
                 onClick={() => router.push('/builder')}
-                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10"
+                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10 cursor-pointer"
               >
                 For Builders
               </button>
@@ -87,7 +91,7 @@ export default function NavBar() {
               <button
                 type="button"
                 onClick={() => router.push('/trader')}
-                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10"
+                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10 cursor-pointer"
               >
                 For Traders
               </button>
@@ -98,7 +102,7 @@ export default function NavBar() {
               <button
                 type="button"
                 onClick={() => router.push('/institution')}
-                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10"
+                className="block text-white text-[16px] font-[500] leading-[24px]  px-3 py-1 relative z-10 cursor-pointer"
               >
                 For Institution
               </button>
@@ -179,7 +183,8 @@ export default function NavBar() {
             )}
           </div>
           <button className="rounded-[12px] p-[2px] bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] hover:from-[#605B8] hover:to-[#AA00B8] font-sans ">
-            <Link href="/explorer" className="flex text-white items-center justify-center px-6 py-4 bg-[#0a0620] rounded-[12px] whitespace-nowrap text-md hover:bg-gradient-to-r from-[#6D05B8] to-[#FF00B8]">
+            <Link href="/" className="flex text-white items-center justify-center px-6 py-4 bg-[#0a0620] rounded-[12px] whitespace-nowrap text-md hover:bg-gradient-to-r from-[#6D05B8] to-[#FF00B8]"
+            onClick={()=>handleExplorerClick()}>
               Krosscoin Explorer
             </Link>
           </button>
