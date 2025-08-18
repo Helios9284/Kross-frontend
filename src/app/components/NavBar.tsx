@@ -47,6 +47,11 @@ export default function NavBar() {
     };
   }, []);
 
+  const handleDeveloperClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://docs.google.com/document/d/1oVOOIEKrAg2AMdvMzhVspPSlxCAJBY8QJrrOFapg19U/edit?usp=drivesdk", "_blank", "noopener,noreferrer")
+  }
+
   return (
     <div className="w-full h-full bg-[#050026] shadow-custom navbar-blur-outline" >
       <div className="flex px-5 md:px-20 py-6 justify-between items-center z-50">
@@ -105,7 +110,7 @@ export default function NavBar() {
               <FaChevronDown className="text-white w-3 h-3" />
             </div>
             {resourcesOpen && (
-              <div className="z-50 absolute top-full left-0 mt-4 bg-[#050026] rounded-[16px] border border-[#2b3250] shadow-lg z-10 flex flex-col w-max px-[16px] py-[16px]">
+              <div className="absolute top-full left-0 mt-4 bg-[#050026] rounded-[16px] border border-[#2b3250] shadow-lg z-10 flex flex-col w-max px-[16px] py-[16px]">
                 <Link
                   href="/news"
                   className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
@@ -121,9 +126,8 @@ export default function NavBar() {
                   Blog
                 </Link>
                 <Link
-                  href="/guide"
+                  href="https://docs.google.com/document/d/1oVOOIEKrAg2AMdvMzhVspPSlxCAJBY8QJrrOFapg19U/edit?usp=drivesdk"
                   className="text-white text-[14px] font-[300]  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
-                  onClick={() => setResourcesOpen(false)}
                 >
                   Developers&apos; Guide
                 </Link>

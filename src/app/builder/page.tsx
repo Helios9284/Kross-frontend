@@ -201,14 +201,14 @@ export default function BuilderPage() {
                        
             <div  style={{width: "fit-content"}} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
                 <a
-                  href="#"
+                  href="https://docs.google.com/document/d/1oVOOIEKrAg2AMdvMzhVspPSlxCAJBY8QJrrOFapg19U/edit?usp=drivesdk"
                   className="inline-flex px-8 py-4 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
                 >
                   Developer Guide
                 </a>
               </div>
           </div>
-          <div className="px-2 sm:px-2 relative w-full relative">
+          <div className="px-2 sm:px-2  w-full relative">
 
           <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-4 z-1">
             <div className="relative w-[180px] sm:w-[280px] md:w-[450px] h-[180px] sm:h-[280px] md:h-[450px]  flex items-center justify-center">

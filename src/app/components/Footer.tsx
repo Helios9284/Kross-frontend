@@ -1,6 +1,27 @@
+'use client'
 import Link from 'next/link';
+import {useState} from 'react'
 
 export default function Footer() {
+
+  // const [sociallink, setSociallink] = useState(1)
+  const [links] = useState({
+    instagram:"https://instagram.com/hashgreed",
+    linkdin: "https://www.linkedin.com/company/kross-blockchain/",
+    Facebook: "https://facebook.com/krosscoin",
+    twitter: "https://x.com/krosscoin_team",
+    telegram: "https://t.me/krosschain",
+    youtube: "https://youtube.com/@krosscoinproject6568?si=Ipow5z-tSrjN6H9q",
+    
+  });
+
+  const setSociallink = (key: keyof typeof links) => {
+    const url = links[key];
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer"); // opens in new tab
+    }
+  };
+
   return (
     <footer className="text-white bg-[#0a0620]">
       <div className="mx-auto px-5 sm:px-2 md:px-20 py-12 sm:py-6">
@@ -52,7 +73,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><Link href="/news" className="text-gray-400 hover:text-white transition-colors">News</Link></li>
               <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="https://docs.google.com/document/d/1jFjSoXKiIPQXUdRmz3X22qPJJk55vydg2EJ-0iYHlYk/edit?usp=drivesdk" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
             </ul>
           </div>
           <div className="col-span-1 text-center md:text-left">
@@ -66,21 +87,27 @@ export default function Footer() {
           <div className="col-span-1 text-center md:text-left">
             <h3 className="font-semibold mb-4 text-gray-200 text-base sm:text-sm">Legal</h3>
             <ul className="space-y-3 sm:space-y-2 ">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms and Condition</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="https://docs.google.com/document/d/1mHfXiynusPrUyQB4YdYCR6YyWZ705w7riZZwQ8GgBCE/edit?usp=drivesdk" className="text-gray-400 hover:text-white transition-colors">Terms and Condition</a></li>
+              <li><a href="https://docs.google.com/document/d/1ku5XtBdNEHYZyBY59pvKB-ZE7IKHd5DOdBWquHCyq_I/edit?usp=drivesdk" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
               <li>
                 <div className="flex flex-wrap gap-4 lg:items-start mt-10 sm:mt-4 justify-start">
                   {/* Social Icons */}
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link 
+                  href="/"  
+                  className="text-gray-400 hover:text-white transition-colors" 
+                  onClick={() => setSociallink("instagram")}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></Link>
+                  <Link href="/" className="text-gray-400 hover:text-white transition-colors" 
+                  onClick={() => setSociallink("linkdin")}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></Link>
+                  <Link href="/" className="text-gray-400 hover:text-white transition-colors"
+                  onClick={() => setSociallink("Facebook")}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></Link>
+                  <Link href="/" className="text-gray-400 hover:text-white transition-colors" onClick={() => setSociallink("twitter")}>
                     <img src="/assets/image/footer/4.svg" alt="medium" className="w-6 h-6 sm:w-5 sm:h-5"/>
-                    </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                    </Link>
+                  <Link href="/" className="text-gray-400 hover:text-white transition-colors" onClick={() => setSociallink("telegram")}>
                     <img src="/assets/image/footer/5.svg" alt="medium" className="w-6 h-6 sm:w-5 sm:h-5"/>
-                    </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></a>
+                    </Link>
+                  <Link href="/" className="text-gray-400 hover:text-white transition-colors"
+                  onClick={() => setSociallink("youtube")}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></Link>
                 </div>
               </li>
             </ul>

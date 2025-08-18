@@ -96,7 +96,7 @@ export default function Home() {
   };
   const handleMediumClick = () => {
     // Replace with your actual Medium page URL
-    window.open("https://medium.com/@kross", "_blank", "noopener,noreferrer")
+    window.open("https://medium.com/@krosscoin_team", "_blank", "noopener,noreferrer")
   }
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#050026] to-[#110942] text-white font-sans">
