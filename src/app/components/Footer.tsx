@@ -12,6 +12,9 @@ export default function Footer() {
     twitter: "https://x.com/krosscoin_team",
     telegram: "https://t.me/krosschain",
     youtube: "https://youtube.com/@krosscoinproject6568?si=Ipow5z-tSrjN6H9q",
+    patyble: "https://i.imghippo.com/files/BIq6575uNc.jpg",
+    jollo: "https://jollofchain.com",
+    github: "https://github.com/krosscoin"
     
   });
 
@@ -72,8 +75,9 @@ export default function Footer() {
             <h3 className="font-semibold mb-4 text-gray-200 text-base sm:text-sm">Resources</h3>
             <ul className="space-y-3">
               <li><Link href="/news" className="text-gray-400 hover:text-white transition-colors">News</Link></li>
-              <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+              {/* <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li> */}
               <li><Link href="https://docs.google.com/document/d/1jFjSoXKiIPQXUdRmz3X22qPJJk55vydg2EJ-0iYHlYk/edit?usp=drivesdk" className="text-gray-400 hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/" className="text-gray-400 hover:text-white transition-colors">Github</Link></li>
             </ul>
           </div>
           <div className="col-span-1 text-center md:text-left">
@@ -81,7 +85,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><Link href="/fund" className="text-gray-400 hover:text-white transition-colors">Ecosystem Fund</Link></li>
               <li><Link href="/partner" className="text-gray-400 hover:text-white transition-colors">Partners</Link></li>
-              <li><Link href="/coin" className="text-gray-400 hover:text-white transition-colors">$KSS Coin</Link></li>
+              <li><Link href="/coin" className="text-gray-400 hover:text-white transition-colors" onClick={() => setSociallink("github")}>$KSS Coin</Link></li>
             </ul>
           </div>
           <div className="col-span-1 text-center md:text-left">
@@ -102,7 +106,7 @@ export default function Footer() {
                   onClick={() => setSociallink("Facebook")}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></Link>
                   <Link href="/" className="text-gray-400 hover:text-white transition-colors" onClick={() => setSociallink("twitter")}>
                     <img src="/assets/image/footer/4.svg" alt="medium" className="w-6 h-6 sm:w-5 sm:h-5"/>
-                    </Link>
+                  </Link>
                   <Link href="/" className="text-gray-400 hover:text-white transition-colors" onClick={() => setSociallink("telegram")}>
                     <img src="/assets/image/footer/5.svg" alt="medium" className="w-6 h-6 sm:w-5 sm:h-5"/>
                     </Link>
@@ -110,6 +114,14 @@ export default function Footer() {
                   onClick={() => setSociallink("youtube")}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="w-6 h-6 sm:w-5 sm:h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg></Link>
                 </div>
               </li>
+              <div className='flex justify-center items-center align-middle py-4 space-x-4'>
+                <Link href="/" className="text-gray-400 hover:text-white transition-colors -translate-x-18" onClick={() => setSociallink("patyble")}>
+                    <img src="/assets/image/footer/patyble.png" alt="medium" className="w-6 h-6 sm:w-5 sm:h-5 hover:w-7 hover:h-7"/>
+                </Link>
+                <Link href="/" className="text-gray-400 hover:text-white transition-colors -translate-x-18" onClick={() => setSociallink("jollo")}>
+                    <img src="/assets/image/footer/jollo.png" alt="medium" className="w-6 h-6 sm:w-5 sm:h-5 hover:w-7 hover:h-7"/>
+                </Link>
+              </div>
             </ul>
           </div>
         </div>

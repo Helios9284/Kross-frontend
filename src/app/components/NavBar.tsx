@@ -51,6 +51,10 @@ export default function NavBar() {
     // Replace with your actual Medium page URL
     window.open("https://docs.google.com/document/d/1oVOOIEKrAg2AMdvMzhVspPSlxCAJBY8QJrrOFapg19U/edit?usp=drivesdk", "_blank", "noopener,noreferrer")
   }
+  const handleGitClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://github.com/krosscoin", "_blank", "noopener,noreferrer")
+  }
 
   return (
     <div className="w-full h-full bg-[#050026] shadow-custom navbar-blur-outline" >
@@ -118,18 +122,26 @@ export default function NavBar() {
                 >
                   News
                 </Link>
-                <Link
+                {/* <Link
                   href="/blog"
                   className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
                   onClick={() => setResourcesOpen(false)}
                 >
                   Blog
-                </Link>
+                </Link> */}
                 <Link
-                  href="https://docs.google.com/document/d/1oVOOIEKrAg2AMdvMzhVspPSlxCAJBY8QJrrOFapg19U/edit?usp=drivesdk"
-                  className="text-white text-[14px] font-[300]  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
+                  href="/"
+                  className="text-white text-[14px] font-[300] mb-6  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
+                  onClick={() => handleDeveloperClick()}
                 >
                   Developers&apos; Guide
+                </Link>
+                <Link
+                  href="/"
+                  className="text-white text-[14px] font-[300]  hover:text-[#EC34E0] hover:scale-105 transition-all duration-200 text-left"
+                  onClick={() => handleGitClick()}
+                >
+                  Github
                 </Link>
               </div>
             )}
@@ -195,7 +207,7 @@ export default function NavBar() {
           <div className="flex flex-col gap-2">
             <span className="text-white font-semibold">Resources</span>
             <Link href="/news" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>News</Link>
-            <Link href="/blog" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>Blog</Link>
+            {/* <Link href="/blog" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>Blog</Link> */}
             <Link href="/guide" className="text-white text-base py-1" onClick={() => setMobileOpen(false)}>Developers&apos; Guide</Link>
           </div>
           <div className="flex flex-col gap-2 mt-2">
