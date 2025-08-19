@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Link from 'next/link';
 
 import { motion } from "framer-motion";
 export default function EarningPage() {
@@ -7,6 +8,17 @@ export default function EarningPage() {
   useEffect(() => {
     setImgVisible(true);
   }, []);
+
+  const handlePatybleClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://patyble.com", "_blank", "noopener,noreferrer")
+  }
+
+  const handleJolloClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://jollofchain.com", "_blank", "noopener,noreferrer")
+  }
+
   return (
     <div
     className="min-h-screen bg-[#050026] overflow-hidden w-full">
@@ -171,9 +183,11 @@ export default function EarningPage() {
               Patyble is a location-based dating app that connects people through the places they love, allowing users to find meaningful relationships by matching with others who share similar interests in specific locations and venues.
             </span>
             <div style={{ width: "fit-content" }} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200 inline-block mt-auto">
-              <a href="https://lifestyle.krosscoin.io/" className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium  text-[clamp(12px,2vw,16px)]  md:text-[16px] hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block">
+              <Link href="/earning" 
+              className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium  text-[clamp(12px,2vw,16px)]  md:text-[16px] hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block"
+              onClick={()=>handlePatybleClick()}>
                 Enter Patyble
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -184,9 +198,10 @@ export default function EarningPage() {
               JollofChain is the world’s first blockchain-powered cooperative food purchasing network. Built on Kross Blockchain, it pools household funds via smart contract escrow, enables bulk buying from farmer cooperatives, and verifies delivery transparently. With mobile apps and USSD, even non-smartphone users can join, making affordable food access inclusive.
             </span>
             <div style={{ width: "fit-content" }} className="inline-flex p-[2px] rounded-[12px] w-full bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200 inline-block mt-auto">
-              <a href="https://lifestyle.krosscoin.io/" className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium  text-[clamp(12px,2vw,16px)]  md:text-[16px] hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block">
+              <Link href="/earning" className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium  text-[clamp(12px,2vw,16px)]  md:text-[16px] hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block"
+              onClick={()=>handleJolloClick()}>
                 Enter Jollof Chain
-              </a>
+              </Link>
             </div>
           </div>
         </div>
