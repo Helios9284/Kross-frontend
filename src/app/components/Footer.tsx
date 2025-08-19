@@ -118,9 +118,9 @@ export default function Footer() {
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors -translate-x-18" onClick={() => setSociallink("patyble")}>
                     <img src="/assets/image/footer/patyble.png" alt="medium" className="w-6 h-6 sm:w-7 sm:h-7 "/>
                 </Link>
-                <Link href="/" className="text-gray-400 hover:text-white transition-colors -translate-x-18" onClick={() => setSociallink("jollo")}>
+                {/* <Link href="/" className="text-gray-400 hover:text-white transition-colors -translate-x-18" onClick={() => setSociallink("jollo")}>
                     <img src="/assets/image/footer/jollo.png" alt="medium" className="w-6 h-6 sm:w-7 sm:h-7 "/>
-                </Link>
+                </Link> */}
               </div>
             </ul>
           </div>

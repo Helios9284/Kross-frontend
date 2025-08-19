@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState } from "react"
 // import { Lato } from 'next/font/google'
 interface NewsArticle {
@@ -84,6 +85,11 @@ export default function Page() {
   const [searchTerm, setSearchTerm] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedCategory, setSelectedCategory] = useState("everything")
+
+  const handleExplorerClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://medium.com/krosscoin-universal-app-monetization-platform/vinekross-europe-partners-with-ofk-branc-football-club-to-pioneer-20m-football-stadium-ce76d136d25c", "_blank", "noopener,noreferrer")
+  }
 
   return (
     <div
@@ -173,12 +179,13 @@ export default function Page() {
             </div>
             <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-8 leading-relaxed">{featuredArticle.excerpt}</p>
             <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200  inline-block">
-              <a
-                href="#"
+              <Link
+                href="/news"
+                onClick={()=>handleExplorerClick()}
                 className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200  inline-block"
               >
                 Read News
-              </a>
+              </Link>
             </div>
           </div>
           <img src="/assets/image/news/news_1.svg" alt="featured article" className="w-full h-full object-cover rounded-lg mb-2 sm:mb-4 py-4 sm:py-[36px]" />
