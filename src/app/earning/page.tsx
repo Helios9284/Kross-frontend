@@ -134,7 +134,7 @@ export default function EarningPage() {
               World&apos;s first Tap to Own RWA telegram mini-app game. Play the game, stack up OWN coins and earn free shares in Tech startups and real estate globally.
             </span>
             <div style={{ width: "fit-content" }} className="inline-flex p-[2px] w-full rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200 inline-block mt-auto">
-              <a href="#" className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium  text-[clamp(12px,2vw,16px)]  md:text-[16px] hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block">
+              <a href="https://lifestyle.krosscoin.io/" className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium  text-[clamp(12px,2vw,16px)]  md:text-[16px] hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block">
                 Enter TapOwn
               </a>
             </div>
@@ -159,6 +159,33 @@ export default function EarningPage() {
             <div style={{ width: "fit-content" }} className="inline-flex p-[2px] leading-snug   break-words rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200 inline-block mt-auto">
               <a href="https://lifestyle.krosscoin.io/" className="inline-flex px-8 py-4  text-[clamp(12px,2vw,16px)]  md:text-[16px] rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block">
                 Enter Hashgreed Domain
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-8 w-full mt-8 z-50 grid-mobile-1col  ">
+          {/* Card 1 */}
+          <div className="border border-[#4B6794] rounded-[16px] p-2 sm:p-4 md:p-6 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942] min-h-[200px] md:min-h-[362px] w-full overflow-hidden min-w-0">
+            <span className="font-bold text-white leading-snug text-left w-full break-words whitespace-normal text-[clamp(24px,2.5vw,30px)] md:text-[40px]">Patyble</span>
+            <span className="text-white leading-snug text-left break-words whitespace-normal text-[clamp(16px,2vw,22px)]  md:text-[22px]">
+              Patyble is a location-based dating app that connects people through the places they love, allowing users to find meaningful relationships by matching with others who share similar interests in specific locations and venues.
+            </span>
+            <div style={{ width: "fit-content" }} className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200 inline-block mt-auto">
+              <a href="https://lifestyle.krosscoin.io/" className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium  text-[clamp(12px,2vw,16px)]  md:text-[16px] hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block">
+                Enter Patyble
+              </a>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="border border-[#4B6794] rounded-[16px]  p-2 sm:p-4 md:p-6 flex flex-col items-start gap-4 sm:gap-6 bg-[#110942]/60 min-h-[200px] md:min-h-[362px] w-full overflow-hidden min-w-0">
+            <span className="font-bold text-white leading-snug text-left w-full break-words whitespace-normal text-[clamp(24px,2.5vw,30px)] md:text-[40px]">Jollof Chain</span>
+            <span className="text-white leading-snug text-left break-words whitespace-normal text-[clamp(16px,2vw,22px)] md:text-[22px]">
+              JollofChain is the world’s first blockchain-powered cooperative food purchasing network. Built on Kross Blockchain, it pools household funds via smart contract escrow, enables bulk buying from farmer cooperatives, and verifies delivery transparently. With mobile apps and USSD, even non-smartphone users can join, making affordable food access inclusive.
+            </span>
+            <div style={{ width: "fit-content" }} className="inline-flex p-[2px] rounded-[12px] w-full bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200 inline-block mt-auto">
+              <a href="https://lifestyle.krosscoin.io/" className="inline-flex px-8 py-4 rounded-[10px] bg-[#110942] hover:bg-transparent text-white font-medium  text-[clamp(12px,2vw,16px)]  md:text-[16px] hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block">
+                Enter Jollof Chain
               </a>
             </div>
           </div>
