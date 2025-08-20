@@ -57,7 +57,7 @@ export default function NavBar() {
   }
   const handleExplorerClick = () => {
     // Replace with your actual Medium page URL
-    window.open("https://krossvoyager.com", "_blank", "noopener,noreferrer")
+    window.open("https://krossexplorer.com", "_blank", "noopener,noreferrer")
   }
 
   return (
