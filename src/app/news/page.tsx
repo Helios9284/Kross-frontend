@@ -248,122 +248,122 @@ export default function Page() {
       </section>
 
       {/* Articles Section */}
-      <div className="min-h-screen bg-[#050026] py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-12 text-left text-white">
-          All News
-        </h1>
+      <div className="container mx-auto px-4 sm:px-6 min-h-screen bg-[#050026] py-12">
+        <div className="px-4 sm:px-6 mx-auto">
+          <h1 className="text-4xl font-bold mb-12 text-left text-white">
+            All News
+          </h1>
 
-        {posts.length === 0 ? (
-          <div className="text-center text-gray-400 text-xl">No posts found</div>
-        ) : (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {currentPosts.map((post, idx) => (
-                <div
-                  key={idx}
-                  className=" text-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  {/* Image with fallback */}
-                  <div className="h-56 overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder-image.jpg';
-                      }}
-                    />
-                  </div>
+          {posts.length === 0 ? (
+            <div className="text-center text-gray-400 text-xl">No posts found</div>
+          ) : (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {currentPosts.map((post, idx) => (
+                  <div
+                    key={idx}
+                    className=" text-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    {/* Image with fallback */}
+                    <div className="h-56 overflow-hidden">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        onError={(e) => {
+                          e.currentTarget.src = '/placeholder-image.jpg';
+                        }}
+                      />
+                    </div>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <div className="flex flex-row items-center justify-between">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {post.tags.slice(0, 2).map((tag, i) => (
-                          <span
-                            key={i}
-                            className="border-[#686868] border-[2px] text-xs px-3 py-1 rounded-full font-medium"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                        {post.tags.length > 2 && (
-                          <span className="bg-gray-700 text-xs px-3 py-1 rounded-full">
-                            +{post.tags.length - 2}
-                          </span>
-                        )}
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex flex-row items-center justify-between">
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {post.tags.slice(0, 2).map((tag, i) => (
+                            <span
+                              key={i}
+                              className="border-[#686868] border-[2px] text-xs px-3 py-1 rounded-full font-medium"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                          {post.tags.length > 2 && (
+                            <span className="bg-gray-700 text-xs px-3 py-1 rounded-full">
+                              +{post.tags.length - 2}
+                            </span>
+                          )}
+                        </div>
+                        <div className="flex items-center text-gray-400 text-sm mb-4">
+                  
+                        {formatDate(post.date)}
                       </div>
-                      <div className="flex items-center text-gray-400 text-sm mb-4">
-                
-                      {formatDate(post.date)}
+                      </div>
+
+                      <a
+                        href={post.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xl font-bold hover:text-blue-400 block mb-3 transition-colors"
+                      >
+                        {post.title}
+                      </a>
+
+
+
+                      <p className="text-[#CACACA] text-sm line-clamp-3 mb-5 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+
+                      
                     </div>
-                    </div>
-
-                    <a
-                      href={post.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xl font-bold hover:text-blue-400 block mb-3 transition-colors"
-                    >
-                      {post.title}
-                    </a>
-
-
-
-                    <p className="text-[#CACACA] text-sm line-clamp-3 mb-5 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-
-                    
                   </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="flex justify-center mt-8">
-                <nav className="flex items-center space-x-2">
-                  <button
-                    onClick={() => paginate(Math.max(1, currentPage - 1))}
-                    disabled={currentPage === 1}
-                    className="p-2 rounded-lg bg-gray-800 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                  </button>
-
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
-                    <button
-                      key={number}
-                      onClick={() => paginate(number)}
-                      className={`px-4 py-2 rounded-lg transition-colors ${currentPage === number
-                          ? "bg-blue-600 text-white"
-                          : "bg-gray-800 text-white hover:bg-gray-700"
-                        }`}
-                    >
-                      {number}
-                    </button>
-                  ))}
-
-                  <button
-                    onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-                    disabled={currentPage === totalPages}
-                    className="p-2 rounded-lg bg-gray-800 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                </nav>
+                ))}
               </div>
-            )}
-          </>
-        )}
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center mt-8">
+                  <nav className="flex items-center space-x-2">
+                    <button
+                      onClick={() => paginate(Math.max(1, currentPage - 1))}
+                      disabled={currentPage === 1}
+                      className="p-2 rounded-lg bg-gray-800 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+                      </svg>
+                    </button>
+
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
+                      <button
+                        key={number}
+                        onClick={() => paginate(number)}
+                        className={`px-4 py-2 rounded-lg transition-colors ${currentPage === number
+                            ? "bg-blue-600 text-white"
+                            : "bg-gray-800 text-white hover:bg-gray-700"
+                          }`}
+                      >
+                        {number}
+                      </button>
+                    ))}
+
+                    <button
+                      onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
+                      disabled={currentPage === totalPages}
+                      className="p-2 rounded-lg bg-gray-800 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                  </nav>
+                </div>
+              )}
+            </>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   )
 }
