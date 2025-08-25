@@ -33,8 +33,6 @@ const featuredArticle = {
   date: "Aug 14, 2024",
 }
 
-const DEFAULT_IMAGE = "/assets/image/news/news_1.svg"
-
 export default function Page() {
   const [searchTerm, setSearchTerm] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
@@ -112,9 +110,6 @@ export default function Page() {
   // Pagination
   const ITEMS_PER_PAGE = 6
   const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ITEMS_PER_PAGE))
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
-  const currentItems = filteredArticles.slice(startIndex, startIndex + ITEMS_PER_PAGE)
-
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
@@ -134,18 +129,18 @@ export default function Page() {
     }
   }, [totalPages, currentPage])
 
-  // Extract text content from HTML
-  const extractTextFromHTML = (html: string, maxLength: number = 200) => {
-    if (!html) return "No preview available"
+  // // Extract text content from HTML
+  // const extractTextFromHTML = (html: string, maxLength: number = 200) => {
+  //   if (!html) return "No preview available"
     
-    const tempDiv = document.createElement('div')
-    tempDiv.innerHTML = html
-    const text = tempDiv.textContent || tempDiv.innerText || ""
+  //   const tempDiv = document.createElement('div')
+  //   tempDiv.innerHTML = html
+  //   const text = tempDiv.textContent || tempDiv.innerText || ""
     
-    return text.length > maxLength 
-      ? text.substring(0, maxLength) + "..."
-      : text
-  }
+  //   return text.length > maxLength 
+  //     ? text.substring(0, maxLength) + "..."
+  //     : text
+  // }
 
   return (
     <div
