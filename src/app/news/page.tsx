@@ -3,20 +3,6 @@
 import { useEffect, useState } from "react"
 import Link from "next/link";
 
-interface MediumArticle {
-  id: string
-  title: string
-  subtitle?: string
-  url: string
-  author: string
-  published_at: string
-  reading_time: number
-  claps: number
-  responses: number
-  content?: string
-  tags?: string[]
-}
-
 interface Post {
   title: string;
   date: string;
@@ -37,10 +23,10 @@ export default function Page() {
   const [searchTerm, setSearchTerm] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedCategory, setSelectedCategory] = useState("everything")
-  const [articles, setArticles] = useState<MediumArticle[]>([])
+  const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [posts, setPosts] = useState<Post[]>([]);
+  
   const postsPerPage = 6;
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
@@ -49,6 +35,7 @@ export default function Page() {
     const fetchPosts = async () => {
       try {
         setLoading(true);
+        setError(null);
         const response = await fetch("/api/posts");
 
         if (!response.ok) {
@@ -86,61 +73,48 @@ export default function Page() {
     }
   }
 
-  // Filter articles based on search and category
-  const filteredArticles = articles.filter((article) => {
+  // Filter posts based on search and category
+  const filteredPosts = posts.filter((post) => {
     const query = searchTerm.toLowerCase()
     const matchesSearch = 
-      article.title?.toLowerCase().includes(query) ||
-      article.subtitle?.toLowerCase().includes(query) ||
-      article.content?.toLowerCase().includes(query) ||
-      article.tags?.some(tag => tag.toLowerCase().includes(query))
+      post.title?.toLowerCase().includes(query) ||
+      post.excerpt?.toLowerCase().includes(query) ||
+      post.tags?.some(tag => tag.toLowerCase().includes(query))
 
     if (selectedCategory === "everything") {
       return matchesSearch
     }
 
     // Filter by category using tags
-    const matchesCategory = article.tags?.some(tag => 
+    const matchesCategory = post.tags?.some(tag => 
       tag.toLowerCase().includes(selectedCategory.toLowerCase())
     )
 
     return matchesSearch && matchesCategory
   })
 
-  // Pagination
-  const ITEMS_PER_PAGE = 6
-  const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ITEMS_PER_PAGE))
+  // Pagination calculations
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / postsPerPage))
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   const handleMediumClick = () => {
     // Replace with your actual Medium page URL
     window.open("https://tribuneonlineng.com/sec-grants-hashgreed-approval-to-tokenize-real-estate-based-assets/", "_blank", "noopener,noreferrer")
   }
 
+  // Reset to page 1 when search or category changes
   useEffect(() => {
     setCurrentPage(1)
   }, [searchTerm, selectedCategory])
 
+  // Adjust current page if it exceeds total pages
   useEffect(() => {
-    if (currentPage > totalPages) {
+    if (currentPage > totalPages && totalPages > 0) {
       setCurrentPage(totalPages)
     }
   }, [totalPages, currentPage])
-
-  // // Extract text content from HTML
-  // const extractTextFromHTML = (html: string, maxLength: number = 200) => {
-  //   if (!html) return "No preview available"
-    
-  //   const tempDiv = document.createElement('div')
-  //   tempDiv.innerHTML = html
-  //   const text = tempDiv.textContent || tempDiv.innerText || ""
-    
-  //   return text.length > maxLength 
-  //     ? text.substring(0, maxLength) + "..."
-  //     : text
-  // }
 
   return (
     <div
@@ -243,14 +217,23 @@ export default function Page() {
       </section>
 
       {/* Articles Section */}
-      <div className="container mx-auto px-4 sm:px-6 min-h-screen bg-[#050026] py-12">
-        <div className="px-4 sm:px-6 mx-auto">
+      <div className="container mx-auto min-h-screen bg-[#050026] py-12">
+        <div className="mx-auto">
           <h1 className="text-4xl font-bold mb-12 text-left text-white">
             All News
           </h1>
 
-          {posts.length === 0 ? (
-            <div className="text-center text-gray-400 text-xl">No posts found</div>
+          {loading ? (
+            <div className="text-center text-gray-400 text-xl">Loading posts...</div>
+          ) : error ? (
+            <div className="text-center text-red-400 text-xl">Error: {error}</div>
+          ) : filteredPosts.length === 0 ? (
+            <div className="text-center text-gray-400 text-xl">
+              {searchTerm || selectedCategory !== "everything" 
+                ? "No posts match your search criteria" 
+                : "No posts found"
+              }
+            </div>
           ) : (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -290,9 +273,8 @@ export default function Page() {
                           )}
                         </div>
                         <div className="flex items-center text-gray-400 text-sm mb-4">
-                  
-                        {formatDate(post.date)}
-                      </div>
+                          {formatDate(post.date)}
+                        </div>
                       </div>
 
                       <a
@@ -304,13 +286,9 @@ export default function Page() {
                         {post.title}
                       </a>
 
-
-
                       <p className="text-[#CACACA] text-sm line-clamp-3 mb-5 leading-relaxed">
                         {post.excerpt}
                       </p>
-
-                      
                     </div>
                   </div>
                 ))}
@@ -352,7 +330,7 @@ export default function Page() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                       </svg>
                     </button>
-                  </nav>
+                    </nav>
                 </div>
               )}
             </>
