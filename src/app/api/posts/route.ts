@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import { JSDOM } from 'jsdom';
 
-export async function GET(req: Request) {
+export async function GET() {
     const base_url = "https://medium.com/@krosscoin_team";
 
     try {

@@ -101,7 +101,7 @@ export default function Page() {
 
   const handleMediumClick = () => {
     // Replace with your actual Medium page URL
-    window.open("https://tribuneonlineng.com/sec-grants-hashgreed-approval-to-tokenize-real-estate-based-assets/", "_blank", "noopener,noreferrer")
+    window.open("https://medium.com/@krosscoin_team", "_blank", "noopener,noreferrer")
   }
 
   // Reset to page 1 when search or category changes
