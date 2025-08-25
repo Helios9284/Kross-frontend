@@ -1,173 +1,151 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
-import { useState, useMemo } from "react"
+import { useEffect, useState } from "react"
+import Link from "next/link";
 
-interface NewsArticle {
-  id: number
+interface MediumArticle {
+  id: string
   title: string
-  excerpt: string
-  date: string
-  categories: string[]
-  image: string
-  link?: string
+  subtitle?: string
+  url: string
+  author: string
+  published_at: string
+  reading_time: number
+  claps: number
+  responses: number
+  content?: string
+  tags?: string[]
+}
+
+interface Post {
+  title: string;
+  date: string;
+  link: string;
+  excerpt: string;
+  image: string;
+  tags: string[];
 }
 
 const featuredArticle = {
-  id: 0,
   title: "SEC Grants Hashgreed Approval To Tokenize Real Estate Based Assets",
   excerpt:
     "The Securities and Exchange Commission (SEC) has Granted Approval to Kross Real Estate Securities Network, Hashgreed, to offer Tokenized Real Estate Digital Assets.",
   date: "Aug 14, 2024",
-  link: "https://medium.com/krosscoin-universal-app-monetization-platform/vinekross-europe-partners-with-ofk-branc-football-club-to-pioneer-20m-football-stadium-ce76d136d25c"
 }
 
-const newsArticles: NewsArticle[] = [
-  {
-    id: 1,
-    title: "SEC Grants Hashgreed approval to tokenize real estate based assets",
-    excerpt:
-      "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
-    date: "Feb 8, 2024",
-    categories: ["Ecosystem", "SIM Coin"],
-    image: "/assets/image/news/allnews_1.png",
-    link: "https://medium.com/krosscoin-universal-app-monetization-platform/vinekross-europe-partners-with-ofk-branc-football-club-to-pioneer-20m-football-stadium-ce76d136d25c"
-  },
-  {
-    id: 2,
-    title: "Vitalerin Europe and OPK Banc FC Launch €2.0M Stadium Tokenization on Kross Blockchain via Hashgreed",
-    excerpt:
-      "Vitalerin Europe Sp.Z.O, The Registered European Arm Of The Krosscon Project And A Leading Blockchain Asset Tokenization Firm Has Officially Signed A Landmark Agreement With OPK Banc Football Club, A Professional Football Club Based In Poland To Launch Expansion Project And Integrate AI And Metaverse Technologies Into Its Future Infrastructure.",
-    date: "Feb 8, 2024",
-    categories: ["Ecosystem", "SIM Coin"],
-    image: "/assets/image/news/allnews_2.png",
-    link: "https://medium.com/krosscoin-universal-app-monetization-platform/vinekross-europe-partners-with-ofk-branc-football-club-to-pioneer-20m-football-stadium-ce76d136d25c"
-  },
-  {
-    id: 3,
-    title: "Real Estate Tokenization: Revolutionizing The Real Estate Industry",
-    excerpt:
-      "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
-    date: "June 15, 2024",
-    categories: ["tokenization", "blockchain"],
-    image: "/assets/image/news/allnews_3.png",
-    link: "https://medium.com/@example/article-3"
-  },
-  {
-    id: 4,
-    title: "Real Estate Tokenization: Pros, Cons, And Challenges",
-    excerpt:
-      "Vitalerin Europe Sp.Z.O, The Registered European Arm Of The Krosscon Project And A Leading Blockchain Asset Tokenization Firm Has Officially Signed A Landmark Agreement With OPK Banc Football Club, A Professional Football Club Based In Poland To Launch Expansion Project And Integrate AI And Metaverse Technologies Into Its Future Infrastructure.",
-    date: "May 10, 2024",
-    categories: ["tokenization", "regulations"],
-    image: "/assets/image/news/allnews_4.png",
-    link: "https://www.commercialcafe.com/blog/real-estate-tokenization/?utm_source=chatgpt.com"
-  },
-  {
-    id: 5,
-    title: "Real Estate Tokenization: Transforming Investment Opportunities",
-    excerpt:
-      "The Real Estate Industry Has Long Been Recognized As A Lucrative Investment Avenue. However, Traditional Real Estate Investment Comes With Various Challenges, Including High Entry Barriers, Illiquidity, And Lack Of Accessibility.",
-    date: "July 1, 2024",
-    categories: ["tokenization", "blockchain"],
-    image: "/assets/image/news/allnews_5.png",
-    link: "https://medium.com/debutinfotech/real-estate-tokenization-transforming-investment-opportunities-904f70187b21"
-  },
-  {
-    id: 6,
-    title: "The Future Of Real Estate: Tokenization And Its Impact On The Industry",
-    excerpt:
-      "Real Estate Tokenization Is Reshaping The Landscape Of Investment Opportunities By Leveraging Blockchain Technology To Fractionalize Property Ownership.",
-    date: "May 22, 2024",
-    categories: ["tokenization", "blockchain"],
-    image: "/assets/image/news/allnews_3.png",
-    link: "https://medium.com/@example/article-6"
-  },
-]
+const DEFAULT_IMAGE = "/assets/image/news/news_1.svg"
 
-const ITEMS_PER_PAGE = 6;
-const CATEGORIES = ["everything", "tokenization", "blockchain", "regulations", "ecosystem", "sim coin"];
-
-export default function NewsPage() {
+export default function Page() {
   const [searchTerm, setSearchTerm] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedCategory, setSelectedCategory] = useState("everything")
+  const [articles, setArticles] = useState<MediumArticle[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [posts, setPosts] = useState<Post[]>([]);
+  const postsPerPage = 6;
 
-  // Filter and search logic
-  const filteredArticles = useMemo(() => {
-    let filtered = newsArticles;
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-    // Filter by category
-    if (selectedCategory !== "everything") {
-      filtered = filtered.filter(article =>
-        article.categories.some(cat => 
-          cat.toLowerCase().includes(selectedCategory.toLowerCase())
-        )
-      );
-    }
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("/api/posts");
 
-    // Filter by search term
-    if (searchTerm.trim()) {
-      const searchLower = searchTerm.toLowerCase();
-      filtered = filtered.filter(article =>
-        article.title.toLowerCase().includes(searchLower) ||
-        article.excerpt.toLowerCase().includes(searchLower) ||
-        article.categories.some(cat => cat.toLowerCase().includes(searchLower))
-      );
-    }
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-    return filtered;
-  }, [searchTerm, selectedCategory]);
+        const data = await response.json();
 
-  // Pagination logic
-  const totalPages = Math.ceil(filteredArticles.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginatedArticles = filteredArticles.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-  // Reset pagination when filters change
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
-
-  const handleSearchChange = (search: string) => {
-    setSearchTerm(search);
-    setCurrentPage(1);
-  };
-
-  const handleExternalClick = (link: string) => {
-    if (link) {
-      window.open(link, "_blank", "noopener,noreferrer");
-    }
-  };
-
-  const handleArticleClick = (article: NewsArticle) => {
-    if (article.link) {
-      handleExternalClick(article.link);
-    }
-  };
-
-  // Generate page numbers for pagination
-  const getPageNumbers = () => {
-    const pages = [];
-    const maxVisiblePages = 5;
-    
-    if (totalPages <= maxVisiblePages) {
-      for (let i = 1; i <= totalPages; i++) {
-        pages.push(i);
+        if (Array.isArray(data)) {
+          setPosts(data);
+        } else if (data.error) {
+          setError(data.error);
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to fetch posts");
+      } finally {
+        setLoading(false);
       }
-    } else {
-      const start = Math.max(1, currentPage - 2);
-      const end = Math.min(totalPages, start + maxVisiblePages - 1);
-      
-      for (let i = start; i <= end; i++) {
-        pages.push(i);
-      }
+    };
+
+    fetchPosts();
+  }, []);
+  
+  // Format date helper
+  const formatDate = (dateString: string) => {
+    try {
+      const date = new Date(dateString)
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+      })
+    } catch {
+      return "Unknown date"
     }
+  }
+
+  // Filter articles based on search and category
+  const filteredArticles = articles.filter((article) => {
+    const query = searchTerm.toLowerCase()
+    const matchesSearch = 
+      article.title?.toLowerCase().includes(query) ||
+      article.subtitle?.toLowerCase().includes(query) ||
+      article.content?.toLowerCase().includes(query) ||
+      article.tags?.some(tag => tag.toLowerCase().includes(query))
+
+    if (selectedCategory === "everything") {
+      return matchesSearch
+    }
+
+    // Filter by category using tags
+    const matchesCategory = article.tags?.some(tag => 
+      tag.toLowerCase().includes(selectedCategory.toLowerCase())
+    )
+
+    return matchesSearch && matchesCategory
+  })
+
+  // Pagination
+  const ITEMS_PER_PAGE = 6
+  const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ITEMS_PER_PAGE))
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
+  const currentItems = filteredArticles.slice(startIndex, startIndex + ITEMS_PER_PAGE)
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const handleMediumClick = () => {
+    // Replace with your actual Medium page URL
+    window.open("https://tribuneonlineng.com/sec-grants-hashgreed-approval-to-tokenize-real-estate-based-assets/", "_blank", "noopener,noreferrer")
+  }
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchTerm, selectedCategory])
+
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages)
+    }
+  }, [totalPages, currentPage])
+
+  // Extract text content from HTML
+  const extractTextFromHTML = (html: string, maxLength: number = 200) => {
+    if (!html) return "No preview available"
     
-    return pages;
-  };
+    const tempDiv = document.createElement('div')
+    tempDiv.innerHTML = html
+    const text = tempDiv.textContent || tempDiv.innerText || ""
+    
+    return text.length > maxLength 
+      ? text.substring(0, maxLength) + "..."
+      : text
+  }
 
   return (
     <div
@@ -175,20 +153,10 @@ export default function NewsPage() {
       style={{ fontFamily: 'Lato, sans-serif' }}
     >
       {/* Header */}
-      <div 
-        className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center bg-cover bg-no-repeat bg-bottom" 
-        style={{ 
-          background: "linear-gradient(#110942 80%)", 
-          backgroundImage: "url('/assets/image/news/image.png')" 
-        }}
-      >
-        <div className="container mx-auto text-center px-4">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-3">
-            News
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-300">
-            Welcome To Kross News
-          </p>
+      <div className="py-8 sm:py-16 h-[200px] sm:h-[370px] flex items-center justify-center" style={{ background: "linear-gradient( #110942 80%)", backgroundImage: "url('/assets/image/news/image.png')", backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "bottom" }}>
+        <div className="container mx-auto text-center">
+          <h1 className="text-2xl sm:text-[48px] font-bold text-white mb-2 sm:mb-3">News</h1>
+          <p className="text-base sm:text-gray-300 sm:text-[24px]">Welcome To Kross News</p>
         </div>
       </div>
       
@@ -197,38 +165,34 @@ export default function NewsPage() {
         <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 flex gap-2 sm:gap-4">
           <div className="w-[180px] sm:w-[250px] md:w-[350px] h-[180px] sm:h-[250px] md:h-[350px] bg-[#EC34E0]/15 blur-3xl rounded-full"></div>
         </div>
-        
         <div className="border-b border-gray-700/50">
-          <div className="container mx-auto py-4">
-            <div className="flex flex-col xl:flex-row w-full gap-4">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full">
-                <span className="text-xl sm:text-2xl lg:text-3xl whitespace-nowrap font-medium">
-                  Help Me Learn About
-                </span>
-                <div className="p-[2px] rounded-lg bg-gradient-to-l from-[#6D05B8] to-[#FF00B8] w-full sm:w-auto min-w-[200px]">
+          <div className="container mx-auto py-2 sm:py-4">
+            <div className="flex flex-col xl:flex-row w-full gap-2 sm:gap-0" style={{ fontFamily: 'Lato, sans-serif' }}>
+              <div className="flex flex-row items-center gap-1 sm:gap-3 w-full">
+                <span className="text-lg sm:text-[32px] whitespace-nowrap">Help Me Learn About</span>
+                <div className="p-[2px] rounded-lg bg-gradient-to-l from-[#6D05B8] to-[#FF00B8] w-full xs:w-auto min-w-[120px] sm:min-w-[180px]">
                   <select
                     value={selectedCategory}
-                    onChange={(e) => handleCategoryChange(e.target.value)}
-                    className="w-full h-full px-4 py-2 bg-[#050026] text-lg sm:text-xl lg:text-2xl text-white focus:outline-none rounded-lg font-medium border-none cursor-pointer"
-                    aria-label="Filter articles by category"
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="w-full h-full px-3 bg-[#050026] text-base sm:text-[32px] text-white focus:outline-none rounded-lg font-medium border-none"
+                    style={{ fontFamily: 'Lato, sans-serif' }}
                   >
-                    {CATEGORIES.map(category => (
-                      <option key={category} value={category} className="bg-gray-800 text-white capitalize">
-                        {category}
-                      </option>
-                    ))}
+                    <option value="everything" className="bg-gray-800 text-white">everything</option>
+                    <option value="tokenization" className="bg-gray-800 text-white">Tokenization</option>
+                    <option value="blockchain" className="bg-gray-800 text-white">Blockchain</option>
+                    <option value="regulations" className="bg-gray-800 text-white">Regulations</option>
+                    <option value="real estate" className="bg-gray-800 text-white">Real Estate</option>
+                    <option value="cryptocurrency" className="bg-gray-800 text-white">Cryptocurrency</option>
                   </select>
                 </div>
               </div>
-              
-              <div className="flex items-center justify-end w-full">
-                <div className="flex items-center w-full max-w-md bg-transparent border border-gray-600 text-white rounded-lg px-3 py-2 relative">
+              <div className="flex items-center justify-end w-full mt-2 sm:mt-0">
+                <div className="flex items-center w-full max-w-xs sm:max-w-md bg-transparent border border-gray-600 text-white rounded-lg px-2 py-1 relative" style={{fontFamily: 'Lato, sans-serif'}}>
                   <svg
                     className="w-5 h-5 text-gray-400 mr-2 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
-                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -239,20 +203,18 @@ export default function NewsPage() {
                   </svg>
                   <input
                     type="text"
-                    placeholder="Search News"
+                    placeholder="Search Articles"
                     value={searchTerm}
-                    onChange={(e) => handleSearchChange(e.target.value)}
-                    className="flex-1 bg-transparent border-none outline-none text-lg sm:text-xl text-white placeholder:text-gray-400"
-                    aria-label="Search articles"
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="flex-1 bg-transparent border-none outline-none text-base sm:text-[24px] text-white placeholder:text-gray-400"
                   />
                   {searchTerm && (
                     <button
-                      onClick={() => handleSearchChange('')}
+                      onClick={() => setSearchTerm('')}
                       type="button"
-                      className="ml-2 text-gray-400 hover:text-white flex-shrink-0 p-1"
-                      aria-label="Clear search"
+                      className="ml-2 text-gray-400 hover:text-white flex-shrink-0"
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </button>
@@ -265,190 +227,143 @@ export default function NewsPage() {
 
         {/* Featured Article */}
         <div className="container mx-auto py-8 sm:py-16">
-          <div className="mb-8">
-            <div className="flex flex-col sm:flex-row items-start justify-between mb-4 gap-4">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                {featuredArticle.title}
-              </h2>
-              <span className="text-gray-400 text-sm sm:text-base font-medium">
-                {featuredArticle.date}
-              </span>
+          <div className="">
+            <div className="flex flex-col sm:flex-row items-center justify-between mb-2 sm:mb-4 gap-2 sm:gap-4">
+              <h2 className="text-lg sm:text-4xl font-bold text-white leading-tight">{featuredArticle.title}</h2>
+              <span className="text-gray-400 text-xs sm:text-sm">{featuredArticle.date}</span>
             </div>
-            <p className="text-base sm:text-lg text-gray-300 mb-8 leading-relaxed">
-              {featuredArticle.excerpt}
-            </p>
-            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-all duration-300">
-              <button
-                onClick={() => handleExternalClick(featuredArticle.link)}
-                className="inline-flex px-6 py-3 rounded-[10px] bg-[#050026] hover:bg-transparent text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,0.5)] transition-all duration-300"
+            <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-8 leading-relaxed">{featuredArticle.excerpt}</p>
+            <div className="inline-flex p-[2px] rounded-[12px] bg-gradient-to-l from-[#FF00B8] to-[#6D05B8] hover:bg-gradient-to-r transition-colors duration-200 inline-block">
+              <Link
+                href="/news"
+                className="inline-flex px-8 py-4 rounded-[10px] bg-transparent hover:bg-gradient-to-r text-white font-medium hover:shadow-[inset_0_2px_12px_0_rgba(0,0,0,1)] transition-colors duration-200 inline-block"
+                onClick={handleMediumClick}
               >
                 Read News
-              </button>
+              </Link>
             </div>
           </div>
-          <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px]">
-            <Image
-              src="/assets/image/news/news_1.svg"
-              alt="Featured article illustration"
-              fill
-              className="object-cover rounded-lg"
-              priority
-            />
-          </div>
+          <img src="/assets/image/news/news_1.svg" alt="featured article" className="w-full h-full object-cover rounded-lg mb-2 sm:mb-4 py-4 sm:py-[36px]" />
         </div>
       </section>
 
-      {/* All News Section */}
-      <section className="text-white overflow-hidden relative bg-[#050026] min-h-screen px-4 sm:px-6">
-        <div className="container mx-auto pb-16">
-          {/* Section Header */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-16 gap-4">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-              All News
-            </h1>
-            <div className="text-sm text-gray-400">
-              {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''} found
-              {searchTerm && ` for "${searchTerm}"`}
-              {selectedCategory !== "everything" && ` in ${selectedCategory}`}
-            </div>
-          </div>
+      {/* Articles Section */}
+      <div className="min-h-screen bg-[#050026] py-12 px-4">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl font-bold mb-12 text-left text-white">
+          All News
+        </h1>
 
-          {/* No Results Message */}
-          {filteredArticles.length === 0 && (
-            <div className="text-center py-16">
-              <div className="text-6xl mb-4">📰</div>
-              <h3 className="text-xl font-bold mb-2">No articles found</h3>
-              <p className="text-gray-400 mb-6">
-                Try adjusting your search terms or category filter
-              </p>
-              <button
-                onClick={() => {
-                  setSearchTerm('');
-                  setSelectedCategory('everything');
-                }}
-                className="px-6 py-2 bg-gradient-to-r from-[#6D05B8] to-[#FF00B8] text-white rounded-lg font-medium hover:shadow-lg transition-all"
-              >
-                Clear Filters
-              </button>
-            </div>
-          )}
-
-          {/* News Grid */}
-          {filteredArticles.length > 0 && (
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {paginatedArticles.map((article) => (
-                  <article
-                    key={article.id}
-                    className="group cursor-pointer transition-transform hover:scale-105"
-                    onClick={() => handleArticleClick(article)}
-                  >
-                    <div className="space-y-4">
-                      <div className="relative w-full h-[200px] sm:h-[240px] overflow-hidden rounded-lg">
-                        <Image
-                          src={article.image}
-                          alt={article.title}
-                          fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
-                      </div>
-
-                      <h2 className="text-lg sm:text-xl font-bold text-white leading-tight group-hover:text-purple-300 transition-colors line-clamp-2">
-                        {article.title}
-                      </h2>
-
-                      <div className="flex flex-wrap items-center justify-between gap-2">
-                        <div className="flex flex-wrap gap-2">
-                          {article.categories.slice(0, 2).map((category, index) => (
-                            <span
-                              key={index}
-                              className="px-3 py-1 border border-gray-400 text-gray-200 rounded-full text-xs font-medium hover:border-purple-400 transition-colors capitalize"
-                            >
-                              {category}
-                            </span>
-                          ))}
-                          {article.categories.length > 2 && (
-                            <span className="px-3 py-1 text-gray-400 text-xs">
-                              +{article.categories.length - 2}
-                            </span>
-                          )}
-                        </div>
-                        <span className="text-gray-400 text-sm font-medium whitespace-nowrap">
-                          {article.date}
-                        </span>
-                      </div>
-
-                      <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                        {article.excerpt}
-                      </p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-16">
-                  <div className="text-sm text-gray-400">
-                    Page {currentPage} of {totalPages}
+        {posts.length === 0 ? (
+          <div className="text-center text-gray-400 text-xl">No posts found</div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {currentPosts.map((post, idx) => (
+                <div
+                  key={idx}
+                  className=" text-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  {/* Image with fallback */}
+                  <div className="h-56 overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      onError={(e) => {
+                        e.currentTarget.src = '/placeholder-image.jpg';
+                      }}
+                    />
                   </div>
-                  
-                  <div className="flex items-center space-x-2">
-                    {/* Previous Button */}
-                    <button
-                      onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
-                      disabled={currentPage === 1}
-                      className="w-10 h-10 rounded-lg font-medium text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                      aria-label="Previous page"
-                    >
-                      <svg className="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
 
-                    {/* Page Numbers */}
-                    {getPageNumbers().map((page) => (
-                      currentPage === page ? (
-                        <div
-                          key={page}
-                          className="p-[2px] rounded-md bg-gradient-to-r from-[#e91e63] to-[#9c27b0]"
-                        >
-                          <button
-                            className="w-10 h-10 rounded-md font-medium text-white bg-[#050026] flex items-center justify-center"
-                            disabled
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex flex-row items-center justify-between">
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {post.tags.slice(0, 2).map((tag, i) => (
+                          <span
+                            key={i}
+                            className="border-[#686868] border-[2px] text-xs px-3 py-1 rounded-full font-medium"
                           >
-                            {page}
-                          </button>
-                        </div>
-                      ) : (
-                        <button
-                          key={page}
-                          onClick={() => setCurrentPage(page)}
-                          className="w-10 h-10 rounded-md font-medium text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all"
-                        >
-                          {page}
-                        </button>
-                      )
-                    ))}
+                            {tag}
+                          </span>
+                        ))}
+                        {post.tags.length > 2 && (
+                          <span className="bg-gray-700 text-xs px-3 py-1 rounded-full">
+                            +{post.tags.length - 2}
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex items-center text-gray-400 text-sm mb-4">
+                
+                      {formatDate(post.date)}
+                    </div>
+                    </div>
 
-                    {/* Next Button */}
-                    <button
-                      onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
-                      disabled={currentPage === totalPages}
-                      className="w-10 h-10 rounded-lg font-medium text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                      aria-label="Next page"
+                    <a
+                      href={post.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xl font-bold hover:text-blue-400 block mb-3 transition-colors"
                     >
-                      <svg className="w-4 h-4 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
+                      {post.title}
+                    </a>
+
+
+
+                    <p className="text-[#CACACA] text-sm line-clamp-3 mb-5 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+
+                    
                   </div>
                 </div>
-              )}
-            </>
-          )}
-        </div>
-      </section>
+              ))}
+            </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex justify-center mt-8">
+                <nav className="flex items-center space-x-2">
+                  <button
+                    onClick={() => paginate(Math.max(1, currentPage - 1))}
+                    disabled={currentPage === 1}
+                    className="p-2 rounded-lg bg-gray-800 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                  </button>
+
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
+                    <button
+                      key={number}
+                      onClick={() => paginate(number)}
+                      className={`px-4 py-2 rounded-lg transition-colors ${currentPage === number
+                          ? "bg-blue-600 text-white"
+                          : "bg-gray-800 text-white hover:bg-gray-700"
+                        }`}
+                    >
+                      {number}
+                    </button>
+                  ))}
+
+                  <button
+                    onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
+                    disabled={currentPage === totalPages}
+                    className="p-2 rounded-lg bg-gray-800 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </button>
+                </nav>
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </div>
     </div>
   )
 }
